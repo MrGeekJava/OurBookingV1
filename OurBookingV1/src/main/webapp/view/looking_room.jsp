@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -502,13 +504,13 @@
             <li><img src="" alt=""/></li>
         </div>
         <div class="speciality">
-            <img src="../resources/res/images/广州白云宾馆/two.PNG" alt=""/>
+            <img src="../resources/res/images/GZBYBG/two.PNG" alt=""/>
             <button>现在就预定</button>
             <button>保存至心愿清单列表</button>
         </div>
         <div class="text">
             <h3>广州精选推荐之一</h3>
-            <object class="txt" style="border:0px" type="text/x-scriptlet" data="/txt/广州白云宾馆.txt"></object>
+            <object class="txt" style="border:0px" type="text/x-scriptlet" data="../resources/txt/GZBYBG.txt"></object>
         </div>
 
         <div class="tip">

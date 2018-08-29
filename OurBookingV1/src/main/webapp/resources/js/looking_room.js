@@ -2,15 +2,15 @@
  * Created by xiaoxin on 2018/8/11.
  */
 $(document).ready(function(){
-    var imgs = ["../res/images/广州白云宾馆/34980273.jpg","../res/images/广州白云宾馆/34980275.jpg","../res/images/广州白云宾馆/34980276.jpg","../res/images/广州白云宾馆/34980277.jpg","../res/images/广州白云宾馆/34980278.jpg","../res/images/广州白云宾馆/34980280.jpg",
-        "../res/images/广州白云宾馆/34980281.jpg","../res/images/广州白云宾馆/34980282.jpg","../res/images/广州白云宾馆/34980283.jpg","../res/images/广州白云宾馆/34980365.jpg","../res/images/广州白云宾馆/34980368.jpg","../res/images/广州白云宾馆/34980369.jpg",
-        "../res/images/广州白云宾馆/34980370.jpg","../res/images/广州白云宾馆/34980381.jpg","../res/images/广州白云宾馆/34980444.jpg","../res/images/广州白云宾馆/34980445.jpg","../res/images/广州白云宾馆/34980448.jpg","../res/images/广州白云宾馆/34980454.jpg",
-        "../res/images/广州白云宾馆/34980456.jpg","../res/images/广州白云宾馆/34980489.jpg","../res/images/广州白云宾馆/34980490.jpg","../res/images/广州白云宾馆/34980492.jpg","../res/images/广州白云宾馆/34980493.jpg","../res/images/广州白云宾馆/34980495.jpg",
-        "../res/images/广州白云宾馆/34980496.jpg","../res/images/广州白云宾馆/34980498.jpg","../res/images/广州白云宾馆/34980672.jpg","../res/images/广州白云宾馆/34980673.jpg","../res/images/广州白云宾馆/34980676.jpg","../res/images/广州白云宾馆/34980679.jpg",
-        "../res/images/广州白云宾馆/34980680.jpg","../res/images/广州白云宾馆/44116174.jpg","../res/images/广州白云宾馆/44116181.jpg","../res/images/广州白云宾馆/44116187.jpg","../res/images/广州白云宾馆/44116192.jpg","../res/images/广州白云宾馆/44116193.jpg",
-        "../res/images/广州白云宾馆/44116194.jpg","../res/images/广州白云宾馆/44116199.jpg","../res/images/广州白云宾馆/44116201.jpg","../res/images/广州白云宾馆/44116202.jpg","../res/images/广州白云宾馆/44116203.jpg","../res/images/广州白云宾馆/44116205.jpg",
-        "../res/images/广州白云宾馆/44116209.jpg","../res/images/广州白云宾馆/44116224.jpg","../res/images/广州白云宾馆/44116226.jpg","../res/images/广州白云宾馆/44116229.jpg","../res/images/广州白云宾馆/44116240.jpg","../res/images/广州白云宾馆/44116246.jpg",
-        "../res/images/广州白云宾馆/44116256.jpg","../res/images/广州白云宾馆/66422120.jpg","../res/images/广州白云宾馆/7082835.jpg","../res/images/广州白云宾馆/73901522.jpg"];
+    var imgs = ["../resources/res/images/GZBYBG/34980273.jpg","../resources/res/images/GZBYBG/34980275.jpg","../resources/res/images/GZBYBG/34980276.jpg","../resources/res/images/GZBYBG/34980277.jpg","../resources/res/images/GZBYBG/34980278.jpg","../resources/res/images/GZBYBG/34980280.jpg",
+        "../resources/res/images/GZBYBG/34980281.jpg","../resources/res/images/GZBYBG/34980282.jpg","../resources/res/images/GZBYBG/34980283.jpg","../resources/res/images/GZBYBG/34980365.jpg","../resources/res/images/GZBYBG/34980368.jpg","../resources/res/images/GZBYBG/34980369.jpg",
+        "../resources/res/images/GZBYBG/34980370.jpg","../resources/res/images/GZBYBG/34980381.jpg","../resources/res/images/GZBYBG/34980444.jpg","../resources/res/images/GZBYBG/34980445.jpg","../resources/res/images/GZBYBG/34980448.jpg","../resources/res/images/GZBYBG/34980454.jpg",
+        "../resources/res/images/GZBYBG/34980456.jpg","../resources/res/images/GZBYBG/34980489.jpg","../resources/res/images/GZBYBG/34980490.jpg","../resources/res/images/GZBYBG/34980492.jpg","../resources/res/images/GZBYBG/34980493.jpg","../resources/res/images/GZBYBG/34980495.jpg",
+        "../resources/res/images/GZBYBG/34980496.jpg","../resources/res/images/GZBYBG/34980498.jpg","../resources/res/images/GZBYBG/34980672.jpg","../resources/res/images/GZBYBG/34980673.jpg","../resources/res/images/GZBYBG/34980676.jpg","../resources/res/images/GZBYBG/34980679.jpg",
+        "../resources/res/images/GZBYBG/34980680.jpg","../resources/res/images/GZBYBG/44116174.jpg","../resources/res/images/GZBYBG/44116181.jpg","../resources/res/images/GZBYBG/44116187.jpg","../resources/res/images/GZBYBG/44116192.jpg","../resources/res/images/GZBYBG/44116193.jpg",
+        "../resources/res/images/GZBYBG/44116194.jpg","../resources/res/images/GZBYBG/44116199.jpg","../resources/res/images/GZBYBG/44116201.jpg","../resources/res/images/GZBYBG/44116202.jpg","../resources/res/images/GZBYBG/44116203.jpg","../resources/res/images/GZBYBG/44116205.jpg",
+        "../resources/res/images/GZBYBG/44116209.jpg","../resources/res/images/GZBYBG/44116224.jpg","../resources/res/images/GZBYBG/44116226.jpg","../resources/res/images/GZBYBG/44116229.jpg","../resources/res/images/GZBYBG/44116240.jpg","../resources/res/images/GZBYBG/44116246.jpg",
+        "../resources/res/images/GZBYBG/44116256.jpg","../resources/res/images/GZBYBG/66422120.jpg","../resources/res/images/GZBYBG/7082835.jpg","../resources/res/images/GZBYBG/73901522.jpg"];
     flush();
     initimg();
     var n=0;

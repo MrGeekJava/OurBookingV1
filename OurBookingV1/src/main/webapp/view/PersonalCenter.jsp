@@ -1,16 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
-    <script src="../js/JQuery/JQuery3.3.1.js"></script>
+    <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
 
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link href="../res/icon/index_icon/iconfont.css" rel="stylesheet">
-    <link href="../css/index_container.css" rel="stylesheet">
-    <link href="../css/PersonalCenter.css" rel="stylesheet">
-    <link href="../res/icon/PersonalCenter/iconfont.css" rel="stylesheet">
-    <link rel="SHORTCUT ICON" href="../res/images/title_logo.icon"/>
+    <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
+    <link href="../resources/css/index_container.css" rel="stylesheet">
+    <link href="../resources/css/PersonalCenter.css" rel="stylesheet">
+    <link href="../resources/res/icon/PersonalCenter/iconfont.css" rel="stylesheet">
+    <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
 
     <title>个人中心</title>
 
@@ -19,12 +21,12 @@
 <!--最高头部-->
 <div id="registertip" class="index_tip"></div>
 <div id="none_img_id" >
-    <img src="../res/images/wechat_img.png" id="none_img_id2" >
+    <img src="../resources/res/images/wechat_img.png" id="none_img_id2" >
 </div>
 <div class="top">
 
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../res/images/logo.png">
+        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
@@ -128,7 +130,7 @@
                 </li>
                 <li class="user-li_5 person_class">
                     <a href="#" class="person_class_a">
-                        <img src="../res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+                        <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
                         <p class=" user_name">用户名</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
@@ -204,7 +206,7 @@
         <div class="modifyPD">
             <div class="modifyPD-head">
                 <div class="modifyPD-head-img">
-                    <img src="../res/images/PersonCenter/cricleHead.png">
+                    <img src="../resources/res/images/PersonCenter/cricleHead.png">
                 </div>
                 <div class="modifyPD-head-btn">
                     <a href="javascript:void(0)">修改个人资料</a>
@@ -274,21 +276,21 @@
                 <div class="first-info-con">
                     <a href="javascript:void(0)" name="search" class="first-info-con-a">
                         <div class="first-info-con-icon">
-                            <img src="../res/images/PersonCenter/sousuo.png">
+                            <img src="../resources/res/images/PersonCenter/sousuo.png">
                         </div>
                         <p class="first-info-con-p1">网罗全球特价</p>
                         <p class="first-info-con-p2">登录后即可解锁专属优惠</p>
                     </a>
                     <a href="javascript:void(0)" name="addPI" class="first-info-con-a">
                         <div class="first-info-con-icon">
-                            <img src="../res/images/PersonCenter/head.png">
+                            <img src="../resources/res/images/PersonCenter/head.png">
                         </div>
                         <p class="first-info-con-p1">添加个人信息</p>
                         <p class="first-info-con-p2">添加个人信息，助你快读预订，还可以根据你的设置为你特别推荐哦！</p>
                     </a>
                     <a href="javascript:void(0)" name="download" class="first-info-con-a">
                         <div class="first-info-con-icon">
-                            <img src="../res/images/PersonCenter/app.png">
+                            <img src="../resources/res/images/PersonCenter/app.png">
                         </div>
                         <p class="first-info-con-p1">下载移动app</p>
                         <p class="first-info-con-p2">电子确认信在手，查看订单更便捷！</p>
@@ -400,7 +402,7 @@
                 <div class="ISInfo_content_row">
                     <p class="row_name">个人照片</p>
                     <div class="first_row_headImg">
-                        <img src="../res/images/PersonCenter/bigHead.png">
+                        <img src="../resources/res/images/PersonCenter/bigHead.png">
                     </div>
                     <a class="row_button first_row_setHeadImg iconfont icon-xiangji"> 更改照片</a>
                     <p class="row_tip first_row_tip_Img iconfont icon-zlicontips01"> 上传一张美美的个人照吧</p>
@@ -676,7 +678,7 @@
                 <div class="ISInfo_content_row">
                     <p class="row_name">用其他账号登录</p>
                     <p class="second_row_address">关联其他平台帐号，一键轻松登录 </p>
-                    <a href="javascript:void(0)" class="row_button second_row_changeAd"><img src="../res/images/weichar.png" class="weixinIcon">微信登录</a>
+                    <a href="javascript:void(0)" class="row_button second_row_changeAd"><img src="../resources/res/images/weichar.png" class="weixinIcon">微信登录</a>
                 </div>
             </div>
         </div>
@@ -687,8 +689,8 @@
     </div>
 </div>
 
-<script src="../js/PersonalCenter.js"></script>
-<script src="../js/NavBar.js"></script>
-<script src="../js/index_container.js"></script>
+<script src="../resources/js/PersonalCenter.js"></script>
+<script src="../resources/js/NavBar.js"></script>
+<script src="../resources/js/index_container.js"></script>
 </body>
 </html>

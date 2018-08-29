@@ -1,24 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>searchResult</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link rel="stylesheet" href="../css/searchResult.css">
+    <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/searchResult.css">
     <script src="//at.alicdn.com/t/font_781787_db0f5cbcgx.js" type="text/javascript"></script>
-    <link href="../res/icon/index_icon/iconfont.css" rel="stylesheet">
-    <link href="../res/icon/personifm/iconfont.css" rel="stylesheet">
-    <script src="../js/NavBar.js"></script>
-    <script src="../js/index_container.js"></script>
-    <script src="../js/searchResult.js"></script>
+    <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
+    <link href="../resources/res/icon/personifm/iconfont.css" rel="stylesheet">
+    <script src="../resources/js/NavBar.js"></script>
+    <script src="../resources/js/index_container.js"></script>
+    <script src="../resources/js/searchResult.js"></script>
     <script src="//at.alicdn.com/t/font_788386_e8anycfk24u.js" ></script>
 
     <!--map-->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../res/icon/map/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="../css/MapStyle.css">
+    <link rel="stylesheet" type="text/css" href="../resources/res/icon/map/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/MapStyle.css">
     <!-- 引用百度地图API文件 -->
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1XXZ1hp42Ef2qHx8AheU08zIhhU7Sfe0"></script>
 
@@ -26,11 +28,11 @@
 <body>
 <div id="registertip" class="index_tip"></div>
 <div id="none_img_id" >
-    <img src="../res/images/wechat_img.png" id="none_img_id2" >
+    <img src="../resources/res/images/wechat_img.png" id="none_img_id2" >
 </div>
 <div class="top">
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../res/images/logo.png">
+        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
@@ -331,7 +333,7 @@
             <div class="rightBox_containers">
                 <div class="search_hotel">
                     <!--<div class="search_hotel_content"></div>-->
-                    <img src="../res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
+                    <img src="../resources/res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
                     <div class="search_hotel_message">
                         <div class="shm_left">
                             <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
@@ -355,7 +357,7 @@
 
                 <div class="search_hotel">
                     <!--<div class="search_hotel_content"></div>-->
-                    <img src="../res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
+                    <img src="../resources/res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
                     <div class="search_hotel_message">
                         <div class="shm_left">
                             <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
@@ -379,32 +381,7 @@
 
                 <div class="search_hotel">
                     <!--<div class="search_hotel_content"></div>-->
-                    <img src="../res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
-                    <div class="search_hotel_message">
-                        <div class="shm_left">
-                            <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
-                            <p class="look_map"><span class="look_map_icon">&#9829;</span><a href="#" class="map_a">澄江县-显示在地图上</a><span class="distance_icon">&#9808;</span><span class="distance">(离中心地区11km)</span></p>
-                            <div class="hotel_desc">抚仙湖希尔顿酒店位于凤麓，设有内部酒吧。 酒店的每间客房均设有空调、平板电视、带淋浴的私人浴室、浴袍以及拖鞋。 酒店设有24小时前台。 酒店距离最近的机场 - 昆明长水国际机场58公里。</div>
-                        </div>
-                        <div class="shm_right">
-                            <span class="shm_right_text">很棒</span>
-                            <span class="shm_right_subtext">168条住客点评</span>
-                            <span class="score">8.8</span>
-                            <span class="shm_right_scoresubtext">住客至爱</span>
-                            <button class="show_price ">显示价格</button>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="shm_buttom">
-                            <p class="shm_buttom_text"><a href="#">"地理位置不错，位于万科打造的国际度假村区内，紧靠湖边，位于万科打造的国际度假村区内，紧靠湖边..."</a></p>
-                            <p class="shm_buttom_submsg"><span class="shm_buttom_submsg_icon">&#9787;</span><i>束韦</i><span class="county">，中国</span></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="search_hotel">
-                    <!--<div class="search_hotel_content"></div>-->
-                    <img src="../res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
+                    <img src="../resources/res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
                     <div class="search_hotel_message">
                         <div class="shm_left">
                             <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
@@ -429,7 +406,32 @@
 
                 <div class="search_hotel">
                     <!--<div class="search_hotel_content"></div>-->
-                    <img src="../res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
+                    <img src="../resources/res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
+                    <div class="search_hotel_message">
+                        <div class="shm_left">
+                            <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
+                            <p class="look_map"><span class="look_map_icon">&#9829;</span><a href="#" class="map_a">澄江县-显示在地图上</a><span class="distance_icon">&#9808;</span><span class="distance">(离中心地区11km)</span></p>
+                            <div class="hotel_desc">抚仙湖希尔顿酒店位于凤麓，设有内部酒吧。 酒店的每间客房均设有空调、平板电视、带淋浴的私人浴室、浴袍以及拖鞋。 酒店设有24小时前台。 酒店距离最近的机场 - 昆明长水国际机场58公里。</div>
+                        </div>
+                        <div class="shm_right">
+                            <span class="shm_right_text">很棒</span>
+                            <span class="shm_right_subtext">168条住客点评</span>
+                            <span class="score">8.8</span>
+                            <span class="shm_right_scoresubtext">住客至爱</span>
+                            <button class="show_price ">显示价格</button>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="shm_buttom">
+                            <p class="shm_buttom_text"><a href="#">"地理位置不错，位于万科打造的国际度假村区内，紧靠湖边，位于万科打造的国际度假村区内，紧靠湖边..."</a></p>
+                            <p class="shm_buttom_submsg"><span class="shm_buttom_submsg_icon">&#9787;</span><i>束韦</i><span class="county">，中国</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="search_hotel">
+                    <!--<div class="search_hotel_content"></div>-->
+                    <img src="../resources/res/images/searchResult/serchResult1.jpg" class="search_hotel_pic">
                     <div class="search_hotel_message">
                         <div class="shm_left">
                             <p class="hotel_name">抚仙湖希尔顿酒店<span class="hotel_type">尊贵型</span><span class="hotel_type_point">&#9679;&#9679;&#9679;&#9679;&#9679;</span></span></p>
@@ -481,7 +483,7 @@
             <div class="buttom_top1_content">
 
                 <div class="buttom_top1_content_left">
-                    <img src="../res/images/searchResult/phone.png">
+                    <img src="../resources/res/images/searchResult/phone.png">
                     <h3>24小时客服助您安心出行</h3>
                     <p class="p1">订单有问题？我们来帮您！</p>
                     <div class="chinese">
@@ -524,7 +526,7 @@
                 <li><a>联系客服</a></li>
                 <li><a>成为分销合作伙伴</a></li>
                 <li><a>Booking.com商旅服务</a></li>
-                <li><a>关注Booking.com官方微信</a><img src="../res/images/searchResult/wechat.png" class="wechat_logo"></li>
+                <li><a>关注Booking.com官方微信</a><img src="../resources/res/images/searchResult/wechat.png" class="wechat_logo"></li>
             </ul>
         </div>
         </div>
@@ -596,12 +598,12 @@
 
 
         <ul class="buttom_top8">
-            <li><img src="../res/images/searchResult/bookingcom.png"></li>
-            <li><img src="../res/images/searchResult/priceline.png"></li>
-            <li><img src="../res/images/searchResult/kayak.png"></li>
-            <li><img src="../res/images/searchResult/agodacom.png"></li>
-            <li><img src="../res/images/searchResult/rentilcors.png"></li>
-            <li><img src="../res/images/searchResult/opentable.png"></li>
+            <li><img src="../resources/res/images/searchResult/bookingcom.png"></li>
+            <li><img src="../resources/res/images/searchResult/priceline.png"></li>
+            <li><img src="../resources/res/images/searchResult/kayak.png"></li>
+            <li><img src="../resources/res/images/searchResult/agodacom.png"></li>
+            <li><img src="../resources/res/images/searchResult/rentilcors.png"></li>
+            <li><img src="../resources/res/images/searchResult/opentable.png"></li>
 
 
 
@@ -776,7 +778,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/卓美亚喜马拉雅酒店.jpg">
+                        <img src="../resources/res/images/map/卓美亚喜马拉雅酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>卓美亚喜马拉雅酒店</h3>
@@ -801,7 +803,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/上海帝盛酒店.jpg">
+                        <img src="../resources/res/images/map/上海帝盛酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>上海帝盛酒店</h3>
@@ -827,7 +829,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/静安香格里拉大酒店.jpg">
+                        <img src="../resources/res/images/map/静安香格里拉大酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>静安香格里拉大酒店</h3>
@@ -879,7 +881,7 @@
     map.addControl(top_left_control);        				//添加比例尺
     map.addControl(top_right_navigation);					//添加平移和缩放按钮
 
-    var myIcon = new BMap.Icon("../res/images/map/label.png", new BMap.Size(32, 32));		//自定义标注
+    var myIcon = new BMap.Icon("../resources/res/images/map/label.png", new BMap.Size(32, 32));		//自定义标注
     var marker;
     var sContent;
     var pts = new Array();
@@ -889,7 +891,7 @@
         sContent =                     //信息窗口内容
                 '<a href="#">'+
                 '<div class="sContent-hotel-img">'+
-                '<img src="../res/images/map/上海帝盛酒店.jpg">'+
+                '<img src="../resources/res/images/map/上海帝盛酒店.jpg">'+
                 '</div>'+
                 '<div class="sContent-hotel-info">'+
                 '<h3>上海帝盛酒店</h3>'+
@@ -928,7 +930,7 @@
 </script>
 
 
-<script type="text/javascript" src="../js/Map.js"></script>
+<script type="text/javascript" src="../resources/js/Map.js"></script>
 
 
 
@@ -940,7 +942,7 @@
                 <li id="registerLi" class="LAR-li">注册</li>
             </a>
         </ul>
-        <div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="../res/images/close.png" class="closeImg"></a></div>
+        <div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="../resources/res/images/close.png" class="closeImg"></a></div>
         <div id="LAR-login">
             <div class="LAR-contant">
                 <form name="loginForm" action="" onsubmit="" method="POST" class="LAR_form">
@@ -954,7 +956,7 @@
 					<span class="span-line">
 						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
 					</span>
-                <a href="javascript:void(0)" class="weicharLogin"><img src="../res/images/weichar.png" class="login_login">微信登录</a>
+                <a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
             </div>
             <hr>
             <span class="span-tip">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
@@ -974,7 +976,7 @@
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
 					</span>
-                <a href="javascript:void(0)" class="weicharLogin"><img src="../res/images/weichar.png" class="login_login">微信登录</a>
+                <a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
             </div>
             <hr>
 				<span class="span-tip">

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +7,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../res/icon/map/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="../css/MapStyle.css">
+    <link rel="stylesheet" type="text/css" href="../resources/res/icon/map/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/MapStyle.css">
 
     <!-- 引用百度地图API文件 -->
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1XXZ1hp42Ef2qHx8AheU08zIhhU7Sfe0"></script>
@@ -176,7 +178,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/卓美亚喜马拉雅酒店.jpg">
+                        <img src="../resources/res/images/map/卓美亚喜马拉雅酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>卓美亚喜马拉雅酒店</h3>
@@ -200,7 +202,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/上海帝盛酒店.jpg">
+                        <img src="../resources/res/images/map/上海帝盛酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>上海帝盛酒店</h3>
@@ -226,7 +228,7 @@
             <a href="javascript:void(0)">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="../res/images/map/静安香格里拉大酒店.jpg">
+                        <img src="../resources/res/images/map/静安香格里拉大酒店.jpg">
                     </div>
                     <div class="hotel-info">
                         <h3>静安香格里拉大酒店</h3>
@@ -277,7 +279,7 @@
     map.addControl(top_left_control);        				//添加比例尺
     map.addControl(top_right_navigation);					//添加平移和缩放按钮
 
-    var myIcon = new BMap.Icon("../res/images/map/label.png", new BMap.Size(32, 32));		//自定义标注
+    var myIcon = new BMap.Icon("../resources/res/images/map/label.png", new BMap.Size(32, 32));		//自定义标注
     var marker;
     var sContent;
     var pts = new Array();
@@ -287,7 +289,7 @@
         sContent =                     //信息窗口内容
             '<a href="#">'+
                 '<div class="sContent-hotel-img">'+
-                    '<img src="../res/images/map/上海帝盛酒店.jpg">'+
+                    '<img src="../resources/res/images/map/上海帝盛酒店.jpg">'+
                 '</div>'+
                 '<div class="sContent-hotel-info">'+
                     '<h3>上海帝盛酒店</h3>'+
@@ -324,5 +326,5 @@
 //        alert(e.point.lng + "," + e.point.lat);
 //    });
 </script>
-<script type="text/javascript" src="../js/Map.js"></script>
+<script type="text/javascript" src="../resources/js/Map.js"></script>
 </html>

@@ -1,17 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="SHORTCUT ICON" href="../res/images/title_logo.icon"/>
-    <title>Booking.com：个人信息</title>
-    <script src="../js/JQuery/JQuery3.3.1.js"></script>
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link rel="stylesheet" href="../css/personIfm.css">
-    <link href="../res/icon/index_icon/iconfont.css" rel="stylesheet">
-    <link href="../res/icon/personifm/iconfont.css" rel="stylesheet">
-    <script src="../js/index_container.js"></script>
-    <script src="../js/NavBar.js"></script>
-    <script src="../js/personIfm.js"></script>
+    <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
+    <title>Booking.com：最终信息</title>
+    <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
+    <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/personIfm2.css">
+    <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
+    <link href="../resources/res/icon/personifm/iconfont.css" rel="stylesheet">
+    <script src="../resources/js/index_container.js"></script>
+    <script src="../resources/js/NavBar.js"></script>
+    <script src="../resources/js/personIfm.js"></script>
 </head>
 <body>
 <div  class="tips"></div>
@@ -19,30 +21,30 @@
 <div class="tip3"></div>
 <!--实现图片移动-->
 <div  class="modal">
-    <img class="model-content" id="img01" src="../res/images/personIfm/xlhkz.jpg">
+    <img class="model-content" id="img01" src="../resources/res/images/personIfm/xlhkz.jpg">
 </div>
 
 <div class="modal2">
-    <img class="model-content" id="img02" src="../res/images/personIfm/xlhkz1.jpg">
+    <img class="model-content" id="img02" src="../resources/res/images/personIfm/xlhkz1.jpg">
 </div>
 <div class="modal3">
-    <img class="model-content" id="img03" src="../res/images/personIfm/xlhkz2.jpg">
+    <img class="model-content" id="img03" src="../resources/res/images/personIfm/xlhkz2.jpg">
 </div>
 <div class="modal4">
-    <img class="model-content" id="img04" src="../res/images/personIfm/xlhkz3.jpg">
+    <img class="model-content" id="img04" src="../resources/res/images/personIfm/xlhkz3.jpg">
 </div>
 <div class="modal5">
-    <img class="model-content" id="img05" src="../res/images/personIfm/xlhkz4.jpg">
+    <img class="model-content" id="img05" src="../resources/res/images/personIfm/xlhkz4.jpg">
 </div>
 
 <div id="none_img_id" >
-    <img src="../res/images/wechat_img.png" id="none_img_id2" >
+    <img src="../resources/res/images/wechat_img.png" id="none_img_id2" >
 </div>
 
 <div class="top">
 
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../res/images/logo.png">
+        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
@@ -146,7 +148,7 @@
                 </li>
                 <li class="user-li_5 person_class">
                     <a href="#" class="person_class_a">
-                        <img src="../res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+                        <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
                         <p class=" user_name">用户名</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
@@ -178,7 +180,7 @@
         <div class="flow_up_3 flow_up_left">
             <hr>
         </div>
-        <div class="flow_up_4 flow_up_left">2</div>
+        <div class="flow_up_4 flow_up_left"><i class="iconfont icon-gou"></i></div>
         <div class="flow_up_5 flow_up_left">填写您的信息</div>
         <div class="flow_up_6 flow_up_left">
             <hr>
@@ -187,16 +189,16 @@
         <div class="flow_up_8 flow_up_left">最终信息</div>
     </div>
 
-    <div class="flow_down">
-        <span class="flow_down_userName">用户名</span>
-        <span class="flow_down_span">，轻松两步，完成预订！</span>
-    </div>
+    <!--<div class="flow_down">-->
+        <!--<span class="flow_down_userName">用户名</span>-->
+        <!--<span class="flow_down_span">，轻松两步，完成预订！</span>-->
+    <!--</div>-->
 </div>
 <div class="container">
     <div class="container_order_details">
-        <div class="order_details_idcard">
-            无需信用卡!
-        </div>
+        <!--<div class="order_details_idcard">-->
+            <!--无需信用卡!-->
+        <!--</div>-->
         <div class="order_details_box">
             <div class="order_details">订单详情</div>
             <div class="order_details_up">
@@ -297,16 +299,16 @@
                 <div class="container_order_ifm_r_img">
                     <ul class="order_ifm_r_ul">
                         <li class="order_ifm_r_img1 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz1.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz1.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img2 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz2.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz2.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img3 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz3.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz3.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img4 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz4.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz4.jpg" style="height: 100%;width: 100% ">
                         </li>
                     </ul>
                 </div>
@@ -338,89 +340,88 @@
 
             <p class="container_ensure2_p3">立即预订吧！</p>
         </div>
-        <p class="input_user_ifm">输入联系信息</p>
+        <p class="input_user_ifm">输入个人信息</p>
 
         <div class="input_ifm">
             <div class="input_ifm_up">快完成啦！将带<p>*</p>的必填项填写完整即可</div>
-            <div class="input_ifm_down">确认邮件将发送至该邮箱</div>
-
-            <div class="input_ifm_left">
-                <p class="input_ifm_left_p">称谓</p>
-                <select class="input_ifm_left_sel">
-                    <option></option>
-                    <option value="先生">先生</option>
-                    <option value="女士">女士</option>
-                </select>
+            <div class="input_ifm_div">
+                <p class="user_Name font_style">姓名</p>
+                <span class="get_user_Name"></span>
+                <p class="user_email font_style">电子邮箱</p>
+                <span class="get_user_email"></span>
             </div>
-            <div class="input_ifm_centre">
-                <p class="input_ifm_centre_p">姓（拼音或英语
-
-                <p class="input_ifm_centre_pp">*</p> </p>
-                <input type="text" name="userLastName" placeholder="例:Zhang" class="input_ifm_centre_inp" style="outline:none;">
-            </div>
-            <div class="input_ifm_right">
-                <p class="input_ifm_right_p">名（拼音或英语）</p>
-                <input type="text" name="userName" placeholder="例:Xiaoming" class="input_ifm_right_inp">
-            </div>
-            <div class="input_ifm_email">
-                <p class="user_ifm_p">电子邮箱地址
-
-                <p class="input_ifm_centre_pp">*</p></p>
-                <input type="text" name="userEmail" placeholder="温馨提示：填写后检查一下，避免拼写错！" class="input_ifm_inp_email">
-            </div>
-            <div class="input_ifm_email">
-                <p class="user_ifm_p">确认电邮地址
-
-                <p class="input_ifm_centre_pp">*</p></p>
-                <input type="text" placeholder="" class="input_ifm_inp_email" name="userEmail"2>
-            </div>
-
-
-            <div class="order_information_box">
-                <div class="order_information_price">400元 （1晚）</div>
-                <div class="order_information_left">
-                    <h2 class="order_information_left_h2">大床房 – 比海口的多数客房宽敞</h2>
-
-                    <p class="order_information_left_p">不可退款
-
-                    <p class="order_information_left_hoverp">?</p></p>
-                    <div class="order_information_left_div">
-                        <h4 class="order_information_left_h4"><i class="iconfont icon-gou"></i></h4>
-
-                        <p class="order_information_left_p2">空调</p>
-                    </div>
-                </div>
-                <div class="order_information_down">
-                    <div class="order_information_down_left">
-                        <p class="order_information_down_left_p">住客全名</p>
-                        <input type="text" placeholder="姓（拼音或英语） 名（拼音或英语）" class="order_information_down_left_inp">
-                    </div>
-                    <div class="order_information_down_right">
-                        <p class="order_information_down_right_p">客人的电子邮件 <em>（可选）</em></p>
-                        <input type="text" placeholder="电子邮箱地址" class="order_information_down_right_inp">
-
-                        <p class="order_information_down_right_p2">电子邮箱地址仅用于接收订单相关信息，我们保证不会向您发送广告邮件。</p>
-                    </div>
-
-                </div>
-            </div>
-
+            <h4 class="input_ifm_h4"><i class="iconfont icon-location"></i>请以中文或英文输入您的信息</h4>
+            <div class="input_ifm_country">国家/地区<p>*</p></div>
+            <select id="select_country" class="row_select">
+                <option value="0"></option>
+                <option value="China">中国</option>
+                <option value="America">美国</option>
+                <option value="Russia">俄罗斯</option>
+                <option value="England">英国</option>
+                <option value="France">法国</option>
+                <option value="Japan">日本</option>
+                <option value="Germany">德国</option>
+                <option value="Denmark">丹麦</option>
+                <option value="Uzbekistan">乌兹别克斯坦</option>
+                <option value="Uruguay">乌拉圭</option>
+                <option value="Uganda">乌干达</option>
+                <option value="Bulgaria">保加利亚</option>
+                <option value="Croatia">克罗地亚</option>
+                <option value="Crimea">克里米亚</option>
+                <option value="Palestine">巴勒斯坦</option>
+                <option value="Pakistan">巴基斯坦</option>
+                <option value="Columbia">哥伦比亚</option>
+                <option value="Costa">哥斯达黎加</option>
+                <option value="Australia">澳大利亚</option>
+                <option value="India">印度</option>
+                <option value="Guatemala">危地马拉</option>
+            </select>
+            <div class="input_ifm_tel">请填写您的电话号码</div>
+            <div class="input_ifm_phone" >
+                <select id="select_pre_phone" class="select_pre_tel" onchange="set_Pre_tel()" >
+                    <option value="0"></option>
+                    <option value="中国大陆 +86">中国大陆 +86</option>
+                    <option value="香港 +852">香港 +852</option>
+                    <option value="澳门 +853">澳门 +853</option>
+                    <option value="台湾">台湾 +886</option>
+                    <option value="韩国 +82">韩国 +82</option>
+                    <option value="日本 +81">日本 +81</option>
+                    <option value="美国 +1">美国 +1</option>
+                    <option value="加拿大 +1">加拿大 +1</option>
+                    <option value="英国 +44">英国 +44</option>
+                    <option value="新加坡 +65">新加坡 +65</option>
+                    <option value="马来西亚 +60">马来西亚 +60</option>
+                    <option value="泰国 +66">泰国 +66</option>
+                    <option value="越南 +84">越南 +84</option>
+                    <option value="菲律宾 +63">菲律宾 +63</option>
+                    <option value="印度尼西亚 +62">印度尼西亚 +62</option>
+                    <option value="意大利 +39">意大利 +39</option>
+                    <option value="俄罗斯 +7">俄罗斯 +7</option>
+                    <option value="新西兰 +64">新西兰 +64</option>
+                    <option value="荷兰 +31">荷兰 +31</option>
+                    <option value="瑞典 +46">瑞典 +46</option>
+                    <option value="乌克兰 +380">乌克兰 +380</option>
+                    <option value="澳大利亚 +61">澳大利亚 +61</option>
+                    <option value="法国 +33">法国 +33</option>
+                    <option value="德国 +49">德国 +49</option>
+                    <option value="阿根廷 +54">阿根廷 +54</option>
+                </select  >
+                <input type="text" name="tel_phone" id="get_pre_tel" ></div>
+            <div class="input_ifm_connet">以便住宿与您联系</div>
         </div>
 
         <div class="order_information_next_box">
             <div class="order_information_next">
                 <div class="order_information_next1">
                     <div class="order_information_next1_tri"></div>
-
-                    <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
+                        <p class="order_information_next_p">核对订单信息</p>
                 </div>
                 <div class="order_information_next2">
-                    <a href="#">下一步：最终信息&#10095;</a>
+                    <a href="#">完成预定&#10095;</a>
                 </div>
                 <div class="order_information_next3">
                     别担心 - 现在不会收取费用！
                 </div>
-
             </div>
 
         </div>
