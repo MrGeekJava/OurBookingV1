@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="resources/css/iconfont.css">
 	<link href="resources/css/booking_com.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="resources/css/NavBar.css">
-	<script src="//at.alicdn.com/t/font_781787_db0f5cbcgx.js" type="text/javascript"></script>
+	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<link href="resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
 	<link href="resources/res/icon/personifm/iconfont.css" rel="stylesheet">
@@ -160,8 +160,8 @@
 	</div>
 	<div class="search_container">
 		<div class="search_container_one">
-			<svg class="icon" aria-hidden="true" >
-				<use xlink:href="#icon-chuang"></use>
+			<svg class="icon icon-chuang1" aria-hidden="true" >
+				<use xlink:href="#icon-chuang1"></use>
 			</svg>
 
 			<input class="search_container_one_input" placeholder="目的地?">
@@ -171,7 +171,7 @@
 		</div>
 
 		<div class="search_container_two">
-			<svg class="icon" aria-hidden="true">
+			<svg class="icon icon-rili" aria-hidden="true">
 				<use xlink:href="#icon-rili"></use>
 			</svg>
 			<span class="search_container_two_span1" onclick="checkclick(1)">入住</span>
@@ -355,9 +355,7 @@
 
 					<div class="user_choose_one_num" onclick="opennumdiv(1)">
 						<span class="roomnum">1</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+						
 						<div class="choose_roomnum">
 							<ul>
 								<li onclick="choosenum('0-0')">1</li>
@@ -405,9 +403,7 @@
 
 					<div class="user_choose_two_num" onclick="opennumdiv(2)">
 						<span class="adultnum">1</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+						
 
 						<div class="choose_adultnum">
 							<ul>
@@ -458,9 +454,7 @@
 
 					<div class="user_choose_three_num" onclick="opennumdiv(3)">
 						<span class="childnum">0</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+				
 
 						<div class="choose_childnum">
 							<ul>
@@ -489,35 +483,27 @@
 					<li>
 						<div class="child" onclick="openagediv(0)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+						
 
 						</div>
 
 						<div class="child" onclick="openagediv(1)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(2)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 
 						</div>
 
 						<div class="child" onclick="openagediv(3)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+				
 
 
 						</div>
@@ -525,51 +511,39 @@
 					<li>
 						<div class="child" onclick="openagediv(4)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 
 						<div class="child" onclick="openagediv(5)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(6)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 
 						<div class="child" onclick="openagediv(7)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(8)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 
 						<div class="child" onclick="openagediv(9)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
