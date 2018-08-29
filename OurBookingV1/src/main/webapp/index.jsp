@@ -36,7 +36,7 @@
 					<a id="mon_tex" href="javascript:void(0)"  class="user-tex" data-title="选择您使用的货币">元</a>
 					<div class="mon_box" id="mon_id_box">
 						<div class="mon_trigon"></div>
-						<h3>常用货币</h3>
+						<h3>货币</h3>
 						<ul class="mon_ul">
 							<li class="mon_li_other"><span>元</span><small>人民币</small></li>
 							<li class="mon_li"><span>€£$</span><small>住宿地使用的货币</small></li>
