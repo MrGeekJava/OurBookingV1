@@ -177,27 +177,6 @@
         </ul>
     </div>
 </div>
-<!--<div class="NavBar">-->
-    <!--<div class="BarContent">-->
-        <!--<ul class="BarUl">-->
-            <!--<a href="#personalCenter" class="a-btn">-->
-                <!--<li class="BarLi">我的个人中心</li>-->
-            <!--</a>-->
-            <!--<a href="#myOrder" class="a-btn">-->
-                <!--<li class="BarLi" >我的订单</li>-->
-            <!--</a>-->
-            <!--<a href="javascript:voud(0)">-->
-                <!--<li class="BarLi">评语</li>-->
-            <!--</a>-->
-            <!--<a href="#install" class="a-btn">-->
-                <!--<li class="BarLi">设置</li>-->
-            <!--</a>-->
-            <!--<a href="javascript:voud(0)">-->
-                <!--<li class="BarLi">上线我的住宿</li>-->
-            <!--</a>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
 
 <!--单个选项卡内容：个人中心-->
 <div class="Model" id="personalCenter">
@@ -404,7 +383,7 @@
                     <div class="first_row_headImg">
                         <img src="../resources/res/images/PersonCenter/bigHead.png">
                     </div>
-                    <a class="row_button first_row_setHeadImg iconfont icon-xiangji"> 更改照片</a>
+                    <a href="#" class="row_button first_row_setHeadImg iconfont icon-xiangji"> 更改照片</a>
                     <p class="row_tip first_row_tip_Img iconfont icon-zlicontips01"> 上传一张美美的个人照吧</p>
                 </div>
 
