@@ -1,4 +1,4 @@
-package com.king.Booking.controller;
+				package com.king.Booking.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
