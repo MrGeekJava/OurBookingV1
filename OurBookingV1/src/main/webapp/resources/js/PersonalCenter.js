@@ -101,7 +101,7 @@ $(document).ready(function(){
         $("#addFacility").css({"display":"block"});
         $(".four_setFacility").css({"display":"none"});
     });
-//  修改头像
+//  修改头像~~~~~~~~~~~~
     $(".first_row_setHeadImg").click(function(){
        $(".changeHeadImg").css({"display":"block"});
     });
