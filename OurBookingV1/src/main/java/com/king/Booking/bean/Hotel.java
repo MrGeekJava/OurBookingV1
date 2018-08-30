@@ -23,8 +23,8 @@ public class Hotel {
 		private String hotelProvince;		//所在省
 		private String hotelDowntown;		//所在市
 		private String hotelArea;		//所在区
-		private double longgitude;		//经度
-		private double Latitude;		//纬度
+		private double longgitude;		//酒店地标经度
+		private double Latitude;		//酒店地标纬度
 		public int getHotelId() {
 			return hotelId;
 		}
