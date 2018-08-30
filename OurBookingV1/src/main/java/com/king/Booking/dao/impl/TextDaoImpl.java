@@ -1,4 +1,6 @@
-package com.king.Booking.dao;
+package com.king.Booking.dao.impl;
+
+
 
 public class TextDaoImpl {
 
