@@ -27,19 +27,6 @@ public class DataSourceUtil {
 	
 	
 	
-//		private static ComboPooledDataSource ds = null;
-//		//在静态代码块中创建数据库连接池
-//		static {
-//			//通过读取C3P0的xml配置文件创建数据源
-//			try {
-//				ds = new ComboPooledDataSource("Booking");
-//			}catch(Exception e) {
-//				
-//				throw new ExceptionInInitializerError(e);
-//			}
-//			
-//		}
-		
 		 /**
 		    * @Method: getConnection
 		    * @Description: 从数据源中获取数据库连接
