@@ -97,7 +97,6 @@ public class VerifyCode {
 	
 	//保存图片到指定的输出流
 	public static void output (BufferedImage image, OutputStream out) throws IOException {
-		
 		ImageIO.write(image, "PNG", out);
 	}
 	

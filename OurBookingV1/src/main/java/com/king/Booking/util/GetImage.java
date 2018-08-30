@@ -17,7 +17,7 @@ public class GetImage extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//动态生成验证码图片
-		VerifyCode v = new VerifyCode();
+		VerifyCode v = new VerifyCode();  
 		BufferedImage bi = v.getImage();
 		System.out.println("验证码上的文本内容："+v.getText());
 		request.getSession().setAttribute("Vtext", v.getText());
