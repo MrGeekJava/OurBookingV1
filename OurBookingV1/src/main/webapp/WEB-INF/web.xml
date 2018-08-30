@@ -4,14 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
   <servlet>
-  	<servlet-name>UserController</servlet-name>
-  	<display-name>UserController</display-name>
+  	<servlet-name>SearchHotelsByMapCtrl</servlet-name>
+  	<display-name>SearchHotelsByMapCtrl</display-name>
   	<description></description>
-  	<servlet-class>com.king.Booking.controller.UserController</servlet-class>
+  	<servlet-class>com.king.Booking.controller.SearchHotelsByMapCtrl</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>UserController</servlet-name>
-  	<url-pattern>/UserController</url-pattern>
+  	<servlet-name>SearchHotelsByMapCtrl</servlet-name>
+  	<url-pattern>/SearchHotelsByMapCtrl</url-pattern>
   </servlet-mapping>
+  
+  
 </web-app>
