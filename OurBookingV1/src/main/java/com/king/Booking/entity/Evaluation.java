@@ -1,4 +1,4 @@
-package com.king.Booking.bean;
+package com.king.Booking.entity;
 
 import java.sql.Clob;
 

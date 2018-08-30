@@ -1,4 +1,4 @@
-package com.king.Booking.bean;
+package com.king.Booking.entity;
 
 public class HotelRoom {
 		private int hotelId;			//酒店ID（外键）

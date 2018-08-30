@@ -1,4 +1,5 @@
-package com.king.Booking.bean;
+package com.king.Booking.entity;
+
 /**
  * 搜索酒店Bean类
  * @author Nier

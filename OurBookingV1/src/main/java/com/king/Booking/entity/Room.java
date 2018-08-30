@@ -1,4 +1,5 @@
-package com.king.Booking.bean;
+package com.king.Booking.entity;
+
 /**
  * 房间表的Bean
  * @author Nier

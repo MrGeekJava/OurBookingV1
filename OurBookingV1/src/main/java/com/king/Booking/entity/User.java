@@ -1,4 +1,5 @@
-package com.king.Booking.bean;
+package com.king.Booking.entity;
+
 /**
  * 用户表的Bean类
  * @author Nier
