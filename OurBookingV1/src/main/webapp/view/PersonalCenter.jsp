@@ -667,6 +667,23 @@
         </div>
     </div>
 </div>
+<!--点击修改照片，弹出修改窗口-->
+<div class="changeHeadImg">
+    <div class="CHIModel">
+        <div class="CHIBody">
+            <a href="#" class="closeImg">×</a>
+            <div class="first_row_headImg newImg" id="img-vessel">
+                <img src="../res/images/PersonCenter/bigHead.png" />
+            </div>
+            <div class="chooseFile">
+                <h3 class="fileTitle">选择文件上传</h3>
+                <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
+                <button class="saveHeadBtn" onclick="readAsDataURL()">保存</button>
+                <textarea id="aaa"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="../resources/js/PersonalCenter.js"></script>
 <script src="../resources/js/NavBar.js"></script>

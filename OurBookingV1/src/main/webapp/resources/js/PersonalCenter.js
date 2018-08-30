@@ -106,4 +106,39 @@ $(document).ready(function(){
         $("#addFacility").css({"display":"block"});
         $(".four_setFacility").css({"display":"none"});
     });
+//  修改头像
+    $(".first_row_setHeadImg").click(function(){
+       $(".changeHeadImg").css({"display":"block"});
+    });
+    $(".closeImg").click(function(){
+        $(".changeHeadImg").css({"display":"none"});
+    });
 });
+var result=document.getElementById("img-vessel");
+var file=document.getElementById("imgfile");
+
+//判断浏览器是否支持FileReader接口
+if(typeof FileReader == 'undefined'){
+    //使选择控件不可操作
+    file.setAttribute("disabled","disabled");
+}
+
+function readAsDataURL(){
+    //检验是否为图像文件
+    var file = document.getElementById("imgfile").files[0];
+    if(!/image\/\w+/.test(file.type)){
+        alert("抱歉，只支持图片类型哦！");
+        return false;
+    }
+    var reader = new FileReader();
+    //将文件以Data URL形式读入页面
+    reader.readAsDataURL(file);
+    reader.onload=function(e){
+        var result=document.getElementById("img-vessel");
+        //显示文件
+        document.getElementById("aaa").innerHTML=this.result;
+        result.innerHTML='<img src="'+this.result+'" />';
+    }
+}
+
+
