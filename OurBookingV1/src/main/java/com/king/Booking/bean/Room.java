@@ -4,7 +4,7 @@ package com.king.Booking.bean;
  * @author Nier
  *
  */
-public class RoomList {
+public class Room {
 	private int roomId;			//房间ID
 	private String roomType;	//房间类型
 	private double roomPrice;	//房间价格

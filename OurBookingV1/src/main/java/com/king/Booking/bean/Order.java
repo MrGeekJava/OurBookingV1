@@ -4,7 +4,7 @@ package com.king.Booking.bean;
  * @author Nier
  *
  */
-public class OrderList {
+public class Order {
 	private int userId;		//用户ID
 	private int orderId;	//订单ID
 	private int hotelId;	//酒店ID

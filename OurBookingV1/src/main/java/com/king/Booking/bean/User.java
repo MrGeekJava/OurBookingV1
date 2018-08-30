@@ -4,7 +4,7 @@ package com.king.Booking.bean;
  * @author Nier
  *
  */
-public class UserList {
+public class User {
 	private int userId;     		//用户ID
 	private String userSurnme;		//用户姓氏
 	private String userName;		//用户名字
