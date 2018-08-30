@@ -11,7 +11,7 @@ public class Hotel {
 		private String hotelType;		//酒店类型
 		private String onlineTime;		//酒店营业时间
 		private float roomGrade;		//酒店评级
-		private String isBreakfast;		//是否有早餐
+		private String isBreakfast;		//酒店是否有早餐
 		private String hotelFacilities;		//酒店设施
 		private String facilitiesPicture;		//酒店设施图片
 		private String checkInTime;		//客人入住时间
