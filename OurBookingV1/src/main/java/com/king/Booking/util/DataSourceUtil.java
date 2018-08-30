@@ -30,7 +30,7 @@ public class DataSourceUtil {
 		 /**
 		    * @Method: getConnection
 		    * @Description: 从数据源中获取数据库连接
-		    * @Anthor:luozhiyuan
+		    * @Anthor:luozhiyuan 8/30
 		    * @return Connection
 		    * @throws SQLException
 		    */ 
