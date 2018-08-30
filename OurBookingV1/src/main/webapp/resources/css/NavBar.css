@@ -577,6 +577,7 @@ body{
 	border: 1px solid #cccccc;
 	padding-left: 12px;
 }
+
 #emailInput:focus,#pwdInput:focus,#emailInput2:focus,#pwdInput2:focus{
 	box-shadow: 0 0 8px #4dff4d;
 	border: 1px solid #4dff4d;
@@ -663,6 +664,7 @@ body{
 	margin-top: 15px;
 	margin-bottom: 4px;
 }
+
 .login_span .lar_a{
 	color: #0077CC;
 	font-weight: bold;
@@ -670,6 +672,29 @@ body{
 .lar_a:hover{
 	color: #000000;
 }
+
+/*验证码样式*/
+.verify_code{
+	margin-bottom: 10px;
+}
+.register_inp{
+	display: inline-block;
+	float: left;
+}
+#verifyImage{
+	display: inline-block;
+	float: left;
+}
+.register_a{
+	display: inline-block;
+	float: left;
+}
+.register_btn{
+	margin-top: 10px;
+}
+
+
+
 
 /*-----------------------搜索功能模块----------------------*/
 .search{

@@ -355,9 +355,7 @@
                 </select>
             </div>
             <div class="input_ifm_centre">
-                <p class="input_ifm_centre_p">姓（拼音或英语
-
-                <p class="input_ifm_centre_pp">*</p> </p>
+                <p class="input_ifm_centre_p">姓（拼音或英语<i class="input_ifm_centre_pp">*</i> </p>
                 <input type="text" name="userLastName" placeholder="例:Zhang" class="input_ifm_centre_inp" style="outline:none;">
             </div>
             <div class="input_ifm_right">
@@ -365,18 +363,18 @@
                 <input type="text" name="userName" placeholder="例:Xiaoming" class="input_ifm_right_inp">
             </div>
             <div class="input_ifm_email">
-                <p class="user_ifm_p">电子邮箱地址
+                <p class="user_ifm_p">邮箱号码
 
                 <p class="input_ifm_centre_pp">*</p></p>
-                <input type="text" name="userEmail" placeholder="温馨提示：填写后检查一下，避免拼写错！" class="input_ifm_inp_email">
+                <input type="text" name="userEmail" placeholder="温馨提示：填写后检查一下，避免拼写错！" class="input_ifm_inp_email" style="outline:none;">
             </div>
             <div class="input_ifm_email">
-                <p class="user_ifm_p">确认电邮地址
+                <p class="user_ifm_p2">确认邮箱号码
 
                 <p class="input_ifm_centre_pp">*</p></p>
-                <input type="text" placeholder="" class="input_ifm_inp_email" name="userEmail"2>
+                <input type="text" placeholder="" class="input_ifm_inp_email2" name="userEmail" style="outline:none;">
             </div>
-
+        
 
             <div class="order_information_box">
                 <div class="order_information_price">400元 （1晚）</div>

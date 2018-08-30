@@ -452,56 +452,16 @@
 
         </div>
         <div class="manyimg">
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
-            <li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li>
+             <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li><li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li> <li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li><li><img src="" alt=""/></li> <li><img src="" alt=""/></li>
         </div>
         <div class="speciality">
             <img src="../resources/res/images/GZBYBG/two.PNG" alt=""/>

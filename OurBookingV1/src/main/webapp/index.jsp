@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@page import="java.io.*" %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
 	<link rel="stylesheet" href="resources/css/iconfont.css">
 	<link href="resources/css/booking_com.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="resources/css/NavBar.css">
-	<script src="//at.alicdn.com/t/font_781787_db0f5cbcgx.js" type="text/javascript"></script>
+	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<link href="resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
 	<link href="resources/res/icon/personifm/iconfont.css" rel="stylesheet">
@@ -36,7 +37,7 @@
 					<a id="mon_tex" href="javascript:void(0)"  class="user-tex" data-title="选择您使用的货币">元</a>
 					<div class="mon_box" id="mon_id_box">
 						<div class="mon_trigon"></div>
-						<h3>常用货币</h3>
+						<h3>货币</h3>
 						<ul class="mon_ul">
 							<li class="mon_li_other"><span>元</span><small>人民币</small></li>
 							<li class="mon_li"><span>€£$</span><small>住宿地使用的货币</small></li>
@@ -161,8 +162,8 @@
 	</div>
 	<div class="search_container">
 		<div class="search_container_one">
-			<svg class="icon" aria-hidden="true" >
-				<use xlink:href="#icon-chuang"></use>
+			<svg class="icon icon-chuang1" aria-hidden="true" >
+				<use xlink:href="#icon-chuang1"></use>
 			</svg>
 
 			<input class="search_container_one_input" placeholder="目的地?">
@@ -172,7 +173,7 @@
 		</div>
 
 		<div class="search_container_two">
-			<svg class="icon" aria-hidden="true">
+			<svg class="icon icon-rili" aria-hidden="true">
 				<use xlink:href="#icon-rili"></use>
 			</svg>
 			<span class="search_container_two_span1" onclick="checkclick(1)">入住</span>
@@ -356,9 +357,7 @@
 
 					<div class="user_choose_one_num" onclick="opennumdiv(1)">
 						<span class="roomnum">1</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+						
 						<div class="choose_roomnum">
 							<ul>
 								<li onclick="choosenum('0-0')">1</li>
@@ -406,9 +405,7 @@
 
 					<div class="user_choose_two_num" onclick="opennumdiv(2)">
 						<span class="adultnum">1</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+						
 
 						<div class="choose_adultnum">
 							<ul>
@@ -459,9 +456,7 @@
 
 					<div class="user_choose_three_num" onclick="opennumdiv(3)">
 						<span class="childnum">0</span>
-						<svg class="icon icon-shangxiajiantou2 " aria-hidden="true \">
-							<use xlink:href="#icon-shangxiajiantou"></use>
-						</svg>
+				
 
 						<div class="choose_childnum">
 							<ul>
@@ -490,35 +485,27 @@
 					<li>
 						<div class="child" onclick="openagediv(0)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+						
 
 						</div>
 
 						<div class="child" onclick="openagediv(1)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(2)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 
 						</div>
 
 						<div class="child" onclick="openagediv(3)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+				
 
 
 						</div>
@@ -526,51 +513,39 @@
 					<li>
 						<div class="child" onclick="openagediv(4)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 
 						<div class="child" onclick="openagediv(5)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(6)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 
 						<div class="child" onclick="openagediv(7)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
 					<li>
 						<div class="child" onclick="openagediv(8)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou3" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+							
 
 						</div>
 
 						<div class="child" onclick="openagediv(9)">
 							<span class="child_nowage">退房时的年龄</span>
-							<svg class="icon icon-shangxiajiantou4" aria-hidden="true">
-								<use xlink:href="#icon-shangxiajiantou"></use>
-							</svg>
+					
 
 						</div>
 					</li>
@@ -1590,7 +1565,22 @@
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
-						<input id="pwdInput2" type="password" name="pwd"><br>
+						<input id="pwdInput2" type="password" name="pwd" ><br>
+						<span class="login_span verify_code">请输入验证码</span>
+						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
+						<img src="GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
+						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
+						
+						<!--注册返回信息-->
+						<%
+							String registerMessage="";
+							String registerMsg = (String)request.getAttribute("registerMsg");
+							if(registerMsg!=null){
+								registerMessage = registerMsg;
+							}	
+						%>
+						<font color="red"><b><%=registerMessage %></b></font>
+						<br>
 						<br>
 						<a href="javascript:void(0)" class="sub-btn ">注册账号</a><br>
 					</form>

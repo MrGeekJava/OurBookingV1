@@ -155,11 +155,11 @@
 
 </div>
 
-<!--头部选项卡菜单-->
+<!--头部选项卡菜单~~~~~~~~~~-->
 <div class="NavBar">
     <div class="BarContent">
         <ul class="BarUl">
-            <a href="javascript:voud(0)" onclick="openModel(event, 'personalCenter')">
+            <a href="#" onclick="openModel(event, 'personalCenter')">
                 <li class="BarLi">我的个人中心</li>
             </a>
             <a href="javascript:voud(0)" onclick="openModel(event, 'myOrder')">
@@ -664,6 +664,23 @@
         <!--设置：最后的一行提示-->
         <div class="ISInfo last">
             <span><a href="javascript:void(0)">点击此处</a>以删除您的Booking.com帐户。感谢您的使用，期待未来还能与您相见。</span>
+        </div>
+    </div>
+</div>
+<!--点击修改照片，弹出修改窗口-->
+<div class="changeHeadImg">
+    <div class="CHIModel">
+        <div class="CHIBody">
+            <a href="#" class="closeImg">×</a>
+            <div class="first_row_headImg newImg" id="img-vessel">
+                <img src="../res/images/PersonCenter/bigHead.png" />
+            </div>
+            <div class="chooseFile">
+                <h3 class="fileTitle">选择文件上传</h3>
+                <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
+                <button class="saveHeadBtn" onclick="readAsDataURL()">保存</button>
+                <textarea id="aaa"></textarea>
+            </div>
         </div>
     </div>
 </div>

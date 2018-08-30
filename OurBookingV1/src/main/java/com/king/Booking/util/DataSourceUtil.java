@@ -5,39 +5,41 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.sql.DataSource;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
- * @ClassName:JdbcUtils_C3P0
+ * @ClassName:DataSourceUtil
  * @author luozhiyuan
  *@Descript:数据库连接工具类
  *@date:2018-8-29
  */
-public class JdbcUtils_C3P0 {
-		private static ComboPooledDataSource ds = null;
-		//在静态代码块中创建数据库连接池
-		static {
-			//通过读取C3P0的xml配置文件创建数据源
-			try {
-				ds = new ComboPooledDataSource("Booking");
-			}catch(Exception e) {
-				
-				throw new ExceptionInInitializerError(e);
-			}
+public class DataSourceUtil {
+	
+		//获取c3p0数据源对象
+		public static DataSource getDataSourceWithC3P0ByXML() {
+			ComboPooledDataSource cpds = new ComboPooledDataSource("Booking");
+			
+			return cpds;
 			
 		}
-		
+	
+	
+	
 		 /**
 		    * @Method: getConnection
 		    * @Description: 从数据源中获取数据库连接
-		    * @Anthor:luozhiyuan
+		    * @Anthor:luozhiyuan 8/30
 		    * @return Connection
 		    * @throws SQLException
 		    */ 
 		
 		public static Connection getConnection() throws SQLException {
 			 //从数据源中获取数据库连接
-			return ds.getConnection();
+			return getDataSourceWithC3P0ByXML().getConnection();
+			
+			
 		}
 		
 		 /**
