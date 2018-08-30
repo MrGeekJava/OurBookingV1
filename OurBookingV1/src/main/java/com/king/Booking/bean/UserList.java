@@ -1,10 +1,14 @@
 package com.king.Booking.bean;
-
+/**
+ * 用户表的Bean类
+ * @author Nier
+ *
+ */
 public class UserList {
 	private int userId;     		//用户ID
 	private String userSurnme;		//用户姓氏
 	private String userName;		//用户名字
-	private String userPassword;	//用户密码
+	private String userPassword;	//用户密码 
 	private String userEmail;		//用户邮箱
 	private String userPhoneNumber;	//用户电话号码
 	private String userCountry;		//用户国家

@@ -79,6 +79,7 @@ public class OrderList {
 	public String getContactNum() {
 		return contactNum;
 	}
+	
 	public void setContactNum(String contactNum) {
 		this.contactNum = contactNum;
 	}

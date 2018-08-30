@@ -5,7 +5,7 @@ package com.king.Booking.bean;
  *
  */
 public class SearchHotelList {
-	private int hotelId;		//酒店ID
+	private int hotelId;		//酒店ID 
 	private double roomMin;		//房间最低价
 	private int roomRating;		//住宿评级
 	private String leisureEntertainment;	//休闲乐活
