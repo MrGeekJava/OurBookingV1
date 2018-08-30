@@ -1,9 +1,9 @@
 package com.king.Booking.bean;
 
 public class HotelRoom {
-		private int hotelId;			//酒店ID
-		private int roomId;		//房间ID
-		private int hotelRoomId;		//酒店房间表ID
+		private int hotelId;			//酒店ID（外键）
+		private int roomId;				//房间ID（外键）
+		private int hotelRoomId;		//酒店房间表ID（主键）
 		public int getHotelId() {
 			return hotelId;
 		}

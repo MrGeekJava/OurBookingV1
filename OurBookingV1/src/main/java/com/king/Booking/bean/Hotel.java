@@ -2,8 +2,13 @@ package com.king.Booking.bean;
 
 import java.sql.Clob;
 
+/**
+ * 酒店实体类
+ * @author Mr.Z
+ *
+ */
 public class Hotel {
-		private int hotelId;			//酒店ID不不不
+		private int hotelId;			//酒店ID
 		private String hotelName;		//酒店名字
 		private Clob hotelPer;		//酒店简介
 		private String hotelAdress;		//酒店地址

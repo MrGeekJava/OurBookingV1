@@ -1,4 +1,5 @@
 package com.king.Booking.bean;
+
 /**
  * 订单表的Bean
  * @author Nier

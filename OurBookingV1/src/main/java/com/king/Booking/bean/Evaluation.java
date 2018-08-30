@@ -2,6 +2,11 @@ package com.king.Booking.bean;
 
 import java.sql.Clob;
 
+/**
+ * 评价实体类
+ * @author Mr.Z
+ *
+ */
 public class Evaluation {
 		private int evaluationId;		//评价ID
 		private int userId;		//用户ID
@@ -16,6 +21,7 @@ public class Evaluation {
 		private float costPerformanceRating;		//性价比
 		private float breakfastRating;		//早餐评级
 		private float wifiRating;		//wifi评级
+		private float sumRating;	//总评分
 		private int likeNumber;		//点赞数
 		public int getEvaluationId() {
 			return evaluationId;
@@ -95,13 +101,16 @@ public class Evaluation {
 		public void setWifiRating(float wifiRating) {
 			this.wifiRating = wifiRating;
 		}
+		public float getSumRating() {
+			return sumRating;
+		}
+		public void setSumRating(float sumRating) {
+			this.sumRating = sumRating;
+		}
 		public int getLikeNumber() {
 			return likeNumber;
 		}
 		public void setLikeNumber(int likeNumber) {
 			this.likeNumber = likeNumber;
 		}
-		
-		
-		
 }

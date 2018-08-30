@@ -1,8 +1,14 @@
 package com.king.Booking.bean;
 
+/**
+ * 地标实体类
+ * @author Mr.Z
+ *
+ */
 public class Landmark {
 		private int landmarkId;			//地标ID
 		private String landmarkName;			//地标名
+		private int hot;					//热门地标
 		private double landmarkLongitude;		//地标经度
 		private double landmarkLalitude;		//地标纬度
 		private String cityName;			//城市名
@@ -36,8 +42,11 @@ public class Landmark {
 		public void setCityName(String cityName) {
 			this.cityName = cityName;
 		}
-		
-		
-		
-		
+		public int getHot() {
+			return hot;
+		}
+		public void setHot(int hot) {
+			this.hot = hot;
+		}
+
 }
