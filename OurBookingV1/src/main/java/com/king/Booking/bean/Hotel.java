@@ -11,7 +11,7 @@ public class Hotel {
 		private String hotelType;		//酒店类型
 		private String onlineTime;		//酒店营业时间
 		private float roomGrade;		//酒店评级
-		private String isBreakfast;		//酒店是否有早餐
+		private char isBreakfast;		//酒店是否有早餐
 		private String hotelFacilities;		//酒店设施
 		private String facilitiesPicture;		//酒店设施图片
 		private String checkInTime;		//客人入住时间
@@ -19,7 +19,7 @@ public class Hotel {
 		private String pet;		//宠物
 		private Clob rePolicy;		//预定政策
 		private String chileAndBed;		//儿童和加床
-		private String bankCard;		//银行卡
+		private char bankCard;		//银行卡
 		private String hotelProvince;		//所在省
 		private String hotelDowntown;		//所在市
 		private String hotelArea;		//所在区
@@ -73,10 +73,10 @@ public class Hotel {
 		public void setRoomGrade(float roomGrade) {
 			this.roomGrade = roomGrade;
 		}
-		public String getIsBreakfast() {
+		public char getIsBreakfast() {
 			return isBreakfast;
 		}
-		public void setIsBreakfast(String isBreakfast) {
+		public void setIsBreakfast(char isBreakfast) {
 			this.isBreakfast = isBreakfast;
 		}
 		public String getHotelFacilities() {
@@ -121,10 +121,10 @@ public class Hotel {
 		public void setChileAndBed(String chileAndBed) {
 			this.chileAndBed = chileAndBed;
 		}
-		public String getBankCard() {
+		public char getBankCard() {
 			return bankCard;
 		}
-		public void setBankCard(String bankCard) {
+		public void setBankCard(char bankCard) {
 			this.bankCard = bankCard;
 		}
 		public String getHotelProvince() {
