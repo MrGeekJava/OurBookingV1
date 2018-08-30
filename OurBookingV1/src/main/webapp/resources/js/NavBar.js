@@ -159,3 +159,9 @@ $(document).ready(function () {
 
 });
 
+//刷新验证码
+function refershVerify(){
+	var imgEle = document.getElementById("verifyImage");
+	imgEle.src="/logintest/GetImage?a="+new Date().getTime();
+}
+

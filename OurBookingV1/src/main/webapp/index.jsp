@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@page import="java.io.*" %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -1564,7 +1565,22 @@
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
-						<input id="pwdInput2" type="password" name="pwd"><br>
+						<input id="pwdInput2" type="password" name="pwd" ><br>
+						<span class="login_span verify_code">请输入验证码</span>
+						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
+						<img src="GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
+						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
+						
+						<!--注册返回信息-->
+						<%
+							String registerMessage="";
+							String registerMsg = (String)request.getAttribute("registerMsg");
+							if(registerMsg!=null){
+								registerMessage = registerMsg;
+							}	
+						%>
+						<font color="red"><b><%=registerMessage %></b></font>
+						<br>
 						<br>
 						<a href="javascript:void(0)" class="sub-btn ">注册账号</a><br>
 					</form>
