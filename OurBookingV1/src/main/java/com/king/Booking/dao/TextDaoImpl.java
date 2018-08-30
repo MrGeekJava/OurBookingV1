@@ -1,5 +1,5 @@
-package com.king.Booking.model;
+package com.king.Booking.dao;
 
-public class TextModel {
+public class TextDaoImpl {
 
 }
