@@ -354,7 +354,7 @@
                     <option value="女士">女士</option>
                 </select>
             </div>
-           <div class="input_ifm_centre">
+            <div class="input_ifm_centre">
                 <p class="input_ifm_centre_p">姓（拼音或英语<i class="input_ifm_centre_pp">*</i> </p>
                 <input type="text" name="userLastName" placeholder="例:Zhang" class="input_ifm_centre_inp" style="outline:none;">
             </div>
@@ -374,6 +374,7 @@
                 <p class="input_ifm_centre_pp">*</p></p>
                 <input type="text" placeholder="" class="input_ifm_inp_email2" name="userEmail" style="outline:none;">
             </div>
+        
 
             <div class="order_information_box">
                 <div class="order_information_price">400元 （1晚）</div>
