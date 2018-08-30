@@ -38,8 +38,6 @@ public class JdbcUtils_C3P0 {
 		public static Connection getConnection() throws SQLException {
 			 //从数据源中获取数据库连接
 			return ds.getConnection();
-			
-			
 		}
 		
 		 /**
