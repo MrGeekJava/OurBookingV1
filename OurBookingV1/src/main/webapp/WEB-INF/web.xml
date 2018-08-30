@@ -6,14 +6,14 @@
   <display-name>Archetype Created Web Application</display-name>
   
   <servlet>
-  	<servlet-name>SearchHotelsByMapCtrl</servlet-name>
-  	<display-name>SearchHotelsByMapCtrl</display-name>
+  	<servlet-name>TextServlet</servlet-name>
+  	<display-name>TextServlet</display-name>
   	<description></description>
-  	<servlet-class>com.king.Booking.controller.SearchHotelsByMapCtrl</servlet-class>
+  	<servlet-class>com.king.Booking.servlet.TextServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>SearchHotelsByMapCtrl</servlet-name>
-  	<url-pattern>/SearchHotelsByMapCtrl</url-pattern>
+  	<servlet-name>TextServlet</servlet-name>
+  	<url-pattern>/TextServlet</url-pattern>
   </servlet-mapping>
   
   
