@@ -13,7 +13,7 @@ public class Hotel {
 		private float roomGrade;		//酒店评级
 		private String isBreakfast;		//是否有早餐
 		private String hotelFacilities;		//酒店设施
-		private String facilitiesPicture;		//设施图片
+		private String facilitiesPicture;		//酒店设施图片
 		private String checkInTime;		//客人入住时间
 		private String leaveTime;		//客人离开时间
 		private String pet;		//宠物
