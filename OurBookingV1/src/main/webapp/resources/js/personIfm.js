@@ -121,12 +121,69 @@ $(document).ready(function () {
     });
 
 
-
-
-
     $('.order_information_next1_p').mouseout(function () {
         $('.tip3').hide();
     });
+
+
+//表单标签事件
+$(".input_ifm_centre_inp").blur(function () {
+    //alert("q");
+   var inpvalue = $(".input_ifm_centre_inp").val();
+    //alert(inpvalue);
+    if(inpvalue!=""){
+        $(".input_ifm_centre_p").html("<p style='display: inline-block'>姓（拼音或英语<i style='color: red;display: inline-block'>*</i> </p>");
+        $(".input_ifm_centre_inp").css("border-color","green");
+
+    }else{
+        $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
+        $(".input_ifm_centre_inp").css("border-color","red");
+    }
+});
+
+    $(".input_ifm_inp_email").blur(function () {
+    //alert("q");
+   var inpvalue = $(".input_ifm_inp_email").val();
+    //alert(inpvalue);
+    if(inpvalue!=""){
+        $(".user_ifm_p").html("<p style='display: inline-block'>邮箱号码<i style='color: red;display: inline-block'></i> </p>");
+        $(".input_ifm_inp_email").css("border-color","green");
+
+    }else{
+        $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+        $(".input_ifm_inp_email").css("border-color","red");
+    }
+});
+
+   $(".input_ifm_inp_email2").blur(function () {
+    //alert("q");
+   var inpvalue2 = $(".input_ifm_inp_email2").val();
+   var inpvalue = $(".input_ifm_inp_email").val();
+
+       //alert(inpvalue);
+       if(inpvalue2!=""){
+           var tag="@";
+           if(inpvalue2==inpvalue && inpvalue.indexOf(tag)!=-1){
+               $(".user_ifm_p2").html("<p style='display: inline-block'>确认邮箱号码<i style='color: red;display: inline-block'></i> </p>");
+               $(".input_ifm_inp_email").css("border-color","green");
+               $(".input_ifm_inp_email2").css("border-color","green");
+           }else{
+               $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+               $(".input_ifm_inp_email").css("border-color","red");
+               $(".input_ifm_inp_email2").css("border-color","red");
+           }
+        }else{
+           $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+           $(".input_ifm_inp_email").css("border-color","red");
+           $(".input_ifm_inp_email2").css("border-color","red");
+       }
+});
+
+
+
+
+
+
 
 
 
