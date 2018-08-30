@@ -14,10 +14,9 @@ function openModel(evt, modelName) {
 }
 $(document).ready(function(){
 
-//
+
 ////    *****************个人中心****************
 ////        设置首个内容上浮效果
-//
     $(".first-info-con-a").mouseover(function (){
         $(this).css({"background-color":"#0077CC"});
         $(this).children(".first-info-con-icon").css({"margin-top":"30px"});
@@ -34,7 +33,6 @@ $(document).ready(function(){
 
 ////    *******************设置*****************
 ////        设置选项卡：左菜单的固定
-//
     $(window).bind("scroll", function () {
         var height = $(this).scrollTop(); 		// 当前窗口的滚动距离
         var top;
@@ -45,8 +43,7 @@ $(document).ready(function(){
             $(".InstallBar").css({"top": top});
         }
     });
-//
-//
+
 ////        动态插入生日日期
 
     for(var i=1; i<=31; i++){
@@ -59,9 +56,8 @@ $(document).ready(function(){
         $("#select_year").append("<option value='" + i + "'>" + i +"</option>");
     }
 
-//
 ////    修改家庭地址按钮
-//
+
     $("#changAdBtn").click(function(){
         $("#showAddress").css({"display":"none"});
         $(this).css({"display":"none"});
@@ -82,7 +78,6 @@ $(document).ready(function(){
         $("#changAdBtn").css({"display":"block"});
         $(".second_Ad_card").css({"display":"none"});
     });
-
 
 //    添加必要设施按钮
 
@@ -114,6 +109,8 @@ $(document).ready(function(){
         $(".changeHeadImg").css({"display":"none"});
     });
 });
+
+
 var result=document.getElementById("img-vessel");
 var file=document.getElementById("imgfile");
 

@@ -159,7 +159,7 @@
 <div class="NavBar">
     <div class="BarContent">
         <ul class="BarUl">
-            <a href="javascript:voud(0)" onclick="openModel(event, 'personalCenter')">
+            <a href="#" onclick="openModel(event, 'personalCenter')">
                 <li class="BarLi">我的个人中心</li>
             </a>
             <a href="javascript:voud(0)" onclick="openModel(event, 'myOrder')">
