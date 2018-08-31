@@ -2,9 +2,8 @@
 $(document).ready(function () {
     $(".rightBox_mapSearch").click(function () {
         $(".Map-Background").show();
+        loadMap();
     });
-
-
 })
 
 //点击左下角地图就浮现地图搜索模块

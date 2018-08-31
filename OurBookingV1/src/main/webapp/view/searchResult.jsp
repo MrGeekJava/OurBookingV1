@@ -775,82 +775,7 @@
             </div>
 
             <!-- 酒店信息 -->
-            <a href="javascript:void(0)">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="../resources/res/images/map/卓美亚喜马拉雅酒店.jpg">
-                    </div>
-                    <div class="hotel-info">
-                        <h3>卓美亚喜马拉雅酒店</h3>
 
-                        <div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-zan zan zan_1"></div>
-                        </div>
-                        <div class="grade">8.5 非常好</div>
-                        <div class="grade-num">450条住客点评</div>
-                        <div class="iconfont icon-rentouliangrense price"> 1,350元</div>
-                    </div>
-                    <div class="hotel-nar">
-                        <div class="iconfont icon-sanjiao-copy-copy"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="javascript:void(0)">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="../resources/res/images/map/上海帝盛酒店.jpg">
-                    </div>
-                    <div class="hotel-info">
-                        <h3>上海帝盛酒店</h3>
-
-                        <div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-zan zan zan_1"></div>
-                        </div>
-                        <div class="grade">8.3 非常好</div>
-                        <div class="grade-num">2,209条住客点评</div>
-                        <div class="iconfont icon-rentouliangrense price"> 1,000元</div>
-                        <div class="free">免费取消</div>
-                        <div class="remain">仅剩2间</div>
-                    </div>
-                    <div class="hotel-nar">
-                        <div class="iconfont icon-sanjiao-copy-copy"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="javascript:void(0)">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="../resources/res/images/map/静安香格里拉大酒店.jpg">
-                    </div>
-                    <div class="hotel-info">
-                        <h3>静安香格里拉大酒店</h3>
-
-                        <div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-start zan"></div>
-                            <div class="iconfont icon-zan zan zan_1"></div>
-                        </div>
-                        <div class="grade">8.7 非常好</div>
-                        <div class="grade-num">334条住客点评</div>
-                        <div class="iconfont icon-rentouliangrense price"> 2,088元</div>
-                    </div>
-                    <div class="hotel-nar">
-                        <div class="iconfont icon-sanjiao-copy-copy"></div>
-                    </div>
-                </div>
-            </a>
         </div>
         <!-- 关闭地图的按钮 -->
         <div class="close">
@@ -865,75 +790,6 @@
         </div>
     </div>
 </div>
-</body>
-
-<script>
-    // 百度地图API功能
-    var map = new BMap.Map("container");    // 创建Map实例
-    map.centerAndZoom("北京", 15);      		// 用城市名设置地图中心点和缩放级别
-    map.enableScrollWheelZoom(true);    	//开启鼠标滚轮缩放
-
-    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});	// 左上角，添加比例尺
-    var top_right_navigation = new BMap.NavigationControl({
-        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
-        type: BMAP_NAVIGATION_CONTROL_SMALL
-    }); //右上角，仅包含平移和缩放按钮
-    map.addControl(top_left_control);        				//添加比例尺
-    map.addControl(top_right_navigation);					//添加平移和缩放按钮
-
-    var myIcon = new BMap.Icon("../resources/res/images/map/label.png", new BMap.Size(32, 32));		//自定义标注
-    var marker;
-    var sContent;
-    var pts = new Array();
-    for (var i = 0; i < 5; i++) {
-        pts[i] = new BMap.Point(116.417 + (i * 0.01), 39.909 + (i * 0.005));
-        marker = new BMap.Marker(pts[i], {icon: myIcon});   // 创建标注
-        sContent =                     //信息窗口内容
-                '<a href="#">'+
-                '<div class="sContent-hotel-img">'+
-                '<img src="../resources/res/images/map/上海帝盛酒店.jpg">'+
-                '</div>'+
-                '<div class="sContent-hotel-info">'+
-                '<h3>上海帝盛酒店</h3>'+
-                '<div>'+
-                '<div class="iconfont icon-start zan"></div>'+
-                '<div class="iconfont icon-start zan"></div>'+
-                '<div class="iconfont icon-start zan"></div>'+
-                '<div class="iconfont icon-start zan"></div>'+
-                '<div class="iconfont icon-zan zan zan_1"></div>'+
-                '</div>'+
-                '<div class="sContent-grade">8.3 非常好</div>'+
-                '<div class="sContent-grade-num">334条住客点评</div>'+
-                '</div>'+
-                '</a>';
-        var infoWindow = new BMap.InfoWindow(sContent);         // 创建信息窗口对象
-        map.addOverlay(marker);                             //将标注添加到地图中
-        marker.addEventListener("click", function(){
-            this.openInfoWindow(infoWindow);
-        });
-    }
-    // 让所有点在视野范围内
-    map.setViewport(pts);
-
-    // 多关键字搜索
-    // var myKeys = ["景点"];
-    // var local = new BMap.LocalSearch(map, {
-    // 	renderOptions:{map: map, panel:"r-result"},
-    // 	pageCapacity:5
-    // });
-    // local.searchInBounds(myKeys, map.getBounds());
-
-    //单击获取点击的经纬度
-//    map.addEventListener("click", function (e) {
-//        alert(e.point.lng + "," + e.point.lat);
-//    });
-</script>
-
-
-<script type="text/javascript" src="../resources/js/Map.js"></script>
-
-
-
 <div id="LARid" class="LAR-Background">
     <div class="LAR-Container">
         <ul class="LAR-ul">
@@ -992,5 +848,6 @@
         </div>
     </div>
 </div>
-
+</body>
+<script type="text/javascript" src="../resources/js/Map.js"></script>
 </html>

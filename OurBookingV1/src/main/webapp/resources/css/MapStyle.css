@@ -16,7 +16,7 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
 }
-.Map-Background>a {
+.Map-Background a {
     display: block;
     text-decoration: none;
     color: #0077CC;
@@ -69,7 +69,7 @@
     width: 30px;
     top: 10px;
 }
-.slide>div{
+.slide div{
     position: absolute;
     height: 30px;
     font-size: 20px;
@@ -94,7 +94,7 @@
     margin-left: 1350px;
 }
 
-.close>a {
+.close a {
     color: white;
 }
 
@@ -129,7 +129,7 @@
 
 }
 
-.nar-search>ul>li {
+.nar-search ul li {
     display: block;
     font-size: 14px;
     font-weight: normal;
@@ -139,27 +139,27 @@
     color: #0077CC;
 }
 
-.nar-search>ul>li:hover {
+.nar-search ul li:hover {
     background-color: #0077CC;
     color: white;
 }
 
-.nar-search>ul>li>input[type="checkbox"] {
+.nar-search ul li input[type="checkbox"] {
     -webkit-appearance: none;
     background: url(../res/images/map/checkbox-default.png);
     height: 12px;
     width: 12px;
 }
 
-.nar-search>ul>li>input[type="checkbox"]:checked {
+.nar-search ul li input[type="checkbox"]:checked {
     background: url(../res/images/map/checkbox-ok.png);
 }
 
-.nar-search>ul>li>input[type="checkbox"]:checked:hover {
+.nar-search ul li input[type="checkbox"]:checked:hover {
     background: url(../res/images/map/checkbox-cencel.png);
 }
 
-.nar-search>ul>li span {
+.nar-search ul li span {
     margin-right: 7px;
     float: right;
 }
@@ -213,14 +213,14 @@
     margin-left: 160px;
 }
 
-.dropdown-select>a {
+.dropdown-select a {
     height: 20px;
     line-height: 20px;
     padding: 5px;
     color: black;
 }
 
-.dropdown-select>a:hover {
+.dropdown-select a:hover {
     background-color: #0077CC;
     color: white;
 }
@@ -244,7 +244,7 @@
     float: left;
 }
 
-.hotel-img>img {
+.hotel-img img {
     height: 100%;
     width: 100%;
 }
@@ -319,22 +319,19 @@
 
 /*地图上的信息窗口样式*/
 .sContent-hotel-img {
-    height: auto;
-    width: 180px;
+    width: 140px;
+    margin: auto;
 }
-.sContent-hotel-img>img {
-    height: 100%;
+.sContent-hotel-img img {
+    height: auto;
     width: 100%;
-}
-.sContent-hotel-info {
-    height: auto;
-    width: 200px;
 }
 .sContent-grade {
     font-size: 16px;
     font-weight: bold;
+    margin-left: 20px;
     color: black;
-    float: right;
+    float: left;
 }
 .sContent-grade-num {
     font-size: 12px;

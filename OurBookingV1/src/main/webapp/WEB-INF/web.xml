@@ -11,9 +11,19 @@
   	<description></description>
   	<servlet-class>com.king.Booking.servlet.TextServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowMapServlet</servlet-name>
+  	<display-name>ShowMapServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.king.Booking.servlet.ShowMapServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>TextServlet</servlet-name>
   	<url-pattern>/TextServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowMapServlet</servlet-name>
+  	<url-pattern>/ShowMapServlet</url-pattern>
   </servlet-mapping>
   
   
