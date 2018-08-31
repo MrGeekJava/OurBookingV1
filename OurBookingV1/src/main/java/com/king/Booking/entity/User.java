@@ -16,7 +16,7 @@ public class User {
 	private String userPicture;		//用户头像
 	private String userNickName;	//用户昵称
 	private String userBirthday;	//用户生日
-	private char userSex;			//用户性别
+	private String userSex;			//用户性别
 	public int getUserId() {
 		return userId;
 	}
@@ -77,10 +77,10 @@ public class User {
 	public void setUserBirthday(String userBirthday) {
 		this.userBirthday = userBirthday;
 	}
-	public char getUserSex() {
+	public String getUserSex() {
 		return userSex;
 	}
-	public void setUserSex(char userSex) {
+	public void setUserSex(String userSex) {
 		this.userSex = userSex;
 	}
 }

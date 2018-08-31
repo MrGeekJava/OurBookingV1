@@ -1529,7 +1529,7 @@
 	</div>
 	<!--**********-->
 
-	<!-- 注册登录模块代码-->
+	<!--  登录模块代码-->
 	<div id="LARid" class="LAR-Background">
 		<div class="LAR-Container">
 			<ul class="LAR-ul">
@@ -1561,7 +1561,7 @@
 
 			<div id="LAR-register">
 				<div class="LAR-contant">
-					<form name="registerForm" action="" onsubmit="" method="POST" class="LAR_form">
+					<form name="registerForm" action="" onsubmit="" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
@@ -1582,7 +1582,7 @@
 						<font color="red"><b><%=registerMessage %></b></font>
 						<br>
 						<br>
-						<a href="javascript:void(0)" class="sub-btn ">注册账号</a><br>
+						<div  class="sub-btn ">注册账号</div><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————

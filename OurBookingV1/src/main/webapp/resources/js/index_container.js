@@ -2,20 +2,49 @@
  * Created by Nier on 2018/8/8.
  */
 $(document).ready(function() {
+	
     $("#hide_i").click(function(){
        $("#container_holiday").hide("show");
-    });
+    });    
+  //å¤„ç†æ³¨å†Œ
+    
+    $(".sub-btn").click(function(){
+    	var userEmail = $("#emailInput2").val();
+    	var userPassword = $("#pwdInput2").val();
+alert("1");
+		 $.getJSON('RegisterServlet',
+				 {Email:userEmail,password:userPassword},
+				 function(result){
+					 var user = eval(result.user);
+					 alert(user.userName);
+					 $("#LARid").css({
+						 "display":"none"
+					 });
+					 $(".user-li_5").css({
+							 "display":"none"
+					 		});
+					 
+					 $(".user-li_6").css({
+						 "display":"none"
+				 		});
+					 
+				 }
+				 
+				 );
+	
+	});
 
-    //ÏÔÊ¾ÎÄ×Ö
+
+    //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
     $('.user_email').hover(function(){
         $('.tip2').fadeIn();
         $('.tip2').text($('.user_email').attr('data-title'));
     });
 
-    //»ñÈ¡Êó±êÎ»ÖÃ
+    //ï¿½ï¿½È¡ï¿½ï¿½ï¿½Î»ï¿½ï¿½
     $('.user_email').mousemove(function(e){
         var top = e.pageY+15;
-        var left = e.pageX+20; //Ê¹µÃÎÄ×Ö¿éÏÔÊ¾ÔÚÊó±êµÄÓÒÏÂ·½
+        var left = e.pageX+20; //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½
         $('.tip2').css({
             'top' : top + 'px',
             'left': left+ 'px'
@@ -23,7 +52,7 @@ $(document).ready(function() {
     });
 
 
-    //Òş²ØÎÄ×Ö
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     $('.user_email').mouseout(function(){
         $('.tip2').hide();
     });
@@ -36,7 +65,7 @@ $(document).ready(function() {
 
 
     $(document).ready(function(){
-        //ÄÚÈİ4
+        //ï¿½ï¿½ï¿½ï¿½4
         var slideindex4 = 0;
         $("#slideLeftBtn4").click(function(){
             slideindex4--;
@@ -49,12 +78,12 @@ $(document).ready(function() {
             });
         });
         $("#slideRightBtn4").click(function(){
-            // µã»÷ÓÒ°´Å¥µÄÊ±ºòÏëÒªÏÔÊ¾µ±Ç°Í¼Æ¬µÄºóÒ»ÕÅ£¬ËùÒÔslideIndexÖµÒª¼ÓÉÏ1
+            // ï¿½ï¿½ï¿½ï¿½Ò°ï¿½Å¥ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½Ç°Í¼Æ¬ï¿½Äºï¿½Ò»ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½slideIndexÖµÒªï¿½ï¿½ï¿½ï¿½1
             slideindex4++;
             var animateLength = slideindex4 * 275 + "px";
             $(".container4list").animate({"left":animateLength},"slow")  });
 
-        //ÄÚÈİ5
+        //ï¿½ï¿½ï¿½ï¿½5
         var slideindex5 = 0;
         $("#slideLeftBtn5").click(function(){
             slideindex5--;
@@ -68,31 +97,31 @@ $(document).ready(function() {
             });
         });
         $("#slideRightBtn5").click(function(){
-            // µã»÷ÓÒ°´Å¥µÄÊ±ºòÏëÒªÏÔÊ¾µ±Ç°Í¼Æ¬µÄºóÒ»ÕÅ£¬ËùÒÔslideIndexÖµÒª¼ÓÉÏ1
+            // ï¿½ï¿½ï¿½ï¿½Ò°ï¿½Å¥ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½Ç°Í¼Æ¬ï¿½Äºï¿½Ò»ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½slideIndexÖµÒªï¿½ï¿½ï¿½ï¿½1
             slideindex5++;
             var animateLength = slideindex5 * 550 + "px";
             $(".container5list").animate({"left":animateLength},"slow")  });
 
         $(".container6 ul li p").css("color","#006BBc");
 
-        //ÄÚÈİ7
+        //ï¿½ï¿½ï¿½ï¿½7
         $(".tab_menu li").click(function(){
-            //»ñÈ¡µ±Ç°ÔªËØÏÂ±ê
+            //ï¿½ï¿½È¡ï¿½ï¿½Ç°Ôªï¿½ï¿½ï¿½Â±ï¿½
             var _index = $(this).index();
-            //ÏÔÊ¾µ±Ç°£¬Òş²ØÆäËûµÄ
+            //ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             $(".tab_box div").eq(_index).show().siblings().hide();
             $(this).addClass("change").siblings().removeClass("change");
         });
-        //ÄÚÈİ8
+        //ï¿½ï¿½ï¿½ï¿½8
         $(".tab_menu8 li").click(function(){
-            //»ñÈ¡µ±Ç°ÔªËØÏÂ±ê
+            //ï¿½ï¿½È¡ï¿½ï¿½Ç°Ôªï¿½ï¿½ï¿½Â±ï¿½
             var _index8 = $(this).index();
-            //ÏÔÊ¾µ±Ç°£¬Òş²ØÆäËûµÄ
+            //ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             $(".tab_box8 div").eq(_index8).show().siblings().hide();
             $(this).addClass("change").siblings().removeClass("change");
         });
 
-        //ÄÚÈİ9
+        //ï¿½ï¿½ï¿½ï¿½9
         $(".tab_menu9 li").click(function(){
             var _index9 = $(this).index();
             $(".tab_box9 div").eq(_index9).show().siblings().hide();
