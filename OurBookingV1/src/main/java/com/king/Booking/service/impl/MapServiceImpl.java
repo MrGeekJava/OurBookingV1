@@ -6,6 +6,7 @@ import java.util.List;
 import com.king.Booking.dao.impl.MapDaoImpl;
 import com.king.Booking.entity.HotelView;
 import com.king.Booking.service.MapService;
+import com.king.Booking.util.DataSourceUtil;
 
 public class MapServiceImpl implements MapService {
 
@@ -16,6 +17,8 @@ public class MapServiceImpl implements MapService {
 		} catch (SQLException e) {
 			System.out.println("数据库出错！！");
 			e.printStackTrace();
+		} finally {
+			DataSourceUtil.close();
 		}
 		return hotels;
 	}
