@@ -1,3 +1,4 @@
+//登录注册
 // 显示提示信息
 $(document).ready(function () {
     $('#reg-btn').hover(function () {

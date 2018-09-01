@@ -1,14 +1,8 @@
 package com.king.Booking.dao.impl;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -17,12 +11,7 @@ import com.king.Booking.entity.HotelView;
 import com.king.Booking.entity.User;
 import com.king.Booking.util.DataSourceUtil;
 
-import net.sf.json.JSONObject;
-
 public class RegisterDaoImpl{
-	
-	
-	
 	
 	public User  register(User user) {
 		String userEmail =user.getUserEmail();
@@ -45,8 +34,6 @@ public class RegisterDaoImpl{
 				user2= user1;
 			}
 		
-		
-			
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
