@@ -16,6 +16,7 @@
 	<link href="resources/css/index_container.css" rel="stylesheet">
 	<link href="resources/css/index_container_yuan.css" rel="stylesheet">
 	<script rel="text/javascript" src="resources/js/index_container.js"></script>
+	<script type="text/javascript" src="resources/js/searchResult.js"></script>
 	<link href="resources/res/icon/index_icon/index_yuan/iconfont.css">
 	<link rel="stylesheet" href="resources/css/searchResult.css">
 	<link rel="SHORTCUT ICON" href="resources/res/images/title_logo.icon"/>

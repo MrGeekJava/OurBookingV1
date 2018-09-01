@@ -7,7 +7,7 @@ import java.sql.Clob;
 public class Hotel {
 		private int hotelId;			//酒店ID
 		private String hotelName;		//酒店名字
-		private Clob hotelPer;		//酒店简介
+		private String hotelPer;		//酒店简介
 		private String hotelAdress;		//酒店地址
 		private String hotelPicture;		//酒店图片
 		private String hotelType;		//酒店类型
@@ -19,7 +19,7 @@ public class Hotel {
 		private String checkInTime;		//客人入住时间
 		private String leaveTime;		//客人离开时间
 		private String pet;		//宠物
-		private Clob rePolicy;		//预定政策
+		private String rePolicy;		//预定政策
 		private String chileAndBed;		//儿童和加床
 		private String bankCard;		//银行卡
 		private String hotelProvince;		//所在省
@@ -40,10 +40,10 @@ public class Hotel {
 		public void setHotelName(String hotelName) {
 			this.hotelName = hotelName;
 		}
-		public Clob getHotelPer() {
+		public String getHotelPer() {
 			return hotelPer;
 		}
-		public void setHotelPer(Clob hotelPer) {
+		public void setHotelPer(String hotelPer) {
 			this.hotelPer = hotelPer;
 		}
 		public String getHotelAdress() {
@@ -112,10 +112,10 @@ public class Hotel {
 		public void setPet(String pet) {
 			this.pet = pet;
 		}
-		public Clob getRePolicy() {
+		public String getRePolicy() {
 			return rePolicy;
 		}
-		public void setRePolicy(Clob rePolicy) {
+		public void setRePolicy(String rePolicy) {
 			this.rePolicy = rePolicy;
 		}
 		public String getChileAndBed() {

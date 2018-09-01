@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <c3p0-config>
     <!--
+    连接数据库
     C3P0的缺省(默认)配置，
     如果在代码中“ComboPooledDataSource ds = new ComboPooledDataSource();”这样写就表示使用的是C3P0的缺省(默认)配置信息来创建数据源
     -->
@@ -18,6 +19,7 @@
     </default-config>
 
     <!--
+    连接数据源
     C3P0的命名配置，
     如果在代码中“ComboPooledDataSource ds = new ComboPooledDataSource("MySQL");”这样写就表示使用的是name是MySQL的配置信息来创建数据源
     -->
