@@ -19,6 +19,7 @@ $(document).ready(function() {
 				 function(result){
 					 var user = eval(result.user);
 					 alert("恭喜"+user.userName+"登录成功");
+					 alert("进入这里");
 					 $("#LARid").css({
 						 "display":"none"
 					 });
