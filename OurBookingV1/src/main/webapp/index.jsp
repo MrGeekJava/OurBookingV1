@@ -1588,7 +1588,7 @@
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
 					</span>
 					<a href="javascript:void(0)" class="weicharLogin"><img src="resources/res/images/weichar.png" class="login_login">微信登录</a>
-				</div>
+				</div> 
 				<hr>
 				<span class="span-tip">
 						还没试过<a href="#" class="font_a">Booking.com商旅服务？</a><br>
@@ -1603,7 +1603,7 @@
 			</div>
 		</div>
 	</div>
-
+<div></div>
 	<script src="resources/js/NavBar.js"></script>
 	<script src="resources/js/index_container.js"></script>
 </div>
