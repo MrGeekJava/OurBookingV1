@@ -1582,7 +1582,7 @@
 						<font color="red"><b><%=registerMessage %></b></font>
 						<br>
 						<br>
-						<div  class="sub-btn ">注册账号</div><br>
+						<div id="sub-userRegister">注册账号</div><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————

@@ -8,7 +8,7 @@ $(document).ready(function() {
     });    
   //处理注册
     
-    $(".sub-btn").click(function(){
+    $("#sub-userRegister").click(function(){
     	var userEmail = $("#emailInput2").val();
     	var userPassword = $("#pwdInput2").val();
 alert("1");

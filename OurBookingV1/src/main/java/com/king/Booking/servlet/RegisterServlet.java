@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet{
 		String userEmail = request.getParameter("Email");
 		String userPassword = request.getParameter("password");
 		
-		User user = null;
+		User user = new User();
 		user.setUserEmail(userEmail);
 		user.setUserPassword(userPassword);
 		
