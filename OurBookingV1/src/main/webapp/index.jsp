@@ -9,7 +9,7 @@
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="resources/css/iconfont.css">
 	<link href="resources/css/booking_com.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="resources/css/NavBar.css">
+	<link rel="stylesheet" href="resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
 	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<link href="resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -1582,7 +1582,7 @@
 						<font color="red"><b><%=registerMessage %></b></font>
 						<br>
 						<br>
-						<div id="sub-userRegister">注册账号</div><br>
+						<div class="subRegister" >注册账号</div><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
