@@ -17,74 +17,77 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 public class DataSourceUtil {
 	
-		//获取c3p0数据源对象
-		public static DataSource getDataSourceWithC3P0ByXML() {
-			ComboPooledDataSource cpds = new ComboPooledDataSource("Booking");
-			
-			return cpds;
-			
-		}
+//	定义ThreadLocal对象，用于存放Connection对象
+	private static ThreadLocal<Connection> threadLocal = new ThreadLocal<Connection>();
 	
+//	定义数据源对象
+	private static DataSource ds = new ComboPooledDataSource();
 	
+//	获取c3p0数据源对象
+	public static DataSource getDataSourceWithC3P0ByXML() {
+		return ds;
+	}
 	
-		 /**
-		    * @Method: getConnection
-		    * @Description: 从数据源中获取数据库连接
-		    * @Anthor:luozhiyuan 8/30
-		    * @return Connection
-		    * @throws SQLException
-		    */ 
-		
-		public static Connection getConnection() throws SQLException {
-			 //从数据源中获取数据库连接
-			return getDataSourceWithC3P0ByXML().getConnection();
-			
-			
+//	获取连接对象
+	public static Connection getConnection(){
+		Connection conn = threadLocal.get();
+		try {
+			if(conn == null) {
+				conn = ds.getConnection();
+			}
+			threadLocal.set(conn);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
-		
-		 /**
-		    * @Method: release
-		    * @Description: 释放资源，
-		    * 释放的资源包括Connection数据库连接对象，负责执行SQL命令的Statement对象，存储查询结果的ResultSet对象
-		    * @Anthor:luozhiyuan
-		    *
-		    * @param conn
-		    * @param st
-		    * @param rs
-		    */ 
-		
-		public static void release(Connection conn,Statement st,ResultSet rs) {
-				if(rs != null) {
-					
-					try {
-						//关闭存储查询结果的ResultSet对象
-						rs.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					rs = null;
-				}
-				
-				if(st != null) {
-					try {
-						//关闭负责执行SQL命令的Statement对象
-						st.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-				
-				if(conn != null) {
-					try {
-						//将Connection连接对象还给数据库连接池
-						conn.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+		return conn;
+	}
+	
+//	开始事务
+	public static void beginTransaction() {
+		Connection conn = getConnection();
+		try {
+			conn.setAutoCommit(false);
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
+	}
+	
+//	提交事务
+	public static void commitTransaction() {
+		Connection conn = threadLocal.get();
+		try {
+			if(conn != null) {
+				conn.commit();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+//	回滚事务
+	public static void rollbackTransaction() {
+		Connection conn = threadLocal.get();
+		try {
+			if(conn != null) {
+				conn.rollback();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+		
+//	关闭连接，释放资源
+	public static void close() {
+		Connection conn = threadLocal.get();
+		try {
+			if(conn != null) {
+				conn.close();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			threadLocal.remove();
+			conn = null;
+		}
+	}
 }
