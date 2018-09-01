@@ -7,7 +7,6 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="resources/css/iconfont.css">
 	<link href="resources/css/booking_com.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
 	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
