@@ -1113,6 +1113,52 @@ $(document).ready(function(){
         );
     });
 
+    
+    
+    //底部定时刷新评论
+    flushComment();
+  
+    function flushComment(){
+    	  var n=0;
+        setInterval(function(){
+            n=(n+1);
+            if(n==4){
+                n=0;
+            };
+          
+            $.getJSON('../LookingroomServlet',
+                {num:n},
+                function(result){
+               
+     
+                   var comment = eval(result.leftComment);
+                   if(n%2==1){
+     
+                	  
+                        $(".CommentFoot").fadeOut("slow");
+                        $(".CommentFootCopy>.span1").text(comment.userNickName);
+                        $(".CommentFootCopy>.span2").text(comment.commentWord);
+                        $(".CommentFoot").animate({top:'1700px'});
+                        $(".CommentFootCopy").fadeIn("slow").animate({top:'1600px'});
+                   }
+                   if(n%2==0){
+           
+              
+                       $(".CommentFootCopy").fadeOut("slow");
+                  	   $(".CommentFoot>.span1").text(comment.userNickName);                       
+                       $(".CommentFoot>.span2").text(comment.commentWord);
+                       $(".CommentFoot").fadeIn("slow").animate({top:'1600px'});
+                       $(".CommentFootCopy").animate({top:'1700px'});
+                   }
+                   
+                }
+            );
+        },5000
+        );
+    }
+    
+    
+    
 
 });
 

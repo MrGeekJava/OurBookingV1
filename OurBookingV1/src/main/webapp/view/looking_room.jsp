@@ -492,7 +492,31 @@
             <h3>还没有找到合适的住宿?</h3>
             <div class="searchother">继续搜索</div>
         </div>
+        
+            <div class="CommentFoot">
+         	   <div class="fineComment">精彩评论</div>
+            <div class="nickName">昵称：</div>
+            <div class="comment">评语：</div>
+            <span class="span1">小玲</span>
+            <span class="span2">广州白云宾馆的4家餐厅提供美味的中国菜肴和意大利美食。大堂酒吧供应
+各种饮料和咖啡。</span>
+        </div>
+        
+            <div class="CommentFootCopy">
+         	   <div class="fineComment">精彩评论</div>
+            <div class="nickName">昵称：</div>
+            <div class="comment">评语：</div>
+            <span class="span1">小玲</span>
+            <span class="span2">广州白云宾馆的4家餐厅提供美味的中国菜肴和意大利美食。大堂酒吧供应
+各种饮料和咖啡。</span>
+        </div>
+        
+        
+        
     </div>
+    
+         
+    
 
 </div>
 
