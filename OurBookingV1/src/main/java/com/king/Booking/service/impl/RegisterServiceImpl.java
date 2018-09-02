@@ -15,18 +15,9 @@ public class RegisterServiceImpl {
 			return user2;
 		}
 		//Dao层用户注册的函数
-		public boolean userRegister(User user) {
+		public boolean userRegister(User user) throws SQLException {
 			RegisterDaoImpl register = new RegisterDaoImpl();
-			boolean result = false;
-			try {
-				result = register.UserRegister(user);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				System.out.println("注册数据异常");
-			}finally {
-				DataSourceUtil.close();
-			}
+			boolean result = register.UserRegister(user);		
 			return result;
 		}
 		

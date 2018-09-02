@@ -155,6 +155,7 @@ public class RegisterDaoImpl{
 	    Matcher matcher = pattern.matcher(email);
 	    return matcher.matches();
 	}
+
 	
 	
 }

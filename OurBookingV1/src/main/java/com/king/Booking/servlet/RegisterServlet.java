@@ -79,7 +79,7 @@ public class RegisterServlet extends HttpServlet{
 			}else {
 				//清空输入框
 				System.out.println("注册失败");	
-				json= new JSONObject();
+				json= new JSONObject(); 
 				json.put("user", EmailOrPhone);//给JS判断是否要显示和隐藏
 				out.print(json);
 			}
