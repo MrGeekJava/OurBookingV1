@@ -22,13 +22,21 @@
   	<servlet-name>ShowMapServlet</servlet-name>
   	<display-name>ShowMapServlet</display-name>
   	<description></description>
-  	<servlet-class>com.king.Booking.servlet.ShowMapServlet</servlet-class>
+  	<servlet-class>com.king.Booking.servlet.ShowMapServlet</servlet-class> 
   </servlet>
-  <servlet>
-  	<servlet-name>SearchResultServlet</servlet-name>
-  	<display-name>SearchResultServlet</display-name>
+  
+    <servlet>
+  	<servlet-name>GetImage</servlet-name>
+  	<display-name>GetImage</display-name>
   	<description></description>
-  	<servlet-class>com.king.Booking.servlet.SearchResultServlet</servlet-class>
+  	<servlet-class>com.king.Booking.servlet.GetImage</servlet-class> 
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.king.Booking.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>TextServlet</servlet-name>
@@ -42,8 +50,15 @@
   	<servlet-name>RegisterServlet</servlet-name>
   	<url-pattern>/RegisterServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    	<servlet-name>SearchResultServlet</servlet-name>
-    	<url-pattern>/SearchResultServlet</url-pattern>
+    <servlet-mapping>
+    	<servlet-name>LoginServlet</servlet-name>
+    	<url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+  
+    <servlet-mapping>
+    	<servlet-name>GetImage</servlet-name>
+    	<url-pattern>/GetImage</url-pattern>
+    </servlet-mapping>
+  
+  
 </web-app>

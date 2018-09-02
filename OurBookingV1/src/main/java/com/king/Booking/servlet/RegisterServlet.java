@@ -26,7 +26,7 @@ public class RegisterServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		this.doPost(request, response);
 	}
-	
+
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -36,53 +36,53 @@ public class RegisterServlet extends HttpServlet{
 		String userPsw = request.getParameter("password");
 		System.out.println("用户输入的验证码："+verrifyCode);
 		String tureVerify = (String) request.getSession().getAttribute("Vtext"); //验证码文本
-			
+
 		//将数据打包到User
 		User user = new User();
 		user.setUserPassword(userPsw);
 		user.setUserEmail(EmailOrPhone);
-		
+
 		JSONObject json = null;
-	
-//		System.out.println(userReturn.getUserEmail()+" "+userReturn.getUserPassword());
+
+		//		System.out.println(userReturn.getUserEmail()+" "+userReturn.getUserPassword());
 		/**
 		 * 验证码JSON
 		 */
-//		HttpSession hs = request.getSession();
-//		if(verrifyCode.equalsIgnoreCase(tureVerify)) {
-//			System.out.println("验证码正确");
-//		}else {
-//			hs.setAttribute("registerMsg", "验证码不正确！");
-//			json= new JSONObject();
-//			json.put("verrifyCode", "验证码不正确！");//给JS判断是否要显示和隐藏
-//			out.print(json);		
-//		}
-		
+		//		HttpSession hs = request.getSession();
+		//		if(verrifyCode.equalsIgnoreCase(tureVerify)) {
+		//			System.out.println("验证码正确");
+		//		}else {
+		//			hs.setAttribute("registerMsg", "验证码不正确！");
+		//			json= new JSONObject();
+		//			json.put("verrifyCode", "验证码不正确！");//给JS判断是否要显示和隐藏
+		//			out.print(json);		
+		//		}
+
 		if(verrifyCode.equalsIgnoreCase(tureVerify)) {
 			RegisterServiceImpl rs = new RegisterServiceImpl();
 			boolean registerReturn = rs.userRegister(user);
 			if(registerReturn==true) {			
-			/**
-			 * 注册成功
-			 */
-			System.out.println("注册成功");
-			json= new JSONObject();
-			json.put("user", registerReturn);//给JS判断是否要显示和隐藏
-			out.print(json);
-		}else {
-			//清空输入框
-			System.out.println("注册失败");		
-		}
-			
+				/**
+				 * 注册成功
+				 */
+				System.out.println("注册成功");
+				json= new JSONObject();
+				json.put("user", registerReturn);//给JS判断是否要显示和隐藏
+				out.print(json);
+			}else {
+				//清空输入框
+				System.out.println("注册失败");		
+			}
+
 		}else {
 			System.out.println("注册失败");
 			json= new JSONObject();
-//			json.put("user", registerReturn);//给JS判断是否要显示和隐藏
+			//			json.put("user", registerReturn);//给JS判断是否要显示和隐藏
 			out.print(json);
 		}
-	
-	
-				
+
+
+
 	}
 
 }
