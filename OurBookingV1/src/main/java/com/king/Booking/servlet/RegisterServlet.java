@@ -2,6 +2,7 @@ package com.king.Booking.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -60,7 +61,13 @@ public class RegisterServlet extends HttpServlet{
 
 		if(verrifyCode.equalsIgnoreCase(tureVerify)) {
 			RegisterServiceImpl rs = new RegisterServiceImpl();
-			boolean registerReturn = rs.userRegister(user);
+			boolean registerReturn = false;
+			try {
+				registerReturn = rs.userRegister(user);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if(registerReturn==true) {			
 				/**
 				 * 注册成功
@@ -71,13 +78,17 @@ public class RegisterServlet extends HttpServlet{
 				out.print(json);
 			}else {
 				//清空输入框
-				System.out.println("注册失败");		
+				System.out.println("注册失败");	
+				json= new JSONObject();
+				json.put("user", EmailOrPhone);//给JS判断是否要显示和隐藏
+				out.print(json);
 			}
 
 		}else {
-			System.out.println("注册失败");
+			//清空输入框
+			System.out.println("注册失败");	
 			json= new JSONObject();
-			//			json.put("user", registerReturn);//给JS判断是否要显示和隐藏
+			json.put("user", EmailOrPhone);//给JS判断是否要显示和隐藏
 			out.print(json);
 		}
 

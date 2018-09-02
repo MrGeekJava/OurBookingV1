@@ -194,7 +194,7 @@ $(document).ready(function () {
 					 		});
 						 $(".user_name").html(" ");					 
 					 }else{
-						 alert("注册失败！"+userEmail+"已经存在或者验证码不正确！");					
+						 alert("注册失败！"+result+"已经存在或者验证码不正确！");					
 						 $(".user-li_5").css({
 								 "display":"block"
 						 		});
