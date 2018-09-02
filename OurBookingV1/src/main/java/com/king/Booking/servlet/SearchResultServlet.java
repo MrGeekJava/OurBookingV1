@@ -15,6 +15,7 @@ import com.king.Booking.entity.User;
 import com.king.Booking.service.impl.RegisterServiceImpl;
 import com.king.Booking.service.impl.SearchResultService;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
@@ -66,9 +67,27 @@ public class SearchResultServlet extends HttpServlet {
 		List<HotelSearchHotelView> hotelReturn = srService.searchRult(searchAdressArray[1], searchAdressArray[0]);
 		
 		System.out.println(hotelReturn.size());
+		
+	
+//		System.out.println(hotelReturn.size());
+		//将结果返回到前端页面jsp
+		
+//		List集合转换成json代码 List list = new ArrayList(); list.add( "first" ); list.add( "second" ); 
+//		JSONArray jsonArray2 = JSONArray.fromObject( list );
+		JSONArray json = JSONArray.fromObject(hotelReturn);
+		
+		
+//		JSONObject json = new JSONObject();
+//		json.put("hotelSearchReturn", hotelReturn);
+		out.print(json);
+		
 		System.out.println("最后结果");
-		
-		
+//		for(int i = 0;i < hotelReturn.size();i ++) {
+//			json.put("hotelSearchReturn", hotelReturn);
+//			out.print(json);
+//			System.out.println("传入前端页面");
+//		}
+//		
 		
 		
 		

@@ -25,13 +25,28 @@ $(document).ready(function(){
 	$(".search_container_four").click(function(){
 		var searchAdress = $(".search_container_one_input").val();
 		
-//		console.log("jq");
 		
 		//用JSON传输数据,中国,广东省,广州市
 		$.getJSON('SearchResultServlet',
 				{searchadress:searchAdress},
 				function(result){
 					//在这里传回到前端页面：index.jsp
+					
+//					JSONObject json = new JSONObject();
+//					json.put("hotelSearchReturn", hotelReturn);
+//					out.print(json);
+//					
+//					var hotelSearch = new Array();
+					
+					
+//					List集合转换成json代码 List list = new ArrayList(); list.add( "first" ); list.add( "second" ); 
+//					JSONArray jsonArray2 = JSONArray.fromObject( list );
+					
+//					var hotelSearch = eval(result.hotelSearchRerturn);
+					var jsonjs = JSON.parse(result);
+					alert("进入这里");
+//					alert(typeof result.hotelSearchRerturn);
+					alert(typeof jsonjs);
 				}
 		);
 	});
