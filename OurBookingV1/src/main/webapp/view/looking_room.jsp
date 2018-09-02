@@ -147,8 +147,6 @@
 </div>
 </div>
 
-
-
 <div class="container">
     <ul class="list">
         <li><a href="">首页</a>
@@ -278,13 +276,7 @@
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     </ul>
                 </div>
-
-
             </div>
-
-
-
-
 
             <div class="adultnum">
                 <span>2位成人</span>
@@ -493,7 +485,7 @@
             <div class="searchother">继续搜索</div>
         </div>
     </div>
-
+    
 </div>
 
 </body>

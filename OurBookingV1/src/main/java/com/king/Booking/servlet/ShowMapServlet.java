@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.king.Booking.entity.HotelView;
+import com.king.Booking.entity.SearchHotel;
 import com.king.Booking.service.impl.MapServiceImpl;
 
 import net.sf.json.JSONArray;
@@ -36,14 +37,59 @@ public class ShowMapServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
-		PrintWriter out = response.getWriter();
-		String destination = request.getParameter("destination");
-		
+//		String destination = request.getParameter("destination");
 		List<HotelView> hotels = null;
-		hotels = new MapServiceImpl().queryHotelsToMap(destination);
-        
+		
+		if(request.getParameterValues("checked") != null) {
+			String[] checkeds = request.getParameterValues("checked");
+			SearchHotel searchHotel = new SearchHotel();
+			for(String checked:checkeds) {
+//				判断并生成对象
+				String[] head = checked.split(":");
+				if(head[0].equals("B")) {
+					float[] budget = {Float.parseFloat(head[1]),Float.parseFloat(head[2])};
+					searchHotel.setRoomMin(budget);
+				}
+				if(head[0].equals("L")) {
+					searchHotel.setRoomRating(head[1]);
+				}
+				if(head[0].equals("R")) {
+					String[] relax = {head[1]};
+					searchHotel.setRelax(relax);
+				}
+				if(head[0].equals("A")) {
+					searchHotel.setRoomQuantity(true);
+				}
+				if(head[0].equals("I")) {
+					searchHotel.setDiscount(true);
+				}
+				if(head[0].equals("E")) {
+					searchHotel.setFrontDesk(true);
+				}
+				if(head[0].equals("F")) {
+					searchHotel.setCancelPrepay(head[1]);
+				}
+				if(head[0].equals("C")) {
+					searchHotel.setMealDinner(head[1]);
+				}
+				if(head[0].equals("T")) {
+					searchHotel.setRoomType(head[1]);
+				}
+				if(head[0].equals("G")) {
+					searchHotel.setRating(head[1]);
+				}
+				if(head[0].equals("H")) {
+					searchHotel.setChainHotels(head[1]);
+				}
+			}
+			hotels = new MapServiceImpl().queryHotelSecond(searchHotel,"广州市");
+		} else {
+			hotels = new MapServiceImpl().queryHotelsToMap("广州市");
+		}
+		
 		JSONArray jsonArray=JSONArray.fromObject(hotels);
-
+		
+		PrintWriter out = response.getWriter();
 		out.print(jsonArray);//返回json数组
 		out.flush();
 		out.close();

@@ -45,7 +45,7 @@
 }
 
 #select2 {
-    display: block;
+    display: none;
     width: 380px;
     height: 100%;
     float: left;
@@ -99,6 +99,19 @@
 }
 
 /* ��һ��ɸѡ������ */
+#searchBtn{
+	display: block;
+	background-color: yellow;
+	border: 2px solid white;
+	border-radius: 3px;
+	color: blue;
+	width: 80px;
+	height: 30px;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-aline: center;
+	float: left;
+}
 .nar-search {
     width: 250px;
     height: auto;
@@ -119,7 +132,7 @@
     background-color: #0077CC;
 }
 
-.nar-search ul {
+#searchForm ul {
     list-style: none;
     font-size: 16px;
     font-weight: bold;
@@ -129,7 +142,7 @@
 
 }
 
-.nar-search ul li {
+#searchForm ul li {
     display: block;
     font-size: 14px;
     font-weight: normal;
@@ -139,27 +152,27 @@
     color: #0077CC;
 }
 
-.nar-search ul li:hover {
+#searchForm ul li:hover {
     background-color: #0077CC;
     color: white;
 }
 
-.nar-search ul li input[type="checkbox"] {
+#searchForm ul li input[type="checkbox"] {
     -webkit-appearance: none;
     background: url(../res/images/map/checkbox-default.png);
     height: 12px;
     width: 12px;
 }
 
-.nar-search ul li input[type="checkbox"]:checked {
+#searchForm ul li input[type="checkbox"]:checked {
     background: url(../res/images/map/checkbox-ok.png);
 }
 
-.nar-search ul li input[type="checkbox"]:checked:hover {
+#searchForm ul li input[type="checkbox"]:checked:hover {
     background: url(../res/images/map/checkbox-cencel.png);
 }
 
-.nar-search ul li span {
+#searchForm ul li span {
     margin-right: 7px;
     float: right;
 }

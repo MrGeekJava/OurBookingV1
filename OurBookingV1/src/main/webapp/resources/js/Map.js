@@ -5,27 +5,27 @@
 // *********************************************************
 // 滑动第二个筛选栏
 $(document).ready(function () {
-    var mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - $("#select2").outerWidth() - 21;
+    var mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth();
     $("#container").css("width", mapWidth);
 
     $("#slide-btn").click(function () {
         if ($("#select2").css("display") == 'none') {
-            mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - $("#select2").outerWidth() - 21;
+            mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - $("#select2").outerWidth() - 35;
             $("#container").animate({width: mapWidth}, 350);
             $("#select2").animate({width: 'toggle'}, 350);
             $("#slide-btn").html('<div class="iconfont icon-sanjiao-copy"></div>');
         } else {
-            mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - 21;
+            mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - 20;
             $("#select2").animate({width: 'toggle'}, 350);
             $("#container").animate({width: mapWidth}, 350);
             $("#slide-btn").html('<div class="iconfont icon-sanjiao-copy-copy"></div>');
         }
-    })
-})
+    });
+});
 
 //选取第一个筛选栏信息
 $(document).ready(function () {
-    $(".nar-search>ul>li").click(function () {
+    $("#searchForm>ul>li").click(function () {
         var cbx = $(this).find("input[type='checkbox']");
         if (cbx.is(":checked")) {
             $(this).css({"background-color": "#077812", "color": "white"});
@@ -33,7 +33,7 @@ $(document).ready(function () {
             $(this).css({"background-color": "#F9F9F9", "color": "#0077CC"});
         }
     });
-})
+});
 
 // 下拉筛选条件
 $(document).ready(function () {
@@ -42,7 +42,7 @@ $(document).ready(function () {
         $(".dropdown-select").toggle();
     });
 });
-// 点击下拉菜单意外区域隐藏
+// 点击下拉菜以外区域隐藏
 window.onclick = function (event) {
     if (!event.target.matches('#select3')) {
         document.getElementById("hotel-sort").style.display = "none";
@@ -70,25 +70,23 @@ $(document).ready(function () {
     $(".close").click(function () {
         $(".Map-Background").hide();
     });
-})
+});
 
 // 筛选栏里的hotel的hover事件
 $(document).ready(function () {
     $(".hotel").hover(function () {
         $(this).children("div.hotel-info").find("h3").css({"color": "#FEBB02"});
         $(this).css({"background-color": "#F3F9FD"});
-    })
+    });
     $(".hotel").mouseleave(function () {
     	$(this).children("div.hotel-info").find("h3").css({"color": "#0077CC"});
         $(this).css({"background-color": "white"});
-    })
-})
+    });
+});
 
-// 动态筛选酒店信息(加载地图)
-function loadMap() {
-	
-	// 百度地图API功能
-    var map = new BMap.Map("container");    // 创建Map实例
+// 加载地图
+$(document).ready(function(){
+	map = new BMap.Map("container");    // 创建Map实例
     map.enableScrollWheelZoom(true);    	//开启鼠标滚轮缩放
 
     var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});	// 左上角，添加比例尺
@@ -98,19 +96,56 @@ function loadMap() {
     }); //右上角，仅包含平移和缩放按钮
     map.addControl(top_left_control);        				//添加比例尺
     map.addControl(top_right_navigation);					//添加平移和缩放按钮
+});
 
+function selectHotels(sortType) {
 	//点击地图的时候，将地点传给后台
-	$.post(
-		"../ShowMapServlet",
-		"destination=广州市",
-		function(result) {
-			selectHotels(result,map);
-		});
+//	$.post(
+//		"../ShowMapServlet",
+//		"destination=广州市",
+//		function(result) {
+//			loadHotels(result,sortType);
+//		}
+//	);
+	$.ajax({
+		//几个参数需要注意一下
+		type: "POST",//方法类型
+//		dataType: "string",//预期服务器返回的数据类型
+		url: "../ShowMapServlet" ,//url
+		data: $('form').serialize(),
+		success: function (result) {
+			loadHotels(result,sortType);
+		},
+		error : function() {
+			alert("异常！");
+		}
+	});
 }
 
-function selectHotels(result, map){
-	var hotel = $.parseJSON(result)
-    
+//加载中间的酒店和地图的坐标点
+function loadHotels(result, sortType){
+	var hotel = $.parseJSON(result);
+	
+	//根据价格排序
+	function sortprice(a,b){
+        return a.roomMin-b.roomMin;
+    }
+	//根据评分降序
+	function sortRating(a,b){
+		return b.avgRating-a.avgRating;
+	}
+	
+	if(sortType == 1){
+		hotel.sort(sortprice);
+	}
+	if(sortType == 2){
+		hotel.sort(sortRating);
+	}
+	
+//	清空原来的元素
+	$(".hotel").parent().remove();
+	deletePoint();
+	
     for(x in hotel){
 //    	var src = hotel[x].hotelPicture;
     	var src = "../resources/res/images/GZBYBG/34980273.jpg";
@@ -164,7 +199,7 @@ function selectHotels(result, map){
 	    var infoWindow = new Array();
 	    var marker;
 	    
-	    map.centerAndZoom(hotel[x].hotelDowntown, 15);      		// 用城市名设置地图中心点和缩放级别
+	    map.centerAndZoom(hotel[x].hotelDowntown, 10);      		// 用城市名设置地图中心点和缩放级别
 	    marker = new BMap.Marker(new BMap.Point(hotel[x].longitude, hotel[x].latitude), {icon: myIcon});   // 创建标注
 	    sContent =                     //信息窗口内容
 	        '<a href="#">'+
@@ -196,7 +231,23 @@ function selectHotels(result, map){
 		var infoWindow = new BMap.InfoWindow(content);  // 创建信息窗口对象 
 		map.openInfoWindow(infoWindow,point); //开启信息窗口
 	}
+	function deletePoint(){
+		var allOverlay = map.getOverlays();
+		for (var i = 0; i < allOverlay.length -1; i++){
+			map.removeOverlay(allOverlay[i]);
+		}
+	}
 }
+
+//点击筛选栏提交按钮，进行再搜索
+$(document).ready(function(){
+	$("#searchBtn").click(function(){
+		$("input:checkbox:checked").each(function(){
+			$(this).attr("name","checked");
+		});
+		selectHotels(0);
+	});
+});
 
 //格式化货币 
 function formatCurrency(num) {  

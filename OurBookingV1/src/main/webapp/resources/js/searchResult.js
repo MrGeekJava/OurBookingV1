@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $(".rightBox_mapSearch").click(function () {
         $(".Map-Background").show();
-        loadMap();
+        selectHotels(0);
     });
 })
 
@@ -10,6 +10,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".map_search").click(function () {
         $(".Map-Background").show();
+        selectHotels(0);
     });
 })
 
