@@ -132,6 +132,101 @@ $(document).ready(function () {
     $("#closebtn").click(function () {
         $("#LARid").hide();
     });
+    
+    /**
+     * 登录注册
+     *在页面中动态加载相同模块的时候，当触发第二次加载的模块时，有时会连第一个模块的内容随之改变，
+     *这是因为为第一个模块注册点击事件时并没有销毁而执行了两遍。
+     *此时需要手动的添加事件移除方法，可以选择在每次事件处理完成后销毁该事件，也可选择在下次事件触发前销毁之前的事件。
+     *用unbind消除
+     */    
+    $(".sub-btn").unbind('click').click(function(){
+    	var userEmail = $("#emailInput").val();
+    	var userPassword = $("#pwdInput").val();
+		 $.getJSON('LoginServlet',
+				 {Email:userEmail,password:userPassword},
+				 function(result){
+					 var user = eval(result.user);
+//					 alert("恭喜"+user.userName+"登录成功");
+					 $("#LARid").css({
+						 "display":"none"
+					 });
+					 $(".user-li_5").css({
+							 "display":"none"
+					 		});
+					 
+					 $(".user-li_6").css({
+						 "display":"none"
+				 		});
+					 
+					 $(".person_class").css({
+						 "display":"block"
+				 		});
+					 $(".user_name").html(user.userName);
+					 
+				 });
+	
+	})
+    
+    $(".subRegister").unbind('click').click(function(){
+    	var userEmail = $("#emailInput2").val();
+    	var userPassword = $("#pwdInput2").val();
+    	var userVerify = $(".register_inp").val();
+		 $.getJSON('RegisterServlet',
+				 {EmailOrPhone:userEmail,password:userPassword,Verify:userVerify},
+				 function(result){
+					 var result = eval(result.user);
+					 if(result==true){
+						 alert("恭喜"+userEmail+"注册成功");
+						 $("#LARid").css({
+							 "display":"none"
+						 });
+						 $(".user-li_5").css({
+								 "display":"none"
+						 		});
+						 
+						 $(".user-li_6").css({
+							 "display":"none"
+					 		});
+						 
+						 $(".person_class").css({
+							 "display":"block"
+					 		});
+						 $(".user_name").html(" ");					 
+					 }else{
+						 alert("注册失败！"+userEmail+"已经存在或者验证码不正确！");					
+						 $(".user-li_5").css({
+								 "display":"block"
+						 		});
+						 
+						 $(".user-li_6").css({
+							 "display":"block"
+					 		});
+						 
+						 $(".person_class").css({
+							 "display":"none"
+					 		});
+					 }
+			});
+	});
+    
+    
+    
+    
+    $(".user_quit").click(function(){
+					 $(".user-li_5").css({
+							 "display":"block"
+					 		});					 
+					 $(".user-li_6").css({
+						 "display":"block"
+				 		});
+					 
+					 $(".person_class").css({
+						 "display":"none"
+				 		});					 
+				 });
+	
+    
 
 //显示选择货币窗口
     $("#mon_tex").click(function () {
@@ -160,9 +255,4 @@ $(document).ready(function () {
 
 });
 
-//刷新验证码
-function refershVerify(){
-	var imgEle = document.getElementById("verifyImage");
-	imgEle.src="/logintest/GetImage?a="+new Date().getTime();
-}
 

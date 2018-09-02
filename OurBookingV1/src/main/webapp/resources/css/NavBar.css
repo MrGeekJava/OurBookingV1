@@ -122,10 +122,17 @@ body{
 	/*border: 1px solid red;*/
 }
 .person_class{
+	height: 50px;
+	display: block;
+	float:left; 		/* 将竖排变成横排 */
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
 	margin-right: 0;
 	position: relative;
 	left: 0;
 	top: 0;
+	display:none;
 }
 
 .personImg_class{

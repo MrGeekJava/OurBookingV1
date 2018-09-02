@@ -16,7 +16,6 @@
 	<link href="resources/css/index_container.css" rel="stylesheet">
 	<link href="resources/css/index_container_yuan.css" rel="stylesheet">
 	<script rel="text/javascript" src="resources/js/index_container.js"></script>
-	<script type="text/javascript" src="resources/js/searchResult.js"></script>
 	<link href="resources/res/icon/index_icon/index_yuan/iconfont.css">
 	<link rel="stylesheet" href="resources/css/searchResult.css">
 	<link rel="SHORTCUT ICON" href="resources/res/images/title_logo.icon"/>
@@ -138,6 +137,29 @@
 				<li class="user-li_6">
 					<a id="log-btn" href="#" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
 				</li>
+				
+				<li class="person_class">
+                    <a href="#" class="person_class_a">
+                        <img src="resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+                        <p class="user_name">用户名</p></a>
+                    <div class="showIfm_none">
+                        <div class="showIfm_none_tri"></div>
+                        <ul class="showIfm_none_ul">
+                            <li><a href="view/PersonalCenter.jsp">我的个人中心</a></li>
+                            <li><a href="#">我的订单</a></li>
+                            <li><a href="#">报表</a></li>
+                            <li><a href="#">评语</a></li>
+                            <li><a href="#">我的收藏</a></li>
+                            <li><a href="#">下载app</a></li>
+                            <li><a href="#">客服帮助</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li class="user_quit"><a href="#" >退出</a></li>
+                        </ul>
+
+                    </div>
+                </li>
+				
+				
 			</ul>
 		</div>
 	</div>
@@ -1547,7 +1569,7 @@
 						<span class="login_span">Booking.com密码</span>
 						<input id="pwdInput" type="password" name="pwd"><br>
 						<a href="#" class="lar_a">想不起密码？</a><br>
-						<a href="javascript:void(0)" class="sub-btn " >登录</a><br>
+						<a href="javascript:void(0)" class="sub-btn "  >登录</a><br>
 					</form>
 					<span class="span-line">
 						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
@@ -1561,7 +1583,7 @@
 
 			<div id="LAR-register">
 				<div class="LAR-contant">
-					<form name="registerForm" action="" onsubmit="" class="LAR_form">
+					<form name="registerForm" action="" method="post" onsubmit="" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
@@ -1571,10 +1593,18 @@
 						<img src="GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
 						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
 						
+						
+						<script type="text/javascript">
+						//刷新验证码
+						function refershVerify(){
+							var imgEle = document.getElementById("verifyImage");
+							imgEle.src="GetImage?a="+new Date().getTime();
+						}
+						</script>
 						<!--注册返回信息-->
 						<%
 							String registerMessage="";
-							String registerMsg = (String)request.getAttribute("registerMsg");
+							String registerMsg = (String)session.getAttribute("registerMsg");
 							if(registerMsg!=null){
 								registerMessage = registerMsg;
 							}	

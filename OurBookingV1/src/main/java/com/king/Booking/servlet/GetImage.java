@@ -1,11 +1,15 @@
-package com.king.Booking.util;
+package com.king.Booking.servlet;
+
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.king.Booking.util.VerifyCode;
 
 
 public class GetImage extends HttpServlet {
@@ -24,8 +28,5 @@ public class GetImage extends HttpServlet {
 		VerifyCode.output(bi, response.getOutputStream());
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
+	
 }
