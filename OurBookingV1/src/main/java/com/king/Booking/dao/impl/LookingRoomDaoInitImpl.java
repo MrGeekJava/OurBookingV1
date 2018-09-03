@@ -20,14 +20,16 @@ public class LookingRoomDaoInitImpl {
 		try {
 			conn = DataSourceUtil.getConnection();
 			
-			String sql = "select * from view_rightComment";
-			List<Hotel> mapHotels = null;
+			String sql = "select * from HotelList where HotelName = ?";
+			Object[] params = {"¹ãÖÝ°×ÔÆ±ö¹Ý"};
 		
-			List<Hotel> hotelQuery = runner.query(conn, sql,new BeanListHandler<Hotel>(Hotel.class));
+			List<Hotel> hotelQuery = runner.query(conn, sql,new BeanListHandler<Hotel>(Hotel.class),params);
+			
+			
 			for(Hotel hotel: hotelQuery) {
 				
 					returnHotel=hotel;
-				
+					System.out.println(returnHotel.getHotelFacilities());
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block

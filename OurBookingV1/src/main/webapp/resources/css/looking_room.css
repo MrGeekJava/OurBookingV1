@@ -1213,6 +1213,13 @@ ul{
     color: #023681;
 }
 
+.hotelPer{
+	color: black;
+	text-indent: 2em;
+	letter-spacing:6px;
+	 font-size: 18px;
+}
+
 .midd>.connectfoot{
     width: 1080px;
     height: 120px;

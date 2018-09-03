@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  import="java.net.URLDecoder"%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -158,15 +158,53 @@
             <svg class="icon icon-youjiantou" aria-hidden="true">
                 <use xlink:href="#icon-youjiantou"></use>
             </svg></li>
-        <li><a href="#">广东</a>
+            <%
+            	
+      
+            %>
+        <li><a href="#"><% 
+        String hotelProvice=null;
+    	Cookie[] cookies = request.getCookies();
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelProvice")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+             hotelProvice = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelProvice);
+         %></a>
             <svg class="icon icon-youjiantou" aria-hidden="true">
                 <use xlink:href="#icon-youjiantou"></use>
             </svg></li>
-        <li><a href="#">广州</a>
+        <li><a href="#"><% 
+        String hotelDowntown=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelDowntown")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+            hotelDowntown = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelDowntown);
+         %></a>
             <svg class="icon icon-youjiantou" aria-hidden="true">
                 <use xlink:href="#icon-youjiantou"></use>
             </svg></li>
-        <li>搜索结果</li></ul>
+        <li><% 
+        String hotelArea=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelArea")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+           hotelArea = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelArea);
+         %></li></ul>
     <div class="leftcontainer">
         <div class="one">
             <button class="onebutton1">现在就预定</button>
@@ -382,10 +420,21 @@
         <a  class="a3">订前必读</a>
         <a  class="a4">预定须知</a>
         <a  class="a5">22131用户点评</a>
-        <hr>
+        <hr style="position:absolute;top 40px;">
         <div class="header">
             <span class="span1">广州白云宾馆</span>
-            <span class="span2">尊贵型</span>
+            <span class="span2"><% 
+        String hotelType=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelType")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+            hotelType = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelType);
+         %></span>
             <div class="pointer">
                 <li></li><li></li><li></li><li></li><li></li>
             </div>
@@ -425,7 +474,18 @@
                 <svg class="icon icon-dizhi" aria-hidden="true">
                     <use xlink:href="#icon-dizhi"></use>
                 </svg>
-                <span>广州, 越秀区, 环市东路367号(花园酒店对面)</span>
+                <span><% 
+        String hotelAdress=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelAdress")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+            hotelAdress = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelAdress);
+         %></span>
                 <a>位置很赞-显示地图</a>
                 <svg class="icon icon-duihaocheckmark17" aria-hidden="true">
                     <use xlink:href="#icon-duihaocheckmark17"></use>
@@ -462,18 +522,30 @@
         </div>
         <div class="text">
             <h3>广州精选推荐之一</h3>
-            <object class="txt" style="border:0px" type="text/x-scriptlet" data="../resources/txt/GZBYBG.txt"></object>
-        </div>
+            <span class="hotelPer"><% 
+        String hotelPer=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelPer")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+            hotelPer = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelPer);
+         %></span>
+                 
+                    </div>
 
         <div class="tip">
-            <li>粉</li>
+            <li>小</li>
             <li>粉</li>
             <li>拳</li>
             <li>锤</li>
             <li>爆</li>
             <li>你</li>
             <li>头</li>
-            <div class="renxin">任性的我，就看看，我不订
+            <div class="renxin">我要下订单啦啦
                 <svg class="icon icon-guilian" aria-hidden="true">
                     <use xlink:href="#icon-guilian"></use>
                 </svg>
@@ -507,12 +579,7 @@
         
     </div>
     
-<<<<<<< HEAD
-         
-    
 
-=======
->>>>>>> branch 'master' of git@github.com:MrGeekJava/OurBookingV1.git
 </div>
 
 </body>
