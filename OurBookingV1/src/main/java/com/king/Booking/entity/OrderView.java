@@ -10,7 +10,7 @@ public class OrderView {
 	private String orderTime;		//订单时间
 	private String inDate;			//入住日期
 	private String outDate;			//退房日期
-	private double orderMoney;		//订单价格
+	private double orderMoney;		//订单总金额
 	private int orderIsPay;			//订单是否支付
 	private int roomNum;			//房间数量
 	private String contactNum;		//订单联系人手机号
