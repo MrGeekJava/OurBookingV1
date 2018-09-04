@@ -286,7 +286,7 @@
             </div>
             <div class="container_loc_adv_right">
                 <strong class="container_loc_adv_s">靠近热门地标</strong>
-                白沙门公园、Hainan University和海口世纪大桥就在附近
+               	 白沙门公园、Hainan University和海口世纪大桥就在附近
             </div>
         </div>
 
@@ -341,8 +341,8 @@
             <p class="container_ensure2_p3">立即预订吧！</p>
         </div>
         <p class="input_user_ifm">输入个人信息</p>
-
-        <div class="input_ifm">
+         <form action=" " method="post">
+         <div class="input_ifm">           
             <div class="input_ifm_up">快完成啦！将带<p>*</p>的必填项填写完整即可</div>
             <div class="input_ifm_div">
                 <p class="user_Name font_style">姓名</p>
@@ -379,7 +379,7 @@
             <div class="input_ifm_tel">请填写您的电话号码</div>
             <div class="input_ifm_phone" >
                 <select id="select_pre_phone" class="select_pre_tel" onchange="set_Pre_tel()" >
-            		<option value="0"></option>
+                    <option value="0"></option>
                     <option value="+86 ">中国大陆 +86</option>
                     <option value="+852 ">香港 +852</option>
                     <option value="+853 ">澳门 +853</option>
@@ -408,8 +408,9 @@
                 </select  >
                 <input type="text" name="tel_phone" id="get_pre_tel" ></div>
             <div class="input_ifm_connet">以便住宿与您联系</div>
+              
         </div>
-
+ 
         <div class="order_information_next_box">
             <div class="order_information_next">
                 <div class="order_information_next1">
@@ -425,7 +426,7 @@
             </div>
 
         </div>
-
+  		</form>
 
         <div class="container_foot_box">
             <i class="iconfont icon-iconfontright2"></i>

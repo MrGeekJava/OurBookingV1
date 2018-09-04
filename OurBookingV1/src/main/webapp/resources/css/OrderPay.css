@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *{
     margin: 0;
     padding: 0;
@@ -314,33 +313,35 @@ body{
 
 .order_ifm{
     width: 778px;
-    height: 370px;
+    height: 390px;
     margin: 10px auto;
     background: #E9F0FA;
     box-sizing: border-box;
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .order_user_list,.order_hotel_list,.order_list{
-    width: 150px;
-    height: 300px;
+    width: 300px;
+    height: 360px;
     border: 1px solid #6F6F6F;
     float: left;
-    margin-left: 15px;
+    margin-left: 55px;
 }
 
 
 .order_user_ifm,.order_hotel_ifm,.order_list_ifm{
-    width: 150px;
+    width: 300px;
     height: 30px;
     background: #B4671C;
     color: white;
     line-height: 30px;
     text-align: center;
 }
-
+.order_back{
+    background: #F07C00;
+}
 .order_user_ifms,.order_hotel_ifms,.order_list_ifms{
-    width: 150px;
+    width: 300px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -349,13 +350,13 @@ body{
     width: 300px;
 }
 .order_list{
-    width: 260px;
+    width: 300px;
 }
 .order_hotel_ifm,.order_hotel_ifms{
     width: 300px;
 }
 .order_list_ifm,.order_list_ifms{
-    width: 260px;
+    width: 300px;
 
 }
 
