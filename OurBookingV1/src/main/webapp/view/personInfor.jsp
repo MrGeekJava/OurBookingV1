@@ -341,7 +341,6 @@
             <p class="container_ensure2_p3">立即预订吧！</p>
         </div>
         <p class="input_user_ifm">输入联系信息</p>
-
         <div class="input_ifm">
             <div class="input_ifm_up">快完成啦！将带<p>*</p>的必填项填写完整即可</div>
             <div class="input_ifm_down">确认邮件将发送至该邮箱</div>
@@ -415,7 +414,7 @@
                     <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
                 </div>
                 <div class="order_information_next2">
-                    <a href="#">下一步：最终信息&#10095;</a>
+                  	<a href="../PersonInforServlet">  下一步：最终信息&#10095;</a>
                 </div>
                 <div class="order_information_next3">
                     别担心 - 现在不会收取费用！
@@ -424,7 +423,6 @@
             </div>
 
         </div>
-
 
         <div class="container_foot_box">
             <i class="iconfont icon-iconfontright2"></i>

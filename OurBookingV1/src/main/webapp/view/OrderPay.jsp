@@ -22,30 +22,29 @@
 <div class="tip3"></div>
 <!--实现图片移动-->
 <div  class="modal">
-    <img class="model-content" id="img01" src="../res/images/personIfm/xlhkz.jpg">
+    <img class="model-content" id="img01" src="../resources/res/images/personIfm/xlhkz.jpg">
 </div>
 
 <div class="modal2">
-    <img class="model-content" id="img02" src="../res/images/personIfm/xlhkz1.jpg">
+    <img class="model-content" id="img02" src="../resources/res/images/personIfm/xlhkz1.jpg">
 </div>
 <div class="modal3">
-    <img class="model-content" id="img03" src="../res/images/personIfm/xlhkz2.jpg">
+    <img class="model-content" id="img03" src="../resources/res/images/personIfm/xlhkz2.jpg">
 </div>
 <div class="modal4">
-    <img class="model-content" id="img04" src="../res/images/personIfm/xlhkz3.jpg">
+    <img class="model-content" id="img04" src="../resources/res/images/personIfm/xlhkz3.jpg">
 </div>
 <div class="modal5">
-    <img class="model-content" id="img05" src="../res/images/personIfm/xlhkz4.jpg">
+    <img class="model-content" id="img05" src="../resources/res/images/personIfm/xlhkz4.jpg">
 </div>
 
 <div id="none_img_id" >
-    <img src="../res/images/wechat_img.png" id="none_img_id2" >
+    <img src="../resources/res/images/wechat_img.png" id="none_img_id2" >
 </div>
-
 <div class="top">
 
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../res/images/logo.png">
+        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
@@ -149,7 +148,7 @@
                 </li>
                 <li class="user-li_5 person_class">
                     <a href="#" class="person_class_a">
-                        <img src="../res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+                        <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
                         <p class=" user_name">用户名</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
@@ -204,16 +203,16 @@
                 <div class="container_order_ifm_r_img">
                     <ul class="order_ifm_r_ul">
                         <li class="order_ifm_r_img1 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz1.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz1.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img2 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz2.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz2.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img3 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz3.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz3.jpg" style="height: 100%;width: 100% ">
                         </li>
                         <li class="order_ifm_r_img4 order_ifm_li">
-                            <img src="../res/images/personIfm/xlhkz4.jpg" style="height: 100%;width: 100% ">
+                            <img src="../resources/res/images/personIfm/xlhkz4.jpg" style="height: 100%;width: 100% ">
                         </li>
                     </ul>
                 </div>
@@ -247,43 +246,36 @@
         </div>
         <p class="input_user_ifm">您的订单信息 &nbsp;&nbsp;&nbsp;Confirm your order information</p>
             <div class="order_ifm">
-                    <div class="order_user_list">
-                    <div class="order_user_ifm">用户名</div>
-                    <div class="order_user_ifms USER_NAME"></div>
-                    <div class="order_user_ifm">订单联系电话</div>
-                    <div class="order_user_ifms CONTACT_NUM"></div>
-                    <div class="order_user_ifm">房间数量</div>
-                    <div class="order_user_ifms ROOM_NUM"></div>
-                    <div class="order_user_ifm">房间类型</div>
-                    <div class="order_user_ifms ROOM_TYPE"></div>
-                    <div class="order_user_ifm">房间大小</div>
-                    <div class="order_user_ifms ROOM_SIZE"></div></div>
+                     <div class="order_user_list">
+                <div class="order_list_ifm order_back">订单号</div>
+                <div class="order_list_ifms ORDER_ID"></div>
+                <div class="order_user_ifm order_back">联系人</div>
+                <div class="order_user_ifms USER_NAME"></div>
+                <div class="order_user_ifm order_back">订单联系电话</div>
+                <div class="order_user_ifms CONTACT_NUM"></div>
+                <div class="order_user_ifm">房间数量</div>
+                <div class="order_user_ifms ROOM_NUM"></div>
+                <div class="order_user_ifm">房间类型</div>
+                <div class="order_user_ifms ROOM_TYPE"></div>
+                <div class="order_user_ifm">房间大小</div>
+                <div class="order_user_ifms ROOM_SIZE"></div></div>
 
-                <div class="order_hotel_list">
-                    <div class="order_hotel_ifm">酒店名字</div>
-                    <div class="order_hotel_ifms HOTEL_NAME"></div>
-                    <div class="order_hotel_ifm">酒店地址</div>
-                    <div class="order_hotel_ifms HOTEL_ADRESS"></div>
-                    <div class="order_hotel_ifm">酒店类型</div>
-                    <div class="order_hotel_ifms HOTEL_TYPE"></div>
-                    <div class="order_hotel_ifm">酒店等级</div>
-                    <div class="order_hotel_ifms ROOM_GRADE"></div>
-                    <div class="order_hotel_ifm">酒店电话</div>
-                    <div class="order_hotel_ifms HOTEL_PHONE_NUM"></div>
-                </div>
 
-                <div class="order_list">
-                    <div class="order_list_ifm">订单号</div>
-                    <div class="order_list_ifms ORDER_ID"></div>
-                    <div class="order_list_ifm">订单时间</div>
-                    <div class="order_list_ifms ORDER_TIME"></div>
-                    <div class="order_list_ifm">入住时间</div>
-                    <div class="order_list_ifms IN_DATE"></div>
-                    <div class="order_list_ifm">退房时间</div>
-                    <div class="order_list_ifms OUT_DATE"></div>
-                    <div class="order_list_ifm">订单总金额</div>
-                    <div class="order_list_ifms ORDER_MONEY"></div>
-                </div>
+            <div class="order_list">
+                <div class="order_list_ifm order_back">入住时间</div>
+                <div class="order_list_ifms IN_DATE"></div>
+                <div class="order_list_ifm order_back">退房时间</div>
+                <div class="order_list_ifms OUT_DATE"></div>
+                <div class="order_list_ifm order_back">订单总金额</div>
+                <div class="order_list_ifms ORDER_MONEY"></div>
+                <div class="order_list_ifm">订单时间</div>
+                <div class="order_list_ifms ORDER_TIME"></div>
+                <div class="order_list_ifm">入住天数</div>
+                <div class="order_list_ifms ORDER_ID"></div>
+                <div class="order_hotel_ifm">酒店电话</div>
+                <div class="order_hotel_ifms HOTEL_PHONE_NUM"></div>
+      
+            </div>
 
 
             </div>

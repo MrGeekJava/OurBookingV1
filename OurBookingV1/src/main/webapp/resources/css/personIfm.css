@@ -930,7 +930,7 @@
     height: 33px;
     background: #CCE1FF;
     border-radius: 5%;
-    float: left;
+    float: left;    
     position: relative;
     top: 0;
     left: 0;
@@ -971,6 +971,7 @@
 }
 
 .order_information_next2{
+    display: inline-block;
     width: 237px;
     height: 41px;
     color: white;
@@ -982,16 +983,16 @@
     float: left;
     margin-left: 15px;
     border-radius: 6%;
+    cursor: pointer;
 }
 
-
-.order_information_next2>a{
+.order_information_next2>a{   
     text-decoration: none;
     list-style: none;
-    color: white;
+    color:white;
 }
 
-.order_information_next2:hover{
+.order_information_next2>button:hover{
     background: #003580;
 }
 .order_information_next3{
@@ -1101,18 +1102,6 @@
 .footer_lover_li4{
     border-right: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
