@@ -1165,19 +1165,28 @@ $(document).ready(function(){
     function orderInit(){
         setInterval(function(){
             var datein = $(".indate>.datein").attr("placeholder");
+            //入住日期cookie
+            $.cookie("datein",datein);  
             for(var i = 1;i<6;i++){
                 $(".order").find("tr").eq(i).find("td").eq(5).text(datein);
             }
             var dateout = $(".outdate>.dateout").attr("placeholder");
+            //离开日期cookie
+            $.cookie("dateout",dateout);
             for(var i = 1;i<6;i++){
                 $(".order").find("tr").eq(i).find("td").eq(6).text(dateout);
             }
             var adultnum = $(".adultnum span").eq(0).text();
             var childnum = $(".childnum span").eq(0).text();
+            //成人人数和儿童人数cookie
+            $.cookie("adultnum",adultnum);
+            $.cookie("chilenum",childnum);
             for(var i = 1;i<6;i++){
                 $(".order").find("tr").eq(i).find("td").eq(7).text(adultnum+"和"+childnum);
             }
             var roomnum = $(".roomnum span").eq(0).text();
+            //房间数cookie
+            $.cookie("roomnum",roomnum);
             for(var i = 1;i<6;i++){
                 $(".order").find("tr").eq(i).find("td").eq(4).text(roomnum);
             }
