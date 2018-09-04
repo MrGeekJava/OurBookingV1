@@ -127,57 +127,84 @@ $(document).ready(function () {
 
 
 //表单标签事件
-$(".input_ifm_centre_inp").blur(function () {
-    //alert("q");
-   var inpvalue = $(".input_ifm_centre_inp").val();
-    //alert(inpvalue);
-    if(inpvalue!=""){
-        $(".input_ifm_centre_p").html("<p style='display: inline-block'>姓（拼音或英语<i style='color: red;display: inline-block'>*</i> </p>");
-        $(".input_ifm_centre_inp").css("border-color","green");
+    $(".input_ifm_centre_inp").blur(function () {
+        //alert("q");
+        var inpvalue = $(".input_ifm_centre_inp").val();
+        //alert(inpvalue);
+        if(inpvalue!=""){
+            $(".input_ifm_centre_p").html("<p style='display: inline-block'>姓（拼音或英语<i style='color: red;display: inline-block'>*</i> </p>");
+            $(".input_ifm_centre_inp").css("border-color","green");
 
-    }else{
-        $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
-        $(".input_ifm_centre_inp").css("border-color","red");
-    }
-});
+        }else{
+            $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
+            $(".input_ifm_centre_inp").css("border-color","red");
+        }
+    });
+
+    $(".input_ifm_right_inp").blur(function () {
+        //alert("q");
+        var inpvalue = $(".input_ifm_right_inp").val();
+        //alert(inpvalue);
+        if(inpvalue!=""){
+            $(".input_ifm_right_p").html("<p style='display: inline-block'>名（拼音或英语）</p>");
+            $(".input_ifm_right_inp").css("border-color","green");
+
+        }else{
+            $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
+            $(".input_ifm_right_inp").css("border-color","red");
+        }
+    });
+
+
+
+
+
 
     $(".input_ifm_inp_email").blur(function () {
-    //alert("q");
-   var inpvalue = $(".input_ifm_inp_email").val();
-    //alert(inpvalue);
-    if(inpvalue!=""){
-        $(".user_ifm_p").html("<p style='display: inline-block'>邮箱号码<i style='color: red;display: inline-block'></i> </p>");
-        $(".input_ifm_inp_email").css("border-color","green");
+        //alert("q");
+        var inpvalue = $(".input_ifm_inp_email").val();
+        //alert(inpvalue);
 
-    }else{
-        $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
-        $(".input_ifm_inp_email").css("border-color","red");
-    }
-});
-
-   $(".input_ifm_inp_email2").blur(function () {
-    //alert("q");
-   var inpvalue2 = $(".input_ifm_inp_email2").val();
-   var inpvalue = $(".input_ifm_inp_email").val();
-
-       //alert(inpvalue);
-       if(inpvalue2!=""){
-           var tag="@";
-           if(inpvalue2==inpvalue && inpvalue.indexOf(tag)!=-1){
-               $(".user_ifm_p2").html("<p style='display: inline-block'>确认邮箱号码<i style='color: red;display: inline-block'></i> </p>");
-               $(".input_ifm_inp_email").css("border-color","green");
-               $(".input_ifm_inp_email2").css("border-color","green");
-           }else{
-               $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
-               $(".input_ifm_inp_email").css("border-color","red");
-               $(".input_ifm_inp_email2").css("border-color","red");
-           }
+        var pattern= /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        var strEmail=pattern.test(inpvalue);
+        if(strEmail){
+            //邮箱格式正确
+            $(".user_ifm_p").html("<p style='display: inline-block'>邮箱号码<i style='color: red;display: inline-block'></i> </p>");
+            $(".input_ifm_inp_email").css("border-color","green");
         }else{
-           $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
-           $(".input_ifm_inp_email").css("border-color","red");
-           $(".input_ifm_inp_email2").css("border-color","red");
-       }
-});
+            //邮箱格式不正确
+            $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+            $(".input_ifm_inp_email").css("border-color","red");
+        }
+    });
+
+    $(".input_ifm_inp_email2").blur(function () {
+        //alert("q");
+        var inpvalue2 = $(".input_ifm_inp_email2").val();
+        var inpvalue = $(".input_ifm_inp_email").val();
+        var pattern= /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        var strEmail=pattern.test(inpvalue2);
+        if(strEmail){
+            //确认邮箱格式正确
+                if(inpvalue2==inpvalue){
+                    $(".user_ifm_p2").html("<p style='display: inline-block'>确认邮箱号码<i style='color: red;display: inline-block'></i> </p>");
+                    $(".user_ifm_p").html("<p style='display: inline-block'>邮箱号码<i style='color: red;display: inline-block'></i> </p>");
+                    $(".input_ifm_inp_email").css("border-color","green");
+                    $(".input_ifm_inp_email2").css("border-color","green");
+                }else{
+                    $(".user_ifm_p").html("<p style='color: red;'>请检查两个邮箱号码是否一致</p>");
+                    $(".input_ifm_inp_email").css("border-color","red");
+                    $(".input_ifm_inp_email2").css("border-color","red");
+                }
+        }
+        else{
+            //邮箱格式不正确
+                    $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+                    $(".input_ifm_inp_email").css("border-color","red");
+                    $(".input_ifm_inp_email2").css("border-color","red");
+        }
+
+    });
 
 
 
@@ -194,4 +221,32 @@ function set_Pre_tel(){
     var selectValue= $('#select_pre_phone option:selected').val();
     document.getElementById("get_pre_tel").value = selectValue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
