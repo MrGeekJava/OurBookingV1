@@ -22,7 +22,7 @@ public class LookingRoomDaoInitImpl {
 			conn = DataSourceUtil.getConnection();
 			
 			String sql = "select * from HotelList where HotelName = ?";
-			Object[] params = {"¹ãÖÝ°×ÔÆ±ö¹Ý"};
+			Object[] params = {"å¹¿å·žç™½äº‘å®¾é¦†"};
 		
 			List<Hotel> hotelQuery = runner.query(conn, sql,new BeanListHandler<Hotel>(Hotel.class),params);
 			
