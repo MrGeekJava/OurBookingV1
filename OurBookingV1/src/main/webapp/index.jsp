@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
  <%@page import="java.io.*" %>
     
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -39,19 +38,19 @@
 						<h3>货币</h3>
 						<ul class="mon_ul">
 							<li class="mon_li_other"><span>元</span><small>人民币</small></li>
-							<li class="mon_li"><span>€£$</span><small>住宿地使用的货币</small></li>
+							<li class="mon_li"><span>€￡$</span><small>住宿地使用的货币</small></li>
 							<li class="mon_li"><span>US$</span><small>美元</small></li>
 							<li class="mon_li"><span>€</span><small>欧元</small></li>
 							<li class="mon_li"><span>TWD</span><small>新台币</small></li>
 							<li class="mon_li"><span>HK$</span><small>港币</small></li>
-							<li class="mon_li"><span>£</span><small>英镑</small></li>
+							<li class="mon_li"><span>￡</span><small>英镑</small></li>
 						</ul>
 
 						<h3>所有货币</h3>
 						<ul class="mon_ul_2">
 							<li class="mon_li"><span>UAH</span><small>乌克兰赫夫米</small></li>
 							<li class="mon_li_other"><span>元</span><small>人民币</small></li>
-							<li class="mon_li"><span>₪</span><small>以色列新谢克尔</small></li>
+							<li class="mon_li"><span>?</span><small>以色列新谢克尔</small></li>
 							<li class="mon_li"><span>RUB</span><small>俄罗斯卢布</small></li>
 							<li class="mon_li"><span>BGN</span><small>保加利亚新列弗</small></li>
 							<li class="mon_li"><span>CAD</span><small>加元</small></li>
@@ -66,7 +65,7 @@
 							<li class="mon_li"><span>BHD</span><small>巴林第纳尔</small></li>
 							<li class="mon_li"><span>R$</span><small>巴西雷阿尔</small></li>
 							<li class="mon_li"><span>NOK</span><small>挪威克朗</small></li>
-							<li class="mon_li"><span>Kč</span><small>捷克克朗</small></li>
+							<li class="mon_li"><span>K?</span><small>捷克克朗</small></li>
 
 
 							<li class="mon_li"><span>MDL</span><small>摩尔多瓦列伊</small></li>
@@ -75,12 +74,12 @@
 							<li class="mon_li"><span>TWD</span><small>新台币</small></li>
 							<li class="mon_li"><span>TL</span><small>新土耳其里拉</small></li>
 							<li class="mon_li"><span>NZD</span><small>新西兰元</small></li>
-							<li class="mon_li"><span>¥</span><small>智利比索</small></li>
+							<li class="mon_li"><span>￥</span><small>智利比索</small></li>
 							<li class="mon_li"><span>CL$</span><small>墨西哥比索</small></li>
 							<li class="mon_li"><span>GEL</span><small>格鲁吉亚拉里</small></li>
 							<li class="mon_li"><span>€</span><small>欧元</small></li>
 							<li class="mon_li"><span>SAR</span><small>沙特阿拉伯里亚尔</small></li>
-							<li class="mon_li"><span>zł</span><small>波兰兹罗提</small></li>
+							<li class="mon_li"><span>z?</span><small>波兰兹罗提</small></li>
 
 							<li class="mon_li"><span>THB</span><small>泰铢</small></li>
 							<li class="mon_li"><span>HK$</span><small>港币</small></li>
@@ -91,7 +90,7 @@
 							<li class="mon_li"><span>NAD</span><small>纳米比亚元</small></li>
 							<li class="mon_li"><span>lei</span><small>罗马尼亚新列伊</small></li>
 							<li class="mon_li"><span>US$</span><small>美元</small></li>
-							<li class="mon_li"><span>£</span><small>英镑</small></li>
+							<li class="mon_li"><span>￡</span><small>英镑</small></li>
 							<li class="mon_li"><span>XOF</span><small>西非法郎</small></li>
 							<li class="mon_li"><span>AZN</span><small>阿塞拜疆新马纳特</small></li>
 
@@ -182,13 +181,15 @@
 		<h2 class="search_tex_h2">去旅行总不会错。查找优惠！</h2>
 		<p class="search_tex_p">从舒适的乡村民宿到时髦的都市公寓</p>
 	</div>
+	
+	<form action="view/indexAdress.jsp" method="post">
 	<div class="search_container">
 		<div class="search_container_one">
 			<svg class="icon icon-chuang1" aria-hidden="true" >
 				<use xlink:href="#icon-chuang1"></use>
 			</svg>
 
-			<input class="search_container_one_input" placeholder="目的地?">
+			<input class="search_container_one_input" placeholder="目的地?" name="adress">
 
 
 
@@ -838,9 +839,10 @@
 				<li onclick="getchild('9-19')">19</li>
 			</ul>
 		</div>
-
-		<div class="search_container_four">搜索</div>
+		<input class="search_container_four" type="submit" value="搜索">
+		<!-- <div class="search_container_four">搜索</div> -->
 	</div>
+	</form>
 	<div class="search_input">
 		<input type="checkbox" id="allSelect" class="chkbox" /> <label for="allSelect" class="search_checkbox"> 我是出差</label>
 	</div>
@@ -1530,7 +1532,7 @@
 			<p class="login_background">登录后台</p>
 		</div>
 
-		<div class="buttom_top6">版权 © 1996–2018 Booking.com™. 版权所有.</div>
+		<div class="buttom_top6">版权 ? 1996–2018 Booking.com?. 版权所有.</div>
 
 		<p class="buttom_top7">Booking.com隶属于Booking Holdings Inc.，该集团是全球领先的在线旅行及周边服务供应商。</p>
 
@@ -1637,5 +1639,7 @@
 	<script src="resources/js/NavBar.js"></script>
 	<script src="resources/js/index_container.js"></script>
 </div>
+
+
 </body>
 </html>

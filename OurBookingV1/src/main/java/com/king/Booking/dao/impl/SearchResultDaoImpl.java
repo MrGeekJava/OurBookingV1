@@ -8,6 +8,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.king.Booking.dao.interfaces.SearchResult;
+import com.king.Booking.entity.HotelEva;
 import com.king.Booking.entity.HotelSearchHotelView;
 import com.king.Booking.util.DataSourceUtil;
 
@@ -37,6 +38,30 @@ public class SearchResultDaoImpl implements SearchResult {
 		}
 		
 		return hotelSearchList;
+	}
+	
+	
+	public List<HotelEva> HotelEvaByHotelId(int hotelId){
+		
+		QueryRunner runner = new QueryRunner();
+		Connection conn = null;
+		List<HotelEva> hotelEvaList = null;
+		
+		try {
+			conn = DataSourceUtil.getConnection();
+			//查询数据库sql语句
+			String sql = "select * from hotel_eva_user_view where HotelId = ?";
+			Object[] params = {hotelId};
+			
+			//返回的数据被封装成List<JavaBean>
+			hotelEvaList = runner.query(conn, sql,new BeanListHandler<HotelEva>(HotelEva.class),params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return hotelEvaList;
+		
 	}
 
 }

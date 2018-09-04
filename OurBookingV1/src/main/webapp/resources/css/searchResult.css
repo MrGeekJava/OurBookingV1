@@ -395,9 +395,9 @@
 }
 
 .rightBox_containers{
-    /*height: 500px;*/
+   height: auto;   
     width: 100%;
-    /*background-color: #0AB21B;*/
+  
     border-radius: 5px;
 }
 .search_hotel{
@@ -494,9 +494,10 @@
 }
 .look_map a{
     color: rgb(0,119,204);
+    font-size:12px;
 }
 .distance{
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 0px;
     display: inline-block;
     border-bottom-style: dotted;
@@ -523,7 +524,7 @@
 }
 .shm_right_subtext{
     margin-top: 0px;
-    margin-left: 53px;
+    margin-left: 61px;
     font-size: 13px;
 }
 .score{
