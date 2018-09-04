@@ -1032,14 +1032,14 @@ $(document).ready(function(){
     adultnumchooseinit();
     function adultnumchooseinit(){
         for(var i=0;i<30;i++){
-            $(".adultnumchoose li").eq(i+1).text((i+1)+"位成人");
+            $(".adultnumchoose li").eq(i+1).text((i)+"位成人");
         }
     }
 
     $(".adultnumchoose li").click(function(){
         for(var i=0;i<30;i++){
             if(($(".adultnumchoose li").eq(i+1).css("color"))=="rgb(2, 54, 129)"){
-                $(".adultnum span").text((i+1)+"位成人");
+                $(".adultnum span").text((i)+"位成人");
             }
         }
     });
@@ -1053,14 +1053,14 @@ $(document).ready(function(){
     roomnumchooseinit();
     function roomnumchooseinit(){
         for(var i=0;i<30;i++){
-            $(".roomnumchoose li").eq(i+1).text((i+1)+"间房");
+            $(".roomnumchoose li").eq(i+1).text((i)+"间房");
         }
     }
 
     $(".roomnumchoose li").click(function(){
         for(var i=0;i<30;i++){
             if(($(".roomnumchoose li").eq(i+1).css("color"))=="rgb(2, 54, 129)"){
-                $(".roomnum span").text((i+1)+"间房");
+                $(".roomnum span").text((i)+"间房");
             }
         }
     });
@@ -1075,14 +1075,14 @@ $(document).ready(function(){
     childnumchooseinit();
     function childnumchooseinit(){
         for(var i=0;i<30;i++){
-            $(".childnumchoose li").eq(i+1).text((i+1)+"位儿童");
+            $(".childnumchoose li").eq(i+1).text((i)+"位儿童");
         }
     }
 
     $(".childnumchoose li").click(function(){
         for(var i=0;i<30;i++){
             if(($(".childnumchoose li").eq(i+1).css("color"))=="rgb(2, 54, 129)"){
-                $(".childnum span").text((i+1)+"位儿童");
+                $(".childnum span").text((i)+"位儿童");
             }
         }
     });
