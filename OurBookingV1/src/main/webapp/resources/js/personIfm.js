@@ -191,35 +191,7 @@ $(".input_ifm_centre_inp").blur(function () {
 
 
 function set_Pre_tel(){
-    var selectValue= $('#select_pre_phone option:selected').text();
+    var selectValue= $('#select_pre_phone option:selected').val();
     document.getElementById("get_pre_tel").value = selectValue;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
