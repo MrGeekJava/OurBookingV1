@@ -18,6 +18,17 @@ public class OrderView {
 	private String roomType;		//房间类型
 	private double roomPrice;		//房间价格
 	private double roomSize;		//房间大小
+	private String orderEmail; 		//订单人邮箱
+
+	
+	
+	
+	public String getOrderEmail() {
+		return orderEmail;
+	}
+	public void setOrderEmail(String orderEmail) {
+		this.orderEmail = orderEmail;
+	}
 	public String getHotelName() {
 		return hotelName;
 	}
