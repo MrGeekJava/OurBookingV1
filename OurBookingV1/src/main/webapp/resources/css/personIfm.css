@@ -715,6 +715,9 @@
     height: 33px;
     margin-top: 5px;
     border-radius: 10%;
+    border: 2px solid #9A9A9A;
+
+
 }
 .input_ifm_centre{
     margin-left: 18px;
@@ -726,6 +729,7 @@
     color: #383838;
     font-weight: bold;
     font-size: 14px;
+
 }
 .input_ifm_centre_pp{
     /*display: block;*/
@@ -739,9 +743,11 @@
     display: block;
     width: 174px;
     height: 31px;
+    border: 2px solid #9A9A9A;
     border-radius: 5%;
+    margin-top: 4px;
     /*float: left;*/
-    outline: none;
+    /*outline: none;*/
     /*border: none;*/
 }
 .input_ifm_centre_inp:hover{
@@ -774,7 +780,8 @@
     height: 33px;
     padding-left: 0;
     font-size: 14px;
-    border-radius: 5%;
+    border-radius: 3%;
+    border: 2px solid #9A9A9A;
 }
 .order_information_box{
     width: 748px;

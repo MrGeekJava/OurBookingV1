@@ -17,6 +17,16 @@ public class Order {
 	private String outDate;		//退房日期
 	private int roomNum;		//订单房间数量
 	private String contactNum;	//订房联系人号码
+	private String orderEmail; 	//订单人邮箱
+	
+	
+	
+	public String getOrderEmail() {
+		return orderEmail;
+	}
+	public void setOrderEmail(String orderEmail) {
+		this.orderEmail = orderEmail;
+	}
 	public int getUserId() {
 		return userId;
 	}
