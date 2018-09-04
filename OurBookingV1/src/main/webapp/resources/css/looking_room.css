@@ -1213,12 +1213,28 @@ ul{
     color: #023681;
 }
 
-.hotelPer{
-	color: black;
-	text-indent: 2em;
-	letter-spacing:6px;
-	 font-size: 18px;
+
+
+.midd>.order{
+    width: 1080px;
+    height: 500px;
+    position: absolute;
+    top: 1380px;
+    left: -280px;
 }
+
+.order td /*设置表格文字左右和上下居中对齐*/
+{
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+
+.order th /*设置表格文字左右和上下居中对齐*/
+{
+    color: #0896FF;
+}
+
 
 .midd>.connectfoot{
     width: 1080px;
@@ -1226,15 +1242,24 @@ ul{
     position: absolute;
     border-bottom: solid 1px #4a98d7;
     border-top: solid 1px #4a98d7;
-    top: 1400px;
+    top: 1570px;
     left: -280px;
     text-align: center;
 }
 
+
+.midd>.connectfoot h3{
+   
+    position: absolute;
+    top:20px;
+    left:440px
+   
+}
 .midd>.connectfoot>.searchother{
     width: 70px;
     height: 40px;
     position: absolute;
+    top: 50px;
     left: 500px;
     right: 30px;
     border-radius: 4px;
@@ -1259,7 +1284,7 @@ ul{
     background-color: #e8eff9;
     position: absolute;
     left: -285px;
-    top: 1600px;
+    top: 1770px;
 }
 .CommentFoot>.span1{
     width: 870px;
@@ -1328,7 +1353,7 @@ ul{
     background-color: #e8eff9;
     position: absolute;
     left: -285px;
-    top: 1700px;
+    top: 1780px;
     display:none;
 }
 .CommentFootCopy>.span1{

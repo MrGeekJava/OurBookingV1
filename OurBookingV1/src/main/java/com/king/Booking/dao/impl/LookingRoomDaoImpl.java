@@ -35,8 +35,7 @@ public class LookingRoomDaoImpl {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-	System.out.println(n);
-	System.out.println(returnComment.getCommentWord());
+
 		return returnComment;
 	}
 }

@@ -6,6 +6,9 @@
     <link href="../resources/css/looking_room.css" rel="stylesheet" type="text/css">
     <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+    
     <script src="../resources/js/NavBar.js"></script>
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -332,7 +335,7 @@
             </div>
 
             <div class="childnum">
-                <span>两位儿童</span>
+                <span>2位儿童</span>
                 <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
                     <use xlink:href="#icon-iconfonticonfonti2"></use>
                 </svg>
@@ -347,7 +350,7 @@
 
 
             <div class="roomnum">
-                <span>两间房</span>
+                <span>2间房</span>
                 <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
                     <use xlink:href="#icon-iconfonticonfonti2"></use>
                 </svg>
@@ -420,7 +423,7 @@
         <a  class="a3">订前必读</a>
         <a  class="a4">预定须知</a>
         <a  class="a5">22131用户点评</a>
-        <hr style="position:absolute;top 40px;">
+
         <div class="header">
             <span class="span1">广州白云宾馆</span>
             <span class="span2"><% 
@@ -522,18 +525,7 @@
         </div>
         <div class="text">
             <h3>广州精选推荐之一</h3>
-            <span class="hotelPer"><% 
-        String hotelPer=null;
-    	for(Cookie cookie:cookies){
-    	
-    	 if (cookie.getName().equals("hotelPer")) {
-             //使用URLDecode.decode()解码,防止中文乱码
-            hotelPer = URLDecoder.decode(cookie.getValue(), "utf-8");
-      
-         }    
-        }
-         	out.print(hotelPer);
-         %></span>
+            <span class="hotelPer" style="color:black;letter-spacing:2px; font-size: 18px"> <%=session.getValue("hotelPer")%></span>
                  
                     </div>
 
@@ -551,6 +543,31 @@
                 </svg>
             </div>
         </div>
+        
+        
+              <div class="order"><table border="1" bordercolor="#4a98d7" width="1058px" >
+            <tr style="background-color: #e8eff9">
+                <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
+            </tr>
+            <tr  style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">预定</td>
+            </tr>
+            <tr style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">预定</td>
+            </tr>
+            <tr style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">预定</td>
+            </tr>
+            <tr style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">预定</td>
+            </tr>
+            <tr style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">预定</td>
+            </tr>
+        </table></div>
+        
+        
+        
 
         <div class="connectfoot">
             <h3>还没有找到合适的住宿?</h3>

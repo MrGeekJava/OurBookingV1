@@ -1138,8 +1138,8 @@ $(document).ready(function(){
                         $(".CommentFoot").fadeOut("slow");
                         $(".CommentFootCopy>.span1").text(comment.userNickName);
                         $(".CommentFootCopy>.span2").text(comment.commentWord);
-                        $(".CommentFoot").animate({top:'1700px'});
-                        $(".CommentFootCopy").fadeIn("slow").animate({top:'1600px'});
+                        $(".CommentFoot").animate({top:'1780px'});
+                        $(".CommentFootCopy").fadeIn("slow").animate({top:'1770px'});
                    }
                    if(n%2==0){
            
@@ -1147,8 +1147,8 @@ $(document).ready(function(){
                        $(".CommentFootCopy").fadeOut("slow");
                   	   $(".CommentFoot>.span1").text(comment.userNickName);                       
                        $(".CommentFoot>.span2").text(comment.commentWord);
-                       $(".CommentFoot").fadeIn("slow").animate({top:'1600px'});
-                       $(".CommentFootCopy").animate({top:'1700px'});
+                       $(".CommentFoot").fadeIn("slow").animate({top:'1770px'});
+                       $(".CommentFootCopy").animate({top:'1780px'});
                    }
                    
                 }
@@ -1157,7 +1157,64 @@ $(document).ready(function(){
         );
     }
     
+  
     
+    
+  //设置订单单元格的内容
+    orderInit();
+    function orderInit(){
+        setInterval(function(){
+            var datein = $(".indate>.datein").attr("placeholder");
+            for(var i = 1;i<6;i++){
+                $(".order").find("tr").eq(i).find("td").eq(5).text(datein);
+            }
+            var dateout = $(".outdate>.dateout").attr("placeholder");
+            for(var i = 1;i<6;i++){
+                $(".order").find("tr").eq(i).find("td").eq(6).text(dateout);
+            }
+            var adultnum = $(".adultnum span").eq(0).text();
+            var childnum = $(".childnum span").eq(0).text();
+            for(var i = 1;i<6;i++){
+                $(".order").find("tr").eq(i).find("td").eq(7).text(adultnum+"和"+childnum);
+            }
+            var roomnum = $(".roomnum span").eq(0).text();
+            for(var i = 1;i<6;i++){
+                $(".order").find("tr").eq(i).find("td").eq(4).text(roomnum);
+            }
+       
+            $(".order").find("tr").eq(1).find("td").eq(0).text($.cookie("roomType1"));
+            $(".order").find("tr").eq(2).find("td").eq(0).text($.cookie("roomType2"));
+            $(".order").find("tr").eq(3).find("td").eq(0).text($.cookie("roomType3"));
+            $(".order").find("tr").eq(4).find("td").eq(0).text($.cookie("roomType4"));
+            $(".order").find("tr").eq(5).find("td").eq(0).text( $.cookie("roomType5"));
+            
+            $(".order").find("tr").eq(1).find("td").eq(1).text( $.cookie("surplusRoomNumber1"));
+            $(".order").find("tr").eq(2).find("td").eq(1).text( $.cookie("surplusRoomNumber2"));
+            $(".order").find("tr").eq(3).find("td").eq(1).text( $.cookie("surplusRoomNumber3"));
+            $(".order").find("tr").eq(4).find("td").eq(1).text( $.cookie("surplusRoomNumber4"));
+            $(".order").find("tr").eq(5).find("td").eq(1).text( $.cookie("surplusRoomNumber5"));
+            
+            
+            
+            $(".order").find("tr").eq(1).find("td").eq(2).text( $.cookie("roomPrice1"));
+            $(".order").find("tr").eq(2).find("td").eq(2).text( $.cookie("roomPrice2"));
+            $(".order").find("tr").eq(3).find("td").eq(2).text( $.cookie("roomPrice3"));
+            $(".order").find("tr").eq(4).find("td").eq(2).text( $.cookie("roomPrice4"));
+            $(".order").find("tr").eq(5).find("td").eq(2).text( $.cookie("roomPrice5"));
+
+            $(".order").find("tr").eq(1).find("td").eq(3).text( Number($.cookie("roomPrice1"))*Number(roomnum.split("间")[0]));
+            $(".order").find("tr").eq(2).find("td").eq(3).text( $.cookie("roomPrice2")*roomnum.split("间")[0]);
+            $(".order").find("tr").eq(3).find("td").eq(3).text( $.cookie("roomPrice3")*roomnum.split("间")[0]);
+            $(".order").find("tr").eq(4).find("td").eq(3).text( $.cookie("roomPrice4")*roomnum.split("间")[0]);
+            $(".order").find("tr").eq(5).find("td").eq(3).text( $.cookie("roomPrice5")*roomnum.split("间")[0]);
+            
+           
+
+        },2000)
+
+    }
+    
+ 
     
 
 });
