@@ -21,20 +21,13 @@ public class LookingroomInitServlet  extends HttpServlet{
 	    public LookingroomInitServlet() {
 	    
 	        super();
-	        // TODO Auto-generated constructor stub
 	    }
 
-		/**
-		 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-		 */
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			this.doPost(request, response);
 			
 			}
 
-		/**
-		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-		 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -66,7 +59,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			//response.addCookie(c6);
 			
 			
-			//获得酒店房间信息
+			//鑾峰彇鎴块棿淇℃伅
 			List<Room> rooms = new ArrayList<Room>();
 			rooms = lris.getRoomMessage();
 			int n = 0;
