@@ -551,24 +551,48 @@
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
             </tr>
             <tr  style="background-color: #EFFFFF">
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>     
                  预定 </td>
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer" >     
+                  </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >   
                    预定 </td>
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">   
+                  </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                   预定 </td>
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
+                    </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                    预定  </td>
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
+                    </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                 预定 </td>
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
+                </td>
+
             </tr>
         </table>
         
