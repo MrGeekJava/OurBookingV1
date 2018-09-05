@@ -227,6 +227,9 @@
     margin-top: 10px; ;
     font-weight: bold;
 }
+.fontweight{
+	margin-left: 10px; 
+}
 .container_measure_p1,.container_measure_p2{
     font-size: 13px;
     color: #383838;
@@ -557,8 +560,8 @@
     font-size: 13px;
 }
 .order_ifm_p2{
-    display: block;
-    width: 129px;
+  	display: block;
+    width: 145px;
     height: 27px;
     line-height: 27px;
     margin-top: 5px;

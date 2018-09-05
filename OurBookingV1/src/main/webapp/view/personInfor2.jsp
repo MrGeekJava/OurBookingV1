@@ -311,11 +311,11 @@
             <div class="container_order_ifm_right">
                 <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
 
-                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i>海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</p>
+                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
-                <p class="order_ifm_p2">海口最热门住宿之一</p>
+                <p class="order_ifm_p2"><i class="order_adress">海口</i> &nbsp;最热门住宿之一</p>
 
-                <p class="order_ifm_p3">2018年8月12日下午6:00前可免费取消</p>
+                <p class="order_ifm_p3"><i class="order_yearsindate">2018年8月12日</i>下午6:00前可免费取消</p>
             </div>
         </div>
 

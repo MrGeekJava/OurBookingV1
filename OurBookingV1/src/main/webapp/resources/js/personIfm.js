@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function () {
-	/*
+	/**/
 	//获取酒店信息，显示到当前页面
 //	$(".flow_down_userName").text($.cookie("UserName"));
 	$(".order_details_in_time").text($.cookie("datein"));//入住日期
@@ -12,8 +12,8 @@ $(document).ready(function () {
 	var inday = $.cookie("datein");
 	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
 	$(".order_allday").text(allday+"天");	//订单总天数
-//	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
-//	$(".order_allprice").text($.cookie("orderprices"));//订单总金额	
+	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
+	$(".order_allprice").text($.cookie("orderprices"));//订单总金额	
 
 	$(".order_yearsindate").text(inday);//年月日
 	$(".order_hotel_adress").text($.cookie("hotelAdress"));	//酒店地址
@@ -26,7 +26,7 @@ $(document).ready(function () {
 	var orderPeopelNum = $.cookie("adultnum")+$.cookie("chilenum");
 	//所有客人
 	$(".container_price_people").text(orderPeopelNum);	
-	*/
+	
 
     $('.order_ifm_p1').hover(function () {
         $('.tips').fadeIn();
