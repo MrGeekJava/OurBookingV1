@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.king.Booking.entity.CommentView;
 import com.king.Booking.entity.Hotel;
 import com.king.Booking.entity.Room;
 import com.king.Booking.service.impl.LookingRoomInitServiceImpl;
@@ -34,6 +35,8 @@ public class LookingroomInitServlet  extends HttpServlet{
 			Hotel hotel = new Hotel();
 			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
 			hotel = lris.getHotelMessage();
+			Cookie c6;
+			Cookie c7;
 			
 			request.getSession().setAttribute("hotelPer", hotel.getHotelPer());
 			
@@ -106,6 +109,70 @@ public class LookingroomInitServlet  extends HttpServlet{
 				response.addCookie(c3);				
 				
 			}
+			
+			//获取评论信息
+			int pageNum=2; //一页显示的条数
+			int page=1;//当前的页数
+			List<CommentView> cv = new ArrayList<CommentView>();
+			cv = lris.getComment(pageNum,page);
+			int k=0;
+			for(CommentView comment:cv) {
+				k++;
+				if(k == 1) {
+					String nickName1 = URLEncoder.encode(comment.getUserNickName(),"utf-8");		
+					String userCountry1 = URLEncoder.encode(comment.getUserCountry(),"utf-8");	
+					String rating1 = URLEncoder.encode(String.valueOf(comment.getPositionRating()),"utf-8");
+					String commentDate1 = URLEncoder.encode(comment.getCommentDate(),"utf-8");		
+					String commentWord1 = URLEncoder.encode(comment.getCommentWord(),"utf-8");
+					String inDate1 = URLEncoder.encode(comment.getInDate(),"utf-8");	
+					String likeNumber1 = URLEncoder.encode(String.valueOf(comment.getLikeNumber()),"utf-8");		
+
+					c1 = new Cookie("nickName",nickName1);
+					c2 = new Cookie("userCountry",userCountry1);
+					c3 = new Cookie("rating",rating1);
+					c4 = new Cookie("commentDate",commentDate1);
+					c5 = new Cookie("commentWord",commentWord1);
+					c6 = new Cookie("inDate",inDate1);
+					c7 = new Cookie("likeNumber",likeNumber1);
+					
+					response.addCookie(c1);
+					response.addCookie(c2);
+					response.addCookie(c3);
+					response.addCookie(c4);
+					response.addCookie(c5);
+					response.addCookie(c6);		
+					response.addCookie(c7);
+				}
+				
+				if(k == 2) {
+					String nickName2 = URLEncoder.encode(comment.getUserNickName(),"utf-8");		
+					String userCountry2 = URLEncoder.encode(comment.getUserCountry(),"utf-8");	
+					String rating2 = URLEncoder.encode(String.valueOf(comment.getPositionRating()),"utf-8");
+					String commentDate2 = URLEncoder.encode(comment.getCommentDate(),"utf-8");		
+					String commentWord2 = URLEncoder.encode(comment.getCommentWord(),"utf-8");
+					String inDate2 = URLEncoder.encode(comment.getInDate(),"utf-8");	
+					String likeNumber2 = URLEncoder.encode(String.valueOf(comment.getLikeNumber()),"utf-8");		
+
+					c1 = new Cookie("nickName",nickName2);
+					c2 = new Cookie("userCountry",userCountry2);
+					c3 = new Cookie("rating",rating2);
+					c4 = new Cookie("commentDate",commentDate2);
+					c5 = new Cookie("commentWord",commentWord2);
+					c6 = new Cookie("inDate",inDate2);
+					c7 = new Cookie("likeNumber",likeNumber2);
+					
+					response.addCookie(c1);
+					response.addCookie(c2);
+					response.addCookie(c3);
+					response.addCookie(c4);
+					response.addCookie(c5);
+					response.addCookie(c6);		
+					response.addCookie(c7);
+				}
+					
+
+			}
+					
 			
 			response.sendRedirect("view/looking_room.jsp");
 			

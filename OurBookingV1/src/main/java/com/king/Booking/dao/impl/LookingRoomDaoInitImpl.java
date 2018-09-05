@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import com.king.Booking.entity.CommentView;
 import com.king.Booking.entity.Hotel;
 import com.king.Booking.entity.Room;
 import com.king.Booking.util.DataSourceUtil;
@@ -57,6 +58,34 @@ public class LookingRoomDaoInitImpl {
 			e1.printStackTrace();
 		}
 			return roomQuery;
+	}
+	
+	
+	//获取评论信息
+	public List<CommentView> getCommentView(int pageNum,int page) {
+		QueryRunner runner = new QueryRunner();
+		Connection conn;
+		List<CommentView> commentQuery = new ArrayList<CommentView>();
+		List<CommentView> returncommentQuery = new ArrayList<CommentView>();
+		
+		conn = DataSourceUtil.getConnection();
+		
+		String sql = "select * from view_rightComment";
+	
+		try {
+			commentQuery = runner.query(conn, sql,new BeanListHandler<CommentView>(CommentView.class));
+		} catch (SQLException e) {
+		}
+		int n=0;
+		for(CommentView cv: commentQuery) {
+			n++;
+			if(n<pageNum*page&&n>(pageNum*page-1)){
+				returncommentQuery.add(cv);
+			}
+		}
+		
+		
+		return returncommentQuery;
 	}
 	
 	
