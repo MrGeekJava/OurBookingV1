@@ -1417,9 +1417,13 @@ ul{
 }
 
 
-
-
-.order :hover{
-	background-color: #0AB21B
+td{
 	cursor: pointer
+	
+}
+
+td:hover{
+	
+	background-color: #0AB21B;
+	
 }

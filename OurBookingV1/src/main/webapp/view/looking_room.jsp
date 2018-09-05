@@ -555,16 +555,14 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>     
                  预定 </td>
 
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer" >     
-                  </td>
+                
 
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >   
                    预定 </td>
 
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">   
-                  </td>
+             
 
             </tr>
             <tr style="background-color: #EFFFFF">
@@ -572,8 +570,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                   预定 </td>
 
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                    </td>
+               
 
             </tr>
             <tr style="background-color: #EFFFFF">
@@ -581,8 +578,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                    预定  </td>
 
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                    </td>
+              
 
             </tr>
             <tr style="background-color: #EFFFFF">
@@ -590,8 +586,7 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                 预定 </td>
 
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                </td>
+               
 
             </tr>
         </table>
