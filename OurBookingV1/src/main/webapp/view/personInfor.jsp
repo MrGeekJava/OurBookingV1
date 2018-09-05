@@ -7,10 +7,8 @@
     <meta charset="UTF-8">
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
     <title>Booking.com：个人信息</title>
-
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
-    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
-    
+    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>    
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link rel="stylesheet" href="../resources/css/personIfm.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -224,7 +222,7 @@
         <div class="container_measure_box">
             <div class="container_measure">客房无障碍设施</div>
             <div class="container_measure_down">
-                <span class="order_details_in_day fontweight">（获取订单床房类型）</span>
+                <span class="order_details_in_day fontweight order_room_type">（获取订单床房类型）</span>
 
                 <p class="container_measure_p1">住宿尚未标注可提供的无障碍设施。请直接联系</p>
 

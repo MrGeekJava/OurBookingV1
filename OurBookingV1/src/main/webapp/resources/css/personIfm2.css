@@ -177,9 +177,11 @@
 }
 
 .order_details_in_time,.order_details_out_time,.order_details_in_day{
-    font-size: 12px;
+    font-size: 16px;
     display: inline;
     line-height: 20px;
+     color: red;
+    font-weight: bold;
 }
 .order_details_down{
     width: 298px;
@@ -246,7 +248,7 @@
     padding: 10px;
 }
 .container_price_left{
-    width: 85px;
+    width: 130px;
     height: 46px;
     /*border: 1px solid red;*/
     float: left;
@@ -315,11 +317,11 @@
     width: 298px;
 
 }
-.container_cancle_fee_span1,.container_cancle_fee_span2{
+.container_cancle_fee_span1{
     display: inline-block;
     float: left;
     height: 20px;
-    width: 110px;
+    width: 220px;
     color: #0AB21B;
     font-size: 14px;
     text-align: left;
@@ -330,11 +332,11 @@
 .container_cancle_fee_span1{
     padding-left: 10px;
 }
-.container_cancle_fee_span3,.container_cancle_fee_span4{
+.container_cancle_fee_span3{
     display: inline-block;
     float: left;
     height: 20px;
-    width: 110px;
+    width: 220px;
     color: #383838;
     font-size: 14px;
     text-align: left;
@@ -344,9 +346,7 @@
 .container_cancle_fee_span3{
     padding-left: 10px;
 }
-.container_cancle_fee_span4{
-    width: 20px;
-}
+
 .container_cancle_fee_span5{
     display: inline-block;
     height: 20px;
@@ -485,7 +485,7 @@
 /*.container_order_ifm_img:hover .modal{*/
 /*display: block;*/
 /*}*/
-/*ÉèÖÃ±³¾°ÑÕÉ«*/
+/*ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½É«*/
 .modal,.modal2,.modal3,.modal4,.modal5 {
     display: none;
     position: absolute;
@@ -494,7 +494,7 @@
     /*top: 50px;*/
     width: 437px;
     height: 337px;
-    /*overflow: auto;  ÏÔÊ¾Ð§¹ûÓÐÏÂÀ­  */
+    /*overflow: auto;  ï¿½ï¿½Ê¾Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  */
     background-color: #0B2141;
 }
 
@@ -695,6 +695,15 @@
     font-weight: 600;
     font-size: 14px;
 }
+
+.get_user_Name,.get_user_email{
+	 padding-left: 10px;
+	 font-size:16px;
+	 color:red;
+	 font-weight:bold;
+	 padding-left: 2px;
+	 
+}
 .input_ifm_up> p{
     display: inline-block;
     font-weight: bold;
@@ -714,7 +723,7 @@
     font-size: 14px;
     font-weight: 600;
 }
-.input_ifm_country>p{
+.input_ifm_tel>p{
     display: inline-block;
     font-weight: bold;
     padding-left: 3px;
@@ -754,7 +763,7 @@
     top: 0;
     left: 0;
     width: 20px;
-    height: 32px;
+    height: 33px;
     z-index: 1;
     font-size: 12px;
     border: 2px solid #077812;

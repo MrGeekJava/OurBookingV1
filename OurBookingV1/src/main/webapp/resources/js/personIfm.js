@@ -2,9 +2,9 @@
  * Created by Nier on 2018/8/16.
  */
 
-
-
 $(document).ready(function () {
+	/*
+	//获取酒店信息，显示到当前页面
 //	$(".flow_down_userName").text($.cookie("UserName"));
 	$(".order_details_in_time").text($.cookie("datein"));//入住日期
 	$(".order_details_out_time").text($.cookie("dateout"));//退房日期
@@ -12,17 +12,21 @@ $(document).ready(function () {
 	var inday = $.cookie("datein");
 	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
 	$(".order_allday").text(allday+"天");	//订单总天数
+//	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
+//	$(".order_allprice").text($.cookie("orderprices"));//订单总金额	
+
 	$(".order_yearsindate").text(inday);//年月日
 	$(".order_hotel_adress").text($.cookie("hotelAdress"));	//酒店地址
 	var order_adress = $.cookie("hotelAdress").split(",")[0];
 	$(".order_adress").text(order_adress);//酒店地址前缀，如广州
+	
 	var monthday=inday.split("年")[1];
 	//月日
 	$(".order_indate").text(monthday);
 	var orderPeopelNum = $.cookie("adultnum")+$.cookie("chilenum");
 	//所有客人
 	$(".container_price_people").text(orderPeopelNum);	
-	
+	*/
 
     $('.order_ifm_p1').hover(function () {
         $('.tips').fadeIn();
@@ -240,12 +244,17 @@ $(document).ready(function(){
         var inpvalue2 = $(".input_ifm_right_inp").val();
 	    var inpvalue3 = $(".input_ifm_inp_email2").val();
         var inpvalue4 = $(".input_ifm_inp_email").val();
-        if(inpvalue4!=null&&inpvalue!=null){
-        	
+        if(inpvalue3==inpvalue4&&inpvalue!=""){
+        	 //创建表单的cookie
+//    		alert(inpvalue4);
+        	var userName = inpvalue+" "+inpvalue2;
+			  $.cookie("Order_User_Name",userName);
+			  $.cookie("Order_User_Email",inpvalue4);       	
         	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
 
         }else{
-//        	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
+//    		alert("c");
+
         	 $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
              $(".input_ifm_centre_inp").css("border-color","red");
 //        	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
@@ -255,6 +264,8 @@ $(document).ready(function(){
              $(".input_ifm_inp_email2").css("border-color","red");
         }
 	});
+	
+
 });
 
 
