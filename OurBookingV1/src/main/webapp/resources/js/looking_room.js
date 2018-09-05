@@ -1223,7 +1223,7 @@ $(document).ready(function(){
 
     }
     
- 
+ //订单监听事件
     
     $(".order").find("td").click(function(){	
     	for(var i=1;i<6;i++){
