@@ -240,16 +240,16 @@ $(document).ready(function(){
         var inpvalue2 = $(".input_ifm_right_inp").val();
 	    var inpvalue3 = $(".input_ifm_inp_email2").val();
         var inpvalue4 = $(".input_ifm_inp_email").val();
-        if(inpvalue4=null){
+        if(inpvalue4!=null&&inpvalue!=null){
+        	
         	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
-//    	$(".order_information_next2>a").href="personInfor2.jsp";
 
         }else{
-        	$(".order_information_next2>a").href="http://localhost:8080/OurBookingV1/view/personInfor.jsp";
+//        	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
         	 $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
              $(".input_ifm_centre_inp").css("border-color","red");
-        	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
-             $(".input_ifm_right_inp").css("border-color","red");        	
+//        	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
+//             $(".input_ifm_right_inp").css("border-color","red");        	
         	 $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
              $(".input_ifm_inp_email").css("border-color","red");
              $(".input_ifm_inp_email2").css("border-color","red");

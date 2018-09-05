@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
+    <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
 
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
     <link href="../resources/css/index_container.css" rel="stylesheet">
     <link href="../resources/css/PersonalCenter.css" rel="stylesheet">
+    <link href="../resources/css/searchCard.css" rel="stylesheet">
     <link href="../resources/res/icon/PersonalCenter/iconfont.css" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
 
@@ -217,33 +219,155 @@
             </div>
         </div>
 
-        <div class="SelectHotelModel">
-            <p class="SHM-head">缤纷四季优惠搜不停</p>
-            <div class="SHM-body">
-                <form action="" method="POST">
-                    <p>目的地、住宿名称或地址：</p>
-                    <input type="text" name="destination" placeholder="例如：城市、地区或特定酒店...">
-                    <p>入住日期</p>
-                    <a href="javascript:void(0)"><div class="iconfont icon-rili"></div><p id="liveTime">入住日期</p><div class="iconfont icon-xiasanjiao"></div></a>
-                    <p>退房日期</p>
-                    <a href="javascript:void(0)"><div class="iconfont icon-rili"></div><p id="leaveTime">退房日期</p><div class="iconfont icon-xiasanjiao"></div></a>
-                    <div class="tripType">
-                        <p>出行类别:</p>
-                        <input id="freedom1" type="radio" name="tripType"> <label for="freedom1">出差</label>
-                        <input id="freedom" type="radio" name="tripType"> <label for="freedom">自由行</label>
-                        <i class="iconfont icon-icon_whao"></i>
-                    </div>
-                    <div class="roomType">
-                        <p>客房</p>
-                        <select></select>
-                        <p>成人</p>
-                        <select></select>
-                        <p>儿童</p>
-                        <select></select>
-                    </div>
-                    <input type="submit" value="搜索">
-                </form>
-            </div>
+        <div class="leftcontainer">
+	        <div class="three">
+	            <div class="header">特价搜不停</div>
+	            <span class="span1">目的地/住宿名称:</span>
+	            <input type="text" class="text1"  placeholder="广州">
+	            <span class="span2">入住日期:</span>
+	
+	            <div class="indate">
+	                <svg class="icon icon-rili" aria-hidden="true">
+	                    <use xlink:href="#icon-rili"></use>
+	                </svg>
+	                <input class="datein" type="text"  placeholder="入住日期">
+	                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+	                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+	                </svg>
+	            </div>
+	            <!--选入住的日期-->
+	            <div class="calenderin">
+	                <div class="header">入住日期
+	                    <svg class="icon icon-cha2" aria-hidden="true">
+	                        <use xlink:href="#icon-cha2"></use>
+	                    </svg>
+	                </div>
+	                <div class="cut"></div>
+	                <div class="bodyleft">
+	                    <h3></h3>
+	                    <div class="pre"><</div>
+	                    <ul>
+	                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                    </ul>
+	                </div>
+	                <div class="bodyright">
+	                    <h3></h3>
+	                    <div class="next">></div>
+	                    <ul>
+	                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                    </ul>
+	                </div>
+	            </div>
+	
+	            <span class="span3">退房日期:</span>
+	            <div class="outdate">
+	                <svg class="icon icon-rili" aria-hidden="true">
+	                    <use xlink:href="#icon-rili"></use>
+	                </svg>
+	                <input class="dateout" type="text"  placeholder="退房日期">
+	                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+	                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+	                </svg>
+	            </div>
+	
+	            <div class="calenderout">
+	                <div class="header">退房日期
+	                    <svg class="icon icon-cha2" aria-hidden="true">
+	                        <use xlink:href="#icon-cha2"></use>
+	                    </svg>
+	                </div>
+	                <div class="cut"></div>
+	                <div class="bodyleft">
+	                    <h3></h3>
+	                    <div class="pre"><</div>
+	                    <ul>
+	                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                    </ul>
+	                </div>
+	                <div class="bodyright">
+	                    <h3></h3>
+	                    <div class="next">></div>
+	                    <ul>
+	                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	                    </ul>
+	                </div>
+	            </div>
+	
+	            <div class="adultnum">
+	                <span>2位成人</span>
+	                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+	                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+	                </svg>
+	            </div>
+	
+	            <div class="adultnumchoose">
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	            </div>
+	
+	            <div class="childnum">
+	                <span>两位儿童</span>
+	                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+	                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+	                </svg>
+	            </div>
+	            <div class="childnumchoose">
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	            </div>
+	
+	            <div class="roomnum">
+	                <span>两间房</span>
+	                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+	                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+	                </svg>
+	            </div>
+	
+	            <div class="roomnumchoose">
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	                <li></li><li></li><li></li><li></li><li></li><li></li>
+	            </div>
+	
+	            <input type="checkbox" class="checkbox1"/>
+	            <span class="span4">我是出差</span>
+	            <svg class="icon icon-wenhao-fill" aria-hidden="true">
+	                <use xlink:href="#icon-wenhao-fill"></use>
+	            </svg>
+	            <button>搜特价</button>
+	        </div>
         </div>
     </div>
         <div class="PC-right">
@@ -685,6 +809,7 @@
     </div>
 </div>
 
+<script src="../resources/js/searchCard.js"></script>
 <script src="../resources/js/PersonalCenter.js"></script>
 <script src="../resources/js/NavBar.js"></script>
 <script src="../resources/js/index_container.js"></script>
