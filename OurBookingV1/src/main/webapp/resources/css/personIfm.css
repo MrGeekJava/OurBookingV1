@@ -177,10 +177,13 @@
 }
 
 .order_details_in_time,.order_details_out_time,.order_details_in_day{
-    font-size: 12px;
-    display: inline;
+    font-size: 16px;
+    display: inline;  
     line-height: 20px;
-}
+    color: red;
+    font-weight: bold;
+    }
+    
 .order_details_down{
     width: 298px;
     height: 76px;
@@ -246,7 +249,7 @@
     padding: 10px;
 }
 .container_price_left{
-    width: 85px;
+    width: 130px;
     height: 46px;
     /*border: 1px solid red;*/
     float: left;
@@ -315,11 +318,12 @@
     width: 298px;
 
 }
-.container_cancle_fee_span1,.container_cancle_fee_span2{
+
+.container_cancle_fee_span1{
     display: inline-block;
     float: left;
     height: 20px;
-    width: 110px;
+    width: 220px;
     color: #0AB21B;
     font-size: 14px;
     text-align: left;
@@ -330,11 +334,11 @@
 .container_cancle_fee_span1{
     padding-left: 10px;
 }
-.container_cancle_fee_span3,.container_cancle_fee_span4{
+.container_cancle_fee_span3{
     display: inline-block;
     float: left;
     height: 20px;
-    width: 110px;
+    width: 220px;
     color: #383838;
     font-size: 14px;
     text-align: left;
@@ -558,7 +562,7 @@
 }
 .order_ifm_p2{
     display: block;
-    width: 129px;
+    width: 145px;
     height: 27px;
     line-height: 27px;
     margin-top: 5px;
