@@ -111,7 +111,7 @@
         	<servlet-name>PersonInfor2Servlet</servlet-name>
         	<url-pattern>/PersonInfor2Servlet</url-pattern>
         </servlet-mapping>
-        <servlet-mapping>
+        <servlet-mapping> 
         	<servlet-name>PersonInforServlet</servlet-name>
         	<url-pattern>/PersonInforServlet</url-pattern>
         </servlet-mapping>
