@@ -1225,9 +1225,32 @@ $(document).ready(function(){
     
  
     
-    $(".order").find("tr").eq(1).find("td").eq(8).click(function(){
-    	alert("ok");
+    $(".order").find("td").click(function(){	
+    	for(var i=1;i<6;i++){
+    		if($(".order").find("tr").eq(i).find("td").eq(8).css("background-color")=="rgb(10, 178, 27)"){
+    			var orderRoomType = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderSurplusRoomNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderPrice = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderprices = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderRoomnum = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderRoomin = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderRoomout = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			var orderNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
+    			
+    			  $.cookie("orderRoomType",orderRoomType);
+    			  $.cookie("orderSurplusRoomNumber",orderSurplusRoomNumber);
+    			  $.cookie("orderPrice",orderPrice);
+    			  $.cookie("orderprices",orderprices);
+    			  $.cookie("orderRoomnum",orderRoomnum);
+    			  $.cookie("orderRoomin",orderRoomin);
+    			  $.cookie("orderRoomout",orderRoomout);
+    			  $.cookie("orderNumber",orderNumber);
+    			  location.href = "jumptolooking.jsp"
+    		}
+    	}
     });
+    
+  
     
 
 });
