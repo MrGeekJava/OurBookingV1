@@ -1223,14 +1223,14 @@ ul{
     left: -280px;
 }
 
-.order td /*ÉèÖÃ±í¸ñÎÄ×Ö×óÓÒºÍÉÏÏÂ¾ÓÖÐ¶ÔÆë*/
+.order td /*è®¾ç½®è¡¨æ ¼æ–‡å­—å·¦å³å’Œä¸Šä¸‹å±…ä¸­å¯¹é½*/
 {
     vertical-align: middle;
     text-align: center;
     color: black;
 }
 
-.order th /*ÉèÖÃ±í¸ñÎÄ×Ö×óÓÒºÍÉÏÏÂ¾ÓÖÐ¶ÔÆë*/
+.order th /*è®¾ç½®è¡¨æ ¼æ–‡å­—å·¦å³å’Œä¸Šä¸‹å±…ä¸­å¯¹é½*/
 {
     color: #0896FF;
 }
@@ -1242,7 +1242,7 @@ ul{
     position: absolute;
     border-bottom: solid 1px #4a98d7;
     border-top: solid 1px #4a98d7;
-    top: 1570px;
+    top: 1915px;
     left: -280px;
     text-align: center;
 }
@@ -1284,7 +1284,7 @@ ul{
     background-color: #e8eff9;
     position: absolute;
     left: -285px;
-    top: 1770px;
+    top: 2070px;
 }
 .CommentFoot>.span1{
     width: 870px;
@@ -1416,10 +1416,10 @@ ul{
     font-size: 25px;
 }
 
-.yuding{
-	position: relative;
-	background-color: #0AB21B;
-	text-decoration: none;
-	color: black;
-	padding: 0px;
+
+
+
+.order :hover{
+	background-color: #0AB21B
+	cursor: pointer
 }

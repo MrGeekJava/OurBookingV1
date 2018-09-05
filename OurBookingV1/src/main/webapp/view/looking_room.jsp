@@ -545,45 +545,56 @@
         </div>
         
         
-              <div class="order"><table border="1" bordercolor="#4a98d7" width="1058px" >
+             <table class="order" border="1" bordercolor="#4a98d7" width="1058px" >
+     
             <tr style="background-color: #e8eff9">
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
             </tr>
             <tr  style="background-color: #EFFFFF">
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>     
+                 预定 </td>
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer" >     
-                  <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                   href="personInfor.jsp" 
-                  style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
-                  >预定</a></button></td>
+                  </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >   
+                   预定 </td>
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">   
-                   <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                    href="personInfor.jsp"
-                     style="position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px">预定</a></button></td>
+                  </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
+                  预定 </td>
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                    <button style="background-color: #0AB21B;border: none;"><a  class="yuding" 
-                     href="personInfor.jsp" 
-                     style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
-                    >预定</a></button></td>
+                    </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
+                   预定  </td>
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                    <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                    href="personInfor.jsp"
-                     style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
-                     >预定</a></button></td>
+                    </td>
+
             </tr>
             <tr style="background-color: #EFFFFF">
+
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
+                预定 </td>
+
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
-                <button style="background-color: #0AB21B;border: none;"><a class="yuding" 
-                 href="personInfor.jsp"
-                  style="position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
-                  >预定</a></button></td>
+                </td>
+
             </tr>
-        </table></div>
+        </table>
         
         
         
