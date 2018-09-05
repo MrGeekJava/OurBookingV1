@@ -19,6 +19,7 @@
     <script src="../resources/js/searchCard.js"></script>
     <script src="//at.alicdn.com/t/font_788386_e8anycfk24u.js" ></script>
 	<script src="../resources/js/searchResult.js"></script>
+   
     <!--map-->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -588,140 +589,117 @@
         <!-- 第一个筛选栏 -->
         <div id="select1">
             <div class="nar-search">
+            <form onsubmit="return false" id="searchForm" action="#" method="post">
                 <div class="nar-search-top">
                     缩小搜索范围
+                    <button type="button" id="searchBtn">搜索酒店</button>
                 </div>
                 <ul>
                     您的预算 <!-- 固定 -->
-                    <li><label><input type="checkbox" name=""> 0元 - 390元（每晚）<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 390元 - 790元（每晚）<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 790元 - 1,100元（每晚）<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 1,100元 - 1,500元（每晚）<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 1,500元 +（每晚）<span>1234</span></label></li>
-                </ul>
-                <ul>
-                    热门筛选 <!-- 动态：为每个选项增加一个搜索量，选取搜索量最高的那几个，并在下方为其加粗 -->
-                    <li><label><input type="checkbox" name=""> 公寓<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 今日超值好价<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 免费取消<span>1234</span></label></li>
-                    <li><label><input type="checkbox" name=""> 黄浦区<span>1234</span></label></li>
-                </ul>
-                <ul>
-                    为你推荐 <!-- 动态：随机分配 -->
-                    <li><label><input type="checkbox"> 健身中心<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 按摩<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 度假村<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 民宿<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="budget" value="B:0:390"/> 0元 - 390元（每晚）<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="budget" value="B:390:790"/> 390元 - 790元（每晚）<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="budget" value="B:790:1100"/> 790元 - 1,100元（每晚）<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="budget" value="B:1100:1500"/> 1,100元 - 1,500元（每晚）<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="budget" value="B:1500"/> 1,500元 +（每晚）<span>1234</span></label></li>
                 </ul>
                 <ul>
                     住宿评级 <!-- 固定 -->
-                    <li><label><input type="checkbox" name=""> 实惠型
+                    <li><label><input type="checkbox" name="lavel" value="L:实惠型"> 实惠型
                         <i class="iconfont icon-start zan_2"></i>
                         <span>1234</span></label>
                     </li>
-                    <li><label><input type="checkbox" name=""> 经济型
-                        <i class="iconfont icon-start zan_2"></i>
-                        <i class="iconfont icon-start zan_2"></i>
-                        <span>1234</span></label>
-                    </li>
-                    <li><label><input type="checkbox" name=""> 舒适型
-                        <i class="iconfont icon-start zan_2"></i>
+                    <li><label><input type="checkbox" name="lavel" value="L:经济型"> 经济型
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <span>1234</span></label>
                     </li>
-                    <li><label><input type="checkbox" name=""> 豪华型
-                        <i class="iconfont icon-start zan_2"></i>
+                    <li><label><input type="checkbox" name="lavel" value="L:舒适型"> 舒适型
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <span>1234</span></label>
                     </li>
-                    <li><label><input type="checkbox" name=""> 尊贵型
-                        <i class="iconfont icon-start zan_2"></i>
+                    <li><label><input type="checkbox" name="lavel" value="L:豪华型"> 豪华型
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <i class="iconfont icon-start zan_2"></i>
                         <span>1234</span></label>
                     </li>
-                    <li><label><input type="checkbox" name=""> 无评级<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="lavel" value="L:尊贵型"> 尊贵型
+                        <i class="iconfont icon-start zan_2"></i>
+                        <i class="iconfont icon-start zan_2"></i>
+                        <i class="iconfont icon-start zan_2"></i>
+                        <i class="iconfont icon-start zan_2"></i>
+                        <i class="iconfont icon-start zan_2"></i>
+                        <span>1234</span></label>
+                    </li>
+                    <li><label><input type="checkbox" name="lavel" value="L:无评级"> 无评级<span>1234</span></label></li>
                 </ul>
                 <ul>
                     休闲乐活 <!-- 动态：按地区显示 -->
-                    <li><label><input type="checkbox"> 健身中心<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 按摩<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 自行车租赁（额外收费）<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 徒步活动<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 室内游泳池<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="relax" value="R:健身"> 健身中心<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="relax" value="R:按摩"> 按摩<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="relax" value="R:自行车"> 自行车租赁（额外收费）<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="relax" value="R:徒步活动"> 徒步活动<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="relax" value="R:游泳池"> 室内游泳池<span>1234</span></label></li>
                 </ul>
                 <ul>
                     住宿房量
-                    <li><label><input type="checkbox"> 只显示可预定住宿</label></li>
+                    <li><label><input type="checkbox" name="lastRoom" value="A:可预订"> 只显示可预定住宿</label></li>
                 </ul>
                 <ul>
                     折扣优惠
-                    <li><label><input type="checkbox"> 今日超值好价<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="discount" value="I:超值"> 今日超值好价<span>1234</span></label></li>
                 </ul>
                 <ul>
                     24小时前台
-                    <li><label><input type="checkbox"> 7天24小时前台<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="desk" value="E:24小时前台"> 7天24小时前台<span>1234</span></label></li>
                 </ul>
                 <ul>
                     免费取消及更多
-                    <li><label><input type="checkbox"> 免费取消<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 预定无需信用卡<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 无需预付<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="free" value="F:免费取消"> 免费取消<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="free" value="F:预定无需信用卡"> 预定无需信用卡<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="free" value="F:无需预付"> 无需预付<span>1234</span></label></li>
                 </ul>
                 <ul>
                     餐点
-                    <li><label><input type="checkbox"> 含早餐<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 包含早餐和晚餐<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 无需预付<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="cook" value="C:含早餐"> 含早餐<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="cook" value="C:含早晚"> 包含早餐和晚餐<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="cook" value="C:不含早"> 不含早餐<span>1234</span></label></li>
                 </ul>
                 <ul>
                     住处类型
-                    <li><label><input type="checkbox"> 酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 青旅<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 民宿<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 公寓<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 旅馆<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 别墅<span>1234</span></label></li>
-                    <a href="javascript:void(0)">显示所有12项</a>
-                </ul>
-                <ul>
-                    地标    <!-- 动态：随地区显示 -->
-                    <li><label><input type="checkbox"> 上海博物馆<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 豫园<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 新天地<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 东方明珠塔<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 上海动物园<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:酒店"> 酒店<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:青旅"> 青旅<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:民宿"> 民宿<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:公寓"> 公寓<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:旅馆"> 旅馆<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="T:别墅"> 别墅<span>1234</span></label></li>
+<!--                      <a href="javascript:void(0)">显示所有12项</a>				-->
                 </ul>
                 <ul>
                     评分
-                    <li><label><input type="checkbox"> 好极了： 9分以上<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 非常好： 8分以上<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 好： 7分以上<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 令人愉悦： 6分以上<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 尚无评分<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="rating" value="G:9"> 好极了： 9分以上<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="rating" value="G:8"> 非常好： 8分以上<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="rating" value="G:7"> 好： 7分以上<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="rating" value="G:6"> 令人愉悦： 6分以上<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="rating" value="G:5"> 尚无评分<span>1234</span></label></li>
                 </ul>
                 <ul>
-                    城市 <!-- 动态：随地区显示 -->
+                    连锁酒店 
+       <!--         <li><label><input type="checkbox"> 全季酒店<span>1234</span></label></li>			-->
+                    <li><label><input type="checkbox" name="chain" value="H:如家快捷"> 如家快捷酒店<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="chain" value="H:如家精选"> 如家精选酒店<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="chain" value="H:格林联盟"> 格林联盟<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="chain" value="H:格林豪泰"> 格林豪泰酒店<span>1234</span></label></li>
+                    <li><label><input type="checkbox" name="chain" value="H:汉庭连锁"> 汉庭连锁酒店<span>1234</span></label></li>
+       <!--         <li><label><input type="checkbox"> 海友酒店<span>1234</span></label></li>			
+                    <li><label><input type="checkbox"> 莫泰酒店<span>1234</span></label></li>		-->
+                    <li><label><input type="checkbox" name="chain" value="H:7天连锁"> 铂涛集团7天连锁酒店<span>1234</span></label></li>
+       <!--         <li><label><input type="checkbox"> 锦江之星<span>1234</span></label></li>		-->
                 </ul>
-                <ul>
-                    连锁酒店 <!-- 动态：随地区显示 -->
-                    <li><label><input type="checkbox"> 全季酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 如家快捷酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 如家精选酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 格林联盟<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 格林豪泰酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 汉庭连锁酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 海友酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 莫泰酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 铂涛集团7天连锁酒店<span>1234</span></label></li>
-                    <li><label><input type="checkbox"> 锦江之星<span>1234</span></label></li>
-                </ul>
+            </form>
             </div>
         </div>
         <!-- 第二个筛选栏 -->
@@ -734,10 +712,9 @@
                 </div>
             </div>
             <div id="hotel-sort" class="dropdown-select">
-                <a href="javascript:void(0)">热门推荐</a>
-                <a href="javascript:void(0)">价格从低到高</a>
-                <a href="javascript:void(0)">按评分和价格</a>
-                <a href="javascript:void(0)">高点评分数及数量</a>
+                <a href="javascript:void(0)" onclick=selectHotels(0)>热门推荐</a>
+                <a href="javascript:void(0)" onclick=selectHotels(1)>价格从低到高</a>
+                <a href="javascript:void(0)" onclick=selectHotels(2)>评分从高到低</a>
             </div>
 
             <!-- 酒店信息 -->
