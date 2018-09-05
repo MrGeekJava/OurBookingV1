@@ -15,7 +15,7 @@ $(document).ready(function () {
 	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
 	$(".order_allprice").text($.cookie("orderprices"));//订单总金额	
 
-	$(".order_yearsindate").text(inday);//年月日
+	$(".order_yearsindate").text(inday);//年月日 
 	$(".order_hotel_adress").text($.cookie("hotelAdress"));	//酒店地址
 	var order_adress = $.cookie("hotelAdress").split(",")[0];
 	$(".order_adress").text(order_adress);//酒店地址前缀，如广州

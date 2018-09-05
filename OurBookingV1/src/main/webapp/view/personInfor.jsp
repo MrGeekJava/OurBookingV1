@@ -321,7 +321,7 @@
         </div>
 
         <div class="container_ensure">
-            <i class="iconfont icon-iconfontright2" ></i>
+            <i class="iconfont icon-iconfontright2" ></i> 
             <p class="container_ensure_p1">担保此项预订无需任何费用。</p>
 
             <p class="container_ensure_p2">您将于入住期间付款。</p>

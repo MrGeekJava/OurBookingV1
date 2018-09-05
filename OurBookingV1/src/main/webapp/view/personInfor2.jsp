@@ -309,7 +309,7 @@
                 </div>
             </div>
             <div class="container_order_ifm_right">
-                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
+                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1> 
 
                 <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
