@@ -1225,6 +1225,10 @@ $(document).ready(function(){
     
  
     
+    $(".order").find("tr").eq(1).find("td").eq(8).click(function(){
+    	alert("ok");
+    });
+    
 
 });
 
