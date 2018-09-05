@@ -7,6 +7,7 @@
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
     <title>Booking.com：最终信息</title>
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>    
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link rel="stylesheet" href="../resources/css/personIfm2.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -14,6 +15,8 @@
     <script src="../resources/js/index_container.js"></script>
     <script src="../resources/js/NavBar.js"></script>
     <script src="../resources/js/personIfm.js"></script>
+    <script src="../resources/js/personIfm2.js"></script>
+    
 </head>
 <body>
 <div  class="tips"></div>
@@ -195,10 +198,7 @@
     <!--</div>-->
 </div>
 <div class="container">
-    <div class="container_order_details">
-        <!--<div class="order_details_idcard">-->
-            <!--无需信用卡!-->
-        <!--</div>-->
+       <div class="container_order_details">    
         <div class="order_details_box">
             <div class="order_details">订单详情</div>
             <div class="order_details_up">
@@ -209,18 +209,18 @@
                 <span class="order_details_out_time">（获取订单退房时间）</span>
 
                 <p class="order_details_p">入住总天数:</p>
-                <span class="order_details_in_day">（获取订单入住总天数）</span>
+                <span class="order_details_in_day order_allday">（获取订单入住总天数）</span>
             </div>
             <div class="order_details_down">
                 <p class="order_details_p">已选择:</p>
-                <span class="order_details_in_day">（获取订单床房类型）</span>
-                <a href="#" class="order_details_rechoose">重新选择</a>
+                <span class="order_details_in_day order_room_type">（获取订单床房类型）</span>
+                <a href="looking_room.jsp" class="order_details_rechoose">重新选择</a>
             </div>
         </div>
         <div class="container_measure_box">
             <div class="container_measure">客房无障碍设施</div>
             <div class="container_measure_down">
-                <span class="order_details_in_day fontweight">（获取订单床房类型）</span>
+                <span class="order_details_in_day fontweight order_room_type">（获取订单床房类型）</span>
 
                 <p class="container_measure_p1">住宿尚未标注可提供的无障碍设施。请直接联系</p>
 
@@ -233,7 +233,7 @@
 
                 <p class="container_price_people">(所有客人)</p>
             </div>
-            <div class="container_price">400元</div>
+            <div class="container_price"><i class="order_allprice">400</i>元</div>
         </div>
 
         <div class="container_pay_timing">
@@ -248,15 +248,9 @@
                 取消费用是多少?
             </div>
             <div class="container_cancle_fee_down">
-                <p class="container_cancle_fee_span1">8月12日下午5:59</p>
-
-                <p class="container_cancle_fee_span2">前可以免费取消</p>
-
-                <p class="container_cancle_fee_span3">8月12日下午6:00</p>
-
-                <p class="container_cancle_fee_span4">起</p>
-
-                <p class="container_cancle_fee_span5 container_price">400元</p>
+                <p class="container_cancle_fee_span1"><i class="order_indate">8月12日</i>下午5:59前可以免费取消</p>
+                <p class="container_cancle_fee_span3"><i class="order_indate">8月12日</i>下午6:00起</p>
+                <p class="container_cancle_fee_span5 container_price"><i class="order_allprice">400</i>元</p>
             </div>
         </div>
 
@@ -286,11 +280,12 @@
             </div>
             <div class="container_loc_adv_right">
                 <strong class="container_loc_adv_s">靠近热门地标</strong>
-               	 白沙门公园、Hainan University和海口世纪大桥就在附近
+                白沙门公园、Hainan University和海口世纪大桥就在附近
             </div>
         </div>
 
     </div>
+   
     <div class="container_order_ifm_box">
         <div class="container_order_ifm">
             <div class="container_order_ifm_left">
@@ -314,13 +309,13 @@
                 </div>
             </div>
             <div class="container_order_ifm_right">
-                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
+                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1> 
 
-                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i>海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</p>
+                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
-                <p class="order_ifm_p2">海口最热门住宿之一</p>
+                <p class="order_ifm_p2"><i class="order_adress">海口</i> &nbsp;最热门住宿之一</p>
 
-                <p class="order_ifm_p3">2018年8月12日下午6:00前可免费取消</p>
+                <p class="order_ifm_p3"><i class="order_yearsindate">2018年8月12日</i>下午6:00前可免费取消</p>
             </div>
         </div>
 
@@ -351,7 +346,7 @@
                 <span class="get_user_email"></span>
             </div>
             <h4 class="input_ifm_h4"><i class="iconfont icon-location"></i>请以中文或英文输入您的信息</h4>
-            <div class="input_ifm_country">国家/地区<p>*</p></div>
+            <div class="input_ifm_country">国家/地区</div>
             <select id="select_country" class="row_select">
                 <option value="0"></option>
                 <option value="China">中国</option>
@@ -376,7 +371,7 @@
                 <option value="India">印度</option>
                 <option value="Guatemala">危地马拉</option>
             </select>
-            <div class="input_ifm_tel">请填写您的电话号码</div>
+            <div class="input_ifm_tel">请填写您的电话号码<p>*</p></div>
             <div class="input_ifm_phone" >
                 <select id="select_pre_phone" class="select_pre_tel" onchange="set_Pre_tel()" >
                     <option value="0"></option>

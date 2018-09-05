@@ -8,15 +8,15 @@ $(document).ready(function () {
     var mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth();
     $("#container").css("width", mapWidth);
 
-    $("#slide-btn").click(function () {
+    $("#slide-btn").unbind('click').click(function () {
         if ($("#select2").css("display") == 'none') {
             mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - $("#select2").outerWidth() - 35;
             $("#container").animate({width: mapWidth}, 350);
-            $("#select2").animate({width: 'toggle'}, 350);
+            $("#select2").animate({width: 'show'}, 350);
             $("#slide-btn").html('<div class="iconfont icon-sanjiao-copy"></div>');
         } else {
             mapWidth = $(".Map-Container").outerWidth() - $("#select1").outerWidth() - 20;
-            $("#select2").animate({width: 'toggle'}, 350);
+            $("#select2").animate({width: 'hide'}, 350);
             $("#container").animate({width: mapWidth}, 350);
             $("#slide-btn").html('<div class="iconfont icon-sanjiao-copy-copy"></div>');
         }
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
 // 下拉筛选条件
 $(document).ready(function () {
-    $("#select3").click(function () {
+    $("#select3").unbind('click').click(function () {
         $(this).css({"box-shadow": "0px 0px 6px #0077CC"});
         $(".dropdown-select").toggle();
     });
@@ -199,7 +199,7 @@ function loadHotels(result, sortType){
 	    var infoWindow = new Array();
 	    var marker;
 	    
-	    map.centerAndZoom(hotel[x].hotelDowntown, 10);      		// 用城市名设置地图中心点和缩放级别
+	    map.centerAndZoom(hotel[x].hotelDowntown, 13);      		// 用城市名设置地图中心点和缩放级别
 	    marker = new BMap.Marker(new BMap.Point(hotel[x].longitude, hotel[x].latitude), {icon: myIcon});   // 创建标注
 	    sContent =                     //信息窗口内容
 	        '<a href="#">'+

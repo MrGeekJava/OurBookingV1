@@ -160,114 +160,6 @@ a {
     color: #8383A1;
 }
 
-.SelectHotelModel {
-    width: 290px;
-    height: auto;
-    margin: 20px auto;
-    background-color: #FEBB02;
-    border-radius: 5px;
-    padding-bottom: 6px;
-}
-
-.SHM-head {
-    display: block;
-    padding: 10px 10px;
-    font-size: 26px;
-    color: #444444;
-}
-
-.SHM-body {
-    width: 280px;
-    height: 450px;
-    background-color: #FFD2A2;
-    margin: 0 auto;
-}
-
-.SHM-body p {
-    padding-top: 16px;
-    padding-left: 10px;
-    font-size: 14px;
-    color: #444444;
-}
-
-.SHM-body input[name='destination'] {
-    display: block;
-    width: 260px;
-    height: 40px;
-    margin: 0 auto;
-    font-size: 18px;
-    border: 1px solid #0077CC;
-    border-radius: 3px;
-}
-
-#liveTime, #leaveTime {
-    box-sizing: border-box;
-    padding: 0;
-    padding-left: 30px;
-    display: block;
-    width: 260px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 auto;
-    color: #AEAEAE;
-    border: 1px solid #0077CC;
-    border-radius: 3px;
-    background-color: white;
-}
-
-.tripType {
-    width: 260px;
-    height: 40px;
-    margin: 20px auto;
-    border-radius: 3px;
-    background-color: #FFE9D1;
-}
-
-.tripType p {
-    display: inline-block;
-    padding: 0;
-    padding-left: 10px;
-    width: auto;
-    height: 40px;
-    line-height: 40px;
-    color: #444459;
-    font-weight: bold;
-}
-
-.tripType input[type=radio] {
-    display: inline-block;
-    position: relative;
-    top: 5px;
-    width: auto;
-    height: 20px;
-}
-
-.SHM-body input[type=submit] {
-    padding: 0;
-    display: block;
-    width: 90px;
-    height: 50px;
-    text-align: center;
-    border-radius: 6px;
-    margin-right: 10px;
-    font-size: 18px;
-    color: white;
-    background-color: #0077CC;
-    float: right;
-}
-
-.roomType {
-    width: 250px;
-    height: auto;
-    margin: 0 auto;
-}
-
-.roomType p {
-    display: inline-block;
-    width: 120px;
-    padding: 4px 0;
-}
-
 .PC-right {
     width: 800px;
     height: 800px;
@@ -394,22 +286,6 @@ a {
     top: -37px;
     width: auto;
     height: 20px;
-}
-
-.icon-xiasanjiao {
-    position: relative;
-    width: auto;
-    float: right;
-    top: -30px;
-    left: -20px;
-}
-
-.icon-rili {
-    position: relative;
-    width: auto;
-    float: left;
-    top: 10px;
-    left: 20px;
 }
 
 .icon-wh {
