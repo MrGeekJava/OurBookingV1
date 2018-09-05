@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.king.Booking.dao.interfaces.SearchResult;
 import com.king.Booking.entity.HotelEva;
@@ -16,7 +17,7 @@ import com.king.Booking.util.DataSourceUtil;
 public class SearchResultDaoImpl implements SearchResult {
 	
 	//通过地址（省，市在数据库查询酒店表酒店）
-	public List<HotelSearchHotelView> HotelSearchByAdress(String province, String downtown) {
+	public List<HotelSearchHotelView> HotelSearchByAdress(String province, String downtown,int currentPage,int pageSize) {
 		// TODO Auto-generated method stub
 		
 		QueryRunner runner = new QueryRunner();
@@ -25,10 +26,12 @@ public class SearchResultDaoImpl implements SearchResult {
 		List<HotelSearchHotelView> hotelSearchList = null;
 		try {
 			conn = DataSourceUtil.getConnection();
+		
 			
 			//查询数据库sql语句
-			String sql = "select * from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ?";
-			Object[] params = {province,downtown};
+			
+			String sql = "select * from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ? and limit ?,?";
+			Object[] params = {province,downtown,(currentPage-1)*pageSize,pageSize};
 			//返回的数据被封装成List<JavaBean>
 			hotelSearchList = runner.query(conn, sql,new BeanListHandler<HotelSearchHotelView>(HotelSearchHotelView.class),params);
 			
@@ -62,6 +65,25 @@ public class SearchResultDaoImpl implements SearchResult {
 		
 		return hotelEvaList;
 		
+	}
+
+	//统计通过地址查询记录的总记录数
+	public int getHotelCount(String province, String downtown) {
+		// TODO Auto-generated method stub
+
+		QueryRunner runner = new QueryRunner();
+		Connection conn = null;
+		int hotelCount = 0;
+		try {
+			conn = DataSourceUtil.getConnection();
+			String sql = "select count(*) from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ? ";
+			Object[] params = {province,downtown};
+			hotelCount = runner.query(conn,sql,new ScalarHandler(),params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hotelCount;
 	}
 
 }
