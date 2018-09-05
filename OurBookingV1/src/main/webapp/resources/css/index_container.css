@@ -34,10 +34,10 @@
     height: 20px;
     line-height: 54px;
 }
-#container_holiday .holiday_span>a:hover{
+#container_holiday .holiday_span a:hover{
     color: #FECA02;
 }
-#container_holiday .icon-ArtboardCopy{
+#hide_i{
     color: #999999;
     font-size: 14px;
     height: 16px;
@@ -46,7 +46,7 @@
     right: 20px;
     top: 20px;
 }
-#container_holiday .icon-ArtboardCopy:hover{
+#hide_i:hover{
     color: black;
     cursor: pointer;
     font-weight: bold;
@@ -103,10 +103,11 @@
 
 .fusongxian_none span,.sanya_none span,.eryuan_none span,.dali_none span,.jinghongshi_none span{
     color: white;
-    line-height: 3px;
-    text-align: center;
+    line-height: 35px;
+    /*text-align: center;*/
     font-size: 13px;
-
+    padding-left:10px;
+   
 }
 .fusongxian_none .fsx_trigon,.sanya_none .sy_trigon,.eryuan_none .ey_trigon,.dali_none .dl_trigon,.jinghongshi_none .jhs_trigon{
     position: absolute;
