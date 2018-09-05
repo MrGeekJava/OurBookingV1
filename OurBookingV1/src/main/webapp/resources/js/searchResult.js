@@ -3,7 +3,7 @@
 $(document).ready(function () {
     $(".rightBox_mapSearch").click(function () {
         $(".Map-Background").show();
-        loadMap();
+        selectHotels(0);
     });
 })
 
