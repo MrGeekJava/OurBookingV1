@@ -1241,7 +1241,7 @@ $(document).ready(function(){
     			  $.cookie("orderSurplusRoomNumber",orderSurplusRoomNumber);//订单房间剩余数量
     			  $.cookie("orderPrice",orderPrice);//单价
     			  $.cookie("orderprices",orderprices);//总价
-    			  $.cookie("orderRoomnum",orderRoomnum);//订房数量
+    			  $.cookie("orderRoomnum",orderRoomnum);//订房数量 
     			  $.cookie("orderRoomin",orderRoomin);//入住日期
     			  $.cookie("orderRoomout",orderRoomout);//退房日期
     			  $.cookie("orderNumber",orderNumber);//人数（成人+儿童）
