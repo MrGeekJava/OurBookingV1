@@ -7,16 +7,18 @@
     <title>searchResult</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/MapStyle.css">
     <link rel="stylesheet" href="../resources/css/searchCard.css">
     <link rel="stylesheet" href="../resources/css/searchResult.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
     <link href="../resources/res/icon/personifm/iconfont.css" rel="stylesheet">
     
+    <script src="../resources/js/Map.js"></script>
     <script src="../resources/js/NavBar.js"></script>
     <script src="../resources/js/index_container.js"></script>
     <script src="../resources/js/searchCard.js"></script>
     <script src="//at.alicdn.com/t/font_788386_e8anycfk24u.js" ></script>
-
+	<script src="../resources/js/searchResult.js"></script>
     <!--map-->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -816,8 +818,7 @@
 
 <%
 	String adress = request.getParameter("searchAdress");
-
-%>
+ %>
 </body>
 <script type="text/javascript" src="../resources/js/Map.js"></script>
 </html>
