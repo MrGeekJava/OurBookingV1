@@ -7,14 +7,14 @@
     <title>searchResult</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/searchCard.css">
     <link rel="stylesheet" href="../resources/css/searchResult.css">
-    <script src="//at.alicdn.com/t/font_781787_db0f5cbcgx.js" type="text/javascript"></script>
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
     <link href="../resources/res/icon/personifm/iconfont.css" rel="stylesheet">
+    
     <script src="../resources/js/NavBar.js"></script>
     <script src="../resources/js/index_container.js"></script>
-    <script src="../resources/js/searchResult.js"></script>
-    
+    <script src="../resources/js/searchCard.js"></script>
     <script src="//at.alicdn.com/t/font_788386_e8anycfk24u.js" ></script>
 
     <!--map-->
@@ -158,11 +158,6 @@
 </div>
 </div>
 
-
-
-
-
-
     <!--luozhiyuan-->
     <div class="body_container">
         <div class="nav_bar">
@@ -182,70 +177,156 @@
         <div class="leftBox">
             <div class="clear"></div>
             <div class="special_search">
-                <div class="special_search_top">
-                    <p>境内外特价搜不停</p>
-                </div>
-                <span class="span1">目的地/住宿名称:</span>
-                <input type="text" class="text1"  placeholder="澄江县">
-
-                <span class="span1">入住日期</span>
-                <div class="indate">
-
-                    <svg class="icon icon-rili" aria-hidden="true">
-                        <use xlink:href="#icon-rili"></use>
-                    </svg>
-                    <p class="text2">入住日期</p>
-                    <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
-                        <use xlink:href="#icon-iconfonticonfonti2"></use>
-                    </svg>
-                </div>
-
-                <span class="span3">退房日期:</span>
-                <div class="outdate">
-                    <svg class="icon icon-rili" aria-hidden="true">
-                        <use xlink:href="#icon-rili"></use>
-                    </svg>
-                    <p class="text2">退房日期</p>
-                    <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
-                        <use xlink:href="#icon-iconfonticonfonti2"></use>
-                    </svg>
-                </div>
-
-
-                <div class="adultnum">
-                    <span>2位成人</span>
-                    <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
-                        <use xlink:href="#icon-iconfonticonfonti2"></use>
-                    </svg>
-                </div>
-
-
-                <div class="childnum">
-                    <span>两位儿童</span>
-                    <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
-                        <use xlink:href="#icon-iconfonticonfonti2"></use>
-                    </svg>
-                </div>
-
-                <div class="roomnum">
-                    <span>两间房</span>
-                    <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
-                        <use xlink:href="#icon-iconfonticonfonti2"></use>
-                    </svg>
-                </div>
-
-
-
-                <input type="checkbox" class="checkbox1"/>
-                <span class="span4">我是出差</span>
-                <svg class="icon icon-wenhao-fill" aria-hidden="true">
-                    <use xlink:href="#icon-wenhao-fill"></use>
-                </svg>
-
-
-                <button class="search_sale">搜特价</button>
-                <div class="clear"></div>
-
+                <div class="leftcontainer">
+			        <div class="three">
+			            <div class="header">特价搜不停</div>
+			            <span class="span1">目的地/住宿名称:</span>
+			            <input type="text" class="text1"  placeholder="广州">
+			            <span class="span2">入住日期:</span>
+			
+			            <div class="indate">
+			                <svg class="icon icon-rili" aria-hidden="true">
+			                    <use xlink:href="#icon-rili"></use>
+			                </svg>
+			                <input class="datein" type="text"  placeholder="入住日期">
+			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+			                </svg>
+			            </div>
+			            <!--选入住的日期-->
+			            <div class="calenderin">
+			                <div class="header">入住日期
+			                    <svg class="icon icon-cha2" aria-hidden="true">
+			                        <use xlink:href="#icon-cha2"></use>
+			                    </svg>
+			                </div>
+			                <div class="cut"></div>
+			                <div class="bodyleft">
+			                    <h3></h3>
+			                    <div class="pre"><</div>
+			                    <ul>
+			                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                    </ul>
+			                </div>
+			                <div class="bodyright">
+			                    <h3></h3>
+			                    <div class="next">></div>
+			                    <ul>
+			                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                    </ul>
+			                </div>
+			            </div>
+			
+			            <span class="span3">退房日期:</span>
+			            <div class="outdate">
+			                <svg class="icon icon-rili" aria-hidden="true">
+			                    <use xlink:href="#icon-rili"></use>
+			                </svg>
+			                <input class="dateout" type="text"  placeholder="退房日期">
+			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+			                </svg>
+			            </div>
+			
+			            <div class="calenderout">
+			                <div class="header">退房日期
+			                    <svg class="icon icon-cha2" aria-hidden="true">
+			                        <use xlink:href="#icon-cha2"></use>
+			                    </svg>
+			                </div>
+			                <div class="cut"></div>
+			                <div class="bodyleft">
+			                    <h3></h3>
+			                    <div class="pre"><</div>
+			                    <ul>
+			                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                    </ul>
+			                </div>
+			                <div class="bodyright">
+			                    <h3></h3>
+			                    <div class="next">></div>
+			                    <ul>
+			                        <li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+			                    </ul>
+			                </div>
+			            </div>
+			
+			            <div class="adultnum">
+			                <span>2位成人</span>
+			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+			                </svg>
+			            </div>
+			
+			            <div class="adultnumchoose">
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			            </div>
+			
+			            <div class="childnum">
+			                <span>两位儿童</span>
+			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+			                </svg>
+			            </div>
+			            <div class="childnumchoose">
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			            </div>
+			
+			            <div class="roomnum">
+			                <span>两间房</span>
+			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
+			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
+			                </svg>
+			            </div>
+			
+			            <div class="roomnumchoose">
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			                <li></li><li></li><li></li><li></li><li></li><li></li>
+			            </div>
+			
+			            <input type="checkbox" class="checkbox1"/>
+			            <span class="span4">我是出差</span>
+			            <svg class="icon icon-wenhao-fill" aria-hidden="true">
+			                <use xlink:href="#icon-wenhao-fill"></use>
+			            </svg>
+			            <button>搜特价</button>
+			        </div>
+			    </div>
             </div>
             <div class="select1">
                 <div class="nar-search-top">缩小搜索范围</div>

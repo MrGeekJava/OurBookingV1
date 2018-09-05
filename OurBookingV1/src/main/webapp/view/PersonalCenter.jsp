@@ -4,15 +4,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
-    <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
+    <script src="//at.alicdn.com/t/font_788386_e8anycfk24u.js" ></script>
 
     <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/searchCard.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
     <link href="../resources/css/index_container.css" rel="stylesheet">
     <link href="../resources/css/PersonalCenter.css" rel="stylesheet">
-    <link href="../resources/css/searchCard.css" rel="stylesheet">
     <link href="../resources/res/icon/PersonalCenter/iconfont.css" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
 
@@ -32,7 +31,7 @@
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
-                    <a id="mon_tex" href="javascript:void(0)"  class="user-tex" data-title="选择您使用的货币">元</a>
+                    <a id="mon_tex" href="#"  class="user-tex" data-title="选择您使用的货币">元</a>
                     <div class="mon_box" id="mon_id_box">
                         <div class="mon_trigon"></div>
                         <h3>常用货币</h3>
@@ -368,7 +367,7 @@
 	            </svg>
 	            <button>搜特价</button>
 	        </div>
-        </div>
+	    </div>
     </div>
         <div class="PC-right">
         <div class="PCInfo">
@@ -787,7 +786,7 @@
         </div>
         <!--设置：最后的一行提示-->
         <div class="ISInfo last">
-            <span><a href="javascript:void(0)">点击此处</a>以删除您的Booking.com帐户。感谢您的使用，期待未来还能与您相见。</span>
+            <span><a href="#">点击此处</a>以删除您的Booking.com帐户。感谢您的使用，期待未来还能与您相见。</span>
         </div>
     </div>
 </div>
@@ -797,7 +796,7 @@
         <div class="CHIBody">
             <a href="#" class="closeImg">×</a>
             <div class="first_row_headImg newImg" id="img-vessel">
-                <img src="../res/images/PersonCenter/bigHead.png" />
+                <img src="../resources/res/images/PersonCenter/bigHead.png" />
             </div>
             <div class="chooseFile">
                 <h3 class="fileTitle">选择文件上传</h3>
