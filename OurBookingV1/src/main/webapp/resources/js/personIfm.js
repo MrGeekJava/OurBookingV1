@@ -1,7 +1,29 @@
 /**
  * Created by Nier on 2018/8/16.
  */
+
+
+
 $(document).ready(function () {
+//	$(".flow_down_userName").text($.cookie("UserName"));
+	$(".order_details_in_time").text($.cookie("datein"));//入住日期
+	$(".order_details_out_time").text($.cookie("dateout"));//退房日期
+	var outday =$.cookie("dateout");
+	var inday = $.cookie("datein");
+	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
+	$(".order_allday").text(allday+"天");	//订单总天数
+	$(".order_yearsindate").text(inday);//年月日
+	$(".order_hotel_adress").text($.cookie("hotelAdress"));	//酒店地址
+	var order_adress = $.cookie("hotelAdress").split(",")[0];
+	$(".order_adress").text(order_adress);//酒店地址前缀，如广州
+	var monthday=inday.split("年")[1];
+	//月日
+	$(".order_indate").text(monthday);
+	var orderPeopelNum = $.cookie("adultnum")+$.cookie("chilenum");
+	//所有客人
+	$(".container_price_people").text(orderPeopelNum);	
+	
+
     $('.order_ifm_p1').hover(function () {
         $('.tips').fadeIn();
         $('.tips').text($('.order_ifm_p1').attr('data-title'));
@@ -125,6 +147,8 @@ $(document).ready(function () {
         $('.tip3').hide();
     });
 
+  
+    
 
 //表单标签事件
     $(".input_ifm_centre_inp").blur(function () {
@@ -206,15 +230,35 @@ $(document).ready(function () {
 
     });
 
-
-
-
-
-
-
-
-
 });
+
+
+$(document).ready(function(){
+	$(".order_next").click(function(){
+//		alert("a");
+        var inpvalue = $(".input_ifm_centre_inp").val();
+        var inpvalue2 = $(".input_ifm_right_inp").val();
+	    var inpvalue3 = $(".input_ifm_inp_email2").val();
+        var inpvalue4 = $(".input_ifm_inp_email").val();
+        if(inpvalue4=null){
+        	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
+//    	$(".order_information_next2>a").href="personInfor2.jsp";
+
+        }else{
+        	$(".order_information_next2>a").href="http://localhost:8080/OurBookingV1/view/personInfor.jsp";
+        	 $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
+             $(".input_ifm_centre_inp").css("border-color","red");
+        	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
+             $(".input_ifm_right_inp").css("border-color","red");        	
+        	 $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
+             $(".input_ifm_inp_email").css("border-color","red");
+             $(".input_ifm_inp_email2").css("border-color","red");
+        }
+	});
+});
+
+
+
 
 
 function set_Pre_tel(){

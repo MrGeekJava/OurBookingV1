@@ -552,34 +552,34 @@
             <tr  style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer" >     
                   <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                   href="#" 
+                   href="personInfor.jsp" 
                   style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
                   >预定</a></button></td>
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">   
                    <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                    href="#"
+                    href="personInfor.jsp"
                      style="position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px">预定</a></button></td>
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
                     <button style="background-color: #0AB21B;border: none;"><a  class="yuding" 
-                     href="#" 
+                     href="personInfor.jsp" 
                      style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
                     >预定</a></button></td>
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
                     <button style="background-color: #0AB21B;border: none;"><a class="yuding"  
-                    href="#"
+                    href="personInfor.jsp"
                      style="	position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
                      >预定</a></button></td>
             </tr>
             <tr style="background-color: #EFFFFF">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background-color: #0AB21B;cursor: pointer">  
                 <button style="background-color: #0AB21B;border: none;"><a class="yuding" 
-                 href="#"
+                 href="personInfor.jsp"
                   style="position: relative;background-color: #0AB21B;text-decoration: none;color: black;padding: 0px"
                   >预定</a></button></td>
             </tr>

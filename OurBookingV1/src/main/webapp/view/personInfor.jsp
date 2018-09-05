@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
     <title>Booking.com：个人信息</title>
+
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+    
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link rel="stylesheet" href="../resources/css/personIfm.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -209,12 +213,12 @@
                 <span class="order_details_out_time">（获取订单退房时间）</span>
 
                 <p class="order_details_p">入住总天数:</p>
-                <span class="order_details_in_day">（获取订单入住总天数）</span>
+                <span class="order_details_in_day order_allday">（获取订单入住总天数）</span>
             </div>
             <div class="order_details_down">
                 <p class="order_details_p">已选择:</p>
-                <span class="order_details_in_day">（获取订单床房类型）</span>
-                <a href="#" class="order_details_rechoose">重新选择</a>
+                <span class="order_details_in_day order_room_type">（获取订单床房类型）</span>
+                <a href="looking_room.jsp" class="order_details_rechoose">重新选择</a>
             </div>
         </div>
         <div class="container_measure_box">
@@ -233,7 +237,7 @@
 
                 <p class="container_price_people">(所有客人)</p>
             </div>
-            <div class="container_price">400元</div>
+            <div class="container_price"><i class="order_allprice">400</i>元</div>
         </div>
 
         <div class="container_pay_timing">
@@ -248,15 +252,9 @@
                 取消费用是多少?
             </div>
             <div class="container_cancle_fee_down">
-                <p class="container_cancle_fee_span1">8月12日下午5:59</p>
-
-                <p class="container_cancle_fee_span2">前可以免费取消</p>
-
-                <p class="container_cancle_fee_span3">8月12日下午6:00</p>
-
-                <p class="container_cancle_fee_span4">起</p>
-
-                <p class="container_cancle_fee_span5 container_price">400元</p>
+                <p class="container_cancle_fee_span1"><i class="order_indate">8月12日</i>下午5:59前可以免费取消</p>
+                <p class="container_cancle_fee_span3"><i class="order_indate">8月12日</i>下午6:00起</p>
+                <p class="container_cancle_fee_span5 container_price"><i class="order_allprice">400</i>元</p>
             </div>
         </div>
 
@@ -316,11 +314,11 @@
             <div class="container_order_ifm_right">
                 <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
 
-                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i>海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</p>
+                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
-                <p class="order_ifm_p2">海口最热门住宿之一</p>
+                <p class="order_ifm_p2"><i class="order_adress">海口</i> &nbsp;最热门住宿之一</p>
 
-                <p class="order_ifm_p3">2018年8月12日下午6:00前可免费取消</p>
+                <p class="order_ifm_p3"><i class="order_yearsindate">2018年8月12日</i>下午6:00前可免费取消</p>
             </div>
         </div>
 
@@ -376,7 +374,7 @@
         
 
             <div class="order_information_box">
-                <div class="order_information_price">400元 （1晚）</div>
+                <div class="order_information_price"><i class="order_allprice">400</i>元 （1晚）</div>
                 <div class="order_information_left">
                     <h2 class="order_information_left_h2">大床房 – 比海口的多数客房宽敞</h2>
 
@@ -414,7 +412,7 @@
                     <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
                 </div>
                 <div class="order_information_next2">
-                  	<a href="../PersonInforServlet">  下一步：最终信息&#10095;</a>
+                  	<a href="#" class="order_next">  下一步：最终信息&#10095;</a>
                 </div>
                 <div class="order_information_next3">
                     别担心 - 现在不会收取费用！

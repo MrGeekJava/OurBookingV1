@@ -22,7 +22,7 @@ public class LookingRoomDaoImpl {
 			conn = DataSourceUtil.getConnection();
 			
 			String sql = "select * from view_rightComment";
-			List<CommentView> mapHotels = null;
+//			List<CommentView> mapHotels = null;
 		
 			List<CommentView> commentQuery = runner.query(conn, sql,new BeanListHandler<CommentView>(CommentView.class));
 			for(CommentView oneComment: commentQuery) {
