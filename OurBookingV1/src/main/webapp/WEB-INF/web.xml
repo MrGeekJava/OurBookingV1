@@ -29,13 +29,6 @@
   	<servlet-class>com.king.Booking.servlet.RegisterServlet</servlet-class>
   </servlet>
   
-     <servlet>
-  	<servlet-name>LookingroomInitServlet</servlet-name>
-  	<display-name>LookingroomInitServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.king.Booking.servlet.LookingroomInitServlet</servlet-class>
-  </servlet>
-  
   <servlet>
   	<servlet-name>ShowMapServlet</servlet-name>
   	<display-name>ShowMapServlet</display-name>
@@ -124,9 +117,4 @@
         	<url-pattern>/PersonInforServlet</url-pattern>
         </servlet-mapping>
   
-    
-      <servlet-mapping> 
-    	<servlet-name>LookingroomInitServlet</servlet-name>
-    	<url-pattern>/LookingroomInitServlet</url-pattern>
-    </servlet-mapping>
 </web-app>
