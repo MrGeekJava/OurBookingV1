@@ -6,6 +6,7 @@
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
     <title>Booking.com：订单预定</title>
     <script src="../resources/js/JQuery/JQuery3.3.1.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>    
     <link rel="stylesheet" href="../resources/css/NavBar.css">
     <link rel="stylesheet" href="../resources/css/OrderPay.css">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
@@ -13,6 +14,7 @@
     <script src="../resources/js/index_container.js"></script>
     <script src="../resources/js/NavBar.js"></script>
     <script src="../resources/js/personIfm.js"></script>
+    <script src="../resources/js/OrderPay.js"></script>
 
     
 </head>
@@ -217,14 +219,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="container_order_ifm_right">
+             <div class="container_order_ifm_right">
                 <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
 
-                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i>海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</p>
+                <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
-                <p class="order_ifm_p2">海口最热门住宿之一</p>
+                <p class="order_ifm_p2"><i class="order_adress">海口</i> &nbsp;最热门住宿之一</p>
 
-                <p class="order_ifm_p3">2018年8月12日下午6:00前可免费取消</p>
+                <p class="order_ifm_p3"><i class="order_yearsindate">2018年8月12日</i>下午6:00前可免费取消</p>
             </div>
         </div>
 
@@ -247,32 +249,32 @@
         <p class="input_user_ifm">您的订单信息 &nbsp;&nbsp;&nbsp;Confirm your order information</p>
             <div class="order_ifm">
                      <div class="order_user_list">
-                <div class="order_list_ifm order_back">订单号</div>
+                <div class="order_list_ifm ">订单号</div>
                 <div class="order_list_ifms ORDER_ID"></div>
-                <div class="order_user_ifm order_back">联系人</div>
+                <div class="order_user_ifm ">联系人</div>
                 <div class="order_user_ifms USER_NAME"></div>
-                <div class="order_user_ifm order_back">订单联系电话</div>
+                <div class="order_user_ifm ">订单联系电话</div>
                 <div class="order_user_ifms CONTACT_NUM"></div>
-                <div class="order_user_ifm">房间数量</div>
+                <div class="order_user_ifm order_back">房间数量</div>
                 <div class="order_user_ifms ROOM_NUM"></div>
-                <div class="order_user_ifm">房间类型</div>
+                <div class="order_user_ifm order_back">房间类型</div>
                 <div class="order_user_ifms ROOM_TYPE"></div>
-                <div class="order_user_ifm">房间大小</div>
-                <div class="order_user_ifms ROOM_SIZE"></div></div>
+                <div class="order_user_ifm order_back">房间单价</div>
+                <div class="order_user_ifms ROOM_PRICE"></div></div>
 
 
             <div class="order_list">
-                <div class="order_list_ifm order_back">入住时间</div>
+                <div class="order_list_ifm ">入住时间</div>
                 <div class="order_list_ifms IN_DATE"></div>
-                <div class="order_list_ifm order_back">退房时间</div>
+                <div class="order_list_ifm ">退房时间</div>
                 <div class="order_list_ifms OUT_DATE"></div>
-                <div class="order_list_ifm order_back">订单总金额</div>
+                <div class="order_list_ifm ">订单总金额</div>
                 <div class="order_list_ifms ORDER_MONEY"></div>
-                <div class="order_list_ifm">订单时间</div>
+                <div class="order_list_ifm order_back">订单时间</div>
                 <div class="order_list_ifms ORDER_TIME"></div>
-                <div class="order_list_ifm">入住天数</div>
-                <div class="order_list_ifms ORDER_ID"></div>
-                <div class="order_hotel_ifm">酒店电话</div>
+                <div class="order_list_ifm order_back">入住天数</div>
+                <div class="order_list_ifms ORDER_Allday"></div>
+                <div class="order_hotel_ifm order_back">酒店电话</div>
                 <div class="order_hotel_ifms HOTEL_PHONE_NUM"></div>
       
             </div>

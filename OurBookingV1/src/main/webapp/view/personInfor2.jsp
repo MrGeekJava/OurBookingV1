@@ -266,8 +266,8 @@
         <div class="container_nervous">
             <div class="container_nervous_left"><i class="iconfont icon-icon-xianmain"></i></div>
             <div class="container_nervous_right">
-                <strong class="container_nervous_s">海口房量紧张: </strong>
-                2家和心灵海客栈（海口海甸店）类似的旅馆无空房！
+                <strong class="container_nervous_s"><i class="order_adress">海口</i>房量紧张: </strong>
+                2家和<i class="order_hotelName">心灵海客栈（海口海甸店）</i>类似的旅馆无空房！
             </div>
         </div>
 
@@ -280,7 +280,7 @@
             </div>
             <div class="container_loc_adv_right">
                 <strong class="container_loc_adv_s">靠近热门地标</strong>
-                白沙门公园、Hainan University和海口世纪大桥就在附近
+                白沙门公园、Hainan University和<i class="order_adress">海口</i>世纪大桥就在附近
             </div>
         </div>
 
@@ -309,7 +309,7 @@
                 </div>
             </div>
             <div class="container_order_ifm_right">
-                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1> 
+                <h1 class="order_ifm_h1 order_hotelName">心灵海客栈（海口海甸店）</h1> 
 
                 <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
@@ -331,7 +331,7 @@
 
             <p class="container_ensure2_p1">运气真不错！</p>
 
-            <p class="container_ensure2_p2">你已锁定心灵海客栈（海口海甸店）最便宜的房型。好价不错过，</p>
+            <p class="container_ensure2_p2">你已锁定<i class="order_hotelName">心灵海客栈（海口海甸店）</i>最便宜的房型。好价不错过，</p>
 
             <p class="container_ensure2_p3">立即预订吧！</p>
         </div>
@@ -413,7 +413,7 @@
                         <p class="order_information_next_p">核对订单信息</p>
                 </div>
                 <div class="order_information_next2">
-                    <a href="#">完成预定&#10095;</a>
+                    <a href="../OrderPayServlet"  onclick="return goOrderPay()">完成预定&#10095;</a>
                 </div>
                 <div class="order_information_next3">
                     别担心 - 现在不会收取费用！

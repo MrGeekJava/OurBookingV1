@@ -27,7 +27,12 @@ public class OrderPayServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		/**
+		 * 订单信息插入数据库模块
+		 */
+		
+		response.sendRedirect("view/OrderPay.jsp");
+
 	}
 
 }

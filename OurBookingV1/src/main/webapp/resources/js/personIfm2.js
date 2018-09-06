@@ -20,3 +20,19 @@ $(document).ready(function(){
 	});
 	
 });
+
+function goOrderPay(){
+//	alert("不去订单页面");
+	 var inpvalue = $("#get_pre_tel").val().split(" ")[1];
+		var phone=/^1[34578]\d{9}$/;		
+		if(inpvalue.match(phone)==null){ 
+		alert("请填写您的电话号码");
+    		return false;
+		}else{
+			inpvalue = $("#get_pre_tel").val();
+			$.cookie("ORDER_CONTACT_NUM",inpvalue);   //订单联系人号码
+			var myDate = new Date();				
+			$.cookie("ORDER_Time",myDate.toLocaleString());   //订单联系人号码
+		  	return true;
+    }	
+}

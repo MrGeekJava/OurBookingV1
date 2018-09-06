@@ -700,12 +700,15 @@
 }
 
 .get_user_Name,.get_user_email{
-	 padding-left: 10px;
+	 display:block;
+	 width:auto;
+	 height:30px;
+	 line-height:30px;
+	 margin-left: 10px;
 	 font-size:16px;
 	 color:red;
 	 font-weight:bold;
-	 padding-left: 2px;
-	 
+	  
 }
 .input_ifm_up> p{
     display: inline-block;

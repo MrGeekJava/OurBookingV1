@@ -212,7 +212,7 @@ body{
 }
 .order_ifm_p2{
     display: block;
-    width: 129px;
+    width: 145px;
     height: 27px;
     line-height: 27px;
     margin-top: 5px;
@@ -332,19 +332,22 @@ body{
 .order_user_ifm,.order_hotel_ifm,.order_list_ifm{
     width: 300px;
     height: 30px;
-    background: #B4671C;
-    color: white;
+    background: #89AB70;
+    color: black;
     line-height: 30px;
     text-align: center;
 }
 .order_back{
-    background: #F07C00;
+    background: #709025;
 }
 .order_user_ifms,.order_hotel_ifms,.order_list_ifms{
     width: 300px;
     height: 30px;
     line-height: 30px;
     text-align: center;
+    font-size:18px;
+    color:#0158A8;
+    font-weight:bold;
 }
 .order_hotel_list{
     width: 300px;

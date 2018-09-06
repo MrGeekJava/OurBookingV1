@@ -268,8 +268,8 @@
         <div class="container_nervous">
             <div class="container_nervous_left"><i class="iconfont icon-icon-xianmain"></i></div>
             <div class="container_nervous_right">
-                <strong class="container_nervous_s">海口房量紧张: </strong>
-                2家和心灵海客栈（海口海甸店）类似的旅馆无空房！
+                <strong class="container_nervous_s"><i class="order_adress">海口</i>房量紧张: </strong>
+                2家和<i class="order_hotelName">心灵海客栈（海口海甸店）</i>类似的旅馆无空房！
             </div>
         </div>
 
@@ -282,7 +282,7 @@
             </div>
             <div class="container_loc_adv_right">
                 <strong class="container_loc_adv_s">靠近热门地标</strong>
-                白沙门公园、Hainan University和海口世纪大桥就在附近
+                白沙门公园、Hainan University和<i class="order_adress">海口</i>世纪大桥就在附近
             </div>
         </div>
 
@@ -310,7 +310,7 @@
                 </div>
             </div>
             <div class="container_order_ifm_right">
-                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
+                <h1 class="order_ifm_h1 order_hotelName">心灵海客栈（海口海甸店）</h1>
 
                 <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
@@ -332,7 +332,7 @@
 
             <p class="container_ensure2_p1">运气真不错！</p>
 
-            <p class="container_ensure2_p2">你已锁定心灵海客栈（海口海甸店）最便宜的房型。好价不错过，</p>
+            <p class="container_ensure2_p2">你已锁定<i class="order_hotelName">心灵海客栈（海口海甸店）</i>最便宜的房型。好价不错过，</p>
 
             <p class="container_ensure2_p3">立即预订吧！</p>
         </div>
@@ -374,7 +374,7 @@
             <div class="order_information_box">
                 <div class="order_information_price"><i class="order_allprice">400</i>元 （1晚）</div>
                 <div class="order_information_left">
-                    <h2 class="order_information_left_h2">大床房 – 比海口的多数客房宽敞</h2>
+                    <h2 class="order_information_left_h2">大床房 – 比<i class="order_adress">海口</i>的多数客房宽敞</h2>
 
                     <p class="order_information_left_p">不可退款
 
@@ -410,7 +410,7 @@
                     <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
                 </div>
                 <div class="order_information_next2">
-                  	<a href="#" class="order_next">  下一步：最终信息&#10095;</a>
+                  	<a href="personInfor2.jsp"  onclick="return goPersonInfor2()" class="order_next">  下一步：最终信息&#10095;</a>
                 </div>
                 <div class="order_information_next3">
                     别担心 - 现在不会收取费用！
