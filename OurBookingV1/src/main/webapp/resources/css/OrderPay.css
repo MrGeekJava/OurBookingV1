@@ -212,7 +212,7 @@ body{
 }
 .order_ifm_p2{
     display: block;
-    width: 145px;
+    width: 145px; 
     height: 27px; 
     line-height: 27px;
     margin-top: 5px;
