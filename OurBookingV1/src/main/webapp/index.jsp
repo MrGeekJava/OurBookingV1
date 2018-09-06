@@ -1,23 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import="java.io.*" %>
-    
+<%@ page import="java.io.*" %>
+<%@ page import="com.king.Booking.entity.User" %>
+<%@ page isELIgnored="false" %>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-	<link href="resources/css/booking_com.css" rel="stylesheet" type="text/css">
+	<link href="resources/css/booking_com.css" rel="stylesheet">
 	<link rel="stylesheet" href="resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
-	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
-	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<link href="resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
 	<link href="resources/res/icon/personifm/iconfont.css" rel="stylesheet">
 	<link href="resources/css/index_container.css" rel="stylesheet">
 	<link href="resources/css/index_container_yuan.css" rel="stylesheet">
-	<script rel="text/javascript" src="resources/js/index_container.js"></script>
 	<link href="resources/res/icon/index_icon/index_yuan/iconfont.css">
 	<link rel="stylesheet" href="resources/css/searchResult.css">
 	<link rel="SHORTCUT ICON" href="resources/res/images/title_logo.icon"/>
+	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
+	<script src="resources/js/booking_com.js" type="text/javascript"></script>
+	<script src="resources/js/NavBar.js" type="text/javascript"></script>
+	<script src="resources/js/index_container.js" type="text/javascript"></script>
 
 	<title>loginAndRegist</title>
 </head>
@@ -130,17 +134,23 @@
 				<li class="user-li_4">
 					<a href="#" onclick="" class="user-btn-2">上线我的住宿</a>
 				</li>
+<%
+	User loginUser = (User) session.getAttribute("loginUser");
+	if(loginUser == null){
+%>
 				<li class="user-li_5">
 					<a id="reg-btn" href="#" class="user-btn" data-title="成为会员，享受专属隐藏优惠">注册</a>
 				</li>
 				<li class="user-li_6">
 					<a id="log-btn" href="#" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
 				</li>
-				
+<%
+	} else {
+%>
 				<li class="person_class">
                     <a href="#" class="person_class_a">
-                        <img src="resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
-                        <p class="user_name">用户名</p></a>
+                        <img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+                        <p class="user_name">${sessionScope.loginUser.userNickName }</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
                         <ul class="showIfm_none_ul">
@@ -152,13 +162,13 @@
                             <li><a href="#">下载app</a></li>
                             <li><a href="#">客服帮助</a></li>
                             <li><a href="#">设置</a></li>
-                            <li class="user_quit"><a href="#" >退出</a></li>
+                            <li class="user_quit"><a href="UserExitServlet" >退出</a></li>
                         </ul>
-
                     </div>
                 </li>
-				
-				
+<%		
+	}
+%>	
 			</ul>
 		</div>
 	</div>
@@ -1576,13 +1586,13 @@
 			<div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="resources/res/images/close.png" class="closeImg"></a></div>
 			<div id="LAR-login">
 				<div class="LAR-contant">
-					<form name="loginForm" action="" onsubmit="" method="POST" class="LAR_form">
+					<form name="loginForm" action="LoginServlet" method="POST" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput" type="text" name="emailOrphone"><br>
 						<span class="login_span">Booking.com密码</span>
 						<input id="pwdInput" type="password" name="pwd"><br>
 						<a href="#" class="lar_a">想不起密码？</a><br>
-						<a href="javascript:void(0)" class="sub-btn "  >登录</a><br>
+						<input type="submit" class="sub-btn" value="登录"><br>
 					</form>
 					<span class="span-line">
 						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
@@ -1646,11 +1656,6 @@
 			</div>
 		</div>
 	</div>
-<div></div>
-	<script src="resources/js/NavBar.js"></script>
-	<script src="resources/js/index_container.js"></script>
 </div>
-
-
 </body>
 </html>

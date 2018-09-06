@@ -120,7 +120,6 @@
                             <li class="li_lang"><a href="#"><i class="iconfont icon-arrow-left"></i><span>arrow</span></a></li>
                             <li class="li_lang"><a href="#"><i class="iconfont icon-shang"></i><span>Shang</span></a></li>
                         </ul>
-
                     </div>
                 </li>
                 <li class="user-li_3">
@@ -146,10 +145,8 @@
                             <li><a href="#">设置</a></li>
                             <li><a href="#">退出</a></li>
                         </ul>
-
                     </div>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -163,16 +160,16 @@
             <a href="#" onclick="openModel(event, 'personalCenter')">
                 <li class="BarLi">我的个人中心</li>
             </a>
-            <a href="javascript:voud(0)" onclick="openModel(event, 'myOrder')">
+            <a href="#" onclick="openModel(event, 'myOrder')">
                 <li class="BarLi">我的订单</li>
             </a>
-            <a href="javascript:voud(0)">
+            <a href="#">
                 <li class="BarLi">评语</li>
             </a>
-            <a href="javascript:voud(0)" onclick="openModel(event, 'install')">
+            <a href="#" onclick="openModel(event, 'install')">
                 <li class="BarLi">设置</li>
             </a>
-            <a href="javascript:voud(0)">
+            <a href="#">
                 <li class="BarLi">上线我的住宿</li>
             </a>
         </ul>
@@ -189,7 +186,7 @@
                     <img src="../resources/res/images/PersonCenter/cricleHead.png">
                 </div>
                 <div class="modifyPD-head-btn">
-                    <a href="javascript:void(0)">修改个人资料</a>
+                    <a href="#" onclick="openModel(event, 'install')">修改个人资料</a>
                 </div>
             </div>
             <div class="modifyPD-body">
@@ -200,19 +197,19 @@
                     </div>
                 </div>
                 <div class="modifyPD-body-con">
-                    <a href="javascript:void(0)" class="iconfont icon-icontj"> 上传头像照</a>
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 上传头像照</a>
                     <p>选好头像照秀出你的高颜值。 </p>
                 </div>
                 <div class="modifyPD-body-con">
-                    <a href="javascript:void(0)" class="iconfont icon-icontj"> 添加信用卡信息</a>
+                    <a href="#CC"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 添加信用卡信息</a>
                     <p>保存支付信息，下次无需重复填写，预订速度快到飞起！（请放心，你的支付信息很安全！）</p>
                 </div>
                 <div class="modifyPD-body-con">
-                    <a href="javascript:void(0)" class="iconfont icon-icontj"> 填写昵称</a>
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写昵称</a>
                     <p>你可以随时修改显示在点评中的昵称。</p>
                 </div>
                 <div class="modifyPD-body-con">
-                    <a href="javascript:void(0)" class="iconfont icon-icontj"> 填写名字</a>
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写名字</a>
                     <p>告诉我们该如何称呼你</p>
                 </div>
             </div>
@@ -376,21 +373,21 @@
             </div>
             <div class="info-body">
                 <div class="first-info-con">
-                    <a href="javascript:void(0)" name="search" class="first-info-con-a">
+                    <a href="../index.jsp" name="search" class="first-info-con-a">
                         <div class="first-info-con-icon">
                             <img src="../resources/res/images/PersonCenter/sousuo.png">
                         </div>
                         <p class="first-info-con-p1">网罗全球特价</p>
                         <p class="first-info-con-p2">登录后即可解锁专属优惠</p>
                     </a>
-                    <a href="javascript:void(0)" name="addPI" class="first-info-con-a">
+                    <a href="#" onclick="openModel(event, 'install')" name="addPI" class="first-info-con-a">
                         <div class="first-info-con-icon">
                             <img src="../resources/res/images/PersonCenter/head.png">
                         </div>
                         <p class="first-info-con-p1">添加个人信息</p>
                         <p class="first-info-con-p2">添加个人信息，助你快读预订，还可以根据你的设置为你特别推荐哦！</p>
                     </a>
-                    <a href="javascript:void(0)" name="download" class="first-info-con-a">
+                    <a href="#" name="download" class="first-info-con-a">
                         <div class="first-info-con-icon">
                             <img src="../resources/res/images/PersonCenter/app.png">
                         </div>
@@ -801,7 +798,7 @@
             <div class="chooseFile">
                 <h3 class="fileTitle">选择文件上传</h3>
                 <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
-                <button class="saveHeadBtn" onclick="readAsDataURL()">保存</button>
+                <button id="saveImg" class="saveHeadBtn" onclick="readAsDataURL()" disabled>保存</button>
                 <textarea id="aaa"></textarea>
             </div>
         </div>
