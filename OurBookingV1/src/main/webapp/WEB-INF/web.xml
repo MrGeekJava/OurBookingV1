@@ -63,17 +63,12 @@
   	<description></description>
   	<servlet-class>com.king.Booking.servlet.LookingroomInitServlet</servlet-class>
   </servlet>
+
       <servlet>
-      	<servlet-name>PersonInfor2Servlet</servlet-name>
-      	<display-name>PersonInfor2Servlet</display-name>
+      	<servlet-name>OrderPayServlet</servlet-name>
+      	<display-name>OrderPayServlet</display-name>
       	<description></description>
-      	<servlet-class>com.king.Booking.servlet.PersonInfor2Servlet</servlet-class>
-      </servlet>
-      <servlet>
-      	<servlet-name>PersonInforServlet</servlet-name>
-      	<display-name>PersonInforServlet</display-name>
-      	<description></description>
-      	<servlet-class>com.king.Booking.servlet.PersonInforServlet</servlet-class>
+      	<servlet-class>com.king.Booking.servlet.OrderPayServlet</servlet-class>
       </servlet>
   
   <servlet-mapping>
@@ -108,13 +103,10 @@
     	<servlet-name>LookingroomInitServlet</servlet-name>
     	<url-pattern>/LookingroomInitServlet</url-pattern>
     </servlet-mapping>
+     
         <servlet-mapping>
-        	<servlet-name>PersonInfor2Servlet</servlet-name>
-        	<url-pattern>/PersonInfor2Servlet</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping> 
-        	<servlet-name>PersonInforServlet</servlet-name>
-        	<url-pattern>/PersonInforServlet</url-pattern>
+        	<servlet-name>OrderPayServlet</servlet-name>
+        	<url-pattern>/OrderPayServlet</url-pattern>
         </servlet-mapping>
   
 </web-app>

@@ -6,10 +6,10 @@ $(document).ready(function () {
 	/**/
 	//获取酒店信息，显示到当前页面
 //	$(".flow_down_userName").text($.cookie("UserName"));
-	$(".order_details_in_time").text($.cookie("datein"));//入住日期
-	$(".order_details_out_time").text($.cookie("dateout"));//退房日期
-	var outday =$.cookie("dateout");
-	var inday = $.cookie("datein");
+	$(".order_details_in_time").text($.cookie("orderRoomin"));//入住日期
+	$(".order_details_out_time").text($.cookie("orderRoomout"));//退房日期
+	var outday =$.cookie("orderRoomout");
+	var inday = $.cookie("orderRoomin");
 	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
 	$(".order_allday").text(allday+"天");	//订单总天数
 	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
@@ -23,9 +23,8 @@ $(document).ready(function () {
 	var monthday=inday.split("年")[1];
 	//月日
 	$(".order_indate").text(monthday);
-	var orderPeopelNum = $.cookie("adultnum")+$.cookie("chilenum");
 	//所有客人
-	$(".container_price_people").text(orderPeopelNum);	
+	$(".container_price_people").text($.cookie("orderNumber"));	
 	
 
     $('.order_ifm_p1').hover(function () {
@@ -247,7 +246,7 @@ $(document).ready(function(){
         if(inpvalue3==inpvalue4&&inpvalue!=""){
         	 //创建表单的cookie
 //    		alert(inpvalue4);
-        	var userName = inpvalue+" "+inpvalue2;
+        	var userName = inpvalue+inpvalue2;
 			  $.cookie("Order_User_Name",userName);
 			  $.cookie("Order_User_Email",inpvalue4);       	
         	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");

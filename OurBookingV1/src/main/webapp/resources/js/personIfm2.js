@@ -9,17 +9,13 @@ $(document).ready(function(){
         var inpvalue = $("#get_pre_tel").val().split(" ")[1];
 		var phone=/^1[34578]\d{9}$/;		
 		if(inpvalue.match(phone)==null){ 
-			alert("不是手机好吗");
+//			alert("不是手机好吗");
 			    $(".input_ifm_tel").html("<p style='color: red;'>请检查您的电话号码</p>");
 	            $("#get_pre_tel").css("border-color","red");
-	         
-
-
 	        }else{
-	    		alert("是手机好吗");
+//	    		alert("是手机好吗");
 				 $(".input_ifm_tel").html("<p style='display: inline-block'><i style='color:#383838;font-style:normal;'>请填写您的电话号码</i><i style='color: red;display: inline-block'>*</i> </p>");
 	            $("#get_pre_tel").css("border-color","green");
-	         
 	        }
 	});
 	

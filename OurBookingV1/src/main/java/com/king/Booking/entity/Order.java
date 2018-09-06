@@ -20,7 +20,67 @@ public class Order {
 	private String orderEmail; 	//订单人邮箱
 	
 	
+	private int orderDay;			//入住时间
+	private String peopleNum;		//入住人数（成人+小孩）
+	private String hotelName;		//酒店名称
+	private String hotelType;		//酒店类型
+	private int hotelAdress;		//酒店地址
+	private int roomGrade;			//酒店等级
+	private String hotelPhoneNum;	//酒店联系电话
+	private String OrderUserName;	//订单联系人
 	
+	
+	
+	
+	
+	public int getOrderDay() {
+		return orderDay;
+	}
+	public void setOrderDay(int orderDay) {
+		this.orderDay = orderDay;
+	}
+	public String getPeopleNum() {
+		return peopleNum;
+	}
+	public void setPeopleNum(String peopleNum) {
+		this.peopleNum = peopleNum;
+	}
+	public String getHotelName() {
+		return hotelName;
+	}
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+	public String getHotelType() {
+		return hotelType;
+	}
+	public void setHotelType(String hotelType) {
+		this.hotelType = hotelType;
+	}
+	public int getHotelAdress() {
+		return hotelAdress;
+	}
+	public void setHotelAdress(int hotelAdress) {
+		this.hotelAdress = hotelAdress;
+	}
+	public int getRoomGrade() {
+		return roomGrade;
+	}
+	public void setRoomGrade(int roomGrade) {
+		this.roomGrade = roomGrade;
+	}
+	public String getHotelPhoneNum() {
+		return hotelPhoneNum;
+	}
+	public void setHotelPhoneNum(String hotelPhoneNum) {
+		this.hotelPhoneNum = hotelPhoneNum;
+	}
+	public String getOrderUserName() {
+		return OrderUserName;
+	}
+	public void setOrderUserName(String orderUserName) {
+		OrderUserName = orderUserName;
+	}
 	public String getOrderEmail() {
 		return orderEmail;
 	}
