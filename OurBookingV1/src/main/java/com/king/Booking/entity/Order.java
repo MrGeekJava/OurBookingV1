@@ -26,7 +26,6 @@ public class Order {
 	private String hotelType;		//酒店类型
 	private int hotelAdress;		//酒店地址
 	private int roomGrade;			//酒店等级
-	private String hotelPhoneNum;	//酒店联系电话
 	private String OrderUserName;	//订单联系人
 	
 	
@@ -68,12 +67,6 @@ public class Order {
 	}
 	public void setRoomGrade(int roomGrade) {
 		this.roomGrade = roomGrade;
-	}
-	public String getHotelPhoneNum() {
-		return hotelPhoneNum;
-	}
-	public void setHotelPhoneNum(String hotelPhoneNum) {
-		this.hotelPhoneNum = hotelPhoneNum;
 	}
 	public String getOrderUserName() {
 		return OrderUserName;

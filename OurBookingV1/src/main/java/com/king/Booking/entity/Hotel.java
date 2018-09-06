@@ -27,7 +27,6 @@ public class Hotel {
 		private String hotelArea;		//所在区
 		private double longgitude;		//酒店地标经度
 		private double Latitude;		//酒店地标纬度
-		private String hotelPhoneNum;	//酒店电话
 		public int getHotelId() {
 			return hotelId;
 		}
@@ -159,12 +158,6 @@ public class Hotel {
 		}
 		public void setLatitude(double latitude) {
 			Latitude = latitude;
-		}
-		public String getHotelPhoneNum() {
-			return hotelPhoneNum;
-		}
-		public void setHotelPhoneNum(String hotelPhoneNum) {
-			this.hotelPhoneNum = hotelPhoneNum;
 		}
 		
 }
