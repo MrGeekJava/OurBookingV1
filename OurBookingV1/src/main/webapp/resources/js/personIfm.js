@@ -280,7 +280,7 @@ function goPersonInfor2(){
     	 //创建表单的cookie
 //		alert(inpvalue4);
     	var userName = inpvalue+inpvalue2;
-		  $.cookie("Order_User_Name",userName);
+		  $.cookie("Order_User_Name",userName); 
 		  $.cookie("Order_User_Email",inpvalue4);       	
     	return true;
     }else{

@@ -9,7 +9,7 @@ i{
 .tips{
     z-index: 1;
     position: absolute;
-    display: none;
+    display: none; 
     height: 67px;
     line-height: 30px;
     width: 300px;

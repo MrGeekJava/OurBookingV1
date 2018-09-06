@@ -29,7 +29,7 @@ function goOrderPay(){
 		alert("请填写您的电话号码");
     		return false;
 		}else{
-			inpvalue = $("#get_pre_tel").val();
+			inpvalue = $("#get_pre_tel").val(); 
 			$.cookie("ORDER_CONTACT_NUM",inpvalue);   //订单联系人号码
 			var myDate = new Date();				
 			$.cookie("ORDER_Time",myDate.toLocaleString());   //订单联系人号码
