@@ -86,4 +86,10 @@ public class SearchResultDaoImpl implements SearchResult {
 		return hotelCount;
 	}
 
+
+	public List<HotelSearchHotelView> HotelSearchByAdress(String province, String Downtown) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
