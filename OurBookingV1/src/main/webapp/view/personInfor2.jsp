@@ -339,7 +339,7 @@
          <form action=" " method="post">
          <div class="input_ifm">           
             <div class="input_ifm_up">快完成啦！将带<p>*</p>的必填项填写完整即可</div>
-            <div class="input_ifm_div">
+            <div class="input_ifm_div"> 
                 <p class="user_Name font_style">姓名</p>
                 <span class="get_user_Name"></span>
                 <p class="user_email font_style">电子邮箱</p>

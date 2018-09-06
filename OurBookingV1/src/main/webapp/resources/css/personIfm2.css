@@ -688,8 +688,8 @@
     right: 18px;
     top: 80px;
     width: 300px;
-    height: 97px;
-    border: 1px solid #537BB4;
+    height: 110px;
+    border: 1px solid #537BB4; 
 }
 .font_style{
     padding-left: 10px;
@@ -702,8 +702,8 @@
 .get_user_Name,.get_user_email{
 	 display:block;
 	 width:auto;
-	 height:30px;
-	 line-height:30px;
+	 height:20px;
+	 line-height:20px;
 	 margin-left: 10px;
 	 font-size:16px;
 	 color:red;

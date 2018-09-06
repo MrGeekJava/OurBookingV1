@@ -231,43 +231,11 @@ $(document).ready(function () {
                     $(".input_ifm_inp_email").css("border-color","red");
                     $(".input_ifm_inp_email2").css("border-color","red");
         }
-
+ 
     });
 
 });
 
-/*
-$(document).ready(function(){
-	$(".order_next").click(function(){
-//		alert("a");
-        var inpvalue = $(".input_ifm_centre_inp").val();
-        var inpvalue2 = $(".input_ifm_right_inp").val();
-	    var inpvalue3 = $(".input_ifm_inp_email2").val();
-        var inpvalue4 = $(".input_ifm_inp_email").val();
-        if(inpvalue3==inpvalue4&&inpvalue!=""){
-        	 //创建表单的cookie
-//    		alert(inpvalue4);
-        	var userName = inpvalue+inpvalue2;
-			  $.cookie("Order_User_Name",userName);
-			  $.cookie("Order_User_Email",inpvalue4);       	
-        	$(".order_next").attr("href","http://localhost:8080/OurBookingV1/view/personInfor2.jsp");
-
-        }else{
-//    		alert("c");
-
-        	 $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
-             $(".input_ifm_centre_inp").css("border-color","red");
-//        	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
-//             $(".input_ifm_right_inp").css("border-color","red");        	
-        	 $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
-             $(".input_ifm_inp_email").css("border-color","red");
-             $(".input_ifm_inp_email2").css("border-color","red");
-        }
-	});
-	
-
-});
-*/
 
 
 function goPersonInfor2(){
@@ -287,14 +255,14 @@ function goPersonInfor2(){
 //		alert("c");
     	 $(".input_ifm_centre_p").html("<p style='color: red;'>请填写您的姓</p>");
          $(".input_ifm_centre_inp").css("border-color","red");
+    	 $(".input_ifm_right_p").html("<p style='color: red;'>请填写您的名</p>");
+         $(".input_ifm_right_inp").css("border-color","red");
     	 $(".user_ifm_p").html("<p style='color: red;'>请填入有效的邮箱号码</p>");
          $(".input_ifm_inp_email").css("border-color","red");
          $(".input_ifm_inp_email2").css("border-color","red");
          return false;
     }
 }
-
-
 
 
 function set_Pre_tel(){

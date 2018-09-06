@@ -13,8 +13,9 @@ $(document).ready(function(){
 	$(".ORDER_Allday").text(allday+"天");	//订单总天数
 	$(".ROOM_TYPE").text($.cookie("orderRoomType"));//房间类型	
 	$(".ROOM_NUM").text($.cookie("orderRoomnum"));//房间类型	
-	$(".ORDER_MONEY").text($.cookie("orderprices")+"元");//订单总金额	
+	$(".ORDER_MONEY").text($.cookie("orderprices")+"元");//订单总金额	 
 	$(".ROOM_PRICE").text($.cookie("orderPrice")+"元");//房间单价	
 	$(".ORDER_TIME").text($.cookie("ORDER_Time"));//订单时间
+	$(".ORDER_EMAIL").text($.cookie("Order_User_Email"));//订单邮箱
 	$(".order_yearsindate").text(inday);//年月日 
 });

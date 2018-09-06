@@ -261,7 +261,7 @@
                 <div class="order_user_ifms ROOM_TYPE"></div>
                 <div class="order_user_ifm order_back">房间单价</div>
                 <div class="order_user_ifms ROOM_PRICE"></div></div>
-
+ 
 
             <div class="order_list">
                 <div class="order_list_ifm ">入住时间</div>
@@ -272,11 +272,10 @@
                 <div class="order_list_ifms ORDER_MONEY"></div>
                 <div class="order_list_ifm order_back">订单时间</div>
                 <div class="order_list_ifms ORDER_TIME"></div>
+                <div class="order_hotel_ifm order_back">订单邮箱</div>
+                <div class="order_hotel_ifms ORDER_EMAIL"></div>
                 <div class="order_list_ifm order_back">入住天数</div>
-                <div class="order_list_ifms ORDER_Allday"></div>
-                <div class="order_hotel_ifm order_back">酒店电话</div>
-                <div class="order_hotel_ifms HOTEL_PHONE_NUM"></div>
-      
+                <div class="order_list_ifms ORDER_Allday"></div>      
             </div>
 
 
