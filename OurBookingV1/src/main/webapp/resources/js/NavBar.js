@@ -22,8 +22,6 @@ $(document).ready(function () {
     });
 
 
-
-
     $('#wechat-i').hover(function () {
         $('#none_img_id').show();
     });
@@ -40,10 +38,6 @@ $(document).ready(function () {
     $('#wechat-i').mouseout(function () {
         $('#none_img_id').hide();
     });
-
-
-
-
 
     $('.user-btn').mousemove(function (e) {
         var top = e.pageY + 15;
@@ -139,34 +133,7 @@ $(document).ready(function () {
      *这是因为为第一个模块注册点击事件时并没有销毁而执行了两遍。
      *此时需要手动的添加事件移除方法，可以选择在每次事件处理完成后销毁该事件，也可选择在下次事件触发前销毁之前的事件。
      *用unbind消除
-     */    
-    $(".sub-btn").unbind('click').click(function(){
-    	var userEmail = $("#emailInput").val();
-    	var userPassword = $("#pwdInput").val();
-		 $.getJSON('LoginServlet',
-				 {Email:userEmail,password:userPassword},
-				 function(result){
-					 var user = eval(result.user);
-//					 alert("恭喜"+user.userName+"登录成功");
-					 $("#LARid").css({
-						 "display":"none"
-					 });
-					 $(".user-li_5").css({
-							 "display":"none"
-					 		});
-					 
-					 $(".user-li_6").css({
-						 "display":"none"
-				 		});
-					 
-					 $(".person_class").css({
-						 "display":"block"
-				 		});
-					 $(".user_name").html(user.userName);
-					 
-				 });
-	
-	})
+     */
     
     $(".subRegister").unbind('click').click(function(){
     	var userEmail = $("#emailInput2").val();
@@ -210,24 +177,6 @@ $(document).ready(function () {
 			});
 	});
     
-    
-    
-    
-    $(".user_quit").click(function(){
-					 $(".user-li_5").css({
-							 "display":"block"
-					 		});					 
-					 $(".user-li_6").css({
-						 "display":"block"
-				 		});
-					 
-					 $(".person_class").css({
-						 "display":"none"
-				 		});					 
-				 });
-	
-    
-
 //显示选择货币窗口
     $("#mon_tex").click(function () {
         $("#mon_id_box").toggle();
@@ -241,8 +190,6 @@ $(document).ready(function () {
 
     });
 
-
-
 //显示图片
     $(".user-li_3").mousemove(function () {
         $("#img_id").show();
@@ -252,7 +199,4 @@ $(document).ready(function () {
         $("#img_id").hide();
     });
 
-
 });
-
-

@@ -1,6 +1,5 @@
 package com.king.Booking.dao.impl;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -8,8 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.king.Booking.entity.User;
 import com.king.Booking.util.DataSourceUtil;
@@ -17,43 +16,24 @@ import com.king.Booking.util.DataSourceUtil;
 public class RegisterDaoImpl{
 	
 	//用户登录
-	public User userLogin(User user) {
-		String userEmail =user.getUserEmail();
-		String userPassword = user.getUserPassword();
-		User user2 = null;
-		
+	public User userLogin(User user) throws SQLException {
 		QueryRunner runner = new QueryRunner();
-		Connection conn;
-		try {
-			conn = DataSourceUtil.getConnection();
-			/**
-			 * 判断是手机号还是邮箱
-			 */
-			String sql = "";
-			List<User> userQuery=null ;
-			boolean result = checkPhone(userEmail);
-			if(result==true) {
-				sql = "select * from UserList where UserPhoneNumber =?";
-				Object[] params = {userEmail};
-				userQuery = runner.query(conn, sql,new BeanListHandler<User>(User.class), params);
-
-			}else {
-				sql = "select * from UserList where UserEmail =?";
-				Object[] params = {userEmail};
-				 userQuery = runner.query(conn, sql,new BeanListHandler<User>(User.class), params);
-			}
-	
-
-			for(User user1:userQuery) {
-				String name = user1.getUserName();
-				user2= user1;
-			}
-		
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		Connection conn = DataSourceUtil.getConnection();
+//		判断是手机还是邮箱
+		String sql = "select * from UserList where";
+		User userResult = null;
+		if(user.getUserEmail() != null) {
+			sql += " UserEmail='"+user.getUserEmail()+"'";
+		} else {
+			sql += " UserPhoneNumber='"+user.getUserPhoneNumber()+"'";
 		}
-		return user2;
+		userResult = runner.query(conn, sql, new BeanHandler(User.class));
+		
+		if(!userResult.getUserPassword().equals(user.getUserPassword())) {
+			userResult.setUserPassword(null);
+		}
+		
+		return userResult;
 	}
 	
 	/**
@@ -156,6 +136,4 @@ public class RegisterDaoImpl{
 	    return matcher.matches();
 	}
 
-	
-	
 }
