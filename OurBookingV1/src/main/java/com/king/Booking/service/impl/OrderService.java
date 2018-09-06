@@ -14,7 +14,7 @@ public class OrderService {
 		OrderDaoImpl orderDao = new OrderDaoImpl();
 		List<Order> orders = null;
 		try {
-			orders = orderDao.queryAllOrderbyOrderId(UserId);
+			orders = orderDao.queryAllOrderbyOrderId(UserId); 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -19,7 +19,7 @@ public class OrderDaoImpl implements OrderDao{
 	public List<Order> queryAllOrderbyOrderId(String UserId) throws SQLException {
 		QueryRunner runner = new QueryRunner();
 		Connection conn = DataSourceUtil.getConnection();
-		String sql = "select * from OrderList where UserId=?";
+		String sql = "select * from OrderList where UserId=?"; 
 		Object[] params = {UserId};
 		List<Order> Orders = new ArrayList<Order>();
 		Orders = runner.query(conn, sql, new BeanListHandler<Order>(Order.class), params);
