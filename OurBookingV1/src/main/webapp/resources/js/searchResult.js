@@ -689,7 +689,11 @@ $(document).ready(function(){
  	    	document.cookie = "hotelName="+(hotelname);
  	    	} 
  	    }
+
 // 	   var url =servletName?参数名=值,多个参数之间用&连接
- 	   window.location.href="../LookingroomInitServlet?hotelId="+hotelId;     //在同当前窗口中打开窗口
+ 	   window.location.href="../LookingroomInitServlet?hotelId="+hotelId;     //在同当前窗口中打开窗口1233
+
+ 	 /*  window.location.href="../LookingroomInitServlet";     //在同当前窗口中打开窗口123
+*/
 	})
 })
