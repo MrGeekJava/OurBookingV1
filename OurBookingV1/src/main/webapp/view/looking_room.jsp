@@ -600,7 +600,7 @@
         </div>
         
         
-             <table class="order" border="1" bordercolor="#4a98d7" width="1058px" >
+         <table class="order" border="0.2" bordercolor="#4a98d7" width="1008px" frame="void">
      
             <tr style="background-color: #e8eff9">
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
