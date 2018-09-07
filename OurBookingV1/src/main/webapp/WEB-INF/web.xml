@@ -91,7 +91,33 @@
       	<description></description>
       	<servlet-class>com.king.Booking.servlet.UserExitServlet</servlet-class>
       </servlet>
-  
+        <servlet>
+      	<servlet-name>CommentPageServlet</servlet-name>
+      	<display-name>CommentPageServlet</display-name>
+      	<description></description>
+      	<servlet-class>com.king.Booking.servlet.CommentPageServlet</servlet-class>
+      </servlet>
+  	<servlet>
+  	<servlet-name>SearchResultServlet</servlet-name>
+  	<display-name>SearchResultServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.king.Booking.servlet.SearchResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+      	<servlet-name>SubmitImgServlet</servlet-name>
+      	<display-name>SubmitImgServlet</display-name>
+      	<description></description>
+      	<servlet-class>com.king.Booking.servlet.SubmitImgServlet</servlet-class>
+      </servlet>
+      <servlet>
+      	<servlet-name>ChangeInfoServlet</servlet-name>
+      	<display-name>ChangeInfoServlet</display-name>
+      	<description></description>
+      	<servlet-class>com.king.Booking.servlet.ChangeInfoServlet</servlet-class>
+      </servlet>
+  	
+  	
+  	
   <servlet-mapping>
   	<servlet-name>TextServlet</servlet-name>
   	<url-pattern>/TextServlet</url-pattern>
@@ -135,6 +161,22 @@
         <servlet-mapping>
         	<servlet-name>UserExitServlet</servlet-name>
         	<url-pattern>/UserExitServlet</url-pattern>
+        </servlet-mapping>
+         <servlet-mapping>
+        	<servlet-name>CommentPageServlet</servlet-name>
+        	<url-pattern>/CommentPageServlet</url-pattern>
+        </servlet-mapping>
+  		<servlet-mapping>
+    	<servlet-name>SearchResultServlet</servlet-name>
+    	<url-pattern>/SearchResultServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        	<servlet-name>SubmitImgServlet</servlet-name>
+        	<url-pattern>/SubmitImgServlet</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        	<servlet-name>ChangeInfoServlet</servlet-name>
+        	<url-pattern>/ChangeInfoServlet</url-pattern>
         </servlet-mapping>
   
 </web-app>

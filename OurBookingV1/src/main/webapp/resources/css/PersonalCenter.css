@@ -137,7 +137,7 @@ a {
 }
 
 .finish {
-    width: 10%;
+    width: 20%;
     height: 100%;
     background-color: #96D99D;
     border-radius: 5px;
@@ -520,6 +520,12 @@ a {
     border: 1px solid #D7D7D7;
     border-radius: 5px;
     left: 80px;
+}
+
+.row_name_tip {
+	display: inline-block;
+	color: red;
+	margin-left: 100px;
 }
 
 .row_select {

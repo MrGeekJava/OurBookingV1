@@ -71,19 +71,22 @@ public class LookingRoomDaoInitImpl {
 		conn = DataSourceUtil.getConnection();
 		
 		String sql = "select * from view_rightComment";
-	
+
 		try {
 			commentQuery = runner.query(conn, sql,new BeanListHandler<CommentView>(CommentView.class));
 		} catch (SQLException e) {
 		}
+
 		int n=0;
 		for(CommentView cv: commentQuery) {
 			n++;
-			if(n<pageNum*page&&n>(pageNum*page-1)){
+		
+			if(n<=pageNum*page&&n>=(pageNum*page-1)){
+				System.out.println(n);
 				returncommentQuery.add(cv);
 			}
 		}
-		
+	
 		
 		return returncommentQuery;
 	}

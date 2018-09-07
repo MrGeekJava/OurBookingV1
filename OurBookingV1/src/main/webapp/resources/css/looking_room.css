@@ -1353,7 +1353,7 @@ ul{
     background-color: #e8eff9;
     position: absolute;
     left: -285px;
-    top: 1780px;
+    top: 2080px;
     display:none;
 }
 .CommentFootCopy>.span1{
@@ -1427,3 +1427,200 @@ td:hover{
 	background-color: #0AB21B;
 	
 }
+
+/*右边评论*/
+
+
+.CommentRightContainer{
+    display: none;
+    width: 1470px;
+    height: 1000px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 5;
+}
+
+
+
+.concentContainer{
+    display: none;
+    width: 700px;
+    height: 1500px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    opacity: 1;
+    background-color: white;
+    z-index: 6;
+    overflow: hidden;
+}
+
+.concentContainer>.hidden{
+    width: 65px;
+    height: 65px;
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.concentContainer>.hidden>.icon-cha2{
+    width: 50px;
+    height: 50px;
+    color: white;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+}
+
+.concentContainer>.hidden:hover {
+    background-color: yellow;
+    color: yellow;
+}
+
+.concentContainer>.comment{
+    width:600px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    top:100px;
+    left: 50px;
+}
+
+.concentContainer>.comment>.comment1{
+    width:600px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    top:20px;
+
+}
+.concentContainer>.comment>.comment2{
+    width:600px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    top:250px;
+}
+
+.concentContainer>.comment>.comment1>.touxiang,.concentContainer>.comment>.comment2>.touxiang{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0896FF;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+}
+
+.concentContainer>.comment>.comment1>.nickName,.concentContainer>.comment>.comment2>.nickName{
+    width: 140px;
+    height: 20px;
+    position: absolute;
+    left: 45px;
+    top:2px;
+    color: #000000;
+}
+
+.concentContainer>.comment>.comment1>.country,.concentContainer>.comment>.comment2>.country{
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    left: 45px;
+    top:22px;
+    color: #000000;
+}
+
+.concentContainer>.comment>.comment1>.pingfeng,.concentContainer>.comment>.comment2>.pingfeng{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    top:2px;
+    background-color: #0896FF;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+
+.concentContainer>.comment>.comment1>.date,.concentContainer>.comment>.comment2>.date{
+    width: 180px;
+    height: 20px;
+    position: absolute;
+    left: 45px;
+    top:44px;
+    left: 0px;
+    color: #A1A1A1;
+    font-size: 13px;
+}
+.concentContainer>.comment>.comment1>.pinglun,.concentContainer>.comment>.comment2>.pinglun{
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    top: 65px;
+  	color: #7e7e7e;
+  	
+}
+
+.concentContainer>.comment>.comment1>.pinglundate,.concentContainer>.comment>.comment2>.pinglundate{
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    top: 169px;
+    font-size: 13px;
+    color: #A1A1A1;
+
+}
+
+.concentContainer>.comment>.comment1>.zang,.concentContainer>.comment>.comment2>.zang{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    top: 199px;
+    font-size: 13px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.concentContainer>.comment>.comment1>.xian,.concentContainer>.comment>.comment2>.xian{
+    width: 600px;
+    height: 3px;
+    position: absolute;
+    top: 219px;
+    font-size: 13px;
+    background-color: black;
+}
+
+.concentContainer>.comment>.comment1>.zang :hover,.concentContainer>.comment>.comment2>.zang :hover{
+    color: blue;
+}
+/*分页*/
+.concentContainer>.comment>.pageDisplay{
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    bottom:20px;
+    right: 0px;
+    border: 1px solid;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+
+.concentContainer>.comment>.pageDisplay li{
+    float: left;
+    margin-right: 5px;
+    font-size:14px;
+}
+.concentContainer>.comment>.pageDisplay li:hover{
+    color: #006BBc;
+}
+

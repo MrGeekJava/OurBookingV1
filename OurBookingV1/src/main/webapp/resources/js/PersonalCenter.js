@@ -151,4 +151,51 @@ function readAsDataURL(){
     }  
 }
 
+$(document).ready(function(){
+	$(".row_input").blur(function(){
+		var nickName = $("#userNickName").val();
+		var tip = $(this).siblings(".row_name_tip");
+		tip.text("正在保存");
+		$.ajax({
+			url:"../ChangeInfoServlet",
+			data:{userNickName:nickName},
+			success:function(result){
+				if(result){
+					tip.text("保存成功");
+				} else {
+					tip.text("保存失败");
+				}
+			},
+			error: function(){
+				tip.text("保存失败");
+			}
+		})
+	});
+	$(".row_select").blur(function(){
+		var day = $("#select_day").val();
+		var month = $("#select_month").val();
+		var year = $("#select_year").val();
+		if(day==null || month==null || year==null){
+			return;
+		} else {
+			var birthday = year+"-"+month+"-"+day;
+			$("#userNickNameInfo").text("正在保存");
+			$.ajax({
+				url:"../ChangeInfoServlet",
+				data:{userBirthday:birthday},
+				success:function(result){
+					if(result){
+						$("#userNickNameInfo").text("保存成功");
+					} else {
+						$("#userNickNameInfo").text("保存失败");
+					}
+				},
+				error: function(){
+					$("#userNickNameInfo").text("保存失败");
+				}
+			});
+		}
+	});
+});
+
 

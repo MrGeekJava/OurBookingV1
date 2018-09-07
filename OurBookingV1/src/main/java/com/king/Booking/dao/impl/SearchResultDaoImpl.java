@@ -19,7 +19,7 @@ public class SearchResultDaoImpl implements SearchResult {
 	//通过地址（省，市在数据库查询酒店表酒店）
 	public List<HotelSearchHotelView> HotelSearchByAdress(String province, String downtown,int currentPage,int pageSize) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("SearchResultDaoImpl");
 		QueryRunner runner = new QueryRunner();
 		
 		Connection conn = null;
@@ -30,7 +30,7 @@ public class SearchResultDaoImpl implements SearchResult {
 			
 			//查询数据库sql语句
 			
-			String sql = "select * from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ? and limit ?,?";
+			String sql = "select * from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ? limit ?,?";
 			Object[] params = {province,downtown,(currentPage-1)*pageSize,pageSize};
 			//返回的数据被封装成List<JavaBean>
 			hotelSearchList = runner.query(conn, sql,new BeanListHandler<HotelSearchHotelView>(HotelSearchHotelView.class),params);
@@ -73,23 +73,22 @@ public class SearchResultDaoImpl implements SearchResult {
 
 		QueryRunner runner = new QueryRunner();
 		Connection conn = null;
-		int hotelCount = 0;
+		Object hotelCount = 0;
 		try {
 			conn = DataSourceUtil.getConnection();
 			String sql = "select count(*) from hotel_searchhotel_view where HotelProvince = ? and HotelDowntown = ? ";
 			Object[] params = {province,downtown};
-			hotelCount = runner.query(conn,sql,new ScalarHandler(),params);
+			hotelCount = runner.query(conn,sql,new ScalarHandler<Object>(),params);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return hotelCount;
-	}
-
-
-	public List<HotelSearchHotelView> HotelSearchByAdress(String province, String Downtown) {
-		// TODO Auto-generated method stub
-		return null;
+		int value = 0;
+		System.out.println("酒店数量");
+		System.out.println(hotelCount);
+		if(hotelCount instanceof Long)
+		    value = Integer.parseInt(String.valueOf(hotelCount));
+		return value;
 	}
 
 }

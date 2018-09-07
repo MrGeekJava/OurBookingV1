@@ -5,7 +5,7 @@
 <head lang="en">
     <link href="../resources/css/looking_room.css" rel="stylesheet" type="text/css">
     <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
     <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
     
@@ -615,11 +615,74 @@
             <span class="span1">小玲</span>
             <span class="span2">广州白云宾馆的4家餐厅提供美味的中国菜肴和意大利美食。大堂酒吧供应
 各种饮料和咖啡。</span>
+        </div>       
+    </div>
+    
+    
+     <div class="CommentRightContainer">
+
+    </div>
+
+    <div class="concentContainer">
+        <div class="hidden">
+            <svg class="icon icon-cha2" aria-hidden="true">
+                <use xlink:href="#icon-cha2"></use>
+            </svg>
+
+        </div>
+        <div class="comment">
+            <div class="comment1">
+                <div class="touxiang">L</div>
+                <div class="nickName">linux</div>
+                <div class="country">中国</div>
+                <div class="pingfeng">7.3</div>
+                <div class="date">点评日期：</div>
+                <div class="pinglun"></div>
+                <div class="pinglundate">于2018.2.12入住</div>
+                <div class="zang">
+                    <svg class="icon   icon-zan" aria-hidden="true">
+                        <use xlink:href="#icon-zan"></use>
+                    </svg>
+                    <span class="zangNum">1223人点赞</span>
+                </div>
+                <div class="xian"></div>
+            </div>
+
+            <div class="comment2">
+                <div class="touxiang">L</div>
+                <div class="nickName">linux</div>
+                <div class="country">中国</div>
+                <div class="pingfeng">7.3</div>
+                <div class="date">点评日期：</div>
+                <div class="pinglun"></div>
+                <div class="pinglundate">于2018.2.12入住</div>
+                <div class="zang">
+                    <svg class="icon   icon-zan" aria-hidden="true">
+                        <use xlink:href="#icon-zan"></use>
+                    </svg>
+                    <span class="zangNum">1223人点赞</span>
+                </div>
+                <div class="xian"></div>
+            </div>
+            
+             <div class="pageDisplay">
+                <ul>
+                	<li>首页</li>
+                    <li>上一页</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>下一页</li>
+                    <li>末页</li>
+                </ul>
+            </div>
         </div>
         
+         
         
         
     </div>
+    
     
 
 </div>
