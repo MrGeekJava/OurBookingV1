@@ -1138,8 +1138,8 @@ $(document).ready(function(){
                         $(".CommentFoot").fadeOut("slow");
                         $(".CommentFootCopy>.span1").text(comment.userNickName);
                         $(".CommentFootCopy>.span2").text(comment.commentWord);
-                        $(".CommentFoot").animate({top:'1780px'});
-                        $(".CommentFootCopy").fadeIn("slow").animate({top:'1770px'});
+                        $(".CommentFoot").animate({top:'2080px'});
+                        $(".CommentFootCopy").fadeIn("slow").animate({top:'2070px'});
                    }
                    if(n%2==0){
            
@@ -1147,8 +1147,8 @@ $(document).ready(function(){
                        $(".CommentFootCopy").fadeOut("slow");
                   	   $(".CommentFoot>.span1").text(comment.userNickName);                       
                        $(".CommentFoot>.span2").text(comment.commentWord);
-                       $(".CommentFoot").fadeIn("slow").animate({top:'1770px'});
-                       $(".CommentFootCopy").animate({top:'1780px'});
+                       $(".CommentFoot").fadeIn("slow").animate({top:'2070px'});
+                       $(".CommentFootCopy").animate({top:'2080px'});
                    }
                    
                 }
@@ -1250,9 +1250,156 @@ $(document).ready(function(){
     	}
     });
     
+  //右侧评论初始化
+    rightComment();
+    function rightComment(){
+    	$(".comment1>.nickName").text($.cookie("nickName1"));
+    	$(".comment1>.touxiang").text($.cookie("nickName1").substring(1,2));
+     	$(".comment1>.country").text($.cookie("userCountry1"));
+     	$(".comment1>.pingfeng").text($.cookie("rating1"));
+     	$(".comment1>.date").text("评论日期"+$.cookie("commentDate1"));
+     	$(".comment1>.pinglun").text($.cookie("commentWord1"));
+     	$(".comment1>.pinglundate").text("入住日期"+$.cookie("inDate1"));
+    	$(".comment1>.zang>.zangNum").text($.cookie("likeNumber1")+"人点赞");
+    	
+    	$(".comment2>.nickName").text($.cookie("nickName2"));
+    	$(".comment2>.touxiang").text($.cookie("nickName2").substring(1,2));
+     	$(".comment2>.country").text($.cookie("userCountry2"));
+     	$(".comment2>.pingfeng").text($.cookie("rating2"));
+     	$(".comment2>.date").text("评论日期"+$.cookie("commentDate2"));
+     	$(".comment2>.pinglun").text($.cookie("commentWord2"));
+     	$(".comment2>.pinglundate").text("入住日期"+$.cookie("inDate2"));
+    	$(".comment2>.zang>.zangNum").text($.cookie("likeNumber2")+"人点赞");
+    	
+    	 $(".pageDisplay li").eq(2).css({"font-size":"18px"});
+    }
+    
+    //评论分页
+    //当前页数
+    var pageNowin = 1;
+    $(".pageDisplay li").click(function(){
+    
+        for(var i = 0;i<7;i++){
+            if( $(".pageDisplay li").eq(i).css("color")=="rgb(0, 107, 188)"){
+            	
+                if(i==1){
+                    pageNowin = pageNowin -1;
+                    if(pageNowin == 0){
+                    	pageNowin = pageNowin + 1;
+                    	return false;
+                    }
+                    for(var j=0;j<6;j++){
+                  	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
+                  }
+                    $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
+                }else if(i==6){
+                	pageNowin=3;
+               	 for(var j=0;j<6;j++){
+                    	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
+                    }
+                      $(".pageDisplay li").eq(4).css({"font-size":"18px"});
+                }else if(i==0){
+                	pageNowin=1;
+                	 for(var j=0;j<6;j++){
+                     	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
+                     }
+                       $(".pageDisplay li").eq(2).css({"font-size":"18px"});
+                }else if(i==5){
+                    pageNowin = pageNowin + 1;
+                    if(pageNowin==4){
+                    	pageNowin = pageNowin-1;
+                    	return false;
+                    }
+                    for(var j=0;j<6;j++){
+                  	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
+                  }
+                    $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
+                }else{
+                    pageNowin = i-1;
+                    for(var j=0;j<6;j++){
+                    	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
+                    }
+                  
+                    $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
+                }
+                var nickName1;var userCountry1;var rating1;var commentDate1;var commentWord1;var inDate1;var likeNumber1;
+				var nickName2;var userCountry2;var rating2 ;var commentDate2;var commentWord2;var inDate2;var likeNumber2;
+                
+                $.getJSON('../CommentPageServlet',
+                    {pageNow:pageNowin,pageNum:2},
+                    function(result){                                
+                    	
+                    	 $.each(result, function(k, v){
+                             $.each(v,function(kk, vv){
+                            	 if(kk==0){
+                            		nickName1 = vv.userNickName;
+                        
+                  					userCountry1 = vv.userCountry;
+                  					rating1 = vv.positionRating;
+                  					 commentDate1 = vv.commentDate;
+                  					commentWord1 = vv.commentWord;
+                  					inDate1 = vv.inDate;
+                  					likeNumber1 = vv.likeNumber;
+                            	 }
+                            	  if(kk==1){
+                            		  nickName2 = vv.userNickName;
+                   					 userCountry2 = vv.userCountry;
+                   					rating2 = vv.positionRating;
+                   					commentDate2 = vv.commentDate;
+                   					commentWord2 = vv.commentWord;
+                   					inDate2 = vv.inDate;
+                   					 likeNumber2 = vv.likeNumber;
+                            	 }
+                            		
+                            	  
+                                  $(".comment1>.nickName").text(nickName1);
+                               	$(".comment1>.touxiang").text(encodeURIComponent(nickName1).substring(1,2));
+                                	$(".comment1>.country").text(userCountry1);
+                                	$(".comment1>.pingfeng").text(rating1);
+                                	$(".comment1>.date").text("评论日期"+commentDate1);
+                                	$(".comment1>.pinglun").text(commentWord1);
+                                	$(".comment1>.pinglundate").text("入住日期"+inDate1);
+                               	$(".comment1>.zang>.zangNum").text(likeNumber1+"人点赞");
+                               	
+                               	$(".comment2>.nickName").text(nickName2);
+                               	$(".comment2>.touxiang").text(encodeURIComponent(nickName2).substring(1,2));
+                                	$(".comment2>.country").text(userCountry2);
+                                	$(".comment2>.pingfeng").text(rating2);
+                                	$(".comment2>.date").text("评论日期"+commentDate2);
+                                	$(".comment2>.pinglun").text(commentWord2);
+                                	$(".comment2>.pinglundate").text("入住日期"+inDate2);
+                               	$(".comment2>.zang>.zangNum").text(likeNumber2+"人点赞"); 	
+                            	  
+                                 
+                             });
+                         });
+                    	
+                                      	
+                    }
+                );
   
+                                        
+            }
+        }      
+        
+
+    });
     
 
+    //显示评论数据
+    $(".midd a").eq(4).click(function(){
+    	$(".CommentRightContainer").fadeToggle();
+    	$(".concentContainer").fadeToggle();
+    });
+    
+    //
+    $(".concentContainer>.hidden").click(function(){
+    	$(".CommentRightContainer").fadeToggle();
+    	$(".concentContainer").fadeToggle();
+    })
+    
+    
+    
 });
 
 

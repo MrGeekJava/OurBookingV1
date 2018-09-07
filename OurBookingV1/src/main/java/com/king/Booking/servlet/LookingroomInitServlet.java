@@ -118,6 +118,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			int k=0;
 			for(CommentView comment:cv) {
 				k++;
+				System.out.println(k);
 				if(k == 1) {
 					String nickName1 = URLEncoder.encode(comment.getUserNickName(),"utf-8");		
 					String userCountry1 = URLEncoder.encode(comment.getUserCountry(),"utf-8");	
@@ -127,13 +128,13 @@ public class LookingroomInitServlet  extends HttpServlet{
 					String inDate1 = URLEncoder.encode(comment.getInDate(),"utf-8");	
 					String likeNumber1 = URLEncoder.encode(String.valueOf(comment.getLikeNumber()),"utf-8");		
 
-					c1 = new Cookie("nickName",nickName1);
-					c2 = new Cookie("userCountry",userCountry1);
-					c3 = new Cookie("rating",rating1);
-					c4 = new Cookie("commentDate",commentDate1);
-					c5 = new Cookie("commentWord",commentWord1);
-					c6 = new Cookie("inDate",inDate1);
-					c7 = new Cookie("likeNumber",likeNumber1);
+					c1 = new Cookie("nickName1",nickName1);
+					c2 = new Cookie("userCountry1",userCountry1);
+					c3 = new Cookie("rating1",rating1);
+					c4 = new Cookie("commentDate1",commentDate1);
+					c5 = new Cookie("commentWord1",commentWord1);
+					c6 = new Cookie("inDate1",inDate1);
+					c7 = new Cookie("likeNumber1",likeNumber1);
 					
 					response.addCookie(c1);
 					response.addCookie(c2);
@@ -152,14 +153,14 @@ public class LookingroomInitServlet  extends HttpServlet{
 					String commentWord2 = URLEncoder.encode(comment.getCommentWord(),"utf-8");
 					String inDate2 = URLEncoder.encode(comment.getInDate(),"utf-8");	
 					String likeNumber2 = URLEncoder.encode(String.valueOf(comment.getLikeNumber()),"utf-8");		
-
-					c1 = new Cookie("nickName",nickName2);
-					c2 = new Cookie("userCountry",userCountry2);
-					c3 = new Cookie("rating",rating2);
-					c4 = new Cookie("commentDate",commentDate2);
-					c5 = new Cookie("commentWord",commentWord2);
-					c6 = new Cookie("inDate",inDate2);
-					c7 = new Cookie("likeNumber",likeNumber2);
+					System.out.println(nickName2);
+					c1 = new Cookie("nickName2",nickName2);
+					c2 = new Cookie("userCountry2",userCountry2);
+					c3 = new Cookie("rating2",rating2);
+					c4 = new Cookie("commentDate2",commentDate2);
+					c5 = new Cookie("commentWord2",commentWord2);
+					c6 = new Cookie("inDate2",inDate2);
+					c7 = new Cookie("likeNumber2",likeNumber2);
 					
 					response.addCookie(c1);
 					response.addCookie(c2);
