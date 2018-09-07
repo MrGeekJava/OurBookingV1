@@ -10,7 +10,8 @@
 
 		<%
 			request.setCharacterEncoding("utf-8");
-			String searchAdress = request.getParameter("adress");
+			String searchAdressTemp = (request.getParameter("adress")); 
+			String searchAdress = searchAdressTemp.replace(',', '#');
 			Cookie cookie = new Cookie("inputAdress",searchAdress);
 			response.addCookie(cookie);
 			response.sendRedirect("searchResult.jsp");
