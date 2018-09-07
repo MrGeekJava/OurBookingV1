@@ -225,7 +225,7 @@
 </div>
 <div class="container">
     <div class="container_order_ifm_box">
-        <div class="container_order_ifm">
+        <div class="container_order_ifm"> 
             <div class="container_order_ifm_left">
                 <div class="container_order_ifm_img" >
                 </div>

@@ -225,7 +225,7 @@
 </div>
 <div class="container">
     <div class="container_order_details">
-        <div class="order_details_idcard">
+        <div class="order_details_idcard"> 
             无需信用卡!
         </div>
         <div class="order_details_box">

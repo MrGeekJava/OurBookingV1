@@ -226,7 +226,7 @@
 </div>
 <div class="container">
        <div class="container_order_details">    
-        <div class="order_details_box">
+        <div class="order_details_box"> 
             <div class="order_details">订单详情</div>
             <div class="order_details_up">
                 <p class="order_details_p">入住时间:</p>
