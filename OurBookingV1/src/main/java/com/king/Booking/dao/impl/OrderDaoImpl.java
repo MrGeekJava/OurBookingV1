@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.king.Booking.dao.interfaces.OrderDao;
+import com.king.Booking.entity.Hotel;
 import com.king.Booking.entity.Order;
-import com.king.Booking.entity.OrderView;
 import com.king.Booking.util.DataSourceUtil;
 
 public class OrderDaoImpl implements OrderDao{
@@ -40,10 +41,23 @@ public class OrderDaoImpl implements OrderDao{
 		}
 		
 		return Orders;
-		
-		
-		
 	}
+	
+	//根据酒店ID查询酒店相关信息
+	public Hotel queryAllHotelbyhotelId(int hotelId) throws SQLException {
+		QueryRunner runner = new QueryRunner();
+		Connection conn = DataSourceUtil.getConnection();
+		String sql = "select * from HotelList where hotelId=?"; 
+		Object[] params = {hotelId};
+		Hotel hotel = new Hotel();
+		hotel = runner.query(conn, sql, new BeanHandler<Hotel>(Hotel.class),params);
+		
+		return hotel ;
+	}
+	
+	
+	
+	
 	
 	
 	//生成的订单存储到订单表中
