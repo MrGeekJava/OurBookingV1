@@ -1227,7 +1227,7 @@ $(document).ready(function(){
     
     $(".order").find("td").click(function(){	
     	for(var i=1;i<6;i++){
-    		if($(".order").find("tr").eq(i).find("td").eq(8).css("background-color")=="rgb(10, 178, 27)"){
+    		if($(".order").find("tr").eq(i).find("td").eq(8).css("color")=="rgb(0, 0, 255)"){
     			var orderRoomType = $(".order").find("tr").eq(i).find("td").eq(0).text();
     			var orderSurplusRoomNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
     			var orderPrice = $(".order").find("tr").eq(i).find("td").eq(2).text();
