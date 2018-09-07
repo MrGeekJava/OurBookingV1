@@ -633,26 +633,19 @@
     font-weight: bold;
     color: #4AA926;
 }
-.container_ensure2_p1,.container_ensure2_p2,.container_ensure2_p3{
+.container_ensure2_p1{
+	width: 436px;
     height: 23px;
     line-height: 23px;
-    font-size: 13px;
+    font-size: 13px; 
     color: #077812;
     display: inline-block;
     padding-top: 10px;
+    padding-left: 20px;
+
     float: left;
 }
-.container_ensure2_p1{
-    width: 78px;
-    padding-left: 20px;
-}
-.container_ensure2_p2{
-    width: 378px;
-    font-weight: bold;
-}
-.container_ensure2_p3{
-    width: 80px;
-}
+
 .input_user_ifm{
     padding-top: 20px;
     color: #383838;
