@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.*" %>
+<%@ page import="com.king.Booking.entity.User" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,14 +132,37 @@
                 <li class="user-li_4">
                     <a href="javascript:void(0)" onclick="" class="user-btn-2">上线我的住宿</a>
                 </li>
-                <li class="user-li_5 person_class">
+<%
+	User loginUser = (User) session.getAttribute("loginUser");
+	if(loginUser == null){
+%>
+				<li class="user-li_5">
+					<a id="reg-btn" href="#" class="user-btn" data-title="成为会员，享受专属隐藏优惠">注册</a>
+				</li>
+				<li class="user-li_6">
+					<a id="log-btn" href="#" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
+				</li>
+<%
+	} else {
+%>
+				<li class="person_class">
                     <a href="#" class="person_class_a">
-                        <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
-                        <p class=" user_name">用户名</p></a>
+<%
+		if(loginUser.getUserPicture() == null) {
+%>
+						<img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		} else {
+%>
+						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		}
+%>
+                        <p class="user_name">${sessionScope.loginUser.userNickName }</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
                         <ul class="showIfm_none_ul">
-                            <li><a href="#">我的个人中心</a></li>
+                            <li><a href="PersonalCenter.jsp">我的个人中心</a></li>
                             <li><a href="#">我的订单</a></li>
                             <li><a href="#">报表</a></li>
                             <li><a href="#">评语</a></li>
@@ -143,10 +170,13 @@
                             <li><a href="#">下载app</a></li>
                             <li><a href="#">客服帮助</a></li>
                             <li><a href="#">设置</a></li>
-                            <li><a href="#">退出</a></li>
+                            <li class="user_quit"><a href="../UserExitServlet" >退出</a></li>
                         </ul>
                     </div>
                 </li>
+<%		
+	}
+%>
             </ul>
         </div>
     </div>
@@ -183,7 +213,17 @@
         <div class="modifyPD">
             <div class="modifyPD-head">
                 <div class="modifyPD-head-img">
-                    <img src="../resources/res/images/PersonCenter/cricleHead.png">
+<%
+	if(loginUser.getUserPicture() == null) {
+%>
+					<img src="../resources/res/images/PersonCenter/cricleHead.png">
+<%
+	} else {
+%>
+					<img src="${sessionScope.loginUser.userPicture }">
+<%
+	}
+%>
                 </div>
                 <div class="modifyPD-head-btn">
                     <a href="#" onclick="openModel(event, 'install')">修改个人资料</a>
@@ -191,28 +231,73 @@
             </div>
             <div class="modifyPD-body">
                 <div class="modifyPD-body-proBar">
-                    <p>已完成10%</p>
+<%
+	int finish = 20;
+	if(loginUser.getUserSurnme()!=null || loginUser.getUserName()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserEmail()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserPhoneNumber()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserCountry()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserPicture()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserNickName()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserBirthday()!=null){
+		finish += 10;
+	}
+	if(loginUser.getUserSex()!=null){
+		finish += 10;
+	}
+%>
+                    <p>已完成<%=finish %>%</p>
                     <div class="porBar">
-                        <div class="finish"></div>
+                        <div class="finish" style="width:<%=finish %>%"></div>
                     </div>
                 </div>
-                <div class="modifyPD-body-con">
-                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 上传头像照</a>
-                    <p>选好头像照秀出你的高颜值。 </p>
-                </div>
-                <div class="modifyPD-body-con">
-                    <a href="#CC"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 添加信用卡信息</a>
-                    <p>保存支付信息，下次无需重复填写，预订速度快到飞起！（请放心，你的支付信息很安全！）</p>
-                </div>
-                <div class="modifyPD-body-con">
-                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写昵称</a>
-                    <p>你可以随时修改显示在点评中的昵称。</p>
-                </div>
-                <div class="modifyPD-body-con">
+<% 
+	if(loginUser.getUserSurnme()==null || loginUser.getUserName()==null){
+%>
+				<div class="modifyPD-body-con">
                     <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写名字</a>
                     <p>告诉我们该如何称呼你</p>
                 </div>
-            </div>
+<%
+	}
+	if(loginUser.getUserCountry()==null){
+%>
+				<div class="modifyPD-body-con">
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写国家</a>
+                    <p>告诉我们你来自哪里</p>
+                </div>
+<%
+	}
+	if(loginUser.getUserPicture()==null){
+%>
+				<div class="modifyPD-body-con">
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 上传头像照</a>
+                    <p>选好头像照秀出你的高颜值。 </p>
+                </div>
+<%
+	}
+	if(loginUser.getUserNickName()==null){
+%>
+				<div class="modifyPD-body-con">
+                    <a href="#PI"  onclick="openModel(event, 'install')" class="iconfont icon-icontj"> 填写昵称</a>
+                    <p>你可以随时修改显示在点评中的昵称。</p>
+                </div>
+<%
+	}
+%>
+       		</div>
         </div>
 
         <div class="leftcontainer">
@@ -509,7 +594,7 @@
 
                 <div class="ISInfo_content_row">
                     <p class="row_name">显示名称</p>
-                    <input type="text" class="row_input">
+                    <input type="text" id="userNickName" name="userNickName" class="row_input"><p class='row_name_tip'></p>
                     <p class="row_tip first_row_tip_name iconfont icon-zlicontips01"> 昵称可以随时修改</p>
                 </div>
 
@@ -524,6 +609,7 @@
                     <select id="select_year" class="row_select">
                         <option value="0"></option>
                     </select>
+                    <p class='row_name_tip'></p>
                     <p class="row_tip first_row_tip_name iconfont icon-zlicontips01"> 请放心，我们仅显示你的年龄范围（如："25-30岁"）</p>
                 </div>
 
@@ -793,12 +879,12 @@
         <div class="CHIBody">
             <a href="#" class="closeImg">×</a>
             <div class="first_row_headImg newImg" id="img-vessel">
-                <img src="../resources/res/images/PersonCenter/bigHead.png" />
+                <img src="../resources/res/images/PersonCenter/bigHead.png" id="myHead" />
             </div>
             <div class="chooseFile">
                 <h3 class="fileTitle">选择文件上传</h3>
                 <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
-                <button id="saveImg" class="saveHeadBtn" onclick="readAsDataURL()" disabled>保存</button>
+                <button id="saveImg" class="saveHeadBtn">保存</button>
                 <textarea id="aaa"></textarea>
             </div>
         </div>

@@ -145,34 +145,10 @@ $(document).ready(function () {
 					 var result = eval(result.user);
 					 if(result==true){
 						 alert("恭喜"+userEmail+"注册成功");
-						 $("#LARid").css({
-							 "display":"none"
-						 });
-						 $(".user-li_5").css({
-								 "display":"none"
-						 		});
-						 
-						 $(".user-li_6").css({
-							 "display":"none"
-					 		});
-						 
-						 $(".person_class").css({
-							 "display":"block"
-					 		});
-						 $(".user_name").html(" ");					 
+						 $("#emailInput").attr("value",userEmail);
+						 $("#log-btn").click();
 					 }else{
-						 alert("注册失败！"+result+"已经存在或者验证码不正确！");					
-						 $(".user-li_5").css({
-								 "display":"block"
-						 		});
-						 
-						 $(".user-li_6").css({
-							 "display":"block"
-					 		});
-						 
-						 $(".person_class").css({
-							 "display":"none"
-					 		});
+						 alert("注册失败！"+result+"已经存在或者验证码不正确！");
 					 }
 			});
 	});

@@ -25,6 +25,7 @@ public class UserLoginFilter implements Filter {
 		HttpSession hs = req.getSession();
 		if(hs.getAttribute("loginUser") == null) {
 			res.sendRedirect("/OurBookingV1/index.jsp");
+			return;
 		}
 		
 		chain.doFilter(request, response);

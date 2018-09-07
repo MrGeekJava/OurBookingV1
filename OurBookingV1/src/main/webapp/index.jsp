@@ -149,7 +149,18 @@
 %>
 				<li class="person_class">
                     <a href="#" class="person_class_a">
-                        <img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		if(loginUser.getUserPicture() == null) {
+%>
+						<img src="resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		} else {
+%>
+						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		}
+%>
+                        
                         <p class="user_name">${sessionScope.loginUser.userNickName }</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
@@ -168,7 +179,7 @@
                 </li>
 <%		
 	}
-%>	
+%>
 			</ul>
 		</div>
 	</div>
@@ -864,7 +875,7 @@
 		<div id="container_holiday">
 			<i class="iconfont icon-Deutsch-flag"></i>
 			<span class="holiday_span">度假在即？<a href="#">年中优惠,省15%+</a>，了解一下!</span>
-			<i id="hide_i">&Chi;</i>
+			<i class="iconfont icon-ArtboardCopy" id="hide_i"></i>
 		</div>
 		<div class="fuSongXian">
 			<!-- 用于连接到目的地-->
@@ -1051,18 +1062,7 @@
 		<div class="container4">
 			<p class="p1">不仅有酒店...还有更多度假屋和公寓等你体验这份舒适</p>
 			<ul class="container4list">
-				<li class="container4list_0">
-				<img src="resources/res/images/index_foot/hotel/01.jpg">
-				<br>
-				<div>
-				<p style="font-size: 13px">休格公寓式酒店</p>
-				<p style="font-size: 13px;color: #707070">里约热内卢</p>
-				<br>
-				<p style="color: #383838;font-size: 14px">353元起</p>
-				<p style="color: #003580;font-size: 13px">9.3好极了..296条住客点评</p>
-				</div>
-				</li>
-				
+				<li class="container4list_0"><img src="resources/res/images/index_foot/hotel/01.jpg"><br><div><p style="font-size: 13px">休格公寓式酒店</p><p style="font-size: 13px;color: #707070">里约热内卢</p><br><p style="color: #383838;font-size: 14px">353元起</p><p style="color: #003580;font-size: 13px">9.3好极了..296条住客点评</p></div></li>
 				<li class="container4list_1"><img src="resources/res/images/index_foot/hotel/02.jpg"><div><p style="font-size: 13px">希亚多梅西公寓|里斯本最佳公寓</p><p style="font-size: 13px;color: #707070">里斯本</p><br><p style="color: #383838;font-size: 14px">1802起</p><p style="color: #003580;font-size: 13px">9.5优异的..768条住客点评</p></div></li>
 				<li class="container4list_2"><img src="resources/res/images/index_foot/hotel/03.jpg"><div><p style="font-size: 13px">市中心优雅时尚公寓</p><p style="font-size: 13px;color: #707070">布达佩斯</p><br><p style="color: #383838;font-size: 14px">862元起</p><p style="color: #003580;font-size: 13px">9.6优异的..57条住客点评</p></div></li>
 				<li class="container4list_3"><img src="resources/res/images/index_foot/hotel/04.jpg"><div><p style="font-size: 13px">海滨美丽公寓</p><p style="font-size: 13px;color: #707070">尼斯</p><br><p style="color: #383838;font-size: 14px">1952元起</p><p style="color: #003580;font-size: 13px">9.7优异的..26条住客点评</p></div></li>
@@ -1070,7 +1070,7 @@
 				<li class="container4list_5"><span >你可能会喜欢这些度假屋和公寓</span><input type="text" placeholder="搜索度假屋及公寓"></li>
 			</ul>
 			<div class="slideLeftBtn4"id="slideLeftBtn4">&#xe60f;</div>
-			<div class="slideRightBtn4" id="slideRightBtn4">&#xe60e;</div>
+			<div class="slideRightBtn4" id="slideRightBtn4">&#xe60e</div>
 		</div>
 	</div>
 	<div class="container_box5">
@@ -1656,6 +1656,7 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 </body>
 </html>
