@@ -50,7 +50,7 @@ $(document).ready(function(){
         $("#select_day").append("<option value='" + i + "'>" + i +"</option>");
     }
     for(var i=1; i<=12; i++){
-        $("#select_month").append("<option value='" + i + "月'>" + i +"月</option>");
+        $("#select_month").append("<option value='" + i + "'>" + i +"月</option>");
     }
     for(var i=2018; i>=1906; i--){
         $("#select_year").append("<option value='" + i + "'>" + i +"</option>");
@@ -154,11 +154,21 @@ function readAsDataURL(){
 $(document).ready(function(){
 	$(".row_input").blur(function(){
 		var nickName = $("#userNickName").val();
+		var userName = $("#userName").val();
+		var userSurnme = $("#userSurnme").val();
+		var userPhoneNumber = $("#userPhoneNumber").val();
+		var userEmail = $("#userEmail").val();
 		var tip = $(this).siblings(".row_name_tip");
 		tip.text("正在保存");
 		$.ajax({
 			url:"../ChangeInfoServlet",
-			data:{userNickName:nickName},
+			data:{
+				userNickName:nickName,
+				userName:userName,
+				userSurnme:userSurnme,
+				userPhoneNumber:userPhoneNumber,
+				userEmail:userEmail
+			},
 			success:function(result){
 				if(result){
 					tip.text("保存成功");
@@ -175,26 +185,32 @@ $(document).ready(function(){
 		var day = $("#select_day").val();
 		var month = $("#select_month").val();
 		var year = $("#select_year").val();
-		if(day==null || month==null || year==null){
-			return;
-		} else {
-			var birthday = year+"-"+month+"-"+day;
-			$("#userNickNameInfo").text("正在保存");
-			$.ajax({
-				url:"../ChangeInfoServlet",
-				data:{userBirthday:birthday},
-				success:function(result){
-					if(result){
-						$("#userNickNameInfo").text("保存成功");
-					} else {
-						$("#userNickNameInfo").text("保存失败");
-					}
-				},
-				error: function(){
-					$("#userNickNameInfo").text("保存失败");
-				}
-			});
+		var birthday = null;
+		var country = $("#select_country").val();
+		var title = $("#select_title").val();
+		if(day!="" && month!="" && year!=""){
+			birthday = year+"-"+month+"-"+day;
 		}
+		var tip = $(this).siblings(".row_name_tip");
+		tip.text("正在保存");
+		$.ajax({
+			url:"../ChangeInfoServlet",
+			data:{
+				userBirthday:birthday,
+				userCountry:country,
+				userSex:title
+			},
+			success:function(result){
+				if(result){
+					tip.text("保存成功");
+				} else {
+					tip.text("保存失败");
+				}
+			},
+			error: function(){
+				tip.text("保存失败");
+			}
+		});
 	});
 });
 

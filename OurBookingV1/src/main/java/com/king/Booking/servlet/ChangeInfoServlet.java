@@ -31,13 +31,56 @@ public class ChangeInfoServlet extends HttpServlet {
 		
 		if(request.getParameter("userNickName") != null) {
 			changeValue = request.getParameter("userNickName");
+			System.out.println(changeValue);
 			isChanged = new ChangeInfoService().ChangeUserInfo("UserNickName", changeValue, user.getUserId());
+			user.setUserNickName(changeValue);
+		}
+		if(request.getParameter("userName") != null) {
+			changeValue = request.getParameter("userName");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserName", changeValue, user.getUserId());
+			user.setUserName(changeValue);
+		}
+		if(request.getParameter("userSurnme") != null) {
+			changeValue = request.getParameter("userSurnme");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserSurnme", changeValue, user.getUserId());
+			user.setUserSurnme(changeValue);
+		}
+		if(request.getParameter("userPhoneNumber") != null) {
+			changeValue = request.getParameter("userPhoneNumber");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserPhoneNumber", changeValue, user.getUserId());
+			user.setUserPhoneNumber(changeValue);
+		}
+		if(request.getParameter("userEmail") != null) {
+			changeValue = request.getParameter("userEmail");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserEmail", changeValue, user.getUserId());
+			user.setUserEmail(changeValue);
 		}
 		if(request.getParameter("userBirthday") != null) {
 			changeValue = request.getParameter("userBirthday");
-			isChanged = new ChangeInfoService().ChangeUserInfo("Userbirthday", changeValue, user.getUserId());
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserBirthday", changeValue, user.getUserId());
+			user.setUserBirthday(changeValue);
+		}
+		if(request.getParameter("userCountry") != null) {
+			changeValue = request.getParameter("userCountry");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("UserCountry", changeValue, user.getUserId());
+			user.setUserCountry(changeValue);
+		}
+		if(request.getParameter("userSex") != null) {
+			changeValue = request.getParameter("userSex");
+			System.out.println(changeValue);
+			isChanged = new ChangeInfoService().ChangeUserInfo("userSex", changeValue, user.getUserId());
+			user.setUserSex(changeValue);
 		}
 		System.out.println(isChanged);
+		
+		hs.setAttribute("loginUser", user);
+		
 		out.print(isChanged);
 		out.flush();
 		out.close();		

@@ -586,7 +586,17 @@
                 <div class="ISInfo_content_row">
                     <p class="row_name">个人照片</p>
                     <div class="first_row_headImg">
-                        <img src="../resources/res/images/PersonCenter/bigHead.png">
+<%
+	if(loginUser.getUserPicture() != null){
+%>
+						<img src="${sessionScope.loginUser.userPicture }">
+<%		
+	} else {
+%>
+						<img src="../resources/res/images/PersonCenter/bigHead.png">
+<%		
+	}
+%>
                     </div>
                     <a href="#" class="row_button first_row_setHeadImg iconfont icon-xiangji"> 更改照片</a>
                     <p class="row_tip first_row_tip_Img iconfont icon-zlicontips01"> 上传一张美美的个人照吧</p>
@@ -594,51 +604,52 @@
 
                 <div class="ISInfo_content_row">
                     <p class="row_name">显示名称</p>
-                    <input type="text" id="userNickName" name="userNickName" class="row_input"><p class='row_name_tip'></p>
+                    <input type="text" id="userNickName" name="userNickName" class="row_input" value="${sessionScope.loginUser.userNickName }">
+                    <p class='row_name_tip'></p>
                     <p class="row_tip first_row_tip_name iconfont icon-zlicontips01"> 昵称可以随时修改</p>
                 </div>
 
                 <div class="ISInfo_content_row">
+<%
+	String[] days = new String[3];
+	if(loginUser.getUserBirthday() != null){
+		days = loginUser.getUserBirthday().split("-");
+	}
+%>
                     <p class="row_name">生日</p>
                     <select id="select_day" class="row_select">
-                        <option value="0"></option>
+                        <option value="<%=days[2]%>"><%=days[2]%></option>
                     </select>
                     <select id="select_month" class="row_select">
-                        <option value="0"></option>
+                        <option value="<%=days[1]%>"><%=days[1]%>月</option>
                     </select>
                     <select id="select_year" class="row_select">
-                        <option value="0"></option>
+                        <option value="<%=days[0]%>"><%=days[0]%></option>
                     </select>
                     <p class='row_name_tip'></p>
                     <p class="row_tip first_row_tip_name iconfont icon-zlicontips01"> 请放心，我们仅显示你的年龄范围（如："25-30岁"）</p>
                 </div>
-
                 <div class="ISInfo_content_row">
                     <p class="row_name">国家/地区</p>
                     <select id="select_country" class="row_select">
-                            <option value="0"></option>
-                            <option value="China">中国</option>
-                            <option value="America">美国</option>
-                            <option value="Russia">俄罗斯</option>
-                            <option value="England">英国</option>
-                            <option value="France">法国</option>
-                            <option value="Japan">日本</option>
-                            <option value="Germany">德国</option>
-                            <option value="Denmark">丹麦</option>
-                            <option value="Uzbekistan">乌兹别克斯坦</option>
-                            <option value="Uruguay">乌拉圭</option>
-                            <option value="Uganda">乌干达</option>
-                            <option value="Bulgaria">保加利亚</option>
-                            <option value="Croatia">克罗地亚</option>
-                            <option value="Crimea">克里米亚</option>
-                            <option value="Palestine">巴勒斯坦</option>
-                            <option value="Pakistan">巴基斯坦</option>
-                            <option value="Columbia">哥伦比亚</option>
-                            <option value="Costa">哥斯达黎加</option>
-                            <option value="Australia">澳大利亚</option>
-                            <option value="India">印度</option>
-                            <option value="Guatemala">危地马拉</option>
+                            <option value="${sessionScope.loginUser.userCountry }" selected>${sessionScope.loginUser.userCountry }</option>
+                            <option value="中国">中国</option>
+                            <option value="美国">美国</option>
+                            <option value="俄罗斯">俄罗斯</option>
+                            <option value="英国">英国</option>
+                            <option value="法国">法国</option>
+                            <option value="日本">日本</option>
+                            <option value="德国">德国</option>
+                            <option value="丹麦">丹麦</option>
+                            <option value="乌兹别克斯坦">乌兹别克斯坦</option>
+                            <option value="乌拉圭">乌拉圭</option>
+                            <option value="乌干达">乌干达</option>
+                            <option value="哥斯达黎加">哥斯达黎加</option>
+                            <option value="澳大利亚">澳大利亚</option>
+                            <option value="印度">印度</option>
+                            <option value="危地马拉">危地马拉</option>
                     </select>
+                    <p class='row_name_tip'></p>
                     <p class="row_tip first_row_tip_name iconfont icon-zlicontips01"> 告诉大家您来自哪里</p>
                 </div>
             </div>
@@ -656,27 +667,55 @@
             <div class="ISInfo_content">
                 <div class="ISInfo_content_row">
                     <p class="row_name">称谓</p>
-                    <select class="row_select">
-                        <option value="0"></option>
-                        <option value="man">先生</option>
-                        <option value="woman">女士</option>
+                    <select id="select_title" class="row_select">
+                        <option value=""></option>
+<%
+	if(loginUser.getUserSex() != null){
+		if(loginUser.getUserSex().equals("男")){
+%>
+						<option value="男" selected>先生</option>
+                        <option value="女">女士</option>
+<%
+		} else if(loginUser.getUserSex().equals("女")){
+%>
+						<option value="男">先生</option>
+                        <option value="女" selected>女士</option>
+<%
+		} else {
+%>
+						<option value="男">先生</option>
+                        <option value="女">女士</option>
+<%
+		}
+	} else {
+%>
+						<option value="男">先生</option>
+                        <option value="女">女士</option>
+<%
+	}
+%>
                     </select>
+                    <p class='row_name_tip'></p>
                 </div>
                 <div class="ISInfo_content_row">
                     <p class="row_name">名</p>
-                    <input type="text" class="row_input">
+                    <input id="userName" type="text" class="row_input" value="${sessionScope.loginUser.userName }">
+                    <p class='row_name_tip'></p>
                 </div>
                 <div class="ISInfo_content_row">
                     <p class="row_name">姓</p>
-                    <input type="text" class="row_input">
+                    <input id="userSurnme" type="text" class="row_input" value="${sessionScope.loginUser.userSurnme }">
+                    <p class='row_name_tip'></p>
                 </div>
                 <div class="ISInfo_content_row">
                     <p class="row_name">电话</p>
-                    <input type="text" class="row_input">
+                    <input id="userPhoneNumber" type="text" class="row_input" value="${sessionScope.loginUser.userPhoneNumber }">
+                    <p class='row_name_tip'></p>
                 </div>
                 <div class="ISInfo_content_row">
                     <p class="row_name">邮箱地址</p>
-                    <input type="text" class="row_input">
+                    <input id="userEmail" type="text" class="row_input" value="${sessionScope.loginUser.userEmail }">
+                    <p class='row_name_tip'></p>
                 </div>
                 <div class="ISInfo_content_row">
                     <p class="row_name">地址</p>
