@@ -1122,7 +1122,7 @@ $(document).ready(function(){
     	  var n=0;
         setInterval(function(){
             n=(n+1);
-            if(n==4){
+            if(n==5){
                 n=0;
             };
           
