@@ -688,7 +688,6 @@ $(document).ready(function(){
  	    	document.cookie = "hotelName="+(hotelname);
  	    	} 
  	    }
- 	    
  	   window.location.href="../LookingroomInitServlet";     //在同当前窗口中打开窗口
 	})
 })
