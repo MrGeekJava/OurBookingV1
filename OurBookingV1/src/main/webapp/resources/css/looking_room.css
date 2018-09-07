@@ -1424,7 +1424,7 @@ td{
 
 td:hover{
 	
-	background-color: #0AB21B;
+	color: blue;
 	
 }
 
@@ -1641,7 +1641,7 @@ td:hover{
 
 }
 .tucao:hover{
-    color: blue;
+   background-color: #077812;
 }
 
 .screen_dibu{
