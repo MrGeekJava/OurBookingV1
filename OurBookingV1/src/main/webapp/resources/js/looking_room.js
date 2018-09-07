@@ -1122,8 +1122,9 @@ $(document).ready(function(){
     	  var n=0;
         setInterval(function(){
             n=(n+1);
-            if(n==4){
-                n=0;
+
+            if(n==9){
+                n=1;
             };
           
             $.getJSON('../LookingroomServlet',
