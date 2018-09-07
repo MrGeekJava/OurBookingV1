@@ -20,7 +20,7 @@ public class PayServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				 String  p0_Cmd = "Buy"; //业务类型   固定值“Buy” 
-		         String  p1_MerId = "10001126856";//商户编号
+		         String  p1_MerId = "10001126856";//商户编号 
 		         String  p2_Order = "123456";// 商户订单号(从订单表中获取)
 		         String p3 = request.getParameter("ORDER_MONEY").split("元")[0];
 		         String  p3_Amt = "0.01";// 支付金额

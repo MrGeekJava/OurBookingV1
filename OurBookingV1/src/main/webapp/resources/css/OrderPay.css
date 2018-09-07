@@ -439,7 +439,7 @@ body{
     cursor:pointer;
 }
 
-.order_information_next2>button:hover{
+.order_information_next2>button:hover{ 
     background: #D1C908;
 }
 .order_information_next3{

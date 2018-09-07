@@ -1,7 +1,7 @@
 /**
  * 订单显示模块
  */
-$(document).ready(function(){
+$(document).ready(function(){ 
 	//OrderPay.jsp获取cookie表单的值
 //	$(".USER_NAME").text($.cookie("Order_User_Name"));  //订单联系人
 //	$(".CONTACT_NUM").text($.cookie("ORDER_CONTACT_NUM"));	//订单联系人号码
