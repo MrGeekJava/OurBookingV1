@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.io.*" %>
+<%@ page import="java.io.*,java.net.*" %>
 <%@ page import="com.king.Booking.entity.User" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -247,7 +247,7 @@
                 </div>
             </div>
              <div class="container_order_ifm_right">
-                <h1 class="order_ifm_h1">心灵海客栈（海口海甸店）</h1>
+                <h1 class="order_ifm_h1 order_hotelName">心灵海客栈（海口海甸店）</h1>
 
                 <p class="order_ifm_p1" data-title="预定后，您可以在预订确认信和您的账户中找到该住宿的详细信息（包括电话和地址）"><i class="iconfont icon-weizhi" style="color: #58B8FF; padding-right: 5px;"></i><i class="order_hotel_adress">海口, 美兰, 海甸六西路万美街万美花园 ，近万恒城市花园</i></p>
 
@@ -273,12 +273,32 @@
 
             <p class="container_ensure2_p3">立即支付吧！</p>
         </div>
+        
+        <%
+        Cookie[] allCookies = request.getCookies();
+        String HotelId = "";
+        String orderNumber = "";
+		if(allCookies!=null) {
+			for(Cookie cookies:allCookies) {
+				if(cookies.getName().equals("hotelId")) {
+					//获取USER_NAME的值，需要解码（通过URLDecoder下的decode方法）
+					HotelId = cookies.getValue();
+				}
+				if(cookies.getName().equals("orderNumber")) {
+					orderNumber = URLDecoder.decode(cookies.getValue(),"UTF-8");
+				}
+				
+			 }
+			}	
+        %>
+        
+        
         <p class="input_user_ifm">您的订单信息 &nbsp;&nbsp;&nbsp;Confirm your order information</p>
-            <form method="post" action="../PayServlet">
+            <form method="post" action="../PayServlet?HotelId=<%=HotelId %>&orderNumber="<%=orderNumber %>>
             <div class="order_ifm">
                 <div class="order_user_list">
                 <div class="order_list_ifm ">订单号</div>
-                <div class="order_list_ifms ORDER_ID"><input type="text" name="ORDER_ID" value="" readonly="readonly"></div>
+                <div class="order_list_ifms ORDER_ID"><input type="text" name="ORDER_ID" value="<%=session.getAttribute("OrderId") %>" readonly="readonly"></div>
                 <div class="order_user_ifm ">联系人</div>
                 <div class="order_user_ifms USER_NAME"><input type="text" name="USER_NAME" value="" readonly="readonly"></div>
                 <div class="order_user_ifm ">订单联系电话</div>
@@ -317,7 +337,7 @@
                     <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
                 </div>
                 <div class="order_information_next2">
-                   <button type="submit">去支付&#10095;</button>
+                   <button type="submit" >去支付&#10095;</button>
                 </div>
 
             </div>

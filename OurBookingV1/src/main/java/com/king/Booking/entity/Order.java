@@ -24,8 +24,8 @@ public class Order {
 	private String peopleNum;		//入住人数（成人+小孩）
 	private String hotelName;		//酒店名称
 	private String hotelType;		//酒店类型
-	private int hotelAdress;		//酒店地址
-	private int roomGrade;			//酒店等级
+	private String hotelAdress;		//酒店地址
+	private float roomGrade;			//酒店等级
 	private String OrderUserName;	//订单联系人
 	
 	
@@ -56,18 +56,21 @@ public class Order {
 	public void setHotelType(String hotelType) {
 		this.hotelType = hotelType;
 	}
-	public int getHotelAdress() {
+
+	
+	public String getHotelAdress() {
 		return hotelAdress;
 	}
-	public void setHotelAdress(int hotelAdress) {
+	public void setHotelAdress(String hotelAdress) {
 		this.hotelAdress = hotelAdress;
 	}
-	public int getRoomGrade() {
+	public float getRoomGrade() {
 		return roomGrade;
 	}
-	public void setRoomGrade(int roomGrade) {
+	public void setRoomGrade(float roomGrade) {
 		this.roomGrade = roomGrade;
 	}
+	
 	public String getOrderUserName() {
 		return OrderUserName;
 	}
@@ -86,6 +89,8 @@ public class Order {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	
 	public int getOrderId() {
 		return orderId;
 	}

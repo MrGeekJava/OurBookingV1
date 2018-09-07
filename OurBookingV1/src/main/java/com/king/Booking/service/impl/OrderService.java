@@ -1,11 +1,12 @@
 package com.king.Booking.service.impl;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.king.Booking.dao.impl.OrderDaoImpl;
+import com.king.Booking.entity.Hotel;
 import com.king.Booking.entity.Order;
-import com.king.Booking.entity.OrderView;
 
 public class OrderService {
 
@@ -28,5 +29,19 @@ public class OrderService {
 		orderInsert.orderInsert(order);
 	}
 	
+	//调用Dao层的酒店信息，根据酒店ID查询
+	public Hotel grtHotelByHotelId(int HotelId){
+		OrderDaoImpl orderDao = new OrderDaoImpl();
+		Hotel hotel = new Hotel();
+		try {
+			hotel = orderDao.queryAllHotelbyhotelId(HotelId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return hotel;
+		
+	}
 	
 }

@@ -1,13 +1,16 @@
 package com.king.Booking.servlet;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.URLEncoder;
-import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
+import java.util.Random;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.king.Booking.entity.User;
 
 /**
  * personInfor2页面超链接跳转过来处理数据
@@ -20,6 +23,7 @@ import javax.activation.*;
  */
 public class OrderPayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
        
     public OrderPayServlet() {
         super();
@@ -28,17 +32,22 @@ public class OrderPayServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		  		response.setCharacterEncoding("UTF-8");
 		        response.setContentType("text/html;charset=utf-8");
-		        String OrderUserEmail = "";
 		        
 //		       PrintWriter out = response.getWriter();
-		       Cookie[] cookies = request.getCookies();          //从请求中获取客户端发来的Cookie
-		       for(int i=0;cookies!=null && i<cookies.length;i++) {
-		            if(cookies[i].getName().equals("Order_User_Email")) {  
-		            	OrderUserEmail = URLEncoder.encode((cookies[i].getValue()),"utf-8");    
-		            	System.out.println("OrderUserEmail:"+OrderUserEmail);
-		            }
-		            
-		        }
+//		       Cookie[] cookies = request.getCookies();          //从请求中获取客户端发来的Cookie
+//		       for(Cookie i:cookies) {
+//		    	   System.out.println(i.getName());
+//		            if("orderRoomin".equals(i.getName())) {  
+////		            	OrderUserEmail = URLEncoder.encode((i.getValue()),"utf-8");    
+//		            	System.out.println("orderRoomin:"+i.getValue());
+//		            }
+//		        }
+		       
+		       
+		       User user =(User)request.getSession().getAttribute("loginUser");
+		       System.out.println("用户ID:"+user.getUserId());  //可以获取用户ID
+		       
+		       
 		/*
 		
 		// 收件人的电子邮件 ID
@@ -92,7 +101,16 @@ public class OrderPayServlet extends HttpServlet {
 	         mex.printStackTrace();
 	      }
 	      */
-	      
+		    
+		       Random random = new Random();
+		       String result="";
+		       for (int i=0;i<6;i++)
+		       {
+		       	result+=random.nextInt(10);
+		       }
+			
+		    request.getSession().setAttribute("OrderId", result);
+		       
 			response.sendRedirect("view/OrderPay.jsp");
 
 	   }

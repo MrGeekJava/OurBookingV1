@@ -633,9 +633,13 @@
     font-weight: bold;
     color: #4AA926;
 }
+ 
+.container_ensure2_p1{
+	width: 536px;
+}
 .container_ensure2_p1,.container_ensure2_p2,.container_ensure2_p3{
     height: 23px;
-    line-height: 23px;
+    line-height: 23px;  
     font-size: 13px;
     color: #077812;
     display: inline-block;
