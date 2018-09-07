@@ -684,11 +684,12 @@ $(document).ready(function(){
  	    for(var i = 0;i < 5; i ++){
  	    if($(".search_hotel").eq(i).css("background-color")  == "rgb(233, 240, 250)"){
  	    	document.cookie = "hotelId="+($(".hotelId").eq(i).html());
+ 	    	var hotelId = $(".hotelId").eq(i).html();
  	    	var hotelname = ($(".hotel_name").eq(i).html()).split('<')[0];
  	    	document.cookie = "hotelName="+(hotelname);
  	    	} 
  	    }
- 	    
- 	   window.location.href="../LookingroomInitServlet";     //在同当前窗口中打开窗口
+// 	   var url =servletName?参数名=值,多个参数之间用&连接
+ 	   window.location.href="../LookingroomInitServlet?hotelId="+hotelId;     //在同当前窗口中打开窗口
 	})
 })
