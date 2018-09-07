@@ -355,12 +355,7 @@
 
         <div class="container_ensure2">
             <i class="iconfont icon-gou2"></i>
-
-            <p class="container_ensure2_p1">运气真不错！</p>
-
-            <p class="container_ensure2_p2">你已锁定<i class="order_hotelName">心灵海客栈（海口海甸店）</i>最便宜的房型。好价不错过，</p>
-
-            <p class="container_ensure2_p3">立即预订吧！</p>
+          <p class="container_ensure2_p1">运气真不错！你已锁定<b class="order_hotelName">心灵海客栈（海口海甸店）</b>最便宜的房型。好价不错过，立即预订吧！</p>
         </div>
         <p class="input_user_ifm">输入个人信息</p>
          <form action=" " method="post">
