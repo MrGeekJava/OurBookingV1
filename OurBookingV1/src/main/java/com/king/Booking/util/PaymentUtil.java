@@ -9,7 +9,7 @@ public class PaymentUtil {
 	private static String encodingCharset = "UTF-8";
 	
 	/**
-	 * 生成hmac方法
+	 * 生成hmac方法  
 	 * 
 	 * @param p0_Cmd 业务类型
 	 * @param p1_MerId 商户编号

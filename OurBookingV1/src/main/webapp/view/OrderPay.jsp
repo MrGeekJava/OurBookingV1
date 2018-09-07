@@ -151,7 +151,7 @@
                 <li class="user-li_5 person_class">
                     <a href="#" class="person_class_a">
                         <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
-                        <p class=" user_name">用户名</p></a>
+                        <p class="user_name">用户名</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
                         <ul class="showIfm_none_ul">
@@ -247,35 +247,36 @@
             <p class="container_ensure2_p3">立即支付吧！</p>
         </div>
         <p class="input_user_ifm">您的订单信息 &nbsp;&nbsp;&nbsp;Confirm your order information</p>
+            <form method="post" action="../PayServlet">
             <div class="order_ifm">
-                     <div class="order_user_list">
+                <div class="order_user_list">
                 <div class="order_list_ifm ">订单号</div>
-                <div class="order_list_ifms ORDER_ID"></div>
+                <div class="order_list_ifms ORDER_ID"><input type="text" name="ORDER_ID" value="" readonly="readonly"></div>
                 <div class="order_user_ifm ">联系人</div>
-                <div class="order_user_ifms USER_NAME"></div>
+                <div class="order_user_ifms USER_NAME"><input type="text" name="USER_NAME" value="" readonly="readonly"></div>
                 <div class="order_user_ifm ">订单联系电话</div>
-                <div class="order_user_ifms CONTACT_NUM"></div>
+                <div class="order_user_ifms CONTACT_NUM"><input type="text" name="CONTACT_NUM" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间数量</div>
-                <div class="order_user_ifms ROOM_NUM"></div>
+                <div class="order_user_ifms ROOM_NUM"><input type="text" name="ROOM_NUM" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间类型</div>
-                <div class="order_user_ifms ROOM_TYPE"></div>
+                <div class="order_user_ifms ROOM_TYPE"><input type="text" name="ROOM_TYPE" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间单价</div>
-                <div class="order_user_ifms ROOM_PRICE"></div></div>
+                <div class="order_user_ifms ROOM_PRICE"><input type="text" name="ROOM_PRICE" value="" readonly="readonly"></div></div>
  
 
             <div class="order_list">
                 <div class="order_list_ifm ">入住时间</div>
-                <div class="order_list_ifms IN_DATE"></div>
+                <div class="order_list_ifms IN_DATE"><input type="text" name="IN_DATE" value="" readonly="readonly"></div>
                 <div class="order_list_ifm ">退房时间</div>
-                <div class="order_list_ifms OUT_DATE"></div>
+                <div class="order_list_ifms OUT_DATE"><input type="text" name="OUT_DATE" value="" readonly="readonly"></div>
                 <div class="order_list_ifm ">订单总金额</div>
-                <div class="order_list_ifms ORDER_MONEY"></div>
+                <div class="order_list_ifms ORDER_MONEY"><input type="text" name="ORDER_MONEY" value="" readonly="readonly"></div>
                 <div class="order_list_ifm order_back">订单时间</div>
-                <div class="order_list_ifms ORDER_TIME"></div>
+                <div class="order_list_ifms ORDER_TIME"><input type="text" name="ORDER_TIME" value="" readonly="readonly"></div>
                 <div class="order_hotel_ifm order_back">订单邮箱</div>
-                <div class="order_hotel_ifms ORDER_EMAIL"></div>
+                <div class="order_hotel_ifms ORDER_EMAIL"><input type="text" name="ORDER_EMAIL" value="" readonly="readonly"></div>
                 <div class="order_list_ifm order_back">入住天数</div>
-                <div class="order_list_ifms ORDER_Allday"></div>      
+                <div class="order_list_ifms ORDER_Allday"><input type="text" name="ORDER_Allday" value="" readonly="readonly"></div>      
             </div>
 
 
@@ -289,12 +290,15 @@
                     <p class="order_information_next1_p" data-title="低廉的价格-不收取预订手续费-别处找到了更便宜的价格？差价核实后将予以补偿"><a href="#"> <i class="iconfont icon-gou2" style="color: #003580;background: white; border-radius: 50%;"></i> 价格更放心</a></p>
                 </div>
                 <div class="order_information_next2">
-                    <a href="#">去支付&#10095;</a>
+                   <button type="submit">去支付&#10095;</button>
                 </div>
 
             </div>
 
         </div>
+</form>
+
+
 
 
 

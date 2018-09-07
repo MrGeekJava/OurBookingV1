@@ -19,12 +19,12 @@ public class PayServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				 String  p0_Cmd = "Buy"; //业务类型   固定值“Buy” .
+				 String  p0_Cmd = "Buy"; //业务类型   固定值“Buy” 
 		         String  p1_MerId = "10001126856";//商户编号
 		         String  p2_Order = "123456";// 商户订单号(从订单表中获取)
 		         String p3 = request.getParameter("ORDER_MONEY").split("元")[0];
 		         String  p3_Amt = "0.01";// 支付金额
-		         String  p4_Cur = "CNY"; // 固定值 ”CNY”.
+		         String  p4_Cur = "CNY"; // 固定值 ”CNY” 
 		         String  p5_Pid = ""; // 商品名称(酒店名)(从订单表中获取)
 		         String  p6_Pcat = ""; // 商品种类(从订单表中获取)
 		         String  p7_Pdesc = ""; // 商品描述(从订单表中获取)
