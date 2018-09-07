@@ -32,11 +32,13 @@ public class LookingroomInitServlet  extends HttpServlet{
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
+			String hotelId = request.getParameter("hotelId");
 			Hotel hotel = new Hotel();
 			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
-			hotel = lris.getHotelMessage();
+			hotel = lris.getHotelMessage(hotelId);
 			Cookie c6;
 			Cookie c7;
+
 			
 			request.getSession().setAttribute("hotelPer", hotel.getHotelPer());
 			
@@ -45,6 +47,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			String hotelArea = URLEncoder.encode(hotel.getHotelArea(),"utf-8");
 			String hotelType = URLEncoder.encode(hotel.getHotelType(),"utf-8");
 			String hotelAdress = URLEncoder.encode(hotel.getHotelAdress(),"utf-8");
+			String hotelName = URLEncoder.encode(hotel.getHotelName(),"utf-8");
 			//String hotelPer = URLEncoder.encode(hotel.getHotelPer(),"utf-8");
 	
 			Cookie c1 = new Cookie("hotelProvice",hotelProvice);
@@ -52,6 +55,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			Cookie c3 = new Cookie("hotelArea",hotelArea);
 			Cookie c4 = new Cookie("hotelType",hotelType);
 			Cookie c5 = new Cookie("hotelAdress",hotelAdress);
+			Cookie c9 = new Cookie("hotelName",hotelName);
 			//Cookie c6 = new Cookie("hotelPer",hotelPer);
 			
 			response.addCookie(c1);
@@ -59,6 +63,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			response.addCookie(c3);
 			response.addCookie(c4);
 			response.addCookie(c5);
+			response.addCookie(c9);
 			//response.addCookie(c6);
 			
 			
