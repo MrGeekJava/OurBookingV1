@@ -714,11 +714,27 @@
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
                     <li>下一页</li>
                     <li>末页</li>
                 </ul>
             </div>
         </div>
+    </div>
+    
+    
+     //弹幕
+      <div class="tucao">
+        <svg class="icon icon-laba" aria-hidden="true">
+        <use xlink:href="#icon-laba"></use>
+    </svg></div>
+    <div class="screen_dibu"></div>
+    <div class="screen_container"></div>
+    <div class="screen_toolbar">
+        <input id="screenBulletText" type="text" placeholder="请输入弹幕内容"/>
+        <button class="send">发射</button>
+        <button class="clear">关闭弹幕</button>
     </div>
     
     	<!--  登录模块代码-->
