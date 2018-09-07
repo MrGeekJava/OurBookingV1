@@ -32,6 +32,13 @@
   	<servlet-class>com.king.Booking.servlet.TextServlet</servlet-class>
   </servlet>
   
+  <servlet>
+  	<servlet-name>OrderPayServlet</servlet-name>
+  	<display-name>OrderPayServlet</display-name> 
+  	<description></description>
+  	<servlet-class>com.king.Booking.servlet.OrderPayServlet</servlet-class>
+  </servlet>
+  
     <servlet>
   	<servlet-name>RegisterServlet</servlet-name>
   	<display-name>RegisterServlet</display-name>
@@ -140,6 +147,10 @@
     	<url-pattern>/GetImage</url-pattern>
     </servlet-mapping>
   
+  <servlet-mapping>
+    	<servlet-name>OrderPayServlet</servlet-name>
+    	<url-pattern>/OrderPayServlet</url-pattern>
+    </servlet-mapping>
   
     <servlet-mapping>
     	<servlet-name>LookingroomServlet</servlet-name>
