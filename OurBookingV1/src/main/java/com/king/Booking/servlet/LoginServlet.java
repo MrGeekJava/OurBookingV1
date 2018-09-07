@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			user.setUserPhoneNumber(userEmail);
 		} else {
 			out.print("请输入正确格式！！！");
-			response.sendRedirect(String.valueOf(request.getRequestURL()));
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
 			return;
 		}
 

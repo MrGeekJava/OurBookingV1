@@ -8,9 +8,7 @@
 <head lang="en">
     <link href="../resources/css/looking_room.css" rel="stylesheet" type="text/css">
     <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
-     <script src="//at.alicdn.com/t/font_788619_tgs1nmfyovk.js" ></script>
    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-       <script type="text/javascript" src="../resources/js/JQuery/main.js"></script>
   
     <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
     
@@ -466,22 +464,10 @@
         <a  class="a2">设施</a>
         <a  class="a3">订前必读</a>
         <a  class="a4">预定须知</a>
-        <a  class="a5">10用户点评</a>
+        <a  class="a5">22131用户点评</a>
 
         <div class="header">
-            <span class="span1"><% 
-        String hotelName=null;
-  
-    	for(Cookie cookie:cookies){
-    	
-    	 if (cookie.getName().equals("hotelName")) {
-             //使用URLDecode.decode()解码,防止中文乱码
-             hotelProvice = URLDecoder.decode(cookie.getValue(), "utf-8");
-      
-         }    
-        }
-         	out.print(hotelProvice);
-         %></span>
+            <span class="span1">广州白云宾馆</span>
             <span class="span2"><% 
         String hotelType=null;
     	for(Cookie cookie:cookies){
@@ -601,8 +587,7 @@
         </div>
         
         
-            
-             <table class="order" border="0.2" bordercolor="#4a98d7" width="1008px" frame="void">
+             <table class="order" border="1" bordercolor="#4a98d7" width="1058px" >
      
             <tr style="background-color: #e8eff9">
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
@@ -722,52 +707,19 @@
                 <div class="xian"></div>
             </div>
             
-              <div class="pageDisplay">
+             <div class="pageDisplay">
                 <ul>
                 	<li>首页</li>
                     <li>上一页</li>
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
                     <li>下一页</li>
                     <li>末页</li>
                 </ul>
             </div>
         </div>
-        
-         
-        
-        
     </div>
-    
-  //弹幕
-      <div class="tucao">
-        <svg class="icon icon-laba" aria-hidden="true">
-        <use xlink:href="#icon-laba"></use>
-    </svg></div>
-    <div class="screen_dibu"></div>
-    <div class="screen_container"></div>
-    <div class="screen_toolbar">
-        <input id="screenBulletText" type="text" placeholder="请输入弹幕内容"/>
-        <button class="send">发射</button>
-        <button class="clear">关闭弹幕</button>
-    </div>  
-
-            
-            
-            
-            
-            
-        </div>
-    </div>
-    
-    
-    
-    
-    
-    
     
     	<!--  登录模块代码-->
 	<div id="LARid" class="LAR-Background">

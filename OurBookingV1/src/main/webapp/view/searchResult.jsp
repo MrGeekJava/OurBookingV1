@@ -197,6 +197,7 @@
             <li class="nav_li_2"><a href="#">机票</a></li>
             <li class="nav_li_2"><a href="#">租车</a></li>
             <li class="nav_li_3"><a href="#">机场出租车</a></li>
+
         </ul>
     </div>
 </div>
@@ -432,6 +433,8 @@
                     <use xlink:href="#icon-dizhi"></use>
                 </svg>
                 <button>显示地图</button>
+
+
             </div>
         </div>
         <div class="rightBox">
@@ -455,6 +458,32 @@
                 </ul>
             </div>
             <div class="rightBox_containers">
+            	
+           
+            
+            
+  
+				<!-- 
+                <div class="rb_containers_bottom">
+                    <div class="rb_containers_bottom_left">
+                        <div class="rbcbl_words">在澄江县搜索出20家住宿.</div>
+                    </div>
+                    <div class="rb_containers_bottom_right">
+                        <div class="rbcbr_words">未找到理想的酒店？</div>
+                        <a>返回搜索页面。</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="rb_containers_bottom_buttom">
+                        <span class="first">&#8249;</span>
+                        <span class="second">1</span>
+                        <span class="third">&#8250;</span>
+                        <span class="forth">显示1-15</span>
+                    </div>
+                </div>
+
+ -->
+
+
             </div>
         </div>
     </div>
@@ -562,6 +591,8 @@
                 <li><a class="li_a_text">隐私和Cookie声明</a></li>
                 <li><a class="li_a_text">其他问题查询</a></li>
                 <li><a class="li_a_text">价格更放心</a></li>
+
+
             </ul>
         </div>
 
@@ -585,6 +616,9 @@
             <li><img src="../resources/res/images/searchResult/agodacom.png"></li>
             <li><img src="../resources/res/images/searchResult/rentilcors.png"></li>
             <li><img src="../resources/res/images/searchResult/opentable.png"></li>
+
+
+
         </ul>
 
         <div class="most_buttom"></div>
@@ -743,9 +777,8 @@
             </a>
         </div>
     </div>
-</div>
-
-	<!--  登录模块代码-->
+	
+		<!--  登录模块代码-->
 	<div id="LARid" class="LAR-Background">
 		<div class="LAR-Container">
 			<ul class="LAR-ul">
@@ -827,6 +860,8 @@
 			</div>
 		</div>
 	</div>
+	
+</div>
 
 
 <%

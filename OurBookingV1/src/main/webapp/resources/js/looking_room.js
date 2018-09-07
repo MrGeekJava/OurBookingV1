@@ -1227,7 +1227,7 @@ $(document).ready(function(){
     
     $(".order").find("td").click(function(){	
     	for(var i=1;i<6;i++){
-    		if($(".order").find("tr").eq(i).find("td").eq(8).css("color")=="rgb(0, 0, 255)"){
+    		if($(".order").find("tr").eq(i).find("td").eq(8).css("background-color")=="rgb(10, 178, 27)"){
     			var orderRoomType = $(".order").find("tr").eq(i).find("td").eq(0).text();
     			var orderSurplusRoomNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
     			var orderPrice = $(".order").find("tr").eq(i).find("td").eq(2).text();
@@ -1277,48 +1277,46 @@ $(document).ready(function(){
     //评论分页
     //当前页数
     var pageNowin = 1;
-    var pages = 5;
     $(".pageDisplay li").click(function(){
     
-        for(var i = 0;i<pages+4;i++){
+        for(var i = 0;i<7;i++){
             if( $(".pageDisplay li").eq(i).css("color")=="rgb(0, 107, 188)"){
-       
-                if( $(".pageDisplay li").eq(i).text()=="上一页"){
+            	
+                if(i==1){
                     pageNowin = pageNowin -1;
                     if(pageNowin == 0){
                     	pageNowin = pageNowin + 1;
                     	return false;
                     }
-                    for(var j=0;j<(pages+3);j++){
+                    for(var j=0;j<6;j++){
                   	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                   }
                     $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
-                }else if( $(".pageDisplay li").eq(i).text()=="末页"){
-                	pageNowin=pages;
-               	 for(var j=0;j<(pages+2);j++){
+                }else if(i==6){
+                	pageNowin=3;
+               	 for(var j=0;j<6;j++){
                     	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                     }
-                      $(".pageDisplay li").eq(pages+1).css({"font-size":"18px"});
-                }else if( $(".pageDisplay li").eq(i).text()=="首页"){
+                      $(".pageDisplay li").eq(4).css({"font-size":"18px"});
+                }else if(i==0){
                 	pageNowin=1;
-                	 for(var j=0;j<(pages+2);j++){
+                	 for(var j=0;j<6;j++){
                      	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                      }
                        $(".pageDisplay li").eq(2).css({"font-size":"18px"});
-                }else if( $(".pageDisplay li").eq(i).text()=="下一页"){
-                	
+                }else if(i==5){
                     pageNowin = pageNowin + 1;
-                    if(pageNowin==pages+1){
+                    if(pageNowin==4){
                     	pageNowin = pageNowin-1;
                     	return false;
                     }
-                    for(var j=0;j<(pages+2);j++){
+                    for(var j=0;j<6;j++){
                   	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                   }
                     $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
                 }else{
                     pageNowin = i-1;
-                    for(var j=0;j<(pages+2);j++){
+                    for(var j=0;j<6;j++){
                     	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                     }
                   
@@ -1400,105 +1398,6 @@ $(document).ready(function(){
     	$(".concentContainer").fadeToggle();
     })
     
-    
-    
-    //弹幕
-    var state = 0;
-    $(".tucao").unbind("click").click(function(){
-    	state++;
-       $(".screen_dibu").fadeToggle();
-        $(".screen_container").fadeToggle();
-        $(".screen_toolbar").fadeToggle();
-        if(state%2 == 1){
-        	   $.getJSON('../TucaoServlet',
-                       {opeartion:"getTucao"},
-                       function(result){
-                          var tuCao = eval(result.tuCao);
-                          $.each(result, function(k, v){
-                              $.each(v,function(kk, vv){
-                           	   // 创建弹幕
-                                  var jqueryDom = createScreenbullet(vv.tucaoWord);
-                                 
-                                  // 添加定时任务
-                                  addInterval(jqueryDom);
-                              });
-                              
-                          });
-                          
-                         
-                       }
-                   );
-        }
-     
-    });
-
-
-    // 弹幕定时器
-    var timers = [];
-// 控制弹幕显隐变量
-    var isShow = true;
-// 监听发送按钮
-    $(".send").on("click", function () {
-        // 创建弹幕
-        var jqueryDom = createScreenbullet($("#screenBulletText").val());
-        
-        //保存弹幕
-        $.getJSON('../TucaoServlet',
-                {opeartion:"setTucao",
-                data:$("#screenBulletText").val()},
-                function(result){
-                  
-                   
-                  
-                }
-            );
-       
-        // 添加定时任务
-        addInterval(jqueryDom);
-    });
-// 监听关闭弹幕按钮
-    $(".clear").on("click", function () {
-        if (isShow) {
-            $(".bullet").css("opacity", 0);
-            isShow = false;
-        } else {
-            $(".bullet").css("opacity", 1);
-            isShow = true;
-        }
-    });
-// 新建一个弹幕
-    function createScreenbullet(text) {
-        var jqueryDom = $("<div class='bullet'>" + text + "</div>");
-        var fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()) + ")";
-        var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
-        var left = $(".screen_container").width() + "px";
-        var top = Math.floor(Math.random() * 400) + "px";
-        top = parseInt(top) > 352 ? "352px" : top;
-        jqueryDom.css({
-            "position": 'absolute',
-            "color": fontColor,
-            "width": "1900px",
-            "height":"30px",
-            "left": left,
-            "top": top
-        });
-        $(".screen_container").append(jqueryDom);
-        return jqueryDom;
-    }
-// 为弹幕添加定时任务
-    function addInterval(jqueryDom) {
-        var left = jqueryDom.offset().left - $(".screen_container").offset().left;
-        var timer = setInterval(function () {
-            left--;
-            jqueryDom.css("left", left + "px");
-            if (jqueryDom.offset().left + jqueryDom.width() < $(".screen_container").offset().left) {
-                jqueryDom.remove();
-                clearInterval(timer);
-            }
-        }, 10);
-        timers.push(timer);
-    }
-
     
     
 });
