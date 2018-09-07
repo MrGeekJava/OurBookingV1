@@ -260,6 +260,10 @@
     border-radius: 5px;
     border: 1px solid grey;
 }
+.hotelId{
+	display:none;  
+	
+}
 .search_hotel:hover{
     background-color: rgb(233,240,250);
 }
