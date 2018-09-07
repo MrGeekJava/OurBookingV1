@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.*" %>
+<%@ page import="com.king.Booking.entity.User" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -148,14 +151,37 @@
                 <li class="user-li_4">
                     <a href="javascript:void(0)" onclick="" class="user-btn-2">上线我的住宿</a>
                 </li>
-                <li class="user-li_5 person_class">
+<%
+	User loginUser = (User) session.getAttribute("loginUser");
+	if(loginUser == null){
+%>
+				<li class="user-li_5">
+					<a id="reg-btn" href="#" class="user-btn" data-title="成为会员，享受专属隐藏优惠">注册</a>
+				</li>
+				<li class="user-li_6">
+					<a id="log-btn" href="#" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
+				</li>
+<%
+	} else {
+%>
+				<li class="person_class">
                     <a href="#" class="person_class_a">
-                        <img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
-                        <p class="user_name">用户名</p></a>
+<%
+		if(loginUser.getUserPicture() == null) {
+%>
+						<img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		} else {
+%>
+						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		}
+%>
+                        <p class="user_name">${sessionScope.loginUser.userNickName }</p></a>
                     <div class="showIfm_none">
                         <div class="showIfm_none_tri"></div>
                         <ul class="showIfm_none_ul">
-                            <li><a href="PersonalCenter.html">我的个人中心</a></li>
+                            <li><a href="PersonalCenter.jsp">我的个人中心</a></li>
                             <li><a href="#">我的订单</a></li>
                             <li><a href="#">报表</a></li>
                             <li><a href="#">评语</a></li>
@@ -163,12 +189,13 @@
                             <li><a href="#">下载app</a></li>
                             <li><a href="#">客服帮助</a></li>
                             <li><a href="#">设置</a></li>
-                            <li><a href="#">退出</a></li>
+                            <li class="user_quit"><a href="../UserExitServlet" >退出</a></li>
                         </ul>
-
                     </div>
                 </li>
-
+<%		
+	}
+%>
             </ul>
         </div>
     </div>

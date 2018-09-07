@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  import="java.net.URLDecoder"%>
+<%@ page import="java.io.*" %>
+<%@ page import="com.king.Booking.entity.User" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -10,7 +13,7 @@
     <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
     
     <script src="../resources/js/NavBar.js"></script>
-    <link rel="stylesheet" href="../resources/css/NavBar.css">
+    <link rel="stylesheet" href="../resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
     <link href="../resources/res/icon/index_icon/iconfont.css" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
 
@@ -127,12 +130,51 @@
                 <li class="user-li_4">
                     <a href="javascript:void(0)" onclick="" class="user-btn-2">上线我的住宿</a>
                 </li>
-                <li class="user-li_5">
-                    <a id="reg-btn" href="javascript:void(0)" class="user-btn" data-title="成为会员，享受专属隐藏优惠">注册</a>
+<%
+	User loginUser = (User) session.getAttribute("loginUser");
+	if(loginUser == null){
+%>
+				<li class="user-li_5">
+					<a id="reg-btn" href="#" class="user-btn" data-title="成为会员，享受专属隐藏优惠">注册</a>
+				</li>
+				<li class="user-li_6">
+					<a id="log-btn" href="#" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
+				</li>
+<%
+	} else {
+%>
+				<li class="person_class">
+                    <a href="#" class="person_class_a">
+<%
+		if(loginUser.getUserPicture() == null) {
+%>
+						<img src="../resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		} else {
+%>
+						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+<%
+		}
+%>
+                        <p class="user_name">${sessionScope.loginUser.userNickName }</p></a>
+                    <div class="showIfm_none">
+                        <div class="showIfm_none_tri"></div>
+                        <ul class="showIfm_none_ul">
+                            <li><a href="PersonalCenter.jsp">我的个人中心</a></li>
+                            <li><a href="#">我的订单</a></li>
+                            <li><a href="#">报表</a></li>
+                            <li><a href="#">评语</a></li>
+                            <li><a href="#">我的收藏</a></li>
+                            <li><a href="#">下载app</a></li>
+                            <li><a href="#">客服帮助</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li class="user_quit"><a href="../UserExitServlet" >退出</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="user-li_6">
-                    <a id="log-btn" href="javascript:void(0)" class="user-btn" data-title="使用已存信息，预订更快捷">登录</a>
-                </li>
+<%		
+	}
+%>
             </ul>
         </div>
     </div>
@@ -677,13 +719,91 @@
                 </ul>
             </div>
         </div>
-        
-         
-        
-        
     </div>
     
-    
+    	<!--  登录模块代码-->
+	<div id="LARid" class="LAR-Background">
+		<div class="LAR-Container">
+			<ul class="LAR-ul">
+				<a href="javascript:void(0)">
+					<li id="loginLi" class="LAR-li">登录</li>
+					<li id="registerLi" class="LAR-li">注册</li>
+				</a>
+			</ul>
+			<div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="../resources/res/images/close.png" class="closeImg"></a></div>
+			<div id="LAR-login">
+				<div class="LAR-contant">
+					<form name="loginForm" action="LoginServlet" method="POST" class="LAR_form">
+						<span class="login_span">电子邮箱/手机号</span>
+						<input id="emailInput" type="text" name="emailOrphone"><br>
+						<span class="login_span">Booking.com密码</span>
+						<input id="pwdInput" type="password" name="pwd"><br>
+						<a href="#" class="lar_a">想不起密码？</a><br>
+						<input type="submit" class="sub-btn" value="登录"><br>
+					</form>
+					<span class="span-line">
+						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
+					</span>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
+				</div>
+				<hr>
+				<span class="span-tip">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
+				<span class="span-tip2">登录帐户即代表您同意本公司的<a href="#" class="font_a">相关条款</a>以及<a href="#" class="font_a">隐私声明</a></span>
+			</div>
+
+			<div id="LAR-register">
+				<div class="LAR-contant">
+					<form name="registerForm" action="" method="post" onsubmit="" class="LAR_form">
+						<span class="login_span">电子邮箱/手机号</span>
+						<input id="emailInput2" type="text" name="emailOrphone"><br>
+						<span class="login_span">创建密码</span>
+						<input id="pwdInput2" type="password" name="pwd" ><br>
+						<span class="login_span verify_code">请输入验证码</span>
+						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
+						<img src="../GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
+						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
+						
+						
+						<script type="text/javascript">
+						//刷新验证码
+						function refershVerify(){
+							var imgEle = document.getElementById("verifyImage");
+							imgEle.src="../GetImage?a="+new Date().getTime();
+						}
+						</script>
+						<!--注册返回信息-->
+						<%
+							String registerMessage="";
+							String registerMsg = (String)session.getAttribute("registerMsg");
+							if(registerMsg!=null){
+								registerMessage = registerMsg;
+							}	
+						%>
+						<font color="red"><b><%=registerMessage %></b></font>
+						<br>
+						<br>
+						<div class="subRegister" >注册账号</div><br>
+					</form>
+					<span class="span-line">
+						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
+					</span>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
+				</div> 
+				<hr>
+				<span class="span-tip">
+						还没试过<a href="#" class="font_a">Booking.com商旅服务？</a><br>
+						输入<a href="#" class="font_a">订单确认号和PIN码</a>即可管理订单
+				</span>
+				<span class="span-tip2">登录帐户即代表您同意本公司的<a href="#" class="font_a">相关条款</a>以及<a href="#" class="font_a">隐私声明</a></span>
+				<br>
+				<hr>
+				<span class="span-tip">
+						在Booking.com出租你的住宿 <a href="#" class="font_a">上线我的住宿</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	
 
 </div>
 
