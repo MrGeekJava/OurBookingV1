@@ -466,10 +466,22 @@
         <a  class="a2">设施</a>
         <a  class="a3">订前必读</a>
         <a  class="a4">预定须知</a>
-        <a  class="a5">22131用户点评</a>
+        <a  class="a5">10用户点评</a>
 
         <div class="header">
-            <span class="span1">广州白云宾馆</span>
+            <span class="span1"><% 
+        String hotelName=null;
+  
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelName")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+             hotelProvice = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelProvice);
+         %></span>
             <span class="span2"><% 
         String hotelType=null;
     	for(Cookie cookie:cookies){

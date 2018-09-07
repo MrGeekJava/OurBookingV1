@@ -43,6 +43,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 					 hotelId = cookie.getValue();
 				};
 			}
+			System.out.println("当前酒店id:"+hotelId);
 			
 			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
 			hotel = lris.getHotelMessage(hotelId);
@@ -53,6 +54,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			String hotelArea = URLEncoder.encode(hotel.getHotelArea(),"utf-8");
 			String hotelType = URLEncoder.encode(hotel.getHotelType(),"utf-8");
 			String hotelAdress = URLEncoder.encode(hotel.getHotelAdress(),"utf-8");
+			String hotelName = URLEncoder.encode(hotel.getHotelName(),"utf-8");
 			//String hotelPer = URLEncoder.encode(hotel.getHotelPer(),"utf-8");
 	
 			Cookie c1 = new Cookie("hotelProvice",hotelProvice);
@@ -60,6 +62,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			Cookie c3 = new Cookie("hotelArea",hotelArea);
 			Cookie c4 = new Cookie("hotelType",hotelType);
 			Cookie c5 = new Cookie("hotelAdress",hotelAdress);
+			Cookie c9 = new Cookie("hotelName",hotelName);
 			//Cookie c6 = new Cookie("hotelPer",hotelPer);
 			
 			response.addCookie(c1);
@@ -67,6 +70,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			response.addCookie(c3);
 			response.addCookie(c4);
 			response.addCookie(c5);
+			response.addCookie(c9);
 			//response.addCookie(c6);
 			
 			
@@ -126,7 +130,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			int k=0;
 			for(CommentView comment:cv) {
 				k++;
-				System.out.println(k);
+			
 				if(k == 1) {
 					String nickName1 = URLEncoder.encode(comment.getUserNickName(),"utf-8");		
 					String userCountry1 = URLEncoder.encode(comment.getUserCountry(),"utf-8");	
@@ -161,7 +165,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 					String commentWord2 = URLEncoder.encode(comment.getCommentWord(),"utf-8");
 					String inDate2 = URLEncoder.encode(comment.getInDate(),"utf-8");	
 					String likeNumber2 = URLEncoder.encode(String.valueOf(comment.getLikeNumber()),"utf-8");		
-					System.out.println(nickName2);
+					
 					c1 = new Cookie("nickName2",nickName2);
 					c2 = new Cookie("userCountry2",userCountry2);
 					c3 = new Cookie("rating2",rating2);
