@@ -8,9 +8,11 @@
 <head lang="en">
     <link href="../resources/css/looking_room.css" rel="stylesheet" type="text/css">
     <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
+    <script src="//at.alicdn.com/t/font_788619_tgs1nmfyovk.js" ></script>
    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
     <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+       <script type="text/javascript" src="../resources/js/JQuery/main.js"></script>
     
     <script src="../resources/js/NavBar.js"></script>
     <link rel="stylesheet" href="../resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
