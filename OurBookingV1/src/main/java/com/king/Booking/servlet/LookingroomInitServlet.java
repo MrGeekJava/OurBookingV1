@@ -32,9 +32,10 @@ public class LookingroomInitServlet  extends HttpServlet{
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
+			String hotelId = request.getParameter("hotelId");
 			Hotel hotel = new Hotel();
 			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
-			hotel = lris.getHotelMessage();
+			hotel = lris.getHotelMessage(hotelId);
 			Cookie c6;
 			Cookie c7;
 

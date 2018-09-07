@@ -10,10 +10,10 @@ import com.king.Booking.entity.Room;
 
 public class LookingRoomInitServiceImpl {
 
-	public Hotel getHotelMessage() {
+	public Hotel getHotelMessage(String hotelId) {
 		Hotel hotel = new Hotel();
 		LookingRoomDaoInitImpl lrid = new LookingRoomDaoInitImpl();
-		hotel = lrid.getHotelMessage();
+		hotel = lrid.getHotelMessage(hotelId);
 		return hotel;
 	}
 	
