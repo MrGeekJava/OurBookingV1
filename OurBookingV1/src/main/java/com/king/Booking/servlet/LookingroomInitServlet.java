@@ -39,7 +39,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 			Cookie c7;
 			Cookie[] cookies = request.getCookies();
 			for(Cookie cookie:cookies) {
-				System.out.println("当前酒店id:"+cookie.getName());
+	
 				if(cookie.getName().equals("hotelId")) {
 					 hotelId = cookie.getValue();
 				};
