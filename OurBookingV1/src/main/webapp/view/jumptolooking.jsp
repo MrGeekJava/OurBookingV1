@@ -8,6 +8,6 @@
 </head>
 <body>
 	<a href="../LookingroomInitServlet">跳转</a>
-	
+	<div></div>
 </body>
 </html>
