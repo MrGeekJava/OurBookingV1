@@ -15,15 +15,16 @@ import com.king.Booking.util.DataSourceUtil;
 
 public class LookingRoomDaoInitImpl {
 
-	public Hotel getHotelMessage() {
+	public Hotel getHotelMessage(String hotelId) {
 		Hotel returnHotel = new Hotel();
 		QueryRunner runner = new QueryRunner();
+		int hotelIdin = Integer.parseInt(hotelId);
 		Connection conn;
 		try {
 			conn = DataSourceUtil.getConnection();
 			
-			String sql = "select * from HotelList where HotelName = ?";
-			Object[] params = {"广州白云宾馆"};
+			String sql = "select * from HotelList where HotelId = ?";
+			Object[] params = {hotelIdin};
 		
 			List<Hotel> hotelQuery = runner.query(conn, sql,new BeanListHandler<Hotel>(Hotel.class),params);
 			

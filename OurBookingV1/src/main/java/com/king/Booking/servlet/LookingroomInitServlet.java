@@ -33,11 +33,19 @@ public class LookingroomInitServlet  extends HttpServlet{
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			Hotel hotel = new Hotel();
-			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
-			hotel = lris.getHotelMessage();
+			String hotelId = "7";
+			
 			Cookie c6;
 			Cookie c7;
+			Cookie[] cookies = request.getCookies();
+			for(Cookie cookie:cookies) {
+				if(cookie.getName() == "hotelId") {
+					 hotelId = cookie.getValue();
+				};
+			}
 			
+			LookingRoomInitServiceImpl lris = new LookingRoomInitServiceImpl();
+			hotel = lris.getHotelMessage(hotelId);
 			request.getSession().setAttribute("hotelPer", hotel.getHotelPer());
 			
 			String hotelProvice = URLEncoder.encode(hotel.getHotelProvince(),"utf-8");
