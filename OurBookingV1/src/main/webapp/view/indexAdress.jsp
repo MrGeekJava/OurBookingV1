@@ -11,7 +11,6 @@
 		<%
 			request.setCharacterEncoding("utf-8");
 			String searchAdress = request.getParameter("adress");
-			/* request.getRequestDispatcher("searchResult.jsp").forward(request, response); */
 			Cookie cookie = new Cookie("inputAdress",searchAdress);
 			response.addCookie(cookie);
 			response.sendRedirect("searchResult.jsp");

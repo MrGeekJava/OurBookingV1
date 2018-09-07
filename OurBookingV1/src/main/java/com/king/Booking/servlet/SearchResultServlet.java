@@ -16,8 +16,8 @@ import com.king.Booking.entity.Hotel;
 import com.king.Booking.entity.HotelEva;
 import com.king.Booking.entity.HotelSearchHotelView;
 import com.king.Booking.entity.HotelSet;
+import com.king.Booking.entity.Page;
 import com.king.Booking.entity.User;
-import com.king.Booking.service.impl.RegisterServiceImpl;
 import com.king.Booking.service.impl.SearchResultService;
 
 import net.sf.json.JSONArray;
@@ -42,7 +42,7 @@ public class SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.doPost(request,response);
+		doPost(request,response);
 	}
 
 	/**
@@ -62,17 +62,30 @@ public class SearchResultServlet extends HttpServlet {
 		
 		//获取地址详细详细信息，用,分割成字符数组
 		String searchAdress = request.getParameter("searchadress");
-//		Cookie[] cookies = request.getCookies();
+		int currentPage = Integer.parseInt(request.getParameter("currentpage"));
+
 		
 		String[] searchAdressArray = searchAdress.split("#");
 		//searchAdressArray的三个字符串元素有市i，省，国家组成，按照这三个字段去搜索酒店
 		Hotel hotel = new Hotel();
 		hotel.setHotelProvince(searchAdressArray[1]);
 		hotel.setHotelDowntown(searchAdressArray[0]);
-		
+		Page page = new Page();
+		page.setPageSize(5);
 		//调用service层的
 		SearchResultService srService = new SearchResultService();
-		List<HotelSearchHotelView> hotelReturn = srService.searchRult(searchAdressArray[1], searchAdressArray[0]);
+		//酒店的总记录数
+		int hotelCount = srService.getCountService(searchAdressArray[1], searchAdressArray[0]);
+		
+		page.setTotalCount(hotelCount);
+		//用cookie保存酒店page对象
+		//创建cookie
+
+		Cookie cookiePage=new Cookie("hotelcount", hotelCount+"");
+		//将创建的cookie写到浏览器中
+
+		response.addCookie(cookiePage);
+		List<HotelSearchHotelView> hotelReturn = srService.searchRult(searchAdressArray[1], searchAdressArray[0],(currentPage),5);
 		List<HotelSet> hotelSetReturn = new ArrayList<HotelSet>();
 		HotelSet hotelSet = null;
 
@@ -90,7 +103,7 @@ public class SearchResultServlet extends HttpServlet {
 			hotelSet.setHotelArea(hotelReturn.get(i).getHotelArea());
 			hotelSet.setRoomMin(hotelReturn.get(i).getRoomMin());
 			hotelSet.setSumScore(hotelReturn.get(i).getSumScore());
-			
+			hotelSet.setEvaSum(hotelReturn.get(i).getEvaSum());
 			int hotelId = hotelReturn.get(i).getHotelId();
 			
 			List<HotelEva> hotelEvaReturn = srService.searchEva(hotelId);

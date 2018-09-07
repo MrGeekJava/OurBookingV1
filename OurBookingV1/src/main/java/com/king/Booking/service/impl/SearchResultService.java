@@ -9,10 +9,10 @@ import com.king.Booking.entity.HotelSearchHotelView;
 public class SearchResultService {
 	
 		////通过地址（省，市调用dao等的相关方法
-		public List<HotelSearchHotelView> searchRult(String province,String downtown){
-			
+		public List<HotelSearchHotelView> searchRult(String province,String downtown,int currentPage,int pageSize){
+			System.out.println("SearchResultService");
 			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
-			List<HotelSearchHotelView> searchRult = srdImpl.HotelSearchByAdress(province, downtown);
+			List<HotelSearchHotelView> searchRult = srdImpl.HotelSearchByAdress(province, downtown,currentPage,pageSize);
 			return searchRult;
 			
 		}
@@ -21,6 +21,13 @@ public class SearchResultService {
 			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
 			List<HotelEva> hotelEva = srdImpl.HotelEvaByHotelId(hotelId);
 			return hotelEva;
+			
+		}
+		//通过地址查询酒店的总记录数
+		public int getCountService(String province, String downtown) {
+			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
+			int sum = srdImpl.getHotelCount(province,downtown);
+			return sum;
 			
 		}
 }

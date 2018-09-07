@@ -508,6 +508,7 @@
     margin-left: 15px;
     font-size: 22px;
     margin-top: 9px;
+    cursor:pointer;
 }
 .rb_containers_bottom_buttom .forth{
     float: right;
@@ -520,15 +521,17 @@
     margin-left: 15px;
     height: 15px;
     width: 15px;
-    border: 1px solid;
+   /*  border: 1px solid; */
     padding-left: 4px;
     margin-top: 15px;
+    cursor:pointer;
 }
 .rb_containers_bottom_buttom .third{
     float: left;
     margin-left: 15px;
     font-size: 22px;
     margin-top: 9px;
+     cursor:pointer;
 }
 .buttom{
     /*position: relative;*/

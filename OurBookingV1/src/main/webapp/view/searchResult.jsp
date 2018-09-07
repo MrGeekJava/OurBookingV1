@@ -421,7 +421,7 @@
             
             
   
-				
+				<!-- 
                 <div class="rb_containers_bottom">
                     <div class="rb_containers_bottom_left">
                         <div class="rbcbl_words">在澄江县搜索出20家住宿.</div>
@@ -438,6 +438,9 @@
                         <span class="forth">显示1-15</span>
                     </div>
                 </div>
+
+ -->
+
 
             </div>
         </div>
