@@ -8,9 +8,11 @@
 <head lang="en">
     <link href="../resources/css/looking_room.css" rel="stylesheet" type="text/css">
     <script src="//at.alicdn.com/t/font_788386_2i6kkukzw5q.js" ></script>
+    <script src="//at.alicdn.com/t/font_788619_tgs1nmfyovk.js" ></script>
    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
     <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+       <script type="text/javascript" src="../resources/js/JQuery/main.js"></script>
     
     <script src="../resources/js/NavBar.js"></script>
     <link rel="stylesheet" href="../resources/css/NavBar.css?v=<%= System.currentTimeMillis()%>">
@@ -467,7 +469,18 @@
         <a  class="a5">22131用户点评</a>
 
         <div class="header">
-            <span class="span1">广州白云宾馆</span>
+            <span class="span1"><% 
+        String hotelName=null;
+    	for(Cookie cookie:cookies){
+    	
+    	 if (cookie.getName().equals("hotelName")) {
+             //使用URLDecode.decode()解码,防止中文乱码
+            hotelName = URLDecoder.decode(cookie.getValue(), "utf-8");
+      
+         }    
+        }
+         	out.print(hotelName);
+         %></span>
             <span class="span2"><% 
         String hotelType=null;
     	for(Cookie cookie:cookies){
@@ -714,11 +727,27 @@
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
                     <li>下一页</li>
                     <li>末页</li>
                 </ul>
             </div>
         </div>
+    </div>
+    
+    
+     //弹幕
+      <div class="tucao">
+        <svg class="icon icon-laba" aria-hidden="true">
+        <use xlink:href="#icon-laba"></use>
+    </svg></div>
+    <div class="screen_dibu"></div>
+    <div class="screen_container"></div>
+    <div class="screen_toolbar">
+        <input id="screenBulletText" type="text" placeholder="请输入弹幕内容"/>
+        <button class="send">发射</button>
+        <button class="clear">关闭弹幕</button>
     </div>
     
     	<!--  登录模块代码-->

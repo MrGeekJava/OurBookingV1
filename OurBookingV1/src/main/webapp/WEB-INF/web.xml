@@ -145,6 +145,18 @@
       	<description></description>
       	<servlet-class>com.king.Booking.servlet.ChangeInfoServlet</servlet-class>
       </servlet>
+          <servlet>
+      	<servlet-name>TucaoServlet</servlet-name>
+      	<display-name>TucaoServlet</display-name>
+      	<description></description>
+      	<servlet-class>com.king.Booking.servlet.TucaoServlet</servlet-class>
+      </servlet>
+  	 <servlet>
+      	<servlet-name>AutoComplete</servlet-name>
+      	<display-name>AutoComplete</display-name>
+      	<description></description>
+      	<servlet-class>com.king.Booking.servlet.AutoComplete</servlet-class>
+      </servlet>
   	
   	
   	
@@ -218,6 +230,13 @@
         <servlet-mapping>
         	<servlet-name>ChangeInfoServlet</servlet-name>
         	<url-pattern>/ChangeInfoServlet</url-pattern>
+        </servlet-mapping>  
+          <servlet-mapping>
+        	<servlet-name>TucaoServlet</servlet-name>
+        	<url-pattern>/TucaoServlet</url-pattern>
         </servlet-mapping>
-  
+        <servlet-mapping>
+        	<servlet-name>AutoComplete</servlet-name>
+        	<url-pattern>/AutoComplete</url-pattern>
+        </servlet-mapping>
 </web-app>

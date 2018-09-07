@@ -219,13 +219,13 @@
     </div>
 
     <div class="flow_down">
-        <span class="flow_down_userName">${sessionScope.loginUser.userNickName}</span>
+        <span class="flow_down_userName">用户名</span>
         <span class="flow_down_span">，完成预订！</span>
     </div>
 </div>
 <div class="container">
     <div class="container_order_ifm_box">
-        <div class="container_order_ifm"> 
+        <div class="container_order_ifm">
             <div class="container_order_ifm_left">
                 <div class="container_order_ifm_img" >
                 </div>
@@ -267,8 +267,11 @@
         <div class="container_ensure2">
             <i class="iconfont icon-gou2"></i>
 
-        <p class="container_ensure2_p1">运气真不错！你已锁定<b class="order_hotelName">心灵海客栈（海口海甸店）</b>最便宜的房型。好价不错过，立即支付吧！</p>
+            <p class="container_ensure2_p1">运气真不错！</p>
 
+            <p class="container_ensure2_p2">你已锁定心灵海客栈（海口海甸店）最便宜的房型。好价不错过，</p>
+
+            <p class="container_ensure2_p3">立即支付吧！</p>
         </div>
         
         <%

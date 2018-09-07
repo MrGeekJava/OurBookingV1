@@ -1122,8 +1122,9 @@ $(document).ready(function(){
     	  var n=0;
         setInterval(function(){
             n=(n+1);
-            if(n==4){
-                n=0;
+
+            if(n==9){
+                n=1;
             };
           
             $.getJSON('../LookingroomServlet',
@@ -1277,46 +1278,48 @@ $(document).ready(function(){
     //评论分页
     //当前页数
     var pageNowin = 1;
+    var pages = 5;
     $(".pageDisplay li").click(function(){
     
-        for(var i = 0;i<7;i++){
+        for(var i = 0;i<pages+4;i++){
             if( $(".pageDisplay li").eq(i).css("color")=="rgb(0, 107, 188)"){
-            	
-                if(i==1){
+       
+                if( $(".pageDisplay li").eq(i).text()=="上一页"){
                     pageNowin = pageNowin -1;
                     if(pageNowin == 0){
                     	pageNowin = pageNowin + 1;
                     	return false;
                     }
-                    for(var j=0;j<6;j++){
+                    for(var j=0;j<(pages+3);j++){
                   	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                   }
                     $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
-                }else if(i==6){
-                	pageNowin=3;
-               	 for(var j=0;j<6;j++){
+                }else if( $(".pageDisplay li").eq(i).text()=="末页"){
+                	pageNowin=pages;
+               	 for(var j=0;j<(pages+2);j++){
                     	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                     }
-                      $(".pageDisplay li").eq(4).css({"font-size":"18px"});
-                }else if(i==0){
+                      $(".pageDisplay li").eq(pages+1).css({"font-size":"18px"});
+                }else if( $(".pageDisplay li").eq(i).text()=="首页"){
                 	pageNowin=1;
-                	 for(var j=0;j<6;j++){
+                	 for(var j=0;j<(pages+2);j++){
                      	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                      }
                        $(".pageDisplay li").eq(2).css({"font-size":"18px"});
-                }else if(i==5){
+                }else if( $(".pageDisplay li").eq(i).text()=="下一页"){
+                	
                     pageNowin = pageNowin + 1;
-                    if(pageNowin==4){
+                    if(pageNowin==pages+1){
                     	pageNowin = pageNowin-1;
                     	return false;
                     }
-                    for(var j=0;j<6;j++){
+                    for(var j=0;j<(pages+2);j++){
                   	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                   }
                     $(".pageDisplay li").eq(pageNowin+1).css({"font-size":"18px"});
                 }else{
                     pageNowin = i-1;
-                    for(var j=0;j<6;j++){
+                    for(var j=0;j<(pages+2);j++){
                     	  $(".pageDisplay li").eq(j).css({"font-size":"14px"});
                     }
                   
@@ -1398,6 +1401,105 @@ $(document).ready(function(){
     	$(".concentContainer").fadeToggle();
     })
     
+    
+    
+    //弹幕
+    var state = 0;
+    $(".tucao").unbind("click").click(function(){
+    	state++;
+       $(".screen_dibu").fadeToggle();
+        $(".screen_container").fadeToggle();
+        $(".screen_toolbar").fadeToggle();
+        if(state%2 == 1){
+        	   $.getJSON('../TucaoServlet',
+                       {opeartion:"getTucao"},
+                       function(result){
+                          var tuCao = eval(result.tuCao);
+                          $.each(result, function(k, v){
+                              $.each(v,function(kk, vv){
+                           	   // 创建弹幕
+                                  var jqueryDom = createScreenbullet(vv.tucaoWord);
+                                 
+                                  // 添加定时任务
+                                  addInterval(jqueryDom);
+                              });
+                              
+                          });
+                          
+                         
+                       }
+                   );
+        }
+     
+    });
+
+
+    // 弹幕定时器
+    var timers = [];
+// 控制弹幕显隐变量
+    var isShow = true;
+// 监听发送按钮
+    $(".send").on("click", function () {
+        // 创建弹幕
+        var jqueryDom = createScreenbullet($("#screenBulletText").val());
+        
+        //保存弹幕
+        $.getJSON('../TucaoServlet',
+                {opeartion:"setTucao",
+                data:$("#screenBulletText").val()},
+                function(result){
+                  
+                   
+                  
+                }
+            );
+       
+        // 添加定时任务
+        addInterval(jqueryDom);
+    });
+// 监听关闭弹幕按钮
+    $(".clear").on("click", function () {
+        if (isShow) {
+            $(".bullet").css("opacity", 0);
+            isShow = false;
+        } else {
+            $(".bullet").css("opacity", 1);
+            isShow = true;
+        }
+    });
+// 新建一个弹幕
+    function createScreenbullet(text) {
+        var jqueryDom = $("<div class='bullet'>" + text + "</div>");
+        var fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()) + ")";
+        var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
+        var left = $(".screen_container").width() + "px";
+        var top = Math.floor(Math.random() * 400) + "px";
+        top = parseInt(top) > 352 ? "352px" : top;
+        jqueryDom.css({
+            "position": 'absolute',
+            "color": fontColor,
+            "width": "1900px",
+            "height":"30px",
+            "left": left,
+            "top": top
+        });
+        $(".screen_container").append(jqueryDom);
+        return jqueryDom;
+    }
+// 为弹幕添加定时任务
+    function addInterval(jqueryDom) {
+        var left = jqueryDom.offset().left - $(".screen_container").offset().left;
+        var timer = setInterval(function () {
+            left--;
+            jqueryDom.css("left", left + "px");
+            if (jqueryDom.offset().left + jqueryDom.width() < $(".screen_container").offset().left) {
+                jqueryDom.remove();
+                clearInterval(timer);
+            }
+        }, 10);
+        timers.push(timer);
+    }
+
     
     
 });
