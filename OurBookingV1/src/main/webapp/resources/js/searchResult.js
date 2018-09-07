@@ -111,6 +111,7 @@ $(document).ready(function(){
 						$(".rightBox_containers").prepend(
 								
 								'<div class="search_hotel">'+
+								'<div class="hotelId" >'+hotelId+'</div>'+
 								'<img src=" '+src+' " class="search_hotel_pic">'+
 								'<div class="search_hotel_message">'+
 								' <div class="shm_left">'+
@@ -289,7 +290,8 @@ $(document).ready(function () {
 							$(".rightBox_containers").prepend(
 									
 									'<div class="search_hotel">'+
-									'<img src=" '+src+' " class="search_hotel_pic">'+
+									'<div class="hotelId" >'+hotelId+'</div>'+
+									'<img src=" '+src+' " class="search_hotel_pic" >'+
 									'<div class="search_hotel_message">'+
 									' <div class="shm_left">'+
 									'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -669,4 +671,24 @@ $(document).ready(function(){
             
             
 		})
+})
+
+
+//点击图片就将酒店ID保存到cookie中
+$(document).ready(function(){
+	//点击图片事件
+//	$(".search_hotel_pic").click(function(){
+	$("div").delegate('.search_hotel_pic','click',function(evt){
+ 	    evt.stopPropagation(); 			//阻止事件冒泡
+ 	    
+ 	    for(var i = 0;i < 5; i ++){
+ 	    if($(".search_hotel").eq(i).css("background-color")  == "rgb(233, 240, 250)"){
+ 	    	document.cookie = "hotelId="+($(".hotelId").eq(i).html());
+ 	    	var hotelname = ($(".hotel_name").eq(i).html()).split('<')[0];
+ 	    	document.cookie = "hotelName="+(hotelname);
+ 	    	} 
+ 	    }
+ 	    
+ 	   window.location.href="../LookingroomInitServlet";     //在同当前窗口中打开窗口
+	})
 })
