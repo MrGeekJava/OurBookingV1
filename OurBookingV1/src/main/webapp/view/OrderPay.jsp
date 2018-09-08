@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contenttype="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.net.*" %>
 <%@ page import="com.king.Booking.entity.User" %>
 <%@ page isELIgnored="false" %>
-<!DOCTYPE html>
+<!DOCtype html>
 <html>
 <head>
     <link rel="SHORTCUT ICON" href="../resources/res/images/title_logo.icon"/>
@@ -173,7 +173,7 @@
 <%
 		} else {
 %>
-						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+						<img src=${sessionScope.loginUser.userPicture } style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>
@@ -302,7 +302,7 @@
                 <div class="order_user_ifm order_back">房间数量</div>
                 <div class="order_user_ifms ROOM_NUM"><input type="text" name="ROOM_NUM" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间类型</div>
-                <div class="order_user_ifms ROOM_TYPE"><input type="text" name="ROOM_TYPE" value="" readonly="readonly"></div>
+                <div class="order_user_ifms ROOM_type"><input type="text" name="ROOM_type" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间单价</div>
                 <div class="order_user_ifms ROOM_PRICE"><input type="text" name="ROOM_PRICE" value="" readonly="readonly"></div></div>
  
@@ -321,9 +321,35 @@
                 <div class="order_list_ifm order_back">入住天数</div>
                 <div class="order_list_ifms ORDER_Allday"><input type="text" name="ORDER_Allday" value="" readonly="readonly"></div>      
             </div>
-
-
             </div>
+            
+                  <div class="payMethod">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+                <tr>
+                    <td colspan="4" align="center" style="width:100px; font-weight: bold">请您选择在线支付银行</td>
+                </tr>
+                <tr >
+                    <td><input type="radio" name="pd_FrpId" value="CMBCHINA-NET" checked>招商银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="ICBC-NET">工商银行</td>
+                    <td><input type="radio" name="pd_FrpId" value="ABC-NET">农业银行</td>
+                    <td><input type="radio" name="pd_FrpId" value="CCB-NET">建设银行 </td>
+                </tr>
+                <tr >
+                    <td><input type="radio" name="pd_FrpId" value="CMBC-NET">中国民生银行总行</td>
+                    <td><input type="radio" name="pd_FrpId" value="CEB-NET" >光大银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="BOCO-NET">交通银行</td>
+                    <td><input type="radio" name="pd_FrpId" value="SDB-NET">深圳发展银行</td>
+                </tr>
+                <tr >
+                    <td><input type="radio" name="pd_FrpId" value="BCCB-NET">北京银行</td>
+                    <td><input type="radio" name="pd_FrpId" value="CIB-NET">兴业银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="SPDB-NET">上海浦东发展银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="ECITIC-NET">中信银行</td>
+                </tr>
+            </table>
+
+        </div>
+            
 
         <div class="order_information_next_box">
             <div class="order_information_next">

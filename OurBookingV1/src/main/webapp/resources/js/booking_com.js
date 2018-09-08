@@ -10,6 +10,10 @@ var calendar_open = 1;
 
 setInterval(loopchangecolor, 100);
 
+
+
+
+
 function flush(yearin, monthin) {
 
     //判断是否是第一次传入
@@ -82,8 +86,9 @@ function flush(yearin, monthin) {
     }
     //判断是否是今天，是则把今天的日的字体色改变
     var datetext = new Date();
+  
     if ((datetext.getFullYear() == year && (datetext.getMonth() + 1) == month)) {
-
+   
         flush_day(new Date().getDate());
     }
 
@@ -127,9 +132,10 @@ function flush(yearin, monthin) {
 
 //用于记录今天所在的容器的位置
 var nowday_position;
+var change;
 //改变传入的日的背景色
 function flush_day(dayin) {
-    var change;
+ 
     var day = dayin;
     nowday_position = dayin;
     var day_enum = document.getElementsByClassName("day_enum");
@@ -143,7 +149,7 @@ function flush_day(dayin) {
 
     }
 
-    for (var i = 0; i < (day + 1); i++) {
+    for (var i = 0; i < (change); i++) {
         day_enum[i].style.color = "gray";
         day_enum[i].style.cursor = "default"
     }
@@ -162,7 +168,7 @@ function change_page(n) {
     if (number_flag == 0) {
         var day_enum = document.getElementsByClassName("day_enum")
 
-        for (var i = 0; i < (now_day + 1); i++) {
+        for (var i = 0; i < change; i++) {
             day_enum[i].style.color = "#73aac7";
             day_enum[i].style.cursor = "pointer";
 
@@ -203,7 +209,9 @@ function change_page(n) {
         //得到年月
         var yearnow = date.getFullYear();
         var monthnow = date.getMonth() + n - 1;
-        if (monthnow < 0) {
+
+       
+        if (monthnow == (-1)) {
             yearnow -= 1;
             monthnow = 11;
         }
