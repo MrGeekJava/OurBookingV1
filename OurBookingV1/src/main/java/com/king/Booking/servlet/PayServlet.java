@@ -101,7 +101,7 @@ public class PayServlet extends HttpServlet {
 		 		order.setOrderUserName(contactNum);
 		 		order.setOrderTime(orderTime);
 		 		order.setOutDate(outDate);
-		 		order.setPeopleNum("3");
+		 		order.setPeopleNum(peopleNum);
 		 		order.setRoomGrade(roomGrade);
 		 		order.setRoomNum(roomNum);
 		 		order.setUserId(userId);
