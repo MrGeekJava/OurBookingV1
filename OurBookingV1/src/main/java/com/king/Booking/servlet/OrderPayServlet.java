@@ -101,7 +101,7 @@ public class OrderPayServlet extends HttpServlet {
 		    request.getSession().setAttribute("OrderId", result);
 		       
 			response.sendRedirect("view/OrderPay.jsp");
-
+ 
 	   }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

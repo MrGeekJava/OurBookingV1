@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$("#get_pre_tel").blur(function(){
         var inpvalue = $("#get_pre_tel").val().split(" ")[1];
 		var phone=/^1[34578]\d{9}$/;		
-		if(inpvalue.match(phone)==null){ 
+		if(inpvalue.match(phone)==null){  
 //			alert("不是手机好吗");
 			    $(".input_ifm_tel").html("<p style='color: red;'>请检查您的电话号码</p>");
 	            $("#get_pre_tel").css("border-color","red");

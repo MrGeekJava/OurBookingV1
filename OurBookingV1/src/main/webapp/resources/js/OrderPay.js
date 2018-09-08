@@ -28,7 +28,7 @@ $(document).ready(function(){
 	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
 	$(".ORDER_Allday>input").attr("value",allday+"天");	//订单总天数
 	$(".ROOM_NUM>input").attr("value",$.cookie("orderRoomnum"));//房间数量	
-	$(".ROOM_TYPE>input").attr("value",$.cookie("orderRoomType"));//房间类型	
+	$(".ROOM_TYPE>input").attr("value",$.cookie("orderRoomType"));//房间类型	 
 	
 	$(".ORDER_MONEY>input").attr("value",$.cookie("orderprices")+"元");//订单总金额	 
 	$(".ROOM_PRICE>input").attr("value",$.cookie("orderPrice")+"元");//房间单价	

@@ -7,7 +7,7 @@ $(document).ready(function () {
 	//获取酒店信息，显示到当前页面
 	$(".order_details_in_time").text($.cookie("orderRoomin"));//入住日期
 	$(".order_details_out_time").text($.cookie("orderRoomout"));//退房日期
-	var outday =$.cookie("orderRoomout");
+	var outday =$.cookie("orderRoomout"); 
 	var inday = $.cookie("orderRoomin");
 	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
 	$(".order_allday").text(allday+"天");	//订单总天数
