@@ -154,7 +154,7 @@
 <%
 		} else {
 %>
-						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+						<img src=${sessionScope.loginUser.userPicture } style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>
@@ -762,7 +762,7 @@
 			<div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="../resources/res/images/close.png" class="closeImg"></a></div>
 			<div id="LAR-login">
 				<div class="LAR-contant">
-					<form name="loginForm" action="LoginServlet" method="POST" class="LAR_form">
+					<form name="loginForm" action="../LoginServlet?url=view/looking_room.jsp" method="POST" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号</span>
 						<input id="emailInput" type="text" name="emailOrphone"><br>
 						<span class="login_span">Booking.com密码</span>

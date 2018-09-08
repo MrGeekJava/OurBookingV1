@@ -253,7 +253,7 @@
         </div>
         <!-- 关闭地图的按钮 -->
         <div class="close">
-            <a href="javascript:void(0)">关闭地图 ×</a>
+            <a href="#">关闭地图 ×</a>
         </div>
         <!-- 地图、第二个筛选栏的滑入滑出按钮 -->
         <div class="showMap">
