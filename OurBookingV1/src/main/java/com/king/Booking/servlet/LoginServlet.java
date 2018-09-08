@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 		} else if(verifyUtil.checkPhone(userEmail)) {
 			user.setUserPhoneNumber(userEmail);
 		} else {
-			out.print("请输入正确格式！！！");
+			out.print("alert('请输入正确格式！！！')");
 			response.sendRedirect(request.getContextPath()+"/index.jsp");
 			return;
 		}

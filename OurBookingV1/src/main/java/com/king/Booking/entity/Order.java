@@ -6,31 +6,26 @@ package com.king.Booking.entity;
  *
  */
 public class Order {
-	private int userId;		//用户ID
-	private int orderId;	//订单ID
-	private int hotelId;	//酒店ID
-	private String orderTime;	//订单时间
-	private double orderMoney;	//订单总金额
-	private int orderIsPay;		//订单是否支付
-	private int isChargeback;	//订单是否可以退单
-	private String inDate;		//入住日期
-	private String outDate;		//退房日期
-	private int roomNum;		//订单房间数量
-	private String contactNum;	//订房联系人号码
-	private String orderEmail; 	//订单人邮箱
-	
-	
+	private int userId;				//用户ID
+	private int orderId;			//订单ID
+	private int hotelId;			//酒店ID
+	private String orderTime;		//订单时间
+	private double orderMoney;		//订单总金额
+	private int orderIsPay;			//订单是否支付
+	private int isChargeback;		//订单是否可以退单
+	private String inDate;			//入住日期
+	private String outDate;			//退房日期
+	private int roomNum;			//订单房间数量
+	private String contactNum;		//订房联系人号码
+	private String orderEmail; 		//订单人邮箱
 	private int orderDay;			//入住时间
 	private String peopleNum;		//入住人数（成人+小孩）
 	private String hotelName;		//酒店名称
+	private String hotelImg;		//酒店图片
 	private String hotelType;		//酒店类型
 	private String hotelAdress;		//酒店地址
-	private float roomGrade;			//酒店等级
+	private float roomGrade;		//酒店等级
 	private String OrderUserName;	//订单联系人
-	
-	
-	
-	
 	
 	public int getOrderDay() {
 		return orderDay;
@@ -56,8 +51,6 @@ public class Order {
 	public void setHotelType(String hotelType) {
 		this.hotelType = hotelType;
 	}
-
-	
 	public String getHotelAdress() {
 		return hotelAdress;
 	}
@@ -89,8 +82,6 @@ public class Order {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
-	
 	public int getOrderId() {
 		return orderId;
 	}
@@ -152,9 +143,11 @@ public class Order {
 	public void setContactNum(String contactNum) {
 		this.contactNum = contactNum;
 	}
-	
-	
-	
-	
+	public String getHotelImg() {
+		return hotelImg;
+	}
+	public void setHotelImg(String hotelImg) {
+		this.hotelImg = hotelImg;
+	}
 	
 }

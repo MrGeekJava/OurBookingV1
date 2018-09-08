@@ -174,24 +174,83 @@ function showImg(){
  * 动态加载订单
  * @returns
  */
-$(document).ready(function(){
-
-		var orderIsPay = $(".orderHead-select option:selected").val();	
-		alert("orderIsPay:"+orderIsPay);	
-		$.ajax({
-			url:"../ShowOrderServlet",
-			type:"post",
-			data:{orderIsPay:orderIsPay},
-			success:function(result){
-				var jsonObj = $.parseJSON(result);
-				
-			},
-			error:function(){
-				alert("我的订单错误！");
+function showOrders(type){
+	$.ajax({
+		url:"../ShowOrderServlet",
+		type:"post",
+		data:{orderIsPay:type},
+		success:function(result){
+			var orders = $.parseJSON(result);
+			
+//			清空原来的元素
+			$(".showOrder").remove();
+			
+			for(i in orders){
+				var isPay = orders[i].orderIsPay;
+				var showIsPay;
+				if(isPay == 1){
+					showIsPay = "已支付";
+				} else {
+					showIsPay = "未支付";
+				}
+				$(".orderModel").append(
+						'<div class="showOrder">'+
+					    '<div class="orderTime_Id">'+
+					        '<h4 class="myOrder_Time">'+orders[i].orderTime+'</h4>'+
+					        '<p class="myOrder_Id">订单号：</p>'+
+					        '<p class="myOrder_Id2">'+orders[i].orderId+'</p>'+
+					    '</div>'+
+					    '<div class="myOrder_ifm">'+
+					        '<div class="myOrder_hotel"><img src="'+orders[i].hotelImg+'" class="myhotel_Img"></div>'+
+					        '<div class="order_Hotel_Ifm">'+
+					            '<div class="myhotel_Name">'+
+					                '<h2 class="myhotel_Name_Name">'+orders[i].hotelName+'</h2>'+
+					                '<p class="myhotel_Name_Adress">'+orders[i].hotelAdress+'</p>'+
+					            '</div>'+
+					            '<div class="myOrder_Room">'+
+					                '<p class="myOrder_Room_p">房间类型：</p><h3 class="myOrder_Room_Type">'+orders[i].hotelType+'</h3>'+
+					                '<p class="myOrder_Room_p">入住人数：</p><h3 class="myOrder_PeopleNum">'+orders[i].peopleNum+'</h3>'+
+					                '<p class="myOrder_Room_p">房间数量：</p><h3 class="myOrder_RoomNum">'+orders[i].roomNum+'</h3>'+
+					            '</div>'+
+					            '<div class="myOrderTime">'+
+					                '<p class="myOrder_Time_p">入住时间：</p><h3 class="myOrder_InTime">'+orders[i].inDate+'</h3>'+
+					                '<p class="myOrder_Time_p">退房时间：</p><h3 class="myOrder_OutTime">'+orders[i].outDate+'</h3>'+
+					            '</div>'+
+					            '<div class="myOrder_Money">￥'+orders[i].orderMoney+'</div>'+
+					            '<div class="myOrder_Pay">'+
+					                '<a href="#" class="myOrder_Pay_a2">退单</a>'+
+					                '<a href="#" class="myOrder_Pay_a">'+showIsPay+'</a>'+
+					          	'</div></div></div></div>'
+				);
 			}
-		});
-		
-		
+		},
+		error:function(){
+			alert("网络错误！");
+		}
+	});
+}
+$(document).ready(function(){
+	$("#myOrders").click(function(){
+		showOrders(2);
+	});
+	$(".orderHead-select").change(function(){
+		var orderIsPay = $(".orderHead-select option:selected").val();
+		showOrders(orderIsPay);
+	});
+//		var orderIsPay = $(".orderHead-select option:selected").val();	
+//		alert("orderIsPay:"+orderIsPay);	
+//		$.ajax({
+//			url:"../ShowOrderServlet",
+//			type:"post",
+//			data:{orderIsPay:orderIsPay},
+//			success:function(result){
+//				var jsonObj = $.parseJSON(result);
+//				
+//			},
+//			error:function(){
+//				alert("我的订单错误！");
+//			}
+//		});
 });
 
 

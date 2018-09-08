@@ -36,6 +36,23 @@ public class RegisterDaoImpl{
 		return userResult;
 	}
 	
+	//判断用户是否存在
+		public boolean userExist(String eop) throws SQLException {
+			QueryRunner runner = new QueryRunner();
+			Connection conn = DataSourceUtil.getConnection();
+//			判断是手机还是邮箱
+			String sql = "select UserId from UserList where UserEmail = ? or UserPhoneNumber = ?";
+			Object[] params = {eop, eop};
+			
+			User userResult = runner.query(conn, sql, new BeanHandler(User.class), params);
+			
+			if(userResult != null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	
 	/**
 	 * 用户注册
 	 * @param user
@@ -43,97 +60,26 @@ public class RegisterDaoImpl{
 	 * @throws SQLException 
 	 */
 	public boolean UserRegister(User user) throws SQLException {
-		String userEmail =user.getUserEmail();//拿到的是输入框架的用户名
 		String userPassword = user.getUserPassword();
-		boolean registerRes = false;//用来判断是否可以注册
 		int num = (int)(Math.random() * 1000000);
 		QueryRunner runner = new QueryRunner();
-		Connection conn;	
-			conn = DataSourceUtil.getConnection();
-			/**
-			 * 判断是手机号还是邮箱
-			 */
-			String sql = "";
-			List<User> userQuery=null ;
-			boolean Phoneresult = checkPhone(userEmail);
-			boolean Emailresult = checkEmail(userEmail);
-			if(Phoneresult==true) {			
-				System.out.println("Dao注册的用户是手机号！");
-				sql = "select * from UserList where UserPhoneNumber =?";
-				Object[] params = {userEmail};
-				userQuery = runner.query(conn, sql,new BeanListHandler<User>(User.class), params);
-				if(userQuery==null) {
-					//代表有记录
-					//不能注册
-					registerRes = false;
-				}else {				
-					//用用户输入的手机号码注册
-					runner = new QueryRunner(DataSourceUtil.getDataSourceWithC3P0ByXML());
-					String inSql = "insert into UserList(UserId,UserPassword,UserPhoneNumber) values(?,?,?)";
+		Connection conn = DataSourceUtil.getConnection();
+		boolean registerRes;
+		if(user.getUserPhoneNumber() != null) {
+			String inSql = "insert into UserList(UserId,UserPassword,UserPhoneNumber) values(?,?,?)";
+			Object[] result = {num,userPassword,user.getUserPhoneNumber()};
+			runner.update(conn, inSql,result);
+		} else {
+			//用用户输入的邮箱号码注册
+			String inSql = "insert into UserList(UserId,UserPassword,UserEmail) values(?,?,?)";
+			Object[] result = {num,userPassword,user.getUserEmail()};
+			runner.update(conn, inSql,result);
+		}
+		registerRes = true;
 
-					Object[] result = {num,userPassword,userEmail};
-					
-					int  count = runner.update(inSql,result);
-					System.out.println("插入"+count+"条数据成功！");
-					registerRes = true;
-				}
-				
-			} 
-			if(Emailresult==true){
-				System.out.println("Dao注册的用户是邮箱号！");
-				sql = "select * from UserList where UserEmail =?";
-				Object[] params = {userEmail};
-				 userQuery = runner.query(conn, sql,new BeanListHandler<User>(User.class), params);
-				 if(userQuery==null) {
-						//代表有记录
-						//不能注册
-					 System.out.println("数据库有记录不能注册");
-						registerRes = false;
-
-					}else {		
-						//用用户输入的邮箱号码注册
-						String inSql = "insert into UserList(UserId,UserPassword,UserEmail) values(?,?,?)";
-						runner = new QueryRunner(DataSourceUtil.getDataSourceWithC3P0ByXML());
-							
-						Object[] result = {num,userPassword,userEmail};
-						int  count = runner.update(inSql,result);
-						System.out.println("插入"+count+"条数据成功！");				
-						registerRes = true;
-					}
-			}
-
-			if(registerRes==false) {
-				System.out.println("注册失败!");
-			}
-
-		
-		
+		if(registerRes==false) {
+			System.out.println("注册失败!");
+		}
 		return registerRes;
 	}
-	
-	
-	
-	
-	/**
-	 * 验证手机号码
-	 */
-	public  boolean checkPhone(String str) {
-	    Pattern p = null;
-	    Matcher m = null;
-	    boolean b = false;
-	    p = Pattern.compile("^[1][3,4,5,7,8][0-9]{9}$"); 
-	    // 验证手机号
-	    m = p.matcher(str);
-	    b = m.matches();
-	    return b;
-	}
-	/***
-	 * 验证邮箱
-	 */
-	public  boolean checkEmail(String email){
-	    Pattern pattern = Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
-	    Matcher matcher = pattern.matcher(email);
-	    return matcher.matches();
-	}
-
 }

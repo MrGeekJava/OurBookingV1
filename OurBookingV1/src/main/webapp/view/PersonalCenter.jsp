@@ -190,7 +190,7 @@
             <a href="#" onclick="openModel(event, 'personalCenter')">
                 <li class="BarLi">我的个人中心</li>
             </a>
-            <a href="#" onclick="openModel(event, 'myOrder')">
+            <a href="#" id="myOrders" onclick="openModel(event, 'myOrder')">
                 <li class="BarLi">我的订单</li>
             </a>
             <a href="#">
@@ -522,44 +522,7 @@
             </div>
             <a href="#" class="orderHead-un">找不到你的订单?</a>
         </div>
-<div class="showOrder">
-    <div class="orderTime_Id">
-        <h4 class="myOrder_Time">订单时间</h4>
-        <p class="myOrder_Id">订单号：</p>
-        <p class="myOrder_Id2">订单号码</p>
-    </div>
-
-
-    <div class="myOrder_ifm">
-        <div class="myOrder_hotel"><img src="#" class="myhotel_Img"></div>
-        <div class="order_Hotel_Ifm">
-                <div class="myhotel_Name">
-                    <h2 class="myhotel_Name_Name">酒店名</h2>
-                    <p class="myhotel_Name_Adress">酒店地址</p>
-                </div>
-
-                <div class="myOrder_Room">
-                    <p class="myOrder_Room_p">房间类型：</p><h3 class="myOrder_Room_Type">豪华型</h3>
-                    <p class="myOrder_Room_p">入住人数：</p><h3 class="myOrder_PeopleNum">豪华型</h3>
-                    <p class="myOrder_Room_p">房间数量：</p><h3 class="myOrder_RoomNum">豪华型</h3>
-                </div>
-
-            <div class="myOrderTime">
-                <p class="myOrder_Time_p">入住时间：</p><h3 class="myOrder_InTime">2018-9-8</h3>
-                <p class="myOrder_Time_p">退房时间：</p><h3 class="myOrder_OutTime">2018-9-10</h3>
-            </div>
-
-            <div class="myOrder_Money">1000元</div>
-
-            <div class="myOrder_Pay">
-                <a href="#" class="myOrder_Pay_a2">退单</a>
-                <a href="#" class="myOrder_Pay_a">已支付</a>
-
-          	  </div>
-        	</div>
-    	</div>
-
-</div>
+<!--  
 <div class="showOrder">
     <div class="orderTime_Id">
         <h4 class="myOrder_Time">订单时间</h4>
@@ -597,7 +560,7 @@
         </div>
     </div>
 
-</div>
+</div>-->
    		 </div>
 
 </div>

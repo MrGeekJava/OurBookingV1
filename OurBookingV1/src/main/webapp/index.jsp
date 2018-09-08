@@ -1592,7 +1592,7 @@
 			<div id="LAR-login">
 				<div class="LAR-contant">
 					<form name="loginForm" action="LoginServlet" method="POST" class="LAR_form">
-						<span class="login_span">电子邮箱/手机号</span>
+						<span class="login_span">电子邮箱/手机号<i id="eoplogin" class="input_tip"></i></span>
 						<input id="emailInput" type="text" name="emailOrphone"><br>
 						<span class="login_span">Booking.com密码</span>
 						<input id="pwdInput" type="password" name="pwd"><br>
@@ -1612,11 +1612,11 @@
 			<div id="LAR-register">
 				<div class="LAR-contant">
 					<form name="registerForm" action="" method="post" onsubmit="" class="LAR_form">
-						<span class="login_span">电子邮箱/手机号</span>
+						<span class="login_span">电子邮箱/手机号<i id="eop" class="input_tip"></i></span>
 						<input id="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
 						<input id="pwdInput2" type="password" name="pwd" ><br>
-						<span class="login_span verify_code">请输入验证码</span>
+						<span class="login_span verify_code">请输入验证码<i id="verifyCode" class="input_tip"></i></span>
 						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
 						<img src="GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
 						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
@@ -1629,18 +1629,9 @@
 							imgEle.src="GetImage?a="+new Date().getTime();
 						}
 						</script>
-						<!--注册返回信息-->
-						<%
-							String registerMessage="";
-							String registerMsg = (String)session.getAttribute("registerMsg");
-							if(registerMsg!=null){
-								registerMessage = registerMsg;
-							}	
-						%>
-						<font color="red"><b><%=registerMessage %></b></font>
 						<br>
 						<br>
-						<div class="subRegister" >注册账号</div><br>
+						<input type="button" class="subRegister" value="注册账号"><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————

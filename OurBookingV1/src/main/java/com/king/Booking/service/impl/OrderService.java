@@ -12,7 +12,7 @@ import com.king.Booking.util.DataSourceUtil;
 public class OrderService {
 
 	//调用Dao层的：根据用户ID和是否支付获取订单信息
-	public List<Order> getOrderIfmbyUserIdandPay(String UserId,int OrderIsPay){
+	public List<Order> getOrderIfmbyUserIdandPay(int UserId,int OrderIsPay){
 		OrderDaoImpl orderDao = new OrderDaoImpl();
 		List<Order> orders = null;
 		try {
@@ -27,7 +27,7 @@ public class OrderService {
 	}
 	
 	//调用Dao层的：根据用户ID获取订单信息
-		public List<Order> getOrderIfmbyUserId(String UserId){
+		public List<Order> getOrderIfmbyUserId(int UserId){
 			OrderDaoImpl orderDao = new OrderDaoImpl();
 			List<Order> orders = null;
 			try {

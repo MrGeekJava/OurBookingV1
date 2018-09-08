@@ -17,34 +17,19 @@ import com.king.Booking.util.DataSourceUtil;
 public class OrderDaoImpl implements OrderDao{
 	
 //	查询所有该用户的订单根据用户ID和是否支付来查询
-	public List<Order> queryAllOrderbyOrderIdandPay(String UserId,int OrderIsPay) throws SQLException {
+	public List<Order> queryAllOrderbyOrderIdandPay(int UserId,int OrderIsPay) throws SQLException {
 		QueryRunner runner = new QueryRunner();
 		Connection conn = DataSourceUtil.getConnection();
 		String sql = "select * from OrderList where UserId=? and OrderIsPay = ?"; 
 		Object[] params = {UserId,OrderIsPay};
 		List<Order> Orders = new ArrayList<Order>();
 		Orders = runner.query(conn, sql, new BeanListHandler<Order>(Order.class), params);
-		
-		//查询到多条OrderList的记录
-		for(Order order:Orders) {
-			//通过遍历拿到每一条记录
-			//动态生成一个表格。
-			/**
-			 * 用三个盒子来装三个表格
-			 * 默认显示一个用户ID的所有订单信息（一个盒子）
-			 * 第二个用if(orderIsPay==1)来显示支付的表格，隐藏起来
-			 * 第三个用if(orderIsPay==0)来显示未支付的表格，（多了，删除，去支付的按钮）隐藏起来。
-			 * 我的订单信息中，选择option来调用盒子显示和隐藏
-			 * 
-			 */
-			System.out.println(order);
-		}
-		
+
 		return Orders;
 	}
 	
 //	查询所有该用户的订单根据用户ID来查询
-	public List<Order> queryAllOrderbyOrderId(String UserId) throws SQLException {
+	public List<Order> queryAllOrderbyOrderId(int UserId) throws SQLException {
 		QueryRunner runner = new QueryRunner();
 		Connection conn = DataSourceUtil.getConnection();
 		String sql = "select * from OrderList where UserId=?"; 
@@ -52,25 +37,8 @@ public class OrderDaoImpl implements OrderDao{
 		List<Order> Orders = new ArrayList<Order>();
 		Orders = runner.query(conn, sql, new BeanListHandler<Order>(Order.class), params);
 		
-		//查询到多条OrderList的记录
-		for(Order order:Orders) {
-			//通过遍历拿到每一条记录
-			//动态生成一个表格。
-			/**
-			 * 用三个盒子来装三个表格
-			 * 默认显示一个用户ID的所有订单信息（一个盒子）
-			 * 第二个用if(orderIsPay==1)来显示支付的表格，隐藏起来
-			 * 第三个用if(orderIsPay==0)来显示未支付的表格，（多了，删除，去支付的按钮）隐藏起来。
-			 * 我的订单信息中，选择option来调用盒子显示和隐藏
-			 * 
-			 */
-			System.out.println(order);
-		}
-		
 		return Orders;
 	}
-	
-	
 	
 	//根据酒店ID查询酒店相关信息
 	public Hotel queryAllHotelbyhotelId(int hotelId) throws SQLException {
@@ -83,11 +51,6 @@ public class OrderDaoImpl implements OrderDao{
 		
 		return hotel ;
 	}
-	
-	
-	
-	
-	
 	
 	//生成的订单存储到订单表中
 	//用户ID，酒店ID可以相同，只要保证订单号不相同就行

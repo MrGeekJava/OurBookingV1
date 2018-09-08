@@ -2,13 +2,19 @@ package com.king.Booking.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.king.Booking.entity.Order;
 import com.king.Booking.entity.User;
+import com.king.Booking.service.impl.OrderService;
+
+import net.sf.json.JSONArray;
 
 public class ShowOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,14 +30,24 @@ public class ShowOrderServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("我的订单进来了！！");
 		PrintWriter out = response.getWriter();
-		//获取用户ID和是否完成支付
+		
 		User user =(User)request.getSession().getAttribute("loginUser");
-		 int userId =user.getUserId(); 
-		 int orderIsPay = Integer.parseInt(request.getParameter("orderIsPay"));
+		int userId =user.getUserId(); 
+		int orderIsPay = Integer.parseInt(request.getParameter("orderIsPay"));
+		List<Order> orders = new ArrayList<Order>();
+		OrderService os = new OrderService();
 		
-		 System.out.println("userId:"+userId+";orderIsPay:"+orderIsPay);
+		if(orderIsPay == 2) {
+			orders = os.getOrderIfmbyUserId(userId); 
+		} else {
+			orders = os.getOrderIfmbyUserIdandPay(userId, orderIsPay);
+		}
 		
-
+		JSONArray jsonArray=JSONArray.fromObject(orders);
+		
+		out.print(jsonArray);//返回json数组
+		out.flush();
+		out.close();
 	}
 
 }

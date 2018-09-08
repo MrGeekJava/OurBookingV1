@@ -718,7 +718,15 @@ body{
 	margin-top: 10px;
 }
 
-
+/****异步验证样式****/
+.input_tip{
+	position: absolute;
+	display: inline-block;
+	padding-left: 20px;
+	line-height: 20px;
+	color: green;
+	font-size: 18px;
+}
 
 
 /*-----------------------搜索功能模块----------------------*/

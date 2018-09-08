@@ -127,25 +127,85 @@ $(document).ready(function () {
         $("#LARid").hide();
     });
     
+    $("#emailInput").blur(function(){
+    	var eop = $("#emailInput").val();
+    	$.ajax({
+    		url:"RegisterVerifyServlet",
+    		data:{EOP:eop},
+    		success:function(result){
+    			if(result == '0'){
+    				$("#eoplogin").text("× 格式错误");
+    			} else if(result == '2'){
+    				$("#eoplogin").text("× 用户不存在");
+    			} else {
+    				$("#eoplogin").text("");
+    			}
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
+    
+//    当鼠标移出的时候，进行判断
+    $("#emailInput2").blur(function(){
+    	var eop = $("#emailInput2").val();
+    	$.ajax({
+    		url:"RegisterVerifyServlet",
+    		data:{EOP:eop},
+    		success:function(result){
+    			if(result == '0'){
+    				$("#eop").text("× 格式错误");
+    			} else if(result == '1'){
+    				$("#eop").text("× 该用户已存在");
+    			} else {
+    				$("#eop").text("√ 账号可用");
+    			}
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
+    
+//    验证码
+    $("input[name='verifyName']").blur(function(){
+    	var verifyCode = $("input[name='verifyName']").val();
+    	$.ajax({
+    		url:"VerifyServlet",
+    		data:{VC:verifyCode},
+    		success:function(result){
+    			$("#verifyCode").text(result);
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
+    
     /**
      * 注册
      */
+    
     $(".subRegister").unbind('click').click(function(){
-    	var userEmail = $("#emailInput2").val();
-    	var userPassword = $("#pwdInput2").val();
-    	var userVerify = $(".register_inp").val();
-		 $.getJSON('RegisterServlet',
-				 {EmailOrPhone:userEmail,password:userPassword,Verify:userVerify},
-				 function(result){
-					 var result = eval(result.user);
-					 if(result==true){
-						 alert("恭喜"+userEmail+"注册成功");
-						 $("#emailInput").attr("value",userEmail);
-						 $("#log-btn").click();
-					 }else{
-						 alert("注册失败！"+result+"已经存在或者验证码不正确！");
-					 }
-			});
+    	if($("#eop").text()=="√ 账号可用" && $("#verifyCode").text()=="√"){
+        	var userEmail = $("#emailInput2").val();
+        	var userPassword = $("#pwdInput2").val();
+    		 $.getJSON(
+    				 'RegisterServlet',
+    				 {EmailOrPhone:userEmail,password:userPassword},
+    				 function(result){
+    					 if(result){
+    						 alert("恭喜"+userEmail+"注册成功");
+    						 $("#emailInput").attr("value",userEmail);
+    						 $("#log-btn").click();
+    					 }else{
+    						 alert("注册失败！");
+    					 }
+    				 });
+        } else {
+        	alert("信息不正确");
+        }
 	});
     
 //显示选择货币窗口
