@@ -18,7 +18,7 @@
 	<link href="resources/res/icon/index_icon/index_yuan/iconfont.css">
 	<link rel="stylesheet" href="resources/css/searchResult.css">
 	<link rel="SHORTCUT ICON" href="resources/res/images/title_logo.icon"/>
-	<script src="//at.alicdn.com/t/font_781787_uulemrrj1h.js" type="text/javascript"></script>
+	<script src="//at.alicdn.com/t/font_781787_iwtca8wtt8.js" type="text/javascript"></script>
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<script src="resources/js/NavBar.js" type="text/javascript"></script>
 	<script src="resources/js/index_container.js" type="text/javascript"></script>
