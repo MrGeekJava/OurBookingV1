@@ -1,4 +1,3 @@
-
 //点击右上角地图就浮现地图搜索模块
 $(document).ready(function () {
     $(".rightBox_mapSearch").click(function () {
@@ -11,20 +10,13 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".map_search").click(function () {
         $(".Map-Background").show();
+        selectHotels(0);
     });
 })
-
-//点击显示在地图上的链接就浮现地图模块
-
-$(document).ready(function () {
-    $(".map_a").click(function () {
-        $(".Map-Background").show();
-    });
-})
-
 
 //从首页搜索跳到本页面所加载的方法
 $(document).ready(function(){
+
 	var currentPage = "1";
 	 var strCookie = document.cookie;
 	 var serchAdress = null;
@@ -41,10 +33,11 @@ $(document).ready(function(){
 		$.post('../SearchResultServlet',
 				{searchadress:searchAdress,currentpage:currentPage},
 				function(result){
-					
-					
+					var jsonObj = $.parseJSON(result);
 
-					var jsonObj = $.parseJSON(result)
+//					清空原来的元素
+					$(".search_hotel").siblings().remove();
+					
 					var flag = false;
 					for (var i in jsonObj) {
 						flag = true;
@@ -134,7 +127,6 @@ $(document).ready(function(){
 								'</div>'+
 								' </div>'
 						)
-
 					}
 					
 					//酒店的总数
@@ -150,7 +142,7 @@ $(document).ready(function(){
 							}
 					}
 					//分页的页数
-					var pageCount = Math.floor((hotelCount % 5 == 0) ? (hotelCount/5) : (hotelCount/5+1)); 
+					var pageCount = Math.floor((hotelCount % 7 == 0) ? (hotelCount/7) : (hotelCount/7+1)); 
 					//分页的详细信息
 					if(flag){
 						
@@ -177,31 +169,29 @@ $(document).ready(function(){
 					}
 					
 					//加载分页码
-					for(var i = 2;i <= pageCount; i++){
-						$(".numSet").append(
+						for(var i = 2;i <= pageCount; i++){
+							$(".numSet").append(
 								'<span class="second">'+i+'</span>'
-						)
+							)
+						}
+						if(pageCount > 5){
+							$(".numSet").append(
+									'<span class="second">...</span>'
+							)
+						}
 						
-					}
-					
-					
-					
 					//在相应的页面数字显示出外框
 					var sEls = document.getElementsByClassName("second");
 					sEls[0].style.border = "1px solid";
 					sEls[0].style.color = "red";
-					
+//					var thisPage = sEls[0].innerText;
+//					alert(thisPage);
 			
 					//在头部显示地点及总的酒店数量
 					$(".address").html(hotelDowntown+":"+"共"+hotelCount+"家住宿");
-					
 				}
-				
 		);
-		
-		
-		
-})
+});
 
 	//点击当前数字显示相关的酒店结果页面
 $(document).ready(function () {
@@ -212,14 +202,10 @@ $(document).ready(function () {
 			
 			alert($(this).index());
 			document.cookie = "currentNum="+clickNum;
-		
 
 			//隐藏酒店
 		$(".search_hotel").remove();
-			
-			
 //			*********************************
-			
 			$.post('../SearchResultServlet',
 					{searchadress:searchAdress,currentpage:clickNum},
 					function(result){
@@ -696,4 +682,17 @@ $(document).ready(function(){
  	 /*  window.location.href="../LookingroomInitServlet";     //在同当前窗口中打开窗口123
 */
 	})
+})
+
+//点击显示在地图上的链接就浮现地图模块
+$(document).ready(function () {
+	$("div").delegate('.map_a','click',function(evt){
+ 	    evt.stopPropagation(); 			//阻止事件冒泡
+ 	   $(".Map-Background").show();
+       selectHotels(0);
+	});
+//    $(".map_a").click(function () {
+//        $(".Map-Background").show();
+//        selectHotels(0);
+//    });
 })

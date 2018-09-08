@@ -85,7 +85,7 @@ public class SearchResultServlet extends HttpServlet {
 		//将创建的cookie写到浏览器中
 
 		response.addCookie(cookiePage);
-		List<HotelSearchHotelView> hotelReturn = srService.searchRult(searchAdressArray[1], searchAdressArray[0],(currentPage),5);
+		List<HotelSearchHotelView> hotelReturn = srService.searchRult(searchAdressArray[1], searchAdressArray[0],(currentPage),7);
 		List<HotelSet> hotelSetReturn = new ArrayList<HotelSet>();
 		HotelSet hotelSet = null;
 
