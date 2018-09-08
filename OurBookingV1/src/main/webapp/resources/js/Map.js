@@ -42,7 +42,7 @@ $(document).ready(function () {
         $(".dropdown-select").toggle();
     });
 });
-// 点击下拉菜以外区域隐藏
+// 点击下拉菜单以外区域隐藏
 window.onclick = function (event) {
     if (!event.target.matches('#select3')) {
         document.getElementById("hotel-sort").style.display = "none";
