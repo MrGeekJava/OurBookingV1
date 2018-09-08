@@ -1,5 +1,5 @@
-<%@ page language="java" contenttype="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>    
 <%@ page import="java.io.*,java.net.*" %>
 <%@ page import="com.king.Booking.entity.User" %>
 <%@ page isELIgnored="false" %>
@@ -302,7 +302,7 @@
                 <div class="order_user_ifm order_back">房间数量</div>
                 <div class="order_user_ifms ROOM_NUM"><input type="text" name="ROOM_NUM" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间类型</div>
-                <div class="order_user_ifms ROOM_type"><input type="text" name="ROOM_type" value="" readonly="readonly"></div>
+                <div class="order_user_ifms ROOM_TYPE"><input  type="text" name="ROOM_TYPE" value="" readonly="readonly"></div>
                 <div class="order_user_ifm order_back">房间单价</div>
                 <div class="order_user_ifms ROOM_PRICE"><input type="text" name="ROOM_PRICE" value="" readonly="readonly"></div></div>
  

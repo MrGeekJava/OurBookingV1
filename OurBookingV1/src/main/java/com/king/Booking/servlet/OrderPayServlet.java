@@ -32,18 +32,7 @@ public class OrderPayServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		  		response.setCharacterEncoding("UTF-8");
 		        response.setContentType("text/html;charset=utf-8");
-		        
-//		       PrintWriter out = response.getWriter();
-//		       Cookie[] cookies = request.getCookies();          //从请求中获取客户端发来的Cookie
-//		       for(Cookie i:cookies) {
-//		    	   System.out.println(i.getName());
-//		            if("orderRoomin".equals(i.getName())) {  
-////		            	OrderUserEmail = URLEncoder.encode((i.getValue()),"utf-8");    
-//		            	System.out.println("orderRoomin:"+i.getValue());
-//		            }
-//		        }
-		       
-		       
+       
 		       User user =(User)request.getSession().getAttribute("loginUser");
 		       System.out.println("用户ID:"+user.getUserId());  //可以获取用户ID
 		       
