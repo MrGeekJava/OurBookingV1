@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.king.Booking.dao.interfaces.SearchResult;
+import com.king.Booking.entity.AutoComplete;
 import com.king.Booking.entity.HotelEva;
 import com.king.Booking.entity.HotelSearchHotelView;
 import com.king.Booking.util.DataSourceUtil;
@@ -89,6 +90,30 @@ public class SearchResultDaoImpl implements SearchResult {
 		if(hotelCount instanceof Long)
 		    value = Integer.parseInt(String.valueOf(hotelCount));
 		return value;
+	}
+
+	//首页的自动补全和模糊搜索的方法
+	public List<AutoComplete> getAutoComplete(String address) {
+		// TODO Auto-generated method stub
+		QueryRunner runner = new QueryRunner();
+		Connection conn = null;
+		List<AutoComplete> autoCompleteList = null;
+		
+		
+		//返回的数据被封装成List<JavaBean>
+		try {
+			conn = DataSourceUtil.getConnection();
+			//查询数据库sql语句
+			String sql = "select AutoAddress from AutoCompleteList where AutoAddress Like ?";
+			Object[] params = {"%"+address+"%"};
+			autoCompleteList = runner.query(conn, sql,new BeanListHandler<AutoComplete>(AutoComplete.class),params);
+//			autoCompleteList = runner.query(conn, sql,new ColumnListHander(object),params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return autoCompleteList;
 	}
 
 }

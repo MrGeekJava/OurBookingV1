@@ -3,6 +3,7 @@ package com.king.Booking.service.impl;
 import java.util.List;
 
 import com.king.Booking.dao.impl.SearchResultDaoImpl;
+import com.king.Booking.entity.AutoComplete;
 import com.king.Booking.entity.HotelEva;
 import com.king.Booking.entity.HotelSearchHotelView;
 
@@ -28,6 +29,23 @@ public class SearchResultService {
 			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
 			int sum = srdImpl.getHotelCount(province,downtown);
 			return sum;
+			
+		}
+		
+		//通过部分地址模糊查询
+		//把dao层查询的所有的地址拼接为一个字符串
+		public String getAutoCompleteService(String address){
+			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
+			List<AutoComplete> autoCompleteList = srdImpl.getAutoComplete(address);
+			String res = "";
+			for(int i = 0;i < autoCompleteList.size();i ++) {
+				if(i > 0) {
+					res += "#"+autoCompleteList.get(i).getAutoAddress();
+				}else {
+					res += autoCompleteList.get(i).getAutoAddress();
+				}
+			}
+			return res;
 			
 		}
 }

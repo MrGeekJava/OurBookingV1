@@ -211,8 +211,12 @@
 				<use xlink:href="#icon-chuang1"></use>
 			</svg>
 
-			<input class="search_container_one_input" placeholder="目的地?" name="adress">
+			
+			<input class="search_container_one_input" placeholder="目的地?" name="adress" >
 
+			<div id="word">
+
+			</div>
 
 
 		</div>
