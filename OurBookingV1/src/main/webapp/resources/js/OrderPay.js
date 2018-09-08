@@ -34,6 +34,6 @@ $(document).ready(function(){
 	$(".ORDER_TIME>input").attr("value",$.cookie("ORDER_Time"));//订单时间
 	$(".ORDER_EMAIL>input").attr("value",$.cookie("Order_User_Email"));//订单邮箱
 	$(".order_yearsindate>input").attr("value",inday);//年月日 
-	
+	 
 	
 });

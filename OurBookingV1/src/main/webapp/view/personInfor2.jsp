@@ -449,7 +449,7 @@
             <p class="container_foot_box_p1">请您在下一页添加更多信息。<b>无需信用卡</b>即可完成预订。您将于入住期间付费。</p>
         </div>
 
-    </div>
+    </div> 
 </div>
 <div class="footer">
     <div class="footer_up">

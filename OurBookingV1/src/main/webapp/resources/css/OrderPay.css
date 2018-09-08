@@ -228,7 +228,7 @@ body{
     color: #0AB21B;
     user-select: none;
     font-size: 12px;
-    margin-top: 19px;
+    margin-top: 19px; 
     cursor: help;
     border-bottom: 1px dotted #0AB21B;
 }

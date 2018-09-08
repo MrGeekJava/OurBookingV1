@@ -346,7 +346,7 @@
                 <p class="order_ifm_p3"><i class="order_yearsindate">2018年8月12日</i>下午6:00前可免费取消</p>
             </div>
         </div>
-
+ 
         <div class="container_ensure">
             <i class="iconfont icon-iconfontright2" ></i> 
             <p class="container_ensure_p1"><b>担保此项预订无需任何费用。</b>您将于入住期间付款。</p>

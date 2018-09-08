@@ -108,7 +108,7 @@ public class PayServlet extends HttpServlet {
 		 		order.setOrderUserName(orderUserName);
 		 		 order.setOrderMoney(orderMoney);
 		 		 
-		 		orderService.OrderInsertOrderList(order);
+		 		orderService.OrderInsertOrderList(order); 
 		 		
 		 		 
 		         /**

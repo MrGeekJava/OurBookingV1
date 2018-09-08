@@ -292,7 +292,7 @@
         <p class="input_user_ifm">您的订单信息 &nbsp;&nbsp;&nbsp;Confirm your order information</p>
             <form method="post" action="../PayServlet?HotelId=<%=HotelId %>&orderNumber=<%=orderNumber %>">
             <div class="order_ifm">
-                <div class="order_user_list">
+                <div class="order_user_list"> 
                 <div class="order_list_ifm ">订单号</div>
                 <div class="order_list_ifms ORDER_ID"><input type="text" name="ORDER_ID" value="<%=session.getAttribute("OrderId") %>" readonly="readonly"></div>
                 <div class="order_user_ifm ">联系人</div>

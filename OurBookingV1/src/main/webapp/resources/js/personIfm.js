@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function () {
-	/**/ 
+	/**/  
 	//获取酒店信息，显示到当前页面
 	$(".order_details_in_time").text($.cookie("orderRoomin"));//入住日期
 	$(".order_details_out_time").text($.cookie("orderRoomout"));//退房日期

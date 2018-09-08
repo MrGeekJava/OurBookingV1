@@ -104,7 +104,7 @@ public class OrderPayServlet extends HttpServlet {
 		    
 		       Random random = new Random();
 		       String result="";
-		       for (int i=0;i<6;i++)
+		       for (int i=0;i<6;i++) 
 		       {
 		       	result+=random.nextInt(10);
 		       }
