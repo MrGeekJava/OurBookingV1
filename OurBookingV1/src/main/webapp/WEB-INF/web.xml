@@ -157,6 +157,12 @@
       	<description></description>
       	<servlet-class>com.king.Booking.servlet.AutoCompleteServlet</servlet-class>
       </servlet>
+  	 <servlet>
+  	 	<servlet-name>ShowOrderServlet</servlet-name>
+  	 	<display-name>ShowOrderServlet</display-name>
+  	 	<description></description>
+  	 	<servlet-class>com.king.Booking.servlet.ShowOrderServlet</servlet-class>
+  	 </servlet>
   	
   	
   	
@@ -238,5 +244,9 @@
         <servlet-mapping>
         	<servlet-name>AutoCompleteServlet</servlet-name>
         	<url-pattern>/AutoCompleteServlet</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        	<servlet-name>ShowOrderServlet</servlet-name>
+        	<url-pattern>/ShowOrderServlet</url-pattern>
         </servlet-mapping>
 </web-app>

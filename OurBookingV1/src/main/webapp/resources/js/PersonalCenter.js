@@ -170,6 +170,30 @@ function showImg(){
 	});
 }
 
+/**
+ * 动态加载订单
+ * @returns
+ */
+$(document).ready(function(){
+
+		var orderIsPay = $(".orderHead-select option:selected").val();	
+		alert("orderIsPay:"+orderIsPay);	
+		$.ajax({
+			url:"../ShowOrderServlet",
+			type:"post",
+			data:{orderIsPay:orderIsPay},
+			success:function(result){
+				var jsonObj = $.parseJSON(result);
+				
+			},
+			error:function(){
+				alert("我的订单错误！");
+			}
+		});
+		
+		
+});
+
 
 $(document).ready(function(){
 	$(".row_input").blur(function(){

@@ -339,44 +339,130 @@ a {
     margin-right: 20px;
     font-size: 14px;
 }
-.orderContent{
-    width: 100%;
-    height: auto;
-    border: 1px solid;
-}
-.order-card{
-    width: 1100px;
-    height: 180px;
-    margin: 20px auto;
-    border: 1px solid #0077CC;
-}
-.order-card-head{
-    width: 100%;
+
+.showOrder{
+     width: 1098px;
+     height: 182px;
+     border: 1px solid gray;
+     margin: 5px auto;
+     }
+.orderTime_Id{
     height: 50px;
-    background-color: #0099E0;
-}
-.order-card-body{
-    width: 130%;
-    height: 100px;
-}
-.order-createTime, .order-no{
-    display: inline-block;
-    line-height: 50px;
-    width: auto;
-    margin: 0 20px;
-    font-weight: bold;
-}
-.order-no{
-    font-weight: normal;
-}
-.order-delete{
-    float: right;
-    height: 32px;
-    width: 32px;
-    font-size: 32px;
-    line-height: 50px;
-    margin: 0 10px;
-}
+    width: 1098px;
+    background: #0099E0;
+ }
+.myOrder_ifm{
+      width: 1098px;
+      height: 130px;
+  }
+.myOrder_Time,.myOrder_Id,.myOrder_Id2{
+     display: inline-block;
+     float: left;
+     height: 50px;
+     line-height: 50px;
+ }
+ .myOrder_Time{
+     width: auto;
+     font-size: 18px;
+     margin-left: 15px;
+ }
+ .myOrder_Id,.myOrder_Id2{
+     color: #383838;
+     margin-left: 50px;
+ }
+ .myOrder_Id2{
+     margin-left: 5px;
+ }
+ .myOrder_hotel{
+     width: 200px;
+     height: 130px;
+     float: left;
+ }
+ .myhotel_Name{
+     width: 240px;
+     height: 130px;
+     box-sizing: border-box;
+     float: left;
+ }
+ .myhotel_Name_Name{
+     padding-top: 10px;
+     font-size: 24px;
+
+ }
+ .myhotel_Name_Adress{
+     padding-top: 10px;
+     font-size: 15px;
+     color: #383838;
+ }
+ .myOrder_Room{
+     width: 210px;
+     height: 130px;
+     box-sizing: border-box;
+     float: left;
+ }
+ .myOrder_Room_p,.myOrder_Room_Type,.myOrder_PeopleNum,.myOrder_RoomNum{
+     margin-top: 5px;
+     display: inline-block;
+     float: left;
+     margin-bottom: 10px;
+     color: #383838;
+ }
+ .myOrder_Room_p{
+     display: block;
+ }
+ .myOrder_Room_Type,.myOrder_PeopleNum,.myOrder_RoomNum{
+     font-size: 18px;
+ }
+ .myOrderTime{
+     width: 150px;
+     height: 130px;
+     box-sizing: border-box;
+     float: left;
+     padding-top: 10px;
+ }
+ .myOrder_Time_p{
+     padding-top: 5px;
+     display: block;
+ }
+ .myOrder_Money{
+     width: 150px;
+     height: 130px;
+     color: red;
+     font-size: 30px;
+     line-height: 130px;
+     text-align: center;
+     float: left;
+     font-weight: bold;
+ }
+ .myOrder_Pay{
+     width: 142px;
+     height: 130px;
+     box-sizing: border-box;
+     float: left;
+     padding-top: 10px;
+
+ }
+ .myOrder_Pay_a,.myOrder_Pay_a2{
+     display: block;
+     height: 30px;
+     line-height: 30px;
+     background: #5BBAFF;
+     color: #ff6600;
+     text-decoration: none;
+     list-style: none;
+     margin-top: 15px;
+     text-align: center;
+     margin-left: 20px;
+     font-weight: bold;
+ }
+ .myOrder_Pay_a{
+     width: 70px;
+ }
+ .myOrder_Pay_a2{
+     width: 70px;
+ }
+
+
 
 /*************************设置****************************/
 #install{
