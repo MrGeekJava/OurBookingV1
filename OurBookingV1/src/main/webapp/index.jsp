@@ -22,7 +22,7 @@
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<script src="resources/js/NavBar.js" type="text/javascript"></script>
 	<script src="resources/js/index_container.js" type="text/javascript"></script>
-
+	<script src="resources/js/AutoComplete.js" type="text/javascript"></script>
 	<title>loginAndRegist</title>
 </head>
 <body>
