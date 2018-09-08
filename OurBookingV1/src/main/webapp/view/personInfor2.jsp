@@ -226,7 +226,7 @@
 </div>
 <div class="container">
        <div class="container_order_details">    
-        <div class="order_details_box">
+        <div class="order_details_box"> 
             <div class="order_details">订单详情</div>
             <div class="order_details_up">
                 <p class="order_details_p">入住时间:</p>
@@ -348,19 +348,12 @@
 
         <div class="container_ensure">
             <i class="iconfont icon-iconfontright2" ></i>
-            <p class="container_ensure_p1">担保此项预订无需任何费用。</p>
-
-            <p class="container_ensure_p2">您将于入住期间付款。</p>
+            <p class="container_ensure_p1">担保此项预订无需任何费用。您将于入住期间付款。</p>
         </div>
 
         <div class="container_ensure2">
             <i class="iconfont icon-gou2"></i>
-
-            <p class="container_ensure2_p1">运气真不错！</p>
-
-            <p class="container_ensure2_p2">你已锁定<i class="order_hotelName">心灵海客栈（海口海甸店）</i>最便宜的房型。好价不错过，</p>
-
-            <p class="container_ensure2_p3">立即预订吧！</p>
+          <p class="container_ensure2_p1">运气真不错！你已锁定<b class="order_hotelName">心灵海客栈（海口海甸店）</b>最便宜的房型。好价不错过，立即预订吧！</p>
         </div>
         <p class="input_user_ifm">输入个人信息</p>
          <form action=" " method="post">
@@ -453,11 +446,7 @@
         <div class="container_foot_box">
             <i class="iconfont icon-iconfontright2"></i>
 
-            <p class="container_foot_box_p1">请您在下一页添加更多信息。</p>
-
-            <p class="container_foot_box_p2">无需信用卡</p>
-
-            <p class="container_foot_box_p3">即可完成预订。您将于入住期间付费。</p>
+            <p class="container_foot_box_p1">请您在下一页添加更多信息。<b>无需信用卡</b>即可完成预订。您将于入住期间付费。</p>
         </div>
 
     </div>
