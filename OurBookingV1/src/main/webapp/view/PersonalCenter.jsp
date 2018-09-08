@@ -220,7 +220,7 @@
 <%
 	} else {
 %>
-					<img src="${sessionScope.loginUser.userPicture }">
+					<img src=${sessionScope.loginUser.userPicture }>
 <%
 	}
 %>
@@ -923,7 +923,7 @@
             <div class="chooseFile">
                 <h3 class="fileTitle">选择文件上传</h3>
                 <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
-                <button id="saveImg" class="saveHeadBtn">保存</button>
+                <button id="saveImg" class="saveHeadBtn" onclick="showImg()">保存</button>
                 <textarea id="aaa"></textarea>
             </div>
         </div>

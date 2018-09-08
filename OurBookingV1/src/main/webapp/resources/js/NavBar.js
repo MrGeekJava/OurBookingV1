@@ -128,13 +128,8 @@ $(document).ready(function () {
     });
     
     /**
-     * 登录注册
-     *在页面中动态加载相同模块的时候，当触发第二次加载的模块时，有时会连第一个模块的内容随之改变，
-     *这是因为为第一个模块注册点击事件时并没有销毁而执行了两遍。
-     *此时需要手动的添加事件移除方法，可以选择在每次事件处理完成后销毁该事件，也可选择在下次事件触发前销毁之前的事件。
-     *用unbind消除
+     * 注册
      */
-    
     $(".subRegister").unbind('click').click(function(){
     	var userEmail = $("#emailInput2").val();
     	var userPassword = $("#pwdInput2").val();

@@ -146,10 +146,30 @@ function readAsDataURL(){
 	        var result=document.getElementById("img-vessel");
 	        //显示文件
 	        document.getElementById("aaa").innerHTML=this.result;
-	        result.innerHTML='<img src="'+this.result+'" />';
+	        result.innerHTML='<img id="myHead" src="'+this.result+'" />';
 	    }
     }  
 }
+
+function showImg(){
+	var myHead = $("#myHead").attr("src");
+	$.ajax({
+		url:"../SubmitImgServlet",
+		type:"post",
+		data:"source="+myHead,
+		success:function(result){
+			if(result){
+				alert("上传成功");
+			} else {
+				alert("上传失败");
+			}
+		},
+		error:function(){
+			alert("网络错误");
+		}
+	});
+}
+
 
 $(document).ready(function(){
 	$(".row_input").blur(function(){

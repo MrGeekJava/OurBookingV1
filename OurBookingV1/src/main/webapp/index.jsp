@@ -155,8 +155,9 @@
 						<img src="resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
 <%
 		} else {
+			String userHead = loginUser.getUserPicture().replace("../", "");
 %>
-						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+						<img src=<%=userHead %> style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>

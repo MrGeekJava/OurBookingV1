@@ -138,6 +138,7 @@ body{
 	margin-top: 7px;
 	margin-right: 5px;
 	float: left;
+	border-radius: 50%;
 }
 
 .user_name{
