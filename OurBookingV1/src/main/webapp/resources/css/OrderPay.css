@@ -104,7 +104,7 @@ body{
 }
 .container{
     width: 1100px;
-    height: 880px;
+    height: 1080px;
     /*border: 1px solid red;*/
     background: #F2FCF2;
     margin: 20px auto 0;
@@ -357,6 +357,22 @@ body{
     height: 76px;
     width: 778px;
 }
+
+.payMethod{
+    margin: 0 auto;
+    width: 778px;
+    height: 100px;
+    background: #cce1ff;
+}
+
+.payMethod>table{
+    margin: 0 auto;
+    color: #383838;
+}
+
+
+
+
 
 .order_information_next{
     width: 230px;

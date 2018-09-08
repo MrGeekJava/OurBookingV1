@@ -81,4 +81,20 @@ public class OrderDaoImpl implements OrderDao{
 	}
 	
 	
+	//修改订单支付状态未支付改为支付
+	public void orderUpdate(int orderId) {
+		QueryRunner runner = new QueryRunner(DataSourceUtil.getDataSourceWithC3P0ByXML());
+		String updateSql = "update OrderList set OrderIsPay=1 where OrderId=?";
+		Object [] params = {orderId};
+		try {
+			int count = runner.update(updateSql,params);
+			System.out.println("成功修改"+count+"条数据！");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 }

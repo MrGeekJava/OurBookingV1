@@ -41,7 +41,12 @@ public class OrderService {
 		}
 		
 		return hotel;
-		
+	}
+	
+	//修改订单状态的方法
+	public void updateOrder(int orderId) {
+		OrderDaoImpl orderDao = new OrderDaoImpl();
+		orderDao.orderUpdate(orderId);
 	}
 	
 }

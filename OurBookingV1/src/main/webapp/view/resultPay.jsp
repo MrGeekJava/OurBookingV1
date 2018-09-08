@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>支付成功！</h1>
+		
+
+	<h2><%= request.getAttribute("msg").toString() %></h2>
+	<a href="../index.jsp">返回主页</a>
 </body>
 </html>

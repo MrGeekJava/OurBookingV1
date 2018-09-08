@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//personInfor2.jsp获取cookie表单的值
-	alert("姓名："+$.cookie("Order_User_Name"));
-	alert("邮箱号码："+$.cookie("Order_User_Email"));
+//	alert("姓名："+$.cookie("Order_User_Name"));
+//	alert("邮箱号码："+$.cookie("Order_User_Email"));
 	$(".get_user_Name").text($.cookie("Order_User_Name"));
 	$(".get_user_email").text($.cookie("Order_User_Email"));
 

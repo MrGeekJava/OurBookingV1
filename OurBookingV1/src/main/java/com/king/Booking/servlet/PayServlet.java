@@ -24,17 +24,17 @@ public class PayServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				 String  p0_Cmd = "Buy"; //业务类型   固定值“Buy” 
 		         String  p1_MerId = "10001126856";//商户编号 
-		         String  p2_Order = "123456";// 商户订单号(从订单表中获取)
-		         String p3 = request.getParameter("ORDER_MONEY").split("元")[0];
+		         String  p2_Order = request.getParameter("ORDER_ID");// 商户订单号(从订单表中获取)
+//		         String p3 = request.getParameter("ORDER_MONEY").split("元")[0];
 		         String  p3_Amt = "0.01";// 支付金额
 		         String  p4_Cur = "CNY"; // 固定值 ”CNY” 
 		         String  p5_Pid = ""; // 商品名称(酒店名)(从订单表中获取)
 		         String  p6_Pcat = ""; // 商品种类(从订单表中获取)
 		         String  p7_Pdesc = ""; // 商品描述(从订单表中获取)
-		         String  p8_Url = "view/resultPay.jsp"; // 商户接收支付成功数据的地址(应该跳转到修改订单表的Servlet，把是否支付的字段改成已支付)
+		         String  p8_Url = "http://localhost:8080/OurBookingV1/PayServlet?method=back"; // 商户接收支付成功数据的地址(应该跳转到修改订单表的Servlet，把是否支付的字段改成已支付)
 		         String  p9_SAF = ""; // 送货地址   为“1”: 需要用户将送货地址留在易宝支付系统;为“0”: 不需要，默认为 ”0”.
 		         String  pa_MP = ""; // 商户扩展信息(从订单表中获取)
-		         String  pd_FrpId = "ABC-NET-B2C";//农业银行支付,支付通道编码
+		         String  pd_FrpId = request.getParameter("pd_FrpId");;//支付通道编码
 		         String  pr_NeedResponse = "1"; //固定值为“1”: 需要应答机制; 收到易宝支付服务器点对点支付成功通知，必须回写以”success”（无关大小写）开头的字符串，即使您收到成功通知时发现该订单已经处理过，也要正确回写”success”，否则易宝支付将认为您的系统没有收到通知，启动重发机制，直到收到”success”为止。 
 		 		 String keyValue = "69cl522AV6q613Ii4W6u8K6XuW8vM1N6bFgyv769220IuYe9u37N4y7rI4Pl";//密钥
 		 		 String hmac = PaymentUtil.buildHmac(p0_Cmd, p1_MerId, p2_Order, p3_Amt, p4_Cur, p5_Pid, p6_Pcat, p7_Pdesc, p8_Url, p9_SAF, pa_MP, pd_FrpId, pr_NeedResponse, keyValue);
@@ -71,7 +71,7 @@ public class PayServlet extends HttpServlet {
 		 		 String hotelName;		//酒店名称
 		 		 String hotelType;		//酒店类型
 		 		String hotelAdress;		//酒店地址
-		 		float roomGrade;			//酒店等级
+		 		float roomGrade;		//酒店等级
 		 		 
 		 		 String orderUserName = request.getParameter("USER_NAME");	//订单联系人
 		 		 
@@ -131,5 +131,50 @@ public class PayServlet extends HttpServlet {
 //		System.out.println(request.getCookies());
 		doGet(request, response);
 	}
+	
+	
+	
+	public void back(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String p1_MerId = request.getParameter("p1_MerId");
+		String r0_Cmd = request.getParameter("r0_Cmd");
+		String r1_Code = request.getParameter("r1_Code");
+		String r2_TrxId = request.getParameter("r2_TrxId");
+		String r3_Amt = request.getParameter("r3_Amt");
+		String r4_Cur = request.getParameter("r4_Cur");
+		String r5_Pid = request.getParameter("r5_Pid");
+		String r6_Order = request.getParameter("r6_Order");
+		String r7_Uid = request.getParameter("r7_Uid");
+		String r8_MP = request.getParameter("r8_MP");
+		String r9_BType = request.getParameter("r9_BType");
+		//校验访问者是否为易宝
+		String keyValue = "69cl522AV6q613Ii4W6u8K6XuW8vM1N6bFgyv769220IuYe9u37N4y7rI4Pl";//密钥
+		String hmac = request.getParameter("hmac");
+		
+		
+		boolean bool = PaymentUtil.verifyCallback(hmac, p1_MerId, r0_Cmd, r1_Code, r2_TrxId, r3_Amt, r4_Cur, r5_Pid, r6_Order, r7_Uid, r8_MP, r9_BType, keyValue);
+		if(!bool) {
+			request.setAttribute("msg", "糟糕，您支付错了！");
+		}
+		 /**
+		  * 修改订单状态
+		  */
+		OrderService order = new OrderService();
+		order.updateOrder(Integer.parseInt(request.getParameter("ORDER_ID")));
+		  
+		/**
+		 * 判断当前回调方式
+		 * 如果为点对点，需要回调以success开头的字符串
+		 */
+		if(r9_BType.equals("2")) {
+			response.getWriter().print("success");
+		}
+		/**
+		 * 保存成功信息，转发到resultPay.jsp
+		 */
+		request.setAttribute("msg", "支付成功！");
+		
+		response.sendRedirect("view/resultPay.jsp");
+	}
+	
 
 }

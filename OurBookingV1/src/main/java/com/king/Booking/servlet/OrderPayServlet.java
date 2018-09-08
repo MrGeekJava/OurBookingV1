@@ -115,9 +115,7 @@ public class OrderPayServlet extends HttpServlet {
 
 	   }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/**
-		 * 订单信息插入数据库模块
-		 */
+		
 		this.doGet(request, response);
 
 	}
