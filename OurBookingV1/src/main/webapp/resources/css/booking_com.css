@@ -21,8 +21,14 @@ ul{
     left: 6px;
     top: 8px;
 }
-
-.icon-chuang1{
+.search_container_two>.icon-rili{
+	width:30px;
+	height:30px;
+	position:absolute;
+	left:10px;
+	top:16px;
+}
+.search_container_one>.icon-chuang1{
 	width:40px;
 	height:40px;
     position: absolute;
