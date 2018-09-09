@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.king.Booking.entity.User;
 import com.king.Booking.service.impl.RegisterServiceImpl;
+import com.king.Booking.util.MD5Util;
 import com.king.Booking.util.VerifyUtil;
 
 /**
@@ -52,8 +53,17 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+path);
 			return;
 		}
+		
+		String userPswMD5 = null;
+		try {
+			userPswMD5 = MD5Util.md5Encode(userPassword);
+			System.out.println(userPswMD5);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		user.setUserPassword(userPassword);
+		user.setUserPassword(userPswMD5);
 //		JSONObject json = null;
 
 		User userReturn = new RegisterServiceImpl().UserLogin(user);

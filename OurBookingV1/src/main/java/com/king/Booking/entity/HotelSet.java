@@ -7,6 +7,7 @@ package com.king.Booking.entity;
  */
 public class HotelSet {
 	private int hotelId;			//酒店ID
+	private String hotelPicture;	//酒店图片
 	private String hotelName;		//酒店名字
 	private String hotelType;		//酒店类型
 	private String hotelAdress;		//酒店地址
@@ -117,6 +118,12 @@ public class HotelSet {
 	}
 	public void setUserCountry(String userCountry) {
 		this.userCountry = userCountry;
+	}
+	public String getHotelPicture() {
+		return hotelPicture;
+	}
+	public void setHotelPicture(String hotelPicture) {
+		this.hotelPicture = hotelPicture;
 	}
 	
 	

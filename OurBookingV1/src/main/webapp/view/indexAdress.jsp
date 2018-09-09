@@ -8,13 +8,14 @@
 </head>
 <body>
 
-		<%
-			request.setCharacterEncoding("utf-8");
-			String searchAdressTemp = (request.getParameter("adress")); 
-			String searchAdress = searchAdressTemp.replace(',', '#');
-			Cookie cookie = new Cookie("inputAdress",searchAdress);
-			response.addCookie(cookie);
-			response.sendRedirect("searchResult.jsp");
+	<%
+		request.setCharacterEncoding("utf-8");
+		String searchAdressTemp = (request.getParameter("adress")); 
+		String searchAdress = searchAdressTemp.replace(',', '#');
+		Cookie cookie = new Cookie("inputAdress",searchAdress);
+		response.addCookie(cookie);
+		response.sendRedirect("searchResult.jsp");
 	%>
+	
 </body>
 </html>
