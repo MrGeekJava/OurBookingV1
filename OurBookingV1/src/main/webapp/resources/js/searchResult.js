@@ -55,7 +55,7 @@ $(document).ready(function(){
 							var flag = false;
 							for (var i in jsonObj) {
 								flag = true;
-								var src = "../resources/res/images/searchResult/serchResult1.jpg";
+								var src = jsonObj[i].hotelPicture;
 								var hotelId = Number( jsonObj[i].hotelId);
 								var hotelName = jsonObj[i].hotelName;
 								var hotelType = jsonObj[i].hotelType;
@@ -127,11 +127,11 @@ $(document).ready(function(){
 //									$("#sd").html("");
 //								}
 								//动态加载
-								$(".rightBox_containers").prepend(
+								$(".rightBox_containers").append(
 										
 										'<div class="search_hotel">'+
 										'<div class="hotelId" >'+hotelId+'</div>'+
-										'<img src=" '+src+' " class="search_hotel_pic">'+
+										'<img src='+src+' class="search_hotel_pic">'+
 										'<div class="search_hotel_message">'+
 										' <div class="shm_left">'+
 										'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -143,7 +143,7 @@ $(document).ready(function(){
 										' <span class="shm_right_subtext">'+evaSum+'条住客点评</span>'+
 										'<span class="score">'+sumScore+'</span>'+
 										' <span class="shm_right_scoresubtext">住客至爱</span>'+
-										' <button class="show_price ">'+roomMin+'</button>'+
+										' <button class="show_price ">￥'+roomMin+'</button>'+
 										'</div>'+
 										'<div class="clear"></div>'+
 										'  <div class="shm_buttom">'+
@@ -249,7 +249,7 @@ $(document).ready(function(){
 					var flag = false;
 					for (var i in jsonObj) {
 						flag = true;
-						var src = "../resources/res/images/searchResult/serchResult1.jpg";
+						var src = jsonObj[i].hotelPicture;
 						var hotelId = Number( jsonObj[i].hotelId);
 						var hotelName = jsonObj[i].hotelName;
 						var hotelType = jsonObj[i].hotelType;
@@ -321,11 +321,11 @@ $(document).ready(function(){
 //							$("#sd").html("");
 //						}
 						//动态加载
-						$(".rightBox_containers").prepend(
+						$(".rightBox_containers").append(
 								
 								'<div class="search_hotel">'+
 								'<div class="hotelId" >'+hotelId+'</div>'+
-								'<img src=" '+src+' " class="search_hotel_pic">'+
+								'<img src='+src+' class="search_hotel_pic">'+
 								'<div class="search_hotel_message">'+
 								' <div class="shm_left">'+
 								'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -337,7 +337,7 @@ $(document).ready(function(){
 								' <span class="shm_right_subtext">'+evaSum+'条住客点评</span>'+
 								'<span class="score">'+sumScore+'</span>'+
 								' <span class="shm_right_scoresubtext">住客至爱</span>'+
-								' <button class="show_price ">'+roomMin+'</button>'+
+								' <button class="show_price ">￥'+roomMin+'</button>'+
 								'</div>'+
 								'<div class="clear"></div>'+
 								'  <div class="shm_buttom">'+
@@ -420,7 +420,7 @@ $(document).ready(function () {
 		 	evt.stopPropagation(); 			//阻止事件冒泡
 			var clickNum = $(this).text();
 			
-			alert($(this).index());
+//			alert($(this).index());
 			document.cookie = "currentNum="+clickNum;
 
 			
@@ -441,10 +441,11 @@ $(document).ready(function () {
 			
 			
 			
+//				清空原来的元素
+				$(".search_hotel").siblings().remove();
 			
-			
-			//隐藏酒店
-		$(".search_hotel").remove();
+//			//隐藏酒店
+//		$(".search_hotel").remove();
 //			*********************************
 			$.post('../SearchResultServlet',
 					{searchadress:searchAdress,currentpage:clickNum,behavior:behavior},
@@ -453,7 +454,7 @@ $(document).ready(function () {
 						var flag = false;
 						for (var i in jsonObj) {
 							flag = true;
-							var src = "../resources/res/images/searchResult/serchResult1.jpg";
+							var src = jsonObj[i].hotelPicture;
 							var hotelId = Number( jsonObj[i].hotelId);
 							var hotelName = jsonObj[i].hotelName;
 							var hotelType = jsonObj[i].hotelType;
@@ -513,11 +514,11 @@ $(document).ready(function () {
 							}
 							
 							//动态加载
-							$(".rightBox_containers").prepend(
+							$(".rightBox_containers").append(
 									
 									'<div class="search_hotel">'+
 									'<div class="hotelId" >'+hotelId+'</div>'+
-									'<img src=" '+src+' " class="search_hotel_pic" >'+
+									'<img src='+src+' class="search_hotel_pic" >'+
 									'<div class="search_hotel_message">'+
 									' <div class="shm_left">'+
 									'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -529,7 +530,7 @@ $(document).ready(function () {
 									' <span class="shm_right_subtext">'+evaSum+'条住客点评</span>'+
 									'<span class="score">'+sumScore+'</span>'+
 									' <span class="shm_right_scoresubtext">住客至爱</span>'+
-									' <button class="show_price ">'+roomMin+'</button>'+
+									' <button class="show_price ">￥'+roomMin+'</button>'+
 									'</div>'+
 									'<div class="clear"></div>'+
 									'  <div class="shm_buttom">'+
@@ -542,24 +543,90 @@ $(document).ready(function () {
 
 						}
 						
+						
+						
+//						*******************改**************************
+						
+						//酒店的总数
+						var hotelCount;
+						//分页的底部
+						var strcookie = document.cookie;//获取cookie字符串
+						var arrcookie = strcookie.split("; ");//分割
+						//遍历匹配
+						for ( var i = 0; i < arrcookie.length; i++) {
+								var arr = arrcookie[i].split("=");
+								if (arr[0] == "hotelcount"){
+									hotelCount = arr[1];
+								}
+						}
+						//分页的页数
+						var pageCount = Math.floor((hotelCount % 7 == 0) ? (hotelCount/7) : (hotelCount/7+1)); 
+						//分页的详细信息
+						if(flag){
+							
+							$(".rightBox_containers").append(
+					      '<div class="rb_containers_bottom">'+
+		                    '<div class="rb_containers_bottom_left">'+
+		                        '<div class="rbcbl_words">在'+hotelDowntown+'搜索出'+hotelCount+'家住宿.</div>'+
+		                    '</div>'+
+		                    '<div class="rb_containers_bottom_right">'+
+		                       ' <div class="rbcbr_words">未找到理想的酒店？</div>'+
+		                        '<a href="../index.jsp">返回搜索页面。</a>'+
+		                    '</div>'+
+		                    '<div class="clear"></div>'+
+		                    '<div class="rb_containers_bottom_buttom">'+
+		                        '<span class="first">&#8249;</span>'+
+		                        '<div class="numSet">'+
+		                        	'<span class="second">1</span>'+
+		                       '</div>'+
+		                        '<span class="third">&#8250;</span>'+
+		                        '<span class="forth">显示1-'+pageCount+'</span>'+
+		                    '</div>'+
+		                '</div>'
+		                    )
+						}
+						
+						//加载分页码
+							for(var i = 2;i <= pageCount; i++){
+								$(".numSet").append(
+									'<span class="second">'+i+'</span>'
+								)
+							}
+							if(pageCount > 5){
+								$(".numSet").append(
+										'<span class="second">...</span>'
+								)
+							}
+							
+						
+//						*******************改**************************
+						
+//						+++++++++++++++++
+							
+							//在相应的页面数字显示出外框
+							var sEls = document.getElementsByClassName("second");
+							for(var x = 0;x < sEls.length;x ++){
+								sEls[x].style.border = "none";
+								sEls[x].style.color = "black";
+							}
+							for(var c = 0;c < sEls.length;c ++){
+								if(sEls[c].innerHTML == clickNum){
+									sEls[c].style.border = "1px solid";
+									sEls[c].style.color = "red";
+								}
+							}
+//							*********************************
+							
+//						++++++++++++++++
+						
+							
+							
 					}
 					
 			);
 			
 			
-			//在相应的页面数字显示出外框
-			var sEls = document.getElementsByClassName("second");
-			for(var x = 0;x < sEls.length;x ++){
-				sEls[x].style.border = "none";
-				sEls[x].style.color = "black";
-			}
-			for(var c = 0;c < sEls.length;c ++){
-				if(sEls[c].innerHTML == clickNum){
-					sEls[c].style.border = "1px solid";
-					sEls[c].style.color = "red";
-				}
-			}
-//			*********************************
+		
 			
 			
 	})
@@ -607,9 +674,11 @@ $(document).ready(function(){
     			
 //    			*****************************
             	
-            	
-            	//隐藏酒店
-        		$(".search_hotel").remove();
+// 				清空原来的元素
+ 				$(".search_hotel").siblings().remove();
+    		     
+//            	//隐藏酒店
+//        		$(".search_hotel").remove();
         		var currentNumStr = (currentNumber-1);
 //        		alert(currentNumStr);
 //        		alert(typeof currentNumStr);
@@ -622,7 +691,7 @@ $(document).ready(function(){
     						var flag = false;
     						for (var i in jsonObj) {
     							flag = true;
-    							var src = "../resources/res/images/searchResult/serchResult1.jpg";
+    							var src = jsonObj[i].hotelPicture;
     							var hotelId = Number( jsonObj[i].hotelId);
     							var hotelName = jsonObj[i].hotelName;
     							var hotelType = jsonObj[i].hotelType;
@@ -682,10 +751,10 @@ $(document).ready(function(){
     							}
     							
     							//动态加载
-    							$(".rightBox_containers").prepend(
+    							$(".rightBox_containers").append(
     									
     									'<div class="search_hotel">'+
-    									'<img src=" '+src+' " class="search_hotel_pic">'+
+    									'<img src='+src+' class="search_hotel_pic">'+
     									'<div class="search_hotel_message">'+
     									' <div class="shm_left">'+
     									'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -697,7 +766,7 @@ $(document).ready(function(){
     									' <span class="shm_right_subtext">'+evaSum+'条住客点评</span>'+
     									'<span class="score">'+sumScore+'</span>'+
     									' <span class="shm_right_scoresubtext">住客至爱</span>'+
-    									' <button class="show_price ">'+roomMin+'</button>'+
+    									' <button class="show_price ">￥'+roomMin+'</button>'+
     									'</div>'+
     									'<div class="clear"></div>'+
     									'  <div class="shm_buttom">'+
@@ -709,28 +778,102 @@ $(document).ready(function(){
     							)
 
     						}
+    						
+//    						*******************改**************************
+    						
+    						//酒店的总数
+    						var hotelCount;
+    						//分页的底部
+    						var strcookie = document.cookie;//获取cookie字符串
+    						var arrcookie = strcookie.split("; ");//分割
+    						//遍历匹配
+    						for ( var i = 0; i < arrcookie.length; i++) {
+    								var arr = arrcookie[i].split("=");
+    								if (arr[0] == "hotelcount"){
+    									hotelCount = arr[1];
+    								}
+    						}
+    						//分页的页数
+    						var pageCount = Math.floor((hotelCount % 7 == 0) ? (hotelCount/7) : (hotelCount/7+1)); 
+    						//分页的详细信息
+    						if(flag){
+    							
+    							$(".rightBox_containers").append(
+    					      '<div class="rb_containers_bottom">'+
+    		                    '<div class="rb_containers_bottom_left">'+
+    		                        '<div class="rbcbl_words">在'+hotelDowntown+'搜索出'+hotelCount+'家住宿.</div>'+
+    		                    '</div>'+
+    		                    '<div class="rb_containers_bottom_right">'+
+    		                       ' <div class="rbcbr_words">未找到理想的酒店？</div>'+
+    		                        '<a href="../index.jsp">返回搜索页面。</a>'+
+    		                    '</div>'+
+    		                    '<div class="clear"></div>'+
+    		                    '<div class="rb_containers_bottom_buttom">'+
+    		                        '<span class="first">&#8249;</span>'+
+    		                        '<div class="numSet">'+
+    		                        	'<span class="second">1</span>'+
+    		                       '</div>'+
+    		                        '<span class="third">&#8250;</span>'+
+    		                        '<span class="forth">显示1-'+pageCount+'</span>'+
+    		                    '</div>'+
+    		                '</div>'
+    		                    )
+    						}
+    						
+    						//加载分页码
+    							for(var i = 2;i <= pageCount; i++){
+    								$(".numSet").append(
+    									'<span class="second">'+i+'</span>'
+    								)
+    							}
+    							if(pageCount > 5){
+    								$(".numSet").append(
+    										'<span class="second">...</span>'
+    								)
+    							}
+    							
+    						
+//    						*******************改**************************
+//    			    			**************************
+    			    			
+    			    			//在相应的页面数字显示出外框
+    			    			var sEls = document.getElementsByClassName("second");
+    			    			for(var x = 0;x < sEls.length;x ++){
+    			    				sEls[x].style.border = "none";
+    			    				sEls[x].style.color = "black";
+    			    			}
+    			    			for(var c = 0;c < sEls.length;c ++){
+    			    				if(sEls[c].innerHTML == (currentNumber-1)){
+    			    					sEls[c].style.border = "1px solid";
+    			    					sEls[c].style.color = "red";
+    			    				}
+    			    			}
+    			    			
+//    			    			**************************
+    						
+    						
  					
     					}
     					
     			);
     			
 //    			*********************************
-//    			**************************
-    			
-    			//在相应的页面数字显示出外框
-    			var sEls = document.getElementsByClassName("second");
-    			for(var x = 0;x < sEls.length;x ++){
-    				sEls[x].style.border = "none";
-    				sEls[x].style.color = "black";
-    			}
-    			for(var c = 0;c < sEls.length;c ++){
-    				if(sEls[c].innerHTML == (currentNumber-1)){
-    					sEls[c].style.border = "1px solid";
-    					sEls[c].style.color = "red";
-    				}
-    			}
-    			
-//    			**************************
+////    			**************************
+//    			
+//    			//在相应的页面数字显示出外框
+//    			var sEls = document.getElementsByClassName("second");
+//    			for(var x = 0;x < sEls.length;x ++){
+//    				sEls[x].style.border = "none";
+//    				sEls[x].style.color = "black";
+//    			}
+//    			for(var c = 0;c < sEls.length;c ++){
+//    				if(sEls[c].innerHTML == (currentNumber-1)){
+//    					sEls[c].style.border = "1px solid";
+//    					sEls[c].style.color = "red";
+//    				}
+//    			}
+//    			
+////    			**************************
             	
             }
             
@@ -772,7 +915,7 @@ $(document).ready(function(){
 					}
 			}
 			//分页的页数
-			var pageCount = Math.floor((hotelCount % 5 == 0) ? (hotelCount/5) : (hotelCount/5+1)); 
+			var pageCount = Math.floor((hotelCount % 7 == 0) ? (hotelCount/7) : (hotelCount/7+1)); 
             
 //            alert(currentNumber);
 //            alert(typeof currentNumber);
@@ -799,8 +942,8 @@ $(document).ready(function(){
             	
             	
             	
-            	//隐藏酒店
-        		$(".search_hotel").remove();
+//  				清空原来的元素
+  				$(".search_hotel").siblings().remove();
         		var currentNumStr = (currentNumber+1);
 //        		alert(currentNumStr);
 //        		alert(typeof currentNumStr);
@@ -813,7 +956,7 @@ $(document).ready(function(){
     						var flag = false;
     						for (var i in jsonObj) {
     							flag = true;
-    							var src = "../resources/res/images/searchResult/serchResult1.jpg";
+    							var src = jsonObj[i].hotelPicture;
     							var hotelId = Number( jsonObj[i].hotelId);
     							var hotelName = jsonObj[i].hotelName;
     							var hotelType = jsonObj[i].hotelType;
@@ -873,10 +1016,10 @@ $(document).ready(function(){
     							}
     							
     							//动态加载
-    							$(".rightBox_containers").prepend(
+    							$(".rightBox_containers").append(
     									
     									'<div class="search_hotel">'+
-    									'<img src=" '+src+' " class="search_hotel_pic">'+
+    									'<img src='+src+' class="search_hotel_pic">'+
     									'<div class="search_hotel_message">'+
     									' <div class="shm_left">'+
     									'<p class="hotel_name">'+hotelName+'<span class="hotel_type">'+hotelType+'</span><span class="hotel_type_point">'+hotelTypePoint+'</span></span></p>'+
@@ -888,7 +1031,7 @@ $(document).ready(function(){
     									' <span class="shm_right_subtext">'+evaSum+'条住客点评</span>'+
     									'<span class="score">'+sumScore+'</span>'+
     									' <span class="shm_right_scoresubtext">住客至爱</span>'+
-    									' <button class="show_price ">'+roomMin+'</button>'+
+    									' <button class="show_price ">￥'+roomMin+'</button>'+
     									'</div>'+
     									'<div class="clear"></div>'+
     									'  <div class="shm_buttom">'+
@@ -900,6 +1043,81 @@ $(document).ready(function(){
     							)
 
     						}
+    						
+    						
+//    						*******************改**************************
+    						
+    						//酒店的总数
+    						var hotelCount;
+    						//分页的底部
+    						var strcookie = document.cookie;//获取cookie字符串
+    						var arrcookie = strcookie.split("; ");//分割
+    						//遍历匹配
+    						for ( var i = 0; i < arrcookie.length; i++) {
+    								var arr = arrcookie[i].split("=");
+    								if (arr[0] == "hotelcount"){
+    									hotelCount = arr[1];
+    								}
+    						}
+    						//分页的页数
+    						var pageCount = Math.floor((hotelCount % 7 == 0) ? (hotelCount/7) : (hotelCount/7+1)); 
+    						//分页的详细信息
+    						if(flag){
+    							
+    							$(".rightBox_containers").append(
+    					      '<div class="rb_containers_bottom">'+
+    		                    '<div class="rb_containers_bottom_left">'+
+    		                        '<div class="rbcbl_words">在'+hotelDowntown+'搜索出'+hotelCount+'家住宿.</div>'+
+    		                    '</div>'+
+    		                    '<div class="rb_containers_bottom_right">'+
+    		                       ' <div class="rbcbr_words">未找到理想的酒店？</div>'+
+    		                        '<a href="../index.jsp">返回搜索页面。</a>'+
+    		                    '</div>'+
+    		                    '<div class="clear"></div>'+
+    		                    '<div class="rb_containers_bottom_buttom">'+
+    		                        '<span class="first">&#8249;</span>'+
+    		                        '<div class="numSet">'+
+    		                        	'<span class="second">1</span>'+
+    		                       '</div>'+
+    		                        '<span class="third">&#8250;</span>'+
+    		                        '<span class="forth">显示1-'+pageCount+'</span>'+
+    		                    '</div>'+
+    		                '</div>'
+    		                    )
+    						}
+    						
+    						//加载分页码
+    							for(var i = 2;i <= pageCount; i++){
+    								$(".numSet").append(
+    									'<span class="second">'+i+'</span>'
+    								)
+    							}
+    							if(pageCount > 5){
+    								$(".numSet").append(
+    										'<span class="second">...</span>'
+    								)
+    							}
+    							
+    						
+//    						*******************改**************************
+//    			    			**************************
+    			    			
+    			    			//在相应的页面数字显示出外框
+    			    			var sEls = document.getElementsByClassName("second");
+    			    			for(var x = 0;x < sEls.length;x ++){
+    			    				sEls[x].style.border = "none";
+    			    				sEls[x].style.color = "black";
+    			    			}
+    			    			for(var c = 0;c < sEls.length;c ++){
+    			    				if(sEls[c].innerHTML == (currentNumber+1)){
+    			    					sEls[c].style.border = "1px solid";
+    			    					sEls[c].style.color = "red";
+    			    				}
+    			    			}
+    			    			
+//    			    			**************************
+    						
+    						
  					
     					}
     					
@@ -908,19 +1126,19 @@ $(document).ready(function(){
 //    			*********************************
 //    			**********************************
     			
-    			
-    			//在相应的页面数字显示出外框
-    			var sEls = document.getElementsByClassName("second");
-    			for(var x = 0;x < sEls.length;x ++){
-    				sEls[x].style.border = "none";
-    				sEls[x].style.color = "black";
-    			}
-    			for(var c = 0;c < sEls.length;c ++){
-    				if(sEls[c].innerHTML == (currentNumber+1)){
-    					sEls[c].style.border = "1px solid";
-    					sEls[c].style.color = "red";
-    				}
-    			}
+//    			
+//    			//在相应的页面数字显示出外框
+//    			var sEls = document.getElementsByClassName("second");
+//    			for(var x = 0;x < sEls.length;x ++){
+//    				sEls[x].style.border = "none";
+//    				sEls[x].style.color = "black";
+//    			}
+//    			for(var c = 0;c < sEls.length;c ++){
+//    				if(sEls[c].innerHTML == (currentNumber+1)){
+//    					sEls[c].style.border = "1px solid";
+//    					sEls[c].style.color = "red";
+//    				}
+//    			}
     			
     			
     			
@@ -951,13 +1169,13 @@ $(document).ready(function(){
 
  	    
  	    //将搜特价模块的信息放进cookie中
- 	    document.cookie = "destination="+$(".text1").val();
- 	    document.cookie = "checkInDate="+$(".datein").attr('placeholder');
- 	    document.cookie = "checkOutDate="+$(".dateout").attr('placeholder');
-// 	    alert($("#adults").text());
- 	    document.cookie = "adultNum="+$("#adults").text();
-	    document.cookie = "childNum="+$(".childnum > span").html();
-	    document.cookie = "roomNum="+$(".roomnum > span").html();
+//  	    document.cookie = "destination="+$(".text1").val();
+//  	    document.cookie = "checkInDate="+$(".datein").attr('placeholder');
+//  	    document.cookie = "checkOutDate="+$(".dateout").attr('placeholder');
+// // 	    alert($("#adults").text());
+//  	    document.cookie = "adultNum="+$("#adults").text();
+// 	    document.cookie = "childNum="+$(".childnum > span").html();
+// 	    document.cookie = "roomNum="+$(".roomnum > span").html();
  	    
  	    
  	    

@@ -111,6 +111,7 @@ public class SearchResultServlet extends HttpServlet {
 
 			hotelSet = new HotelSet();
 			hotelSet.setHotelId(hotelReturn.get(i).getHotelId());
+			hotelSet.setHotelPicture(hotelReturn.get(i).getHotelPicture());
 			hotelSet.setHotelName(hotelReturn.get(i).getHotelName());
 			hotelSet.setHotelType(hotelReturn.get(i).getHotelType());
 			hotelSet.setHotelAdress(hotelReturn.get(i).getHotelAdress());

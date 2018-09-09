@@ -226,7 +226,7 @@
 			        <div class="three">
 			            <div class="header">特价搜不停</div>
 			            <span class="span1">目的地/住宿名称:</span>
-			            <input type="text" class="text1"  placeholder="广州">
+			            <input id="destinaction" type="text" class="text1"  placeholder="广州">
 			            <span class="span2">入住日期:</span>
 			
 			            <div class="indate">
@@ -336,7 +336,7 @@
 			            </div>
 			
 			            <div class="childnum">
-			                <span>两位儿童</span>
+			                <span id="children">两位儿童</span>
 			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
 			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
 			                </svg>
@@ -350,7 +350,7 @@
 			            </div>
 			
 			            <div class="roomnum">
-			                <span>两间房</span>
+			                <span id="rooms">两间房</span>
 			                <svg class="icon icon-iconfonticonfonti2" aria-hidden="true">
 			                    <use xlink:href="#icon-iconfonticonfonti2"></use>
 			                </svg>
@@ -369,7 +369,7 @@
 			            <svg class="icon icon-wenhao-fill" aria-hidden="true">
 			                <use xlink:href="#icon-wenhao-fill"></use>
 			            </svg>
-			            <button>搜特价</button>
+			            <button id="selectSpecialBtn">搜特价</button>
 			        </div>
 			    </div>
             </div>
@@ -892,5 +892,6 @@
 	String adress = request.getParameter("searchAdress");
  %>
 </body>
+<script type="text/javascript" src="../resources/js/selectSpecial.js"></script>
 <script type="text/javascript" src="../resources/js/Map.js"></script>
 </html>

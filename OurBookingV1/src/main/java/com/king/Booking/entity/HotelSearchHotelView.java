@@ -1,9 +1,8 @@
 package com.king.Booking.entity;
 
-import java.sql.Clob;
-
 public class HotelSearchHotelView {
 		private int hotelId;			//酒店ID
+		private String hotelPicture;	//酒店图片
 		private String hotelName;		//酒店名字
 		private String hotelType;		//酒店类型
 		private String hotelAdress;		//酒店地址
@@ -80,6 +79,11 @@ public class HotelSearchHotelView {
 		public void setSumScore(float sumScore) {
 			this.sumScore = sumScore;
 		}
-		
+		public String getHotelPicture() {
+			return hotelPicture;
+		}
+		public void setHotelPicture(String hotelPicture) {
+			this.hotelPicture = hotelPicture;
+		}
 		
 }

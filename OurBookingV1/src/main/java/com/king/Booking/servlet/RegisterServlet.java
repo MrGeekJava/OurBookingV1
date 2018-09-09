@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.king.Booking.entity.User;
 import com.king.Booking.service.impl.RegisterServiceImpl;
+import com.king.Booking.util.MD5Util;
 import com.king.Booking.util.VerifyUtil; 
 /**
  * 注册：验证码跟输入的是否一致
@@ -31,6 +32,15 @@ public class RegisterServlet extends HttpServlet{
 		String EmailOrPhone = request.getParameter("EmailOrPhone");
 		String userPsw = request.getParameter("password");
 		boolean registerReturn;
+		
+		String userPswMD5 = null;
+		try {
+			userPswMD5 = MD5Util.md5Encode(userPsw);
+			System.out.println(userPswMD5);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		//将数据打包到User
 		User user = new User();
@@ -41,7 +51,7 @@ public class RegisterServlet extends HttpServlet{
 		} else {
 			registerReturn = false;
 		}
-		user.setUserPassword(userPsw);
+		user.setUserPassword(userPswMD5);
 		registerReturn = new RegisterServiceImpl().userRegister(user);
 		
 		out.print(registerReturn);//给JS判断是否要显示和隐藏

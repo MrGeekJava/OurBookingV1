@@ -17,7 +17,7 @@ public class SearchResultService {
 			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
 			List<HotelSearchHotelView> searchRult = null;
 			try {
-				searchRult = srdImpl.HotelSortByPrice(province, downtown,currentPage,pageSize);
+				searchRult = srdImpl.HotelSearchByAdress(province, downtown,currentPage,pageSize);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -34,7 +34,8 @@ public class SearchResultService {
 			SearchResultDaoImpl srdImpl = new SearchResultDaoImpl();
 			List<HotelSearchHotelView> searchRult = null;
 			try {
-				searchRult = srdImpl.HotelSearchByAdress(province, downtown,currentPage,pageSize);
+				
+				searchRult = srdImpl.HotelSortByPrice(province, downtown,currentPage,pageSize);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -12,10 +12,6 @@ var preOpeartion = 0;
 
 setInterval(loopchangecolor, 100);
 
-
-
-
-
 function flush(yearin, monthin) {
 
     //判断是否是第一次传入
@@ -609,88 +605,10 @@ function loopchangecolor() {
 
 }
 
-function getchild(n) {
-    var child = parseInt(n.split('-')[0]);
-    var childage = n.split('-')[1];
-    var docu = document.getElementsByClassName("child_nowage");
-    if (childage == '退房时的年龄') {
-        docu[child].innerText = childage;
-    } else {
-        childage = parseInt(childage);
-        for (var i = 0; i < 20; i++) {
-            if (i == childage) {
-                docu[child].innerText = childage;
-            }
-        }
-    }
-
-}
 /*****/
 var who;
 var whattime = 0;
 
-function openagediv(n) {
-
-    whattime++;
-    if (whattime == 1) {
-        who = n;
-        document.getElementsByClassName("child_age")[who].style.display = "block";
-    }
-    if (whattime == 2) {
-        if (who == n) {
-
-            document.getElementsByClassName("child_age")[who].style.display = "none";
-            whattime = 0;
-        } else {
-            whattime = 1;
-          
-            return false;
-        }
-    }
-
-}
-/******/
-setInterval(flushchildlist, 100);
-function flushchildlist() {
-
-    var docu1 = document.getElementsByClassName("childnum");
-    var num = docu1[0].innerText;
-
-    if (num == '0' || num == "") {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "0px";
-  
-        return false;
-    }
-    num = parseInt(num);
-    for (var i = 0; i < 10; i++) {
-        document.getElementsByClassName("child")[i].style.display = "none";
-    }
-    for (var i = 0; i < num; i++) {
-        document.getElementsByClassName("child")[i].style.display = "block";
-    }
-
-    if (num == 1 || num == 2) {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "120px";
-    }
-
-    if (num == 3 || num == 4) {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "170px";
-    }
-
-    if (num == 5 || num == 6) {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "220px";
-    }
-
-    if (num == 7 || num == 8) {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "270px";
-    }
-
-    if (num == 9 || num == 10) {
-        document.getElementsByClassName("user_choose_container2")[0].style.height = "320px";
-    }
-
-
-}
 /******/
 function choosenum(n) {
     var kind = n.split('-')[0];

@@ -18,11 +18,14 @@
 	<link href="resources/res/icon/index_icon/index_yuan/iconfont.css">
 	<link rel="stylesheet" href="resources/css/searchResult.css">
 	<link rel="SHORTCUT ICON" href="resources/res/images/title_logo.icon"/>
+	<link href="resources/css/messageRegister.css" rel="stylesheet" type="text/css">
 	<script src="//at.alicdn.com/t/font_781787_zjbt04eeo.js" type="text/javascript"></script>
+	<script src="//at.alicdn.com/t/font_788386_tzd56uglegn.js" type="text/javascript"></script>
 	<script src="resources/js/booking_com.js" type="text/javascript"></script>
 	<script src="resources/js/NavBar.js" type="text/javascript"></script>
 	<script src="resources/js/index_container.js" type="text/javascript"></script>
 	<script src="resources/js/AutoComplete.js" type="text/javascript"></script>
+	<script src="resources/js/messageRegister.js" type="text/javascript"></script>
 	<title>loginAndRegist</title>
 </head>
 <body>
@@ -209,17 +212,10 @@
 			<svg class="icon icon-chuang1" aria-hidden="true" >
 				<use xlink:href="#icon-chuang1"></use>
 			</svg>
-
-			
 			<input class="search_container_one_input" placeholder="目的地?" name="adress" >
-
 			<div id="word">
-
 			</div>
-
-
 		</div>
-
 		<div class="search_container_two">
 			<svg class="icon icon-rili" aria-hidden="true">
 				<use xlink:href="#icon-rili"></use>
@@ -227,23 +223,19 @@
 			<span class="search_container_two_span1" onclick="checkclick(1)">入住</span>
 			<span class="search_container_two_span2">-</span>
 			<span class="search_container_two_span3" onclick="checkclick(-1)">退房</span>
-
 			<div class="search_container_three_calendar_container">
 				<span class="search_container_three_calendar_container_span"></span>
-
 				<div class="leftmonth_container">
 					<ul>
 						<li class="prev" onclick="change_page(-1)"><</li>
 						<li class="leftmonth_month">
 							2018年8月
 						</li>
-
 					</ul>
 				</div>
 
 				<div class="week">
 					<ul>
-
 						<li>周一</li>
 						<li>周二</li>
 						<li>周三</li>
@@ -251,7 +243,6 @@
 						<li>周五</li>
 						<li>周六</li>
 						<li>周日</li>
-
 					</ul>
 				</div>
 
@@ -379,17 +370,10 @@
 						<li class="right_day_enum" onclick="choosedate('2-38')"></li>
 						<li class="right_day_enum" onclick="choosedate('2-39')"></li>
 						<li class="right_day_enum" onclick="choosedate('2-40')"></li>
-
-
 					</ul>
-
 				</div>
-
 			</div>
-
-
 		</div>
-
 		<div class="search_container_three">
 			<svg class="icon icon-ren " aria-hidden="true \" onclick="opencontainer2(1)">
 				<use xlink:href="#icon-ren"></use>
@@ -398,14 +382,11 @@
 			<svg class="icon icon-shangxiajiantou" aria-hidden="true" onclick="opencontainer2(1)">
 				<use xlink:href="#icon-shangxiajiantou"></use>
 			</svg>
-
 			<div class="user_choose_container">
 				<div class="user_choose_one">
 					<span>客房</span>
-
 					<div class="user_choose_one_num" onclick="opennumdiv(1)">
 						<span class="roomnum">1</span>
-						
 						<div class="choose_roomnum">
 							<ul>
 								<li onclick="choosenum('0-0')">1</li>
@@ -443,18 +424,14 @@
 								<li onclick="choosenum('0-27')">28</li>
 								<li onclick="choosenum('0-28')">29</li>
 								<li onclick="choosenum('0-29')">30</li>
-
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="user_choose_two">
 					<span>成人</span>
-
 					<div class="user_choose_two_num" onclick="opennumdiv(2)">
 						<span class="adultnum">1</span>
-						
-
 						<div class="choose_adultnum">
 							<ul>
 								<li onclick="choosenum('1-0')">1</li>
@@ -492,20 +469,14 @@
 								<li onclick="choosenum('1-27')">28</li>
 								<li onclick="choosenum('1-28')">29</li>
 								<li onclick="choosenum('1-29')">30</li>
-
 							</ul>
 						</div>
 					</div>
-
-
 				</div>
 				<div class="user_choose_three">
 					<span>儿童</span>
-
 					<div class="user_choose_three_num" onclick="opennumdiv(3)">
 						<span class="childnum">0</span>
-				
-
 						<div class="choose_childnum">
 							<ul>
 								<li onclick="choosenum('2-0')">0</li>
@@ -526,343 +497,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="user_choose_container2">
-				<span>请选择同行儿童的年龄</span>
-				<ul>
-					<li>
-						<div class="child" onclick="openagediv(0)">
-							<span class="child_nowage">退房时的年龄</span>
-						
-
-						</div>
-
-						<div class="child" onclick="openagediv(1)">
-							<span class="child_nowage">退房时的年龄</span>
-					
-
-						</div>
-					</li>
-					<li>
-						<div class="child" onclick="openagediv(2)">
-							<span class="child_nowage">退房时的年龄</span>
-					
-
-
-						</div>
-
-						<div class="child" onclick="openagediv(3)">
-							<span class="child_nowage">退房时的年龄</span>
-				
-
-
-						</div>
-					</li>
-					<li>
-						<div class="child" onclick="openagediv(4)">
-							<span class="child_nowage">退房时的年龄</span>
-					
-
-						</div>
-
-						<div class="child" onclick="openagediv(5)">
-							<span class="child_nowage">退房时的年龄</span>
-							
-
-						</div>
-					</li>
-					<li>
-						<div class="child" onclick="openagediv(6)">
-							<span class="child_nowage">退房时的年龄</span>
-							
-
-						</div>
-
-						<div class="child" onclick="openagediv(7)">
-							<span class="child_nowage">退房时的年龄</span>
-					
-
-						</div>
-					</li>
-					<li>
-						<div class="child" onclick="openagediv(8)">
-							<span class="child_nowage">退房时的年龄</span>
-							
-
-						</div>
-
-						<div class="child" onclick="openagediv(9)">
-							<span class="child_nowage">退房时的年龄</span>
-					
-
-						</div>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-
-		<div class="child_age ">
-			<ul>
-				<li onclick="getchild('0-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('0-0')">0</li>
-				<li onclick="getchild('0-1')">1</li>
-				<li onclick="getchild('0-2')">2</li>
-				<li onclick="getchild('0-3')">3</li>
-				<li onclick="getchild('0-4')">4</li>
-				<li onclick="getchild('0-5')">5</li>
-				<li onclick="getchild('0-6')">6</li>
-				<li onclick="getchild('0-7')">7</li>
-				<li onclick="getchild('0-8')">8</li>
-				<li onclick="getchild('0-9')">9</li>
-				<li onclick="getchild('0-10')">10</li>
-				<li onclick="getchild('0-11')">11</li>
-				<li onclick="getchild('0-12')">12</li>
-				<li onclick="getchild('0-13')">13</li>
-				<li onclick="getchild('0-14')">14</li>
-				<li onclick="getchild('0-15')">15</li>
-				<li onclick="getchild('0-16')">16</li>
-				<li onclick="getchild('0-17')">17</li>
-				<li onclick="getchild('0-18')">18</li>
-				<li onclick="getchild('0-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age2 child_age_two">
-			<ul>
-				<li onclick="getchild('1-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('1-0')">0</li>
-				<li onclick="getchild('1-1')">1</li>
-				<li onclick="getchild('1-2')">2</li>
-				<li onclick="getchild('1-3')">3</li>
-				<li onclick="getchild('1-4')">4</li>
-				<li onclick="getchild('1-5')">5</li>
-				<li onclick="getchild('1-6')">6</li>
-				<li onclick="getchild('1-7')">7</li>
-				<li onclick="getchild('1-8')">8</li>
-				<li onclick="getchild('1-9')">9</li>
-				<li onclick="getchild('1-10')">10</li>
-				<li onclick="getchild('1-11')">11</li>
-				<li onclick="getchild('1-12')">12</li>
-				<li onclick="getchild('1-13')">13</li>
-				<li onclick="getchild('1-14')">14</li>
-				<li onclick="getchild('1-15')">15</li>
-				<li onclick="getchild('1-16')">16</li>
-				<li onclick="getchild('1-17')">17</li>
-				<li onclick="getchild('1-18')">18</li>
-				<li onclick="getchild('1-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age_three">
-			<ul>
-				<li onclick="getchild('2-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('2-0')">0</li>
-				<li onclick="getchild('2-1')">1</li>
-				<li onclick="getchild('2-2')">2</li>
-				<li onclick="getchild('2-3')">3</li>
-				<li onclick="getchild('2-4')">4</li>
-				<li onclick="getchild('2-5')">5</li>
-				<li onclick="getchild('2-6')">6</li>
-				<li onclick="getchild('2-7')">7</li>
-				<li onclick="getchild('2-8')">8</li>
-				<li onclick="getchild('2-9')">9</li>
-				<li onclick="getchild('2-10')">10</li>
-				<li onclick="getchild('2-11')">11</li>
-				<li onclick="getchild('2-12')">12</li>
-				<li onclick="getchild('2-13')">13</li>
-				<li onclick="getchild('2-14')">14</li>
-				<li onclick="getchild('2-15')">15</li>
-				<li onclick="getchild('2-16')">16</li>
-				<li onclick="getchild('2-17')">17</li>
-				<li onclick="getchild('2-18')">18</li>
-				<li onclick="getchild('2-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age2 child_age_four">
-			<ul>
-				<li onclick="getchild('3-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('3-0')">0</li>
-				<li onclick="getchild('3-1')">1</li>
-				<li onclick="getchild('3-2')">2</li>
-				<li onclick="getchild('3-3')">3</li>
-				<li onclick="getchild('3-4')">4</li>
-				<li onclick="getchild('3-5')">5</li>
-				<li onclick="getchild('3-6')">6</li>
-				<li onclick="getchild('3-7')">7</li>
-				<li onclick="getchild('3-8')">8</li>
-				<li onclick="getchild('3-9')">9</li>
-				<li onclick="getchild('3-10')">10</li>
-				<li onclick="getchild('3-11')">11</li>
-				<li onclick="getchild('3-12')">12</li>
-				<li onclick="getchild('3-13')">13</li>
-				<li onclick="getchild('3-14')">14</li>
-				<li onclick="getchild('3-15')">15</li>
-				<li onclick="getchild('3-16')">16</li>
-				<li onclick="getchild('3-17')">17</li>
-				<li onclick="getchild('3-18')">18</li>
-				<li onclick="getchild('3-19')">19</li>
-			</ul>
-		</div>
-
-
-		<div class="child_age child_age_five">
-			<ul>
-				<li onclick="getchild('4-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('4-0')">0</li>
-				<li onclick="getchild('4-1')">1</li>
-				<li onclick="getchild('4-2')">2</li>
-				<li onclick="getchild('4-3')">3</li>
-				<li onclick="getchild('4-4')">4</li>
-				<li onclick="getchild('4-5')">5</li>
-				<li onclick="getchild('4-6')">6</li>
-				<li onclick="getchild('4-7')">7</li>
-				<li onclick="getchild('4-8')">8</li>
-				<li onclick="getchild('4-9')">9</li>
-				<li onclick="getchild('4-10')">10</li>
-				<li onclick="getchild('4-11')">11</li>
-				<li onclick="getchild('4-12')">12</li>
-				<li onclick="getchild('4-13')">13</li>
-				<li onclick="getchild('4-14')">14</li>
-				<li onclick="getchild('4-15')">15</li>
-				<li onclick="getchild('4-16')">16</li>
-				<li onclick="getchild('4-17')">17</li>
-				<li onclick="getchild('4-18')">18</li>
-				<li onclick="getchild('4-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age2 child_age_six">
-			<ul>
-				<li onclick="getchild('5-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('5-0')">0</li>
-				<li onclick="getchild('5-1')">1</li>
-				<li onclick="getchild('5-2')">2</li>
-				<li onclick="getchild('5-3')">3</li>
-				<li onclick="getchild('5-4')">4</li>
-				<li onclick="getchild('5-5')">5</li>
-				<li onclick="getchild('5-6')">6</li>
-				<li onclick="getchild('5-7')">7</li>
-				<li onclick="getchild('5-8')">8</li>
-				<li onclick="getchild('5-9')">9</li>
-				<li onclick="getchild('5-10')">10</li>
-				<li onclick="getchild('5-11')">11</li>
-				<li onclick="getchild('5-12')">12</li>
-				<li onclick="getchild('5-13')">13</li>
-				<li onclick="getchild('5-14')">14</li>
-				<li onclick="getchild('5-15')">15</li>
-				<li onclick="getchild('5-16')">16</li>
-				<li onclick="getchild('5-17')">17</li>
-				<li onclick="getchild('5-18')">18</li>
-				<li onclick="getchild('5-19')">19</li>
-			</ul>
-		</div>
-
-
-		<div class="child_age child_age_seven">
-			<ul>
-				<li onclick="getchild('6-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('6-0')">0</li>
-				<li onclick="getchild('6-1')">1</li>
-				<li onclick="getchild('6-2')">2</li>
-				<li onclick="getchild('6-3')">3</li>
-				<li onclick="getchild('6-4')">4</li>
-				<li onclick="getchild('6-5')">5</li>
-				<li onclick="getchild('6-6')">6</li>
-				<li onclick="getchild('6-7')">7</li>
-				<li onclick="getchild('6-8')">8</li>
-				<li onclick="getchild('6-9')">9</li>
-				<li onclick="getchild('6-10')">10</li>
-				<li onclick="getchild('6-11')">11</li>
-				<li onclick="getchild('6-12')">12</li>
-				<li onclick="getchild('6-13')">13</li>
-				<li onclick="getchild('6-14')">14</li>
-				<li onclick="getchild('6-15')">15</li>
-				<li onclick="getchild('6-16')">16</li>
-				<li onclick="getchild('6-17')">17</li>
-				<li onclick="getchild('6-18')">18</li>
-				<li onclick="getchild('6-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age2 child_age_eight">
-			<ul>
-				<li onclick="getchild('7-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('7-0')">0</li>
-				<li onclick="getchild('7-1')">1</li>
-				<li onclick="getchild('7-2')">2</li>
-				<li onclick="getchild('7-3')">3</li>
-				<li onclick="getchild('7-4')">4</li>
-				<li onclick="getchild('7-5')">5</li>
-				<li onclick="getchild('7-6')">6</li>
-				<li onclick="getchild('7-7')">7</li>
-				<li onclick="getchild('7-8')">8</li>
-				<li onclick="getchild('7-9')">9</li>
-				<li onclick="getchild('7-10')">10</li>
-				<li onclick="getchild('7-11')">11</li>
-				<li onclick="getchild('7-12')">12</li>
-				<li onclick="getchild('7-13')">13</li>
-				<li onclick="getchild('7-14')">14</li>
-				<li onclick="getchild('7-15')">15</li>
-				<li onclick="getchild('7-16')">16</li>
-				<li onclick="getchild('7-17')">17</li>
-				<li onclick="getchild('7-18')">18</li>
-				<li onclick="getchild('7-19')">19</li>
-			</ul>
-		</div>
-
-		<div class="child_age child_age_nine">
-			<ul>
-				<li onclick="getchild('8-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('8-0')">0</li>
-				<li onclick="getchild('8-1')">1</li>
-				<li onclick="getchild('8-2')">2</li>
-				<li onclick="getchild('8-3')">3</li>
-				<li onclick="getchild('8-4')">4</li>
-				<li onclick="getchild('8-5')">5</li>
-				<li onclick="getchild('8-6')">6</li>
-				<li onclick="getchild('8-7')">7</li>
-				<li onclick="getchild('8-8')">8</li>
-				<li onclick="getchild('8-9')">9</li>
-				<li onclick="getchild('8-10')">10</li>
-				<li onclick="getchild('8-11')">11</li>
-				<li onclick="getchild('8-12')">12</li>
-				<li onclick="getchild('8-13')">13</li>
-				<li onclick="getchild('8-14')">14</li>
-				<li onclick="getchild('8-15')">15</li>
-				<li onclick="getchild('8-16')">16</li>
-				<li onclick="getchild('8-17')">17</li>
-				<li onclick="getchild('8-18')">18</li>
-				<li onclick="getchild('8-19')">19</li>
-			</ul>
-		</div>
-
-
-		<div class="child_age child_age2 child_age_ten">
-			<ul>
-				<li onclick="getchild('9-退房时的年龄')">退房时的年龄</li>
-				<li onclick="getchild('9-0')">0</li>
-				<li onclick="getchild('9-1')">1</li>
-				<li onclick="getchild('9-2')">2</li>
-				<li onclick="getchild('9-3')">3</li>
-				<li onclick="getchild('9-4')">4</li>
-				<li onclick="getchild('9-5')">5</li>
-				<li onclick="getchild('9-6')">6</li>
-				<li onclick="getchild('9-7')">7</li>
-				<li onclick="getchild('9-8')">8</li>
-				<li onclick="getchild('9-9')">9</li>
-				<li onclick="getchild('9-10')">10</li>
-				<li onclick="getchild('9-11')">11</li>
-				<li onclick="getchild('9-12')">12</li>
-				<li onclick="getchild('9-13')">13</li>
-				<li onclick="getchild('9-14')">14</li>
-				<li onclick="getchild('9-15')">15</li>
-				<li onclick="getchild('9-16')">16</li>
-				<li onclick="getchild('9-17')">17</li>
-				<li onclick="getchild('9-18')">18</li>
-				<li onclick="getchild('9-19')">19</li>
-			</ul>
 		</div>
 		<input class="search_container_four" type="submit" value="搜索">
 	</div>
@@ -870,7 +504,6 @@
 	<div class="search_input">
 		<input type="checkbox" id="allSelect" class="chkbox" /> <label for="allSelect" class="search_checkbox"> 我是出差</label>
 	</div>
-
 </div>
 <!-- 内容区1-->
 <div class="container_box">
@@ -1650,7 +1283,42 @@
 			</div>
 		</div>
 	</div>
-	
+</div>
+
+<div id="LARidphone" class="LAR-Backgroundphone">
+    <div class="LAR-Containerphone">
+        <ul class="LAR-ulphone">
+            <a href="javascript:void(0)">
+                <li id="loginLiphone" class="LAR-liphone">手机</li>
+                <li id="registerLiphone" class="LAR-liphone">登录</li>
+            </a>
+            <svg class="icon-cha2" aria-hidden="true">
+                <use xlink:href="#icon-cha2"></use>
+            </svg>
+        </ul>
+
+        <div id="closebtnphone" class="closeButtonphone"></div>
+        <div id="LAR-loginphone">
+            <div class="LAR-contantphone">
+                <form name="loginForm" action="" onsubmit="" method="POST" class="LAR_formphone">
+                    <span class="login_spanphone">手机号码</span>
+                    <input id="emailInputphone" type="text" name="emailOrphone">
+                    <button type="button" class="acquireMaphone">获取验证码</button><br>
+                    <span class="login_spanphone">输入验证码</span>
+                    <input id="pwdInputphone" type="password" name="pwd"><br><br>
+
+                    <a href="javascript:void(0)" class="sub-btnphone " >登录</a><br>
+                </form>
+					<span class="span-linephone">
+					&nbsp;———————————&nbsp;&nbsp;或账号登录&nbsp;&nbsp;———————————
+					</span>
+                <a href="javascript:void(0)" class="weicharLoginphone">账号密码登录</a>
+            </div>
+            <hr>
+            <span class="span-tipphone">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
+            <span class="span-tip2phone">登录帐户即代表您同意本公司的<a href="#" class="font_aphone">相关条款</a>以及<a href="#" class="font_aphone">隐私声明</a></span>
+        </div>
+    </div>
 </div>
 </body>
 </html>
