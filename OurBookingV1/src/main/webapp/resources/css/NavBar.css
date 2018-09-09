@@ -718,7 +718,15 @@ body{
 	margin-top: 10px;
 }
 
-
+/****异步验证样式****/
+.input_tip{
+	position: absolute;
+	display: inline-block;
+	padding-left: 20px;
+	line-height: 20px;
+	color: green;
+	font-size: 18px;
+}
 
 
 /*-----------------------搜索功能模块----------------------*/
@@ -729,4 +737,30 @@ body{
 	z-index: 4;
 	position: relative;
 	/*box-sizing: border-box;*/
+}
+
+/*****************luozhiyuan*****************************/
+#word{
+	position: absolute;
+    width: 480px;
+    height: auto;
+    background: white;
+    z-index: 99;
+    top: 70px;
+    border-radius: 6px;
+    left: -5px;
+}
+#click_word{
+	
+	height:40px;
+	line-height:40px;
+	font-size: 15px;
+    cursor: pointer;
+    color:rgb(0,119,204);
+    padding-left:15px;
+    border-radius: 6px;
+    
+}
+#click_word:hover{
+	background-color:rgb(236,236,236);
 }

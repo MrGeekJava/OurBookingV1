@@ -1,0 +1,48 @@
+package com.king.Booking.service.impl;
+
+import java.sql.SQLException;
+
+import com.king.Booking.dao.impl.RegisterDaoImpl;
+import com.king.Booking.entity.User;
+import com.king.Booking.util.DataSourceUtil;
+
+public class RegisterServiceImpl {
+
+		//Dao层用户登录函数
+		public User UserLogin(User user) {
+			User user2;
+			try {
+				user2 = new RegisterDaoImpl().userLogin(user);
+			} catch (SQLException e) {
+				user2 = null;
+			} finally {
+				DataSourceUtil.close();
+			}
+			return user2;
+		}
+		
+		public boolean userExist(String eop) {
+			boolean isExist;
+			try {
+				isExist = new RegisterDaoImpl().userExist(eop);
+			} catch (SQLException e) {
+				return false;
+			} finally {
+				DataSourceUtil.close();
+			}
+			return isExist;
+		}
+		
+		//Dao层用户注册的函数
+		public boolean userRegister(User user){
+			boolean result;
+			try {
+				result = new RegisterDaoImpl().UserRegister(user);
+			} catch (SQLException e) {
+				return false;
+			} finally {
+				DataSourceUtil.close();
+			}
+			return result;
+		}
+}

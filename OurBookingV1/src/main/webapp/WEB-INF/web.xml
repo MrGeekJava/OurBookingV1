@@ -152,17 +152,29 @@
       	<servlet-class>com.king.Booking.servlet.TucaoServlet</servlet-class>
       </servlet>
   	 <servlet>
-      	<servlet-name>AutoComplete</servlet-name>
-      	<display-name>AutoComplete</display-name>
+      	<servlet-name>AutoCompleteServlet</servlet-name>
+      	<display-name>AutoCompleteServlet</display-name>
       	<description></description>
-      	<servlet-class>com.king.Booking.servlet.AutoComplete</servlet-class>
+      	<servlet-class>com.king.Booking.servlet.AutoCompleteServlet</servlet-class>
       </servlet>
-      
-      	 <servlet>
-      	<servlet-name>SendSms</servlet-name>
-      	<display-name>SendSms</display-name>
-      	<servlet-class>com.king.Booking.servlet.SendSms</servlet-class>
-      </servlet>
+  	 <servlet>
+  	 	<servlet-name>RegisterVerifyServlet</servlet-name>
+  	 	<display-name>RegisterVerifyServlet</display-name>
+  	 	<description></description>
+  	 	<servlet-class>com.king.Booking.servlet.RegisterVerifyServlet</servlet-class>
+  	 </servlet>
+  	 <servlet>
+  	 	<servlet-name>VerifyServlet</servlet-name>
+  	 	<display-name>VerifyServlet</display-name>
+  	 	<description></description>
+  	 	<servlet-class>com.king.Booking.servlet.VerifyServlet</servlet-class>
+  	 </servlet>
+  	 <servlet>
+  	 	<servlet-name>ShowOrderServlet</servlet-name>
+  	 	<display-name>ShowOrderServlet</display-name>
+  	 	<description></description>
+  	 	<servlet-class>com.king.Booking.servlet.ShowOrderServlet</servlet-class>
+  	 </servlet>
   	
   	
   	
@@ -242,11 +254,19 @@
         	<url-pattern>/TucaoServlet</url-pattern>
         </servlet-mapping>
         <servlet-mapping>
-        	<servlet-name>AutoComplete</servlet-name>
-        	<url-pattern>/AutoComplete</url-pattern>
+        	<servlet-name>AutoCompleteServlet</servlet-name>
+        	<url-pattern>/AutoCompleteServlet</url-pattern>
         </servlet-mapping>
-          <servlet-mapping>
-        	<servlet-name>SendSms</servlet-name>
-        	<url-pattern>/SendSms</url-pattern>
+        <servlet-mapping>
+        	<servlet-name>RegisterVerifyServlet</servlet-name>
+        	<url-pattern>/RegisterVerifyServlet</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        	<servlet-name>VerifyServlet</servlet-name>
+        	<url-pattern>/VerifyServlet</url-pattern>
+        </servlet-mapping>
+         <servlet-mapping>
+        	<servlet-name>ShowOrderServlet</servlet-name>
+        	<url-pattern>/ShowOrderServlet</url-pattern>
         </servlet-mapping>
 </web-app>

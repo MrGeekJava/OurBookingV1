@@ -44,7 +44,7 @@ public class GetMessageCode {
 		String random = smsCode();
 		//tamp 是短信模板，必须和秒嘀上的一模一样才可以，具体是短信签名+短信内容
 		//random 是生成的验证码。
-		String tamp = "【小新科技】登录验证码："+random+"，如非本人操作，请忽略此短信。";
+		String tamp = "【booking】尊敬的用户，您的验证码为"+random+"，打死都要告诉别人哦。";
 		String timestamp = getTimestamp();
 		String sig = getMD5(ACCOUNT_SID, AUTH_TOKEN, timestamp);
 		OutputStreamWriter out = null;
