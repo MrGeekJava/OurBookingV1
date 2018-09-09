@@ -467,7 +467,7 @@
         <a  class="a2">设施</a>
         <a  class="a3">订前必读</a>
         <a  class="a4">预定须知</a>
-        <a  class="a5">22131用户点评</a>
+        <a  class="a5">10用户点评</a>
 
         <div class="header">
             <span class="span1"><% 
@@ -586,10 +586,10 @@
                     </div>
 
         <div class="tip">
-            <li>小</li>
-            <li>粉</li>
-            <li>拳</li>
-            <li>锤</li>
+            <li>山</li>
+            <li>水</li>
+            <li>有</li>
+            <li></li>
             <li>爆</li>
             <li>你</li>
             <li>头</li>
