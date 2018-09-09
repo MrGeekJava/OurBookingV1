@@ -17,6 +17,7 @@ public class LookingRoomDaoInitImpl {
 
 	public Hotel getHotelMessage(String hotelId) {
 		Hotel returnHotel = new Hotel();
+		
 		int hotelIdIn = Integer.parseInt(hotelId);
 		QueryRunner runner = new QueryRunner();
 		Connection conn;
