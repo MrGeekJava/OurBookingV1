@@ -606,7 +606,7 @@
             <tr style="background-color: #e8eff9">
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
             </tr>
-            <tr  style="background-color: #EFFFFF">
+            <tr  style="background-color: white">
 
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>     
                  预定 </td>
@@ -614,14 +614,14 @@
                 
 
             </tr>
-            <tr style="background-color: #EFFFFF">
+            <tr style="background-color: white">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >   
                    预定 </td>
 
              
 
             </tr>
-            <tr style="background-color: #EFFFFF">
+            <tr style="background-color: white">
 
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                   预定 </td>
@@ -629,7 +629,7 @@
                
 
             </tr>
-            <tr style="background-color: #EFFFFF">
+            <tr style="background-color: white">
 
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                    预定  </td>
@@ -637,7 +637,7 @@
               
 
             </tr>
-            <tr style="background-color: #EFFFFF">
+            <tr style="background-color: white">
 
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
                 预定 </td>
@@ -734,8 +734,17 @@
                     <li>末页</li>
                 </ul>
             </div>
+    
+            
         </div>
+        
     </div>
+    
+         
+    <img src="../resources/res/images/looking_room/dibu1.PNG"  alt="上海鲜花港 - 郁金香" 
+    style="position:absolute;left:0px;top:2600px"/>
+     <img src="../resources/res/images/looking_room/dibu2.PNG"  alt="上海鲜花港 - 郁金香" 
+    style="position:absolute;left:0px;top:2958px"/>
     
      <!--弹幕-->
       <div class="tucao">

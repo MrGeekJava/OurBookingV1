@@ -8,7 +8,7 @@
 
 .container{
     width: 1070px;
-    height: 6600px;
+    height: 3500px;
     margin: 0 auto;
     background-color: white;
 }
@@ -44,7 +44,7 @@ ul{
 
 .leftcontainer{
     width: 257px;
-    height: 2256px;
+    height: 3500px;
     /*border: 1px solid red;*/
     position: absolute;
     /*top: 240px;*/
@@ -582,7 +582,7 @@ ul{
 
 .midd{
     width: 784px;
-    height: 6600px;
+    height: 3500px;
     position: relative;
     left: 280px;
     top: 50px;
