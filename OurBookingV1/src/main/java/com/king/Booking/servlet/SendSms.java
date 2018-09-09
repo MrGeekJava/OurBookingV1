@@ -3,7 +3,7 @@ package com.king.Booking.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,6 +34,9 @@ public class SendSms extends HttpServlet{
 			}else{
 				//把验证码返回到前端
 				System.out.println(code);
+				
+				Cookie phoneCode = new Cookie("phoneCode", code);
+				
 				resp.getWriter().print(code);
 			}
 		} catch (JSONException e) {

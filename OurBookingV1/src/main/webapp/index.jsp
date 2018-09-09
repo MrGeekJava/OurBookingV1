@@ -1233,7 +1233,7 @@
 					<span class="span-line">
 						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
 					</span>
-					<a href="javascript:void(0)" class="weicharLogin"><img src="resources/res/images/weichar.png" class="login_login">微信登录</a>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="resources/res/images/iphone.png" class="login_login">短信登录</a>
 				</div>
 				<hr>
 				<span class="span-tip">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
@@ -1267,7 +1267,7 @@
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
 					</span>
-					<a href="javascript:void(0)" class="weicharLogin"><img src="resources/res/images/weichar.png" class="login_login">微信登录</a>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="resources/res/images/iphone.png" class="login_login">短信登录</a>
 				</div> 
 				<hr>
 				<span class="span-tip">
@@ -1300,14 +1300,14 @@
         <div id="closebtnphone" class="closeButtonphone"></div>
         <div id="LAR-loginphone">
             <div class="LAR-contantphone">
-                <form name="loginForm" action="" onsubmit="" method="POST" class="LAR_formphone">
+                <form name="loginForm" action="LoginServlet?url=/index.jsp" method="POST" class="LAR_formphone">
                     <span class="login_spanphone">手机号码</span>
-                    <input id="emailInputphone" type="text" name="emailOrphone">
+                    <input id="emailInputphone" type="text" name="phoneNum">
                     <button type="button" class="acquireMaphone">获取验证码</button><br>
                     <span class="login_spanphone">输入验证码</span>
-                    <input id="pwdInputphone" type="password" name="pwd"><br><br>
+                    <input id="pwdInputphone" type="text" name="pwd"><br><br>
 
-                    <a href="javascript:void(0)" class="sub-btnphone " >登录</a><br>
+                    <input type="submit" class="sub-btnphone " value="登录" disabled><br>
                 </form>
 					<span class="span-linephone">
 					&nbsp;———————————&nbsp;&nbsp;或账号登录&nbsp;&nbsp;———————————
@@ -1315,7 +1315,7 @@
                 <a href="javascript:void(0)" class="weicharLoginphone">账号密码登录</a>
             </div>
             <hr>
-            <span class="span-tipphone">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
+            <span class="span-tipphone">输入<a href="#" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
             <span class="span-tip2phone">登录帐户即代表您同意本公司的<a href="#" class="font_aphone">相关条款</a>以及<a href="#" class="font_aphone">隐私声明</a></span>
         </div>
     </div>

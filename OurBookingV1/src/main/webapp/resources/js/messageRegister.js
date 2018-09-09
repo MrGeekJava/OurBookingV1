@@ -14,7 +14,6 @@ $(document).ready(function(){
         if(pattern.test(phone)==false){
             $("#emailInputphone").val("");
             alert("输入手机号码格式不正确");
-
         };
 
         //利用ajax把手机号传入后台
@@ -31,22 +30,20 @@ $(document).ready(function(){
             }
         });
     });
-    $(".sub-btnphone").click(function(){
+    $("#pwdInputphone").blur(function(){
         //验证验证码
         var sms = $("#pwdInputphone").val();
-        alert(sms);
         if(sms==""){
             alert("验证码未填写！");
         }else{
             if(code==sms){
-                alert("登录成功");
+                alert("验证成功");
+                $(".sub-btnphone").removeAttr("disabled");
             }else{
                 $("#pwdInputphone").val("");
                 alert("验证码错误");
             }
         }
-
-
     });
 //监听短信验证按键
     $(".weicharLogin").click(function(){

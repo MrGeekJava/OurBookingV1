@@ -52,6 +52,18 @@ public class RegisterDaoImpl{
 				return false;
 			}
 		}
+		
+//		手机登录
+		public User phoneLogin(String phoneNum) throws SQLException {
+			QueryRunner runner = new QueryRunner();
+			Connection conn = DataSourceUtil.getConnection();
+			String sql = "select * from UserList where UserPhoneNumber = ?";
+			Object[] params = {phoneNum};
+			
+			User userResult = runner.query(conn, sql, new BeanHandler(User.class), params);
+			
+			return userResult;
+		}
 	
 	/**
 	 * 用户注册

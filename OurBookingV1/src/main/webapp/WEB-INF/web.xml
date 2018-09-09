@@ -175,6 +175,12 @@
   	 	<description></description>
   	 	<servlet-class>com.king.Booking.servlet.ShowOrderServlet</servlet-class>
   	 </servlet>
+  	 <servlet>
+  	 	<servlet-name>SendSms</servlet-name>
+  	 	<display-name>SendSms</display-name>
+  	 	<description></description>
+  	 	<servlet-class>com.king.Booking.servlet.SendSms</servlet-class>
+  	 </servlet>
   	
   	
   	
@@ -268,5 +274,9 @@
          <servlet-mapping>
         	<servlet-name>ShowOrderServlet</servlet-name>
         	<url-pattern>/ShowOrderServlet</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        	<servlet-name>SendSms</servlet-name>
+        	<url-pattern>/SendSms</url-pattern>
         </servlet-mapping>
 </web-app>

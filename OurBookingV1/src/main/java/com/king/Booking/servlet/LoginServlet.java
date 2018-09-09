@@ -37,37 +37,47 @@ public class LoginServlet extends HttpServlet {
 		VerifyUtil verifyUtil = new VerifyUtil();
 		User user = new User();
 		
-		String userEmail = request.getParameter("emailOrphone");
-		String userPassword = request.getParameter("pwd");
+		String phoneNum = null;
+		String userEmail = null;
+		String userPassword = null;
 		String path = request.getParameter("url");
-		System.out.println(path);
-		/**
-		 * 正则表达式判断输入进来的是手机号还是邮箱
-		 */
-		if(verifyUtil.checkEmail(userEmail)) {
-			user.setUserEmail(userEmail);
-		} else if(verifyUtil.checkPhone(userEmail)) {
-			user.setUserPhoneNumber(userEmail);
-		} else {
-			out.print("alert('请输入正确格式！！！')");
-			response.sendRedirect(request.getContextPath()+path);
-			return;
-		}
+		User userReturn = new User();
 		
-		String userPswMD5 = null;
-		try {
-			userPswMD5 = MD5Util.md5Encode(userPassword);
-			System.out.println(userPswMD5);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(request.getParameter("phoneNum") != null) {
+			phoneNum = request.getParameter("phoneNum");
+			
+			user.setUserPhoneNumber(phoneNum);
+			userReturn = new RegisterServiceImpl().PhoneLogin(phoneNum);
+
+		} else {
+			userEmail = request.getParameter("emailOrphone");
+			userPassword = request.getParameter("pwd");
+			/**
+			 * 正则表达式判断输入进来的是手机号还是邮箱
+			 */
+			if(verifyUtil.checkEmail(userEmail)) {
+				user.setUserEmail(userEmail);
+			} else if(verifyUtil.checkPhone(userEmail)) {
+				user.setUserPhoneNumber(userEmail);
+			} else {
+				out.print("alert('请输入正确格式！！！')");
+				response.sendRedirect(request.getContextPath()+path);
+				return;
+			}
+			
+			String userPswMD5 = null;
+			try {
+				userPswMD5 = MD5Util.md5Encode(userPassword);
+				System.out.println(userPswMD5);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+			user.setUserPassword(userPswMD5);
+	
+			userReturn = new RegisterServiceImpl().UserLogin(user);
 		}
-
-		user.setUserPassword(userPswMD5);
-//		JSONObject json = null;
-
-		User userReturn = new RegisterServiceImpl().UserLogin(user);
-
 		if(userReturn == null) {
 			//登录失败
 			out.print("alert('该账号不存在！！！')");

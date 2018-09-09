@@ -21,6 +21,7 @@ public class RegisterServiceImpl {
 			return user2;
 		}
 		
+//		用户是否存在
 		public boolean userExist(String eop) {
 			boolean isExist;
 			try {
@@ -32,6 +33,19 @@ public class RegisterServiceImpl {
 			}
 			return isExist;
 		}
+		
+//		手机登录
+		public User PhoneLogin(String phoneNum) {
+			User user2;
+			try {
+				user2 = new RegisterDaoImpl().phoneLogin(phoneNum);
+			} catch (SQLException e) {
+				user2 = null;
+			} finally {
+				DataSourceUtil.close();
+			}
+			return user2;
+		} 
 		
 		//Dao层用户注册的函数
 		public boolean userRegister(User user){
