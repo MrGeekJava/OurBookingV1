@@ -329,7 +329,7 @@
                     <td colspan="4" align="center" style="width:100px; font-weight: bold">请您选择在线支付银行</td>
                 </tr>
                 <tr >
-                    <td><input type="radio" name="pd_FrpId" value="CMBCHINA-NET" checked>招商银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="BOC-NET-B2C" checked>中国银行 </td>
                     <td><input type="radio" name="pd_FrpId" value="ICBC-NET">工商银行</td>
                     <td><input type="radio" name="pd_FrpId" value="ABC-NET">农业银行</td>
                     <td><input type="radio" name="pd_FrpId" value="CCB-NET">建设银行 </td>
@@ -342,8 +342,8 @@
                 </tr>
                 <tr >
                     <td><input type="radio" name="pd_FrpId" value="BCCB-NET">北京银行</td>
-                    <td><input type="radio" name="pd_FrpId" value="CIB-NET">兴业银行 </td>
-                    <td><input type="radio" name="pd_FrpId" value="SPDB-NET">上海浦东发展银行 </td>
+                    <td><input type="radio" name="pd_FrpId" value="POST-NET-B2C">中国邮政 </td>
+                    <td><input type="radio" name="pd_FrpId" value="CZ-NET-B2C ">浙商银行 </td>
                     <td><input type="radio" name="pd_FrpId" value="ECITIC-NET">中信银行</td>
                 </tr>
             </table>

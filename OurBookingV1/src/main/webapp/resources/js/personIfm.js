@@ -9,8 +9,7 @@ $(document).ready(function () {
 	$(".order_details_out_time").text($.cookie("orderRoomout"));//退房日期
 	var outday =$.cookie("orderRoomout"); 
 	var inday = $.cookie("orderRoomin");
-	var allday =parseInt(outday.split("月")[1].split("日")[0]) - parseInt(inday.split("月")[1].split("日")[0]);	
-	$(".order_allday").text(allday+"天");	//订单总天数
+	$(".order_allday").text($.cookie("allday")+"天");	//订单总天数
 	$(".order_room_type").text($.cookie("orderRoomType"));//房间类型	
 	$(".order_allprice").text($.cookie("orderprices"));//订单总金额	
 

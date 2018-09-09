@@ -184,8 +184,7 @@ function showOrders(type){
 		success:function(result){
 			var orders = $.parseJSON(result);
 			
-//			清空原来的元素
-			$(".showOrder").remove();
+
 			
 			for(i in orders){
 				var isPay = orders[i].orderIsPay;
@@ -233,10 +232,14 @@ function showOrders(type){
 }
 $(document).ready(function(){
 	$("#myOrders").click(function(){
+//		清空原来的元素
+		$(".showOrder").remove();
 		showOrders(2);
 	});
 	$(".orderHead-select").change(function(){
 		var orderIsPay = $(".orderHead-select option:selected").val();
+//		清空原来的元素
+		$(".showOrder").remove();
 		showOrders(orderIsPay);
 	});
 //		var orderIsPay = $(".orderHead-select option:selected").val();	

@@ -1249,7 +1249,8 @@ $(document).ready(function(){
     			
     				 $(".order").find("tr").eq(i).find("td").eq(3).text(price*roomnum*days);
     				
-    				
+       			     $.cookie("allday",days);//订单天数
+       			     	
     			}
     		 }
     	 },2000);
