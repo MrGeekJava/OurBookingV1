@@ -41,6 +41,7 @@ public class LookingroomInitServlet  extends HttpServlet{
 
 			
 			request.getSession().setAttribute("hotelPer", hotel.getHotelPer());
+			request.getSession(true).setAttribute("hotelId", hotel.getHotelId());
 			
 			String hotelProvice = URLEncoder.encode(hotel.getHotelProvince(),"utf-8");
 			String hotelDowntown = URLEncoder.encode(hotel.getHotelDowntown(),"utf-8");

@@ -576,7 +576,7 @@ body{
 /*margin-top: 15px;*/
 /*}*/
 
-#emailInput,#pwdInput,#emailInput2,#pwdInput2{
+.emailInput,.pwdInput,.emailInput2,.pwdInput2{
 	height: 28px;
 	width: 406px;
 	margin-top: 5px;
@@ -584,11 +584,11 @@ body{
 	padding-left: 12px;
 }
 
-#emailInput:focus,#pwdInput:focus,#emailInput2:focus,#pwdInput2:focus{
+.emailInput:focus,.pwdInput:focus,.emailInput2:focus,.pwdInput2:focus{
 	box-shadow: 0 0 8px #4dff4d;
 	border: 1px solid #4dff4d;
 }
-#emailInput:hover,#pwdInput:hover,#emailInput2:hover,#pwdInput2:hover {
+.emailInput:hover,.pwdInput:hover,.emailInput2:hover,.pwdInput2:hover {
 	box-shadow: 0 0 8px #0077CC;
 	border: 1px solid #0077CC;
 }

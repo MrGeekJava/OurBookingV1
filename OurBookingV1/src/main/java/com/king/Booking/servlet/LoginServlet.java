@@ -38,7 +38,8 @@ public class LoginServlet extends HttpServlet {
 		
 		String userEmail = request.getParameter("emailOrphone");
 		String userPassword = request.getParameter("pwd");
-		
+		String path = request.getParameter("url");
+		System.out.println(path);
 		/**
 		 * 正则表达式判断输入进来的是手机号还是邮箱
 		 */
@@ -48,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			user.setUserPhoneNumber(userEmail);
 		} else {
 			out.print("alert('请输入正确格式！！！')");
-			response.sendRedirect(request.getContextPath()+"/index.jsp");
+			response.sendRedirect(request.getContextPath()+path);
 			return;
 		}
 
@@ -66,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession hs = request.getSession(true);
 			hs.setAttribute("loginUser", userReturn);
 		}
-		response.sendRedirect(request.getContextPath()+"/index.jsp");
+		response.sendRedirect(request.getContextPath()+path);
 	}
 
 }

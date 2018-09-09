@@ -127,8 +127,8 @@ $(document).ready(function () {
         $("#LARid").hide();
     });
     
-    $("#emailInput").blur(function(){
-    	var eop = $("#emailInput").val();
+    $("#eopInput").blur(function(){
+    	var eop = $("#eopInput").val();
     	$.ajax({
     		url:"RegisterVerifyServlet",
     		data:{EOP:eop},
@@ -146,10 +146,29 @@ $(document).ready(function () {
     		}
     	});
     });
+    $("#eopInput2").blur(function(){
+    	var eop = $("#eopInput2").val();
+    	$.ajax({
+    		url:"../RegisterVerifyServlet",
+    		data:{EOP:eop},
+    		success:function(result){
+    			if(result == '0'){
+    				$("#eoplogin").text("× 格式错误");
+    			} else if(result == '2'){
+    				$("#eoplogin").text("× 用户不存在");
+    			} else {
+    				$("#eoplogin").text("");
+    			}
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
     
 //    当鼠标移出的时候，进行判断
-    $("#emailInput2").blur(function(){
-    	var eop = $("#emailInput2").val();
+    $("#eopReg").blur(function(){
+    	var eop = $("#eopReg").val();
     	$.ajax({
     		url:"RegisterVerifyServlet",
     		data:{EOP:eop},
@@ -167,12 +186,44 @@ $(document).ready(function () {
     		}
     	});
     });
+    $("#eopReg1").blur(function(){
+    	var eop = $("#eopReg1").val();
+    	$.ajax({
+    		url:"../RegisterVerifyServlet",
+    		data:{EOP:eop},
+    		success:function(result){
+    			if(result == '0'){
+    				$("#eop").text("× 格式错误");
+    			} else if(result == '1'){
+    				$("#eop").text("× 该用户已存在");
+    			} else {
+    				$("#eop").text("√ 账号可用");
+    			}
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
     
 //    验证码
+    $("input[name='verifyName1']").blur(function(){
+    	var verifyCode = $("input[name='verifyName1']").val();
+    	$.ajax({
+    		url:"VerifyServlet",
+    		data:{VC:verifyCode},
+    		success:function(result){
+    			$("#verifyCode").text(result);
+    		},
+    		error:function(){
+    			alert("sorry!网络错误");
+    		}
+    	});
+    });
     $("input[name='verifyName']").blur(function(){
     	var verifyCode = $("input[name='verifyName']").val();
     	$.ajax({
-    		url:"VerifyServlet",
+    		url:"../VerifyServlet",
     		data:{VC:verifyCode},
     		success:function(result){
     			$("#verifyCode").text(result);
@@ -187,7 +238,27 @@ $(document).ready(function () {
      * 注册
      */
     
-    $(".subRegister").unbind('click').click(function(){
+    $("input[name='reginsterBtn1']").unbind('click').click(function(){
+    	if($("#eop").text()=="√ 账号可用" && $("#verifyCode").text()=="√"){
+        	var userEmail = $("#emailInput2").val();
+        	var userPassword = $("#pwdInput2").val();
+    		 $.getJSON(
+    				 'RegisterServlet',
+    				 {EmailOrPhone:userEmail,password:userPassword},
+    				 function(result){
+    					 if(result){
+    						 alert("恭喜"+userEmail+"注册成功");
+    						 $("#emailInput").attr("value",userEmail);
+    						 $("#log-btn").click();
+    					 }else{
+    						 alert("注册失败！");
+    					 }
+    				 });
+        } else {
+        	alert("信息不正确");
+        }
+	});
+    $("input[name='reginsterBtn']").unbind('click').click(function(){
     	if($("#eop").text()=="√ 账号可用" && $("#verifyCode").text()=="√"){
         	var userEmail = $("#emailInput2").val();
         	var userPassword = $("#pwdInput2").val();

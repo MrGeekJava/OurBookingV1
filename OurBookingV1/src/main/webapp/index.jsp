@@ -866,7 +866,6 @@
 			</ul>
 		</div>
 		<input class="search_container_four" type="submit" value="搜索">
-		<!-- <div class="search_container_four">搜索</div> -->
 	</div>
 	</form>
 	<div class="search_input">
@@ -1591,11 +1590,11 @@
 			<div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="resources/res/images/close.png" class="closeImg"></a></div>
 			<div id="LAR-login">
 				<div class="LAR-contant">
-					<form name="loginForm" action="LoginServlet" method="POST" class="LAR_form">
+					<form name="loginForm" action="LoginServlet?url='index.jsp'" method="POST" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号<i id="eoplogin" class="input_tip"></i></span>
-						<input id="emailInput" type="text" name="emailOrphone"><br>
+						<input id="eopInput" class="emailInput" type="text" name="emailOrphone"><br>
 						<span class="login_span">Booking.com密码</span>
-						<input id="pwdInput" type="password" name="pwd"><br>
+						<input class="pwdInput" type="password" name="pwd"><br>
 						<a href="#" class="lar_a">想不起密码？</a><br>
 						<input type="submit" class="sub-btn" value="登录"><br>
 					</form>
@@ -1613,11 +1612,11 @@
 				<div class="LAR-contant">
 					<form name="registerForm" action="" method="post" onsubmit="" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号<i id="eop" class="input_tip"></i></span>
-						<input id="emailInput2" type="text" name="emailOrphone"><br>
+						<input id="eopReg" class="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
-						<input id="pwdInput2" type="password" name="pwd" ><br>
+						<input class="pwdInput2" type="password" name="pwd" ><br>
 						<span class="login_span verify_code">请输入验证码<i id="verifyCode" class="input_tip"></i></span>
-						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
+						<input type="text" name="verifyName1" size="4" style="height:35px;" class="register_inp">
 						<img src="GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
 						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
 						
@@ -1631,7 +1630,7 @@
 						</script>
 						<br>
 						<br>
-						<input type="button" class="subRegister" value="注册账号"><br>
+						<input type="button" name="reginsterBtn" class="subRegister" value="注册账号"><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
