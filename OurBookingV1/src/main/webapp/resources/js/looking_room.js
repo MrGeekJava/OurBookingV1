@@ -1575,6 +1575,8 @@ $(document).ready(function(){
         timers.push(timer);
     }
 
+    //添加上个页面的日期信息
+    
     
     
 });

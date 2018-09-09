@@ -31,7 +31,7 @@
 <div class="top">
 
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
+        <a href="../index.jsp"><img id="Booking_logo" class="logo" src="../resources/res/images/logo.png"><a>
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >

@@ -23,23 +23,26 @@ public class RegisterVerifyServlet extends HttpServlet implements Servlet {
 		VerifyUtil verifyUtil = new VerifyUtil();
 		PrintWriter out = response.getWriter();
 		
-		String eop = request.getParameter("EOP");
-		boolean iseop = false;
-		int tip;
-		/**
-		 * 正则表达式判断输入进来的是手机号还是邮箱
-		 */
-		if(verifyUtil.checkEmail(eop) || verifyUtil.checkPhone(eop)) {
-			iseop = new RegisterServiceImpl().userExist(eop);
-			if(iseop) {
-				tip = 1;
+		int tip = 1;
+		if(request.getParameter("EOP") != null) {
+			String eop = request.getParameter("EOP");
+			boolean iseop = false;
+			
+			/**
+			 * 正则表达式判断输入进来的是手机号还是邮箱
+			 */
+			if(verifyUtil.checkEmail(eop) || verifyUtil.checkPhone(eop)) {
+				iseop = new RegisterServiceImpl().userExist(eop);
+				if(iseop) {
+					tip = 1;
+				} else {
+					tip = 2;
+				}
 			} else {
-				tip = 2;
+				tip = 0;
 			}
-		} else {
-			tip = 0;
+			
 		}
-		
 		out.print(tip);
 		out.flush();
 		out.close();

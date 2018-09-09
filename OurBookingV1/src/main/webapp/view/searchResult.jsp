@@ -39,7 +39,7 @@
 </div>
 <div class="top">
     <div class="head">
-        <img id="Booking_logo" class="logo" src="../resources/res/images/logo.png">
+        <a href="../index.jsp"><img id="Booking_logo" class="logo" src="../resources/res/images/logo.png"><a>
         <div class="user-bar">
             <ul class="user-ul">
                 <li class="user-li_1" >
@@ -837,7 +837,7 @@
 					<span class="span-line">
 						&nbsp;———————————&nbsp;&nbsp;或一键登录&nbsp;&nbsp;————————————
 					</span>
-					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/iphone.png" class="login_login">短信登录</a>
 				</div>
 				<hr>
 				<span class="span-tip">输入<a href="" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
@@ -850,11 +850,12 @@
 						<span class="login_span">电子邮箱/手机号<i id="eop" class="input_tip"></i></span>
 						<input id="eopReg1" class="emailInput2" type="text" name="emailOrphone"><br>
 						<span class="login_span">创建密码</span>
-						<input id="eopReg2" class="pwdInput2" type="password" name="pwd" ><br>
+						<input class="pwdInput2" type="password" name="pwd" ><br>
 						<span class="login_span verify_code">请输入验证码<i id="verifyCode" class="input_tip"></i></span>
 						<input type="text" name="verifyName" size="4" style="height:35px;" class="register_inp">
 						<img src="../GetImage" alt="图片没显示" id="verifyImage" style="width:70px;height:35px;"> <br>
 						<a href="#" onclick="refershVerify()" class="register_a">换一张</a>
+						
 						
 						<script type="text/javascript">
 						//刷新验证码
@@ -865,12 +866,12 @@
 						</script>
 						<br>
 						<br>
-						<input type="button" name="registerBtn1" class="subRegister" value="注册账号"><br>
+						<input type="button" name="reginsterBtn" class="subRegister" value="注册账号"><br>
 					</form>
 					<span class="span-line">
 						——————————————&nbsp;&nbsp;或&nbsp;&nbsp;——————————————
 					</span>
-					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/weichar.png" class="login_login">微信登录</a>
+					<a href="javascript:void(0)" class="weicharLogin"><img src="../resources/res/images/iphone.png" class="login_login">短信登录</a>
 				</div> 
 				<hr>
 				<span class="span-tip">
@@ -886,6 +887,41 @@
 			</div>
 		</div>
 	</div>
+<div id="LARidphone" class="LAR-Backgroundphone">
+    <div class="LAR-Containerphone">
+        <ul class="LAR-ulphone">
+            <a href="javascript:void(0)">
+                <li id="loginLiphone" class="LAR-liphone">手机</li>
+                <li id="registerLiphone" class="LAR-liphone">登录</li>
+            </a>
+            <svg class="icon-cha2" aria-hidden="true">
+                <use xlink:href="#icon-cha2"></use>
+            </svg>
+        </ul>
+
+        <div id="closebtnphone" class="closeButtonphone"></div>
+        <div id="LAR-loginphone">
+            <div class="LAR-contantphone">
+                <form name="loginForm" action="../LoginServlet?url=/index.jsp" method="POST" class="LAR_formphone">
+                    <span class="login_spanphone">手机号码</span>
+                    <input id="emailInputphone" type="text" name="phoneNum">
+                    <button type="button" class="acquireMaphone">获取验证码</button><br>
+                    <span class="login_spanphone">输入验证码</span>
+                    <input id="pwdInputphone" type="text" name="pwd"><br><br>
+
+                    <input type="submit" class="sub-btnphone " value="登录" disabled><br>
+                </form>
+					<span class="span-linephone">
+					&nbsp;———————————&nbsp;&nbsp;或账号登录&nbsp;&nbsp;———————————
+					</span>
+                <a href="javascript:void(0)" class="weicharLoginphone">账号密码登录</a>
+            </div>
+            <hr>
+            <span class="span-tipphone">输入<a href="#" class="font_a">订单确认号和PIN码</a>即可管理订单</span>
+            <span class="span-tip2phone">登录帐户即代表您同意本公司的<a href="#" class="font_aphone">相关条款</a>以及<a href="#" class="font_aphone">隐私声明</a></span>
+        </div>
+    </div>
+</div>
 
 
 <%
