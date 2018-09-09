@@ -160,6 +160,8 @@ function showImg(){
 		success:function(result){
 			if(result){
 				alert("上传成功");
+				$(".closeImg").click();
+				window.location.reload();
 			} else {
 				alert("上传失败");
 			}

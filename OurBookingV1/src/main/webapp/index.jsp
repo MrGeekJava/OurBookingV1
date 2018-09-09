@@ -155,9 +155,8 @@
 						<img src="resources/res/images/personIfm/person.png" style="width: 37px;height: 37px" class="personImg_class">
 <%
 		} else {
-			String userHead = loginUser.getUserPicture().replace("../", "");
 %>
-						<img src=<%=userHead %> style="width: 37px;height: 37px" class="personImg_class">
+						<img src=${sessionScope.loginUser.userPicture } style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>
@@ -879,7 +878,7 @@
 		<div id="container_holiday">
 			<i class="iconfont icon-Deutsch-flag"></i>
 			<span class="holiday_span">度假在即？<a href="#">年中优惠,省15%+</a>，了解一下!</span>
-			<i class="iconfont icon-ArtboardCopy" id="hide_i"></i>
+			<i  id="hide_i">X</i>
 		</div>
 		<div class="fuSongXian">
 			<!-- 用于连接到目的地-->
@@ -1590,7 +1589,7 @@
 			<div id="closebtn" class="closeButton"><a href="#" title="关闭"><img src="resources/res/images/close.png" class="closeImg"></a></div>
 			<div id="LAR-login">
 				<div class="LAR-contant">
-					<form name="loginForm" action="LoginServlet?url='index.jsp'" method="POST" class="LAR_form">
+					<form name="loginForm" action="LoginServlet?url=/index.jsp" method="POST" class="LAR_form">
 						<span class="login_span">电子邮箱/手机号<i id="eoplogin" class="input_tip"></i></span>
 						<input id="eopInput" class="emailInput" type="text" name="emailOrphone"><br>
 						<span class="login_span">Booking.com密码</span>

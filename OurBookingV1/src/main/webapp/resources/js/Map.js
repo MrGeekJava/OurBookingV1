@@ -99,14 +99,6 @@ $(document).ready(function(){
 });
 
 function selectHotels(sortType) {
-	//点击地图的时候，将地点传给后台
-//	$.post(
-//		"../ShowMapServlet",
-//		"destination=广州市",
-//		function(result) {
-//			loadHotels(result,sortType);
-//		}
-//	);
 	$.ajax({
 		//几个参数需要注意一下
 		type: "POST",//方法类型
@@ -147,8 +139,8 @@ function loadHotels(result, sortType){
 	deletePoint();
 	
     for(x in hotel){
-//    	var src = hotel[x].hotelPicture;
-    	var src = "../resources/res/images/GZBYBG/34980273.jpg";
+    	var hotelId = hotel[x].hotelId;
+    	var src = hotel[x].hotelPicture;
 	    var hotelName = hotel[x].hotelName;
 	    
 	    var roomGrade = Number(hotel[x].roomGrade);
@@ -174,7 +166,7 @@ function loadHotels(result, sortType){
 
 	    // 动态添加
 	    $("#select2").append(
-	        '<a href="javascript:void(0)"><div class="hotel">' +
+	        '<a href="../LookingroomInitServlet?hotelId='+hotelId+'"><div class="hotel">' +
 	        '<div class="hotel-img">' +
 	        '<img src="' + src + '">' +
 	        '</div>' +
@@ -198,13 +190,12 @@ function loadHotels(result, sortType){
 	    var pts = new Array();
 	    var infoWindow = new Array();
 	    var marker;
-	    
 	    map.centerAndZoom(hotel[x].hotelDowntown, 13);      		// 用城市名设置地图中心点和缩放级别
 	    marker = new BMap.Marker(new BMap.Point(hotel[x].longitude, hotel[x].latitude), {icon: myIcon});   // 创建标注
 	    sContent =                     //信息窗口内容
-	        '<a href="#">'+
+	        '<a href="../LookingroomInitServlet?hotelId='+hotelId+'">'+
 	        '<div class="sContent-hotel-img">'+
-	        '<img src="../resources/res/images/map/上海帝盛酒店.jpg">'+
+	        '<img src="'+src+'">'+
 	        '</div>'+
 	        '<h3>'+hotelName+'</h3>';
 	    for(var i=0; i<roomGrade; i++) {

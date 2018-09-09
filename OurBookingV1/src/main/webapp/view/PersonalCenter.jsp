@@ -154,7 +154,7 @@
 <%
 		} else {
 %>
-						<img src="${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
+						<img src="../${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>
@@ -220,7 +220,7 @@
 <%
 	} else {
 %>
-					<img src=${sessionScope.loginUser.userPicture }>
+					<img src="../${sessionScope.loginUser.userPicture }">
 <%
 	}
 %>
@@ -609,7 +609,7 @@
 <%
 	if(loginUser.getUserPicture() != null){
 %>
-						<img src="${sessionScope.loginUser.userPicture }">
+						<img src="../${sessionScope.loginUser.userPicture }">
 <%		
 	} else {
 %>

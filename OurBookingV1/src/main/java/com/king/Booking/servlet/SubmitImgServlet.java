@@ -1,5 +1,6 @@
 package com.king.Booking.servlet;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -11,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.tomcat.util.codec.binary.Base64;
 
 import com.king.Booking.entity.User;
 import com.king.Booking.service.impl.SubmitImgService;
@@ -32,7 +31,7 @@ public class SubmitImgServlet extends HttpServlet implements Servlet {
 		User user = (User)hs.getAttribute("loginUser");
 		
 		String base64Img = request.getParameter("source").replace(" ", "+");
-				
+		String imgFilePath = null;
         try {    
         	if(base64Img != null) {
         		base64Img = base64Img.split(",")[1];
@@ -46,7 +45,8 @@ public class SubmitImgServlet extends HttpServlet implements Servlet {
                 }    
             }    
             // 生成png图片    
-            String imgFilePath = "F:\\TeamProject\\OurBookingV1\\OurBookingV1\\src\\main\\webapp\\resources\\res\\userHead\\"+user.getUserId()+"img.png";
+            imgFilePath = request.getServletContext().getRealPath("/")+"\\"+user.getUserId()+"img.png";
+            System.out.println(imgFilePath);
             OutputStream out = new FileOutputStream(imgFilePath);    
             out.write(b);    
             out.flush();    
@@ -55,8 +55,11 @@ public class SubmitImgServlet extends HttpServlet implements Servlet {
             e.printStackTrace();    
         }
 		
-        String imgURL = "../resources/res/userHead/"+user.getUserId()+"img.png";
+        String imgURL = user.getUserId()+"img.png";
         boolean isSaved = new SubmitImgService().SaveHead(imgURL, user.getUserId());
+        
+        user.setUserPicture(imgURL);
+        hs.setAttribute("loginUser", user);
 		
 		PrintWriter write = response.getWriter();
 		write.print(isSaved);

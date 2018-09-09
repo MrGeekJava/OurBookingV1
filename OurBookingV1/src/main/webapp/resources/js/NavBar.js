@@ -240,15 +240,15 @@ $(document).ready(function () {
     
     $("input[name='reginsterBtn1']").unbind('click').click(function(){
     	if($("#eop").text()=="√ 账号可用" && $("#verifyCode").text()=="√"){
-        	var userEmail = $("#emailInput2").val();
-        	var userPassword = $("#pwdInput2").val();
+        	var userEmail = $(".emailInput2").val();
+        	var userPassword = $(".pwdInput2").val();
     		 $.getJSON(
-    				 'RegisterServlet',
+    				 '../RegisterServlet',
     				 {EmailOrPhone:userEmail,password:userPassword},
     				 function(result){
     					 if(result){
     						 alert("恭喜"+userEmail+"注册成功");
-    						 $("#emailInput").attr("value",userEmail);
+    						 $(".emailInput").attr("value",userEmail);
     						 $("#log-btn").click();
     					 }else{
     						 alert("注册失败！");
@@ -260,15 +260,15 @@ $(document).ready(function () {
 	});
     $("input[name='reginsterBtn']").unbind('click').click(function(){
     	if($("#eop").text()=="√ 账号可用" && $("#verifyCode").text()=="√"){
-        	var userEmail = $("#emailInput2").val();
-        	var userPassword = $("#pwdInput2").val();
+        	var userEmail = $(".emailInput2").val();
+        	var userPassword = $(".pwdInput2").val();
     		 $.getJSON(
     				 'RegisterServlet',
     				 {EmailOrPhone:userEmail,password:userPassword},
     				 function(result){
     					 if(result){
     						 alert("恭喜"+userEmail+"注册成功");
-    						 $("#emailInput").attr("value",userEmail);
+    						 $(".emailInput").attr("value",userEmail);
     						 $("#log-btn").click();
     					 }else{
     						 alert("注册失败！");

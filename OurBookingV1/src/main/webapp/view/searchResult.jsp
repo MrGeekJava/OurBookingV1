@@ -163,7 +163,7 @@
 <%
 		} else {
 %>
-						<img src=${sessionScope.loginUser.userPicture } style="width: 37px;height: 37px" class="personImg_class">
+						<img src="../${sessionScope.loginUser.userPicture }" style="width: 37px;height: 37px" class="personImg_class">
 <%
 		}
 %>

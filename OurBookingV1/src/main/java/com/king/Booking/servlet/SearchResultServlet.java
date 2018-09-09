@@ -142,6 +142,8 @@ public class SearchResultServlet extends HttpServlet {
 			hotelSetReturn.add(hotelSet);
 		}
 		JSONArray jsonArray = JSONArray.fromObject(hotelSetReturn);
+		
+		request.getSession(true).setAttribute("Downtown", searchAdressArray[0]);
 
 		out.print(jsonArray);//返回json数组
 		out.flush();
