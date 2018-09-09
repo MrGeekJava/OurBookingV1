@@ -1212,16 +1212,66 @@ $(document).ready(function(){
             $(".order").find("tr").eq(4).find("td").eq(2).text( $.cookie("roomPrice4"));
             $(".order").find("tr").eq(5).find("td").eq(2).text( $.cookie("roomPrice5"));
 
-            $(".order").find("tr").eq(1).find("td").eq(3).text( Number($.cookie("roomPrice1"))*Number(roomnum.split("间")[0]));
-            $(".order").find("tr").eq(2).find("td").eq(3).text( $.cookie("roomPrice2")*roomnum.split("间")[0]);
-            $(".order").find("tr").eq(3).find("td").eq(3).text( $.cookie("roomPrice3")*roomnum.split("间")[0]);
-            $(".order").find("tr").eq(4).find("td").eq(3).text( $.cookie("roomPrice4")*roomnum.split("间")[0]);
-            $(".order").find("tr").eq(5).find("td").eq(3).text( $.cookie("roomPrice5")*roomnum.split("间")[0]);
-            
+
+          
            
 
         },2000)
 
+    }
+    
+    
+    //刷新总价
+    flushPrices()
+    function flushPrices(){
+    	 setInterval(function(){
+    		 for(var i = 1;i<6;i++){
+    			var datein = $(".order").find("tr").eq(i).find("td").eq(5).text();
+    			var dateout = $(".order").find("tr").eq(i).find("td").eq(6).text();
+    			var price = $(".order").find("tr").eq(i).find("td").eq(2).text();
+    			var roomnum = $(".order").find("tr").eq(i).find("td").eq(4).text().split("间")[0];
+    		
+    			if(datein != "入住日期"&&dateout != "退房日期"){
+    				var yearin = datein.split("年")[0];
+    				var monthin = datein.split("年")[1].split("月")[0];
+    				var dayin = datein.split("年")[1].split("月")[1].split("日")[0];
+    				
+    				var yearout = dateout.split("年")[0];
+    				var monthout = dateout.split("年")[1].split("月")[0];
+    				var dayout = dateout.split("年")[1].split("月")[1].split("日")[0];
+    				
+    				var datepre = yearin+"-"+monthin+"-"+dayin;
+    				var datenext = yearout+"-"+monthout+"-"+dayout;
+    		
+    				var days = dateDiff("D",datepre,datenext);
+    				
+    				
+    			
+    				 $(".order").find("tr").eq(i).find("td").eq(3).text(price*roomnum*days);
+    				
+    				
+    			}
+    		 }
+    	 },2000);
+    }
+    
+    
+    //计算日期间的天数
+    function dateDiff(interval, date1, date2)
+    {
+        var objInterval = {'D' : 1000 * 60 * 60 * 24, 'H' : 1000 * 60 * 60,
+                           'M' : 1000 * 60, 'S' : 1000, 'T' : 1};
+        interval = interval.toUpperCase();
+        var dt1 = Date.parse(date1.replace(/-/g, '/'));
+        var dt2 = Date.parse(date2.replace(/-/g, '/'));
+        try
+        {
+            return Math.round((dt2 - dt1) / eval('(objInterval.' + interval + ')'));
+        }
+        catch (e)
+        {
+            return e.message;
+        }
     }
     
  //订单监听事件
@@ -1409,28 +1459,50 @@ $(document).ready(function(){
     var state = 0;
     $(".tucao").unbind("click").click(function(){
     	state++;
-       $(".screen_dibu").fadeToggle();
-        $(".screen_container").fadeToggle();
-        $(".screen_toolbar").fadeToggle();
-        if(state%2 == 1){
-        	   $.getJSON('../TucaoServlet',
-                       {opeartion:"getTucao"},
-                       function(result){
-                          var tuCao = eval(result.tuCao);
-                          $.each(result, function(k, v){
-                              $.each(v,function(kk, vv){
-                           	   // 创建弹幕
-                                  var jqueryDom = createScreenbullet(vv.tucaoWord);
-                                 
-                                  // 添加定时任务
-                                  addInterval(jqueryDom);
-                              });
-                              
-                          });
-                          
-                         
-                       }
-                   );
+    	 $(".screen_dibu").fadeToggle();
+         $(".screen_container").fadeToggle();
+         $(".screen_toolbar").fadeToggle();
+         var tucaoArray = new Array();
+         if(state%2 == 1){
+        	 
+        	// 创建弹幕
+        	 var jqueryDom = createScreenbullet("一大群弹幕大军即将杀到");
+        	 // 添加定时任务
+             addInterval(jqueryDom);
+    		  $.getJSON('../TucaoServlet',
+                      {opeartion:"getTucao"},
+                      function(result){
+                         var tuCao = eval(result.tuCao);
+                         $.each(result, function(k, v){
+              
+                             $.each(v,function(kk, vv){
+                            	 	tucaoArray.push(vv.tucaoWord);
+                            
+                          	  
+                             	
+                             });
+                        
+                         });
+                         var i=0;
+                         var length = tucaoArray.push("弹药不足。。。。。");
+                         clear = setInterval(function(){
+                        	 if(tucaoArray[i] == "弹药不足。。。。。"){
+ 
+                            	 clearInterval(clear);
+                             }
+                        	 // 创建弹幕
+                        	  jqueryDom = createScreenbullet(tucaoArray[i]);
+                        	 // 添加定时任务
+                             addInterval(jqueryDom);
+                             i++;
+                             
+                         },4000)
+                        
+                      }
+                  );
+    	
+        
+        	 
         }
      
     });
@@ -1475,8 +1547,8 @@ $(document).ready(function(){
         var fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()) + ")";
         var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
         var left = $(".screen_container").width() + "px";
-        var top = Math.floor(Math.random() * 400) + "px";
-        top = parseInt(top) > 352 ? "352px" : top;
+        var top = Math.floor(Math.random() * 600) + "px";
+        top = parseInt(top) > 600 ? "600px" : top;
         jqueryDom.css({
             "position": 'absolute',
             "color": fontColor,
@@ -1498,7 +1570,7 @@ $(document).ready(function(){
                 jqueryDom.remove();
                 clearInterval(timer);
             }
-        }, 10);
+        }, 20);
         timers.push(timer);
     }
 
