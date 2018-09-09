@@ -157,6 +157,12 @@
       	<description></description>
       	<servlet-class>com.king.Booking.servlet.AutoComplete</servlet-class>
       </servlet>
+      
+      	 <servlet>
+      	<servlet-name>SendSms</servlet-name>
+      	<display-name>SendSms</display-name>
+      	<servlet-class>com.king.Booking.servlet.SendSms</servlet-class>
+      </servlet>
   	
   	
   	
@@ -238,5 +244,9 @@
         <servlet-mapping>
         	<servlet-name>AutoComplete</servlet-name>
         	<url-pattern>/AutoComplete</url-pattern>
+        </servlet-mapping>
+          <servlet-mapping>
+        	<servlet-name>SendSms</servlet-name>
+        	<url-pattern>/SendSms</url-pattern>
         </servlet-mapping>
 </web-app>
