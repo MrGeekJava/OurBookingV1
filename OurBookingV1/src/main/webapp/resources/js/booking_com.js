@@ -7,6 +7,8 @@ var prev_flag = 11;
 var number_flag = 1;
 var now_day;
 var calendar_open = 1;
+//pre按键是否起作用
+var preOpeartion = 0;
 
 setInterval(loopchangecolor, 100);
 
@@ -151,7 +153,8 @@ function flush_day(dayin) {
 
     for (var i = 0; i < (change); i++) {
         day_enum[i].style.color = "gray";
-        day_enum[i].style.cursor = "default"
+        day_enum[i].style.cursor = "default";
+        preOpeartion = 0;
     }
 
 
@@ -171,6 +174,7 @@ function change_page(n) {
         for (var i = 0; i < change; i++) {
             day_enum[i].style.color = "#73aac7";
             day_enum[i].style.cursor = "pointer";
+            preOpeartion = 1;
 
         }
         number_flag = 1;
@@ -180,8 +184,11 @@ function change_page(n) {
     if (n == 1) {
         //prev是否起作用
         if (prev_flag == 10) {
+    
+        	
             return false;
         }
+        
         //把背景色变白
         document.getElementsByClassName("day_enum")[change_white].style.color = "#73aac7";
         //得到年月
@@ -201,7 +208,15 @@ function change_page(n) {
 
     if (n == -1) {
         //prev是否起作用
-        if (prev_flag == 01) {
+        if (prev_flag == 01) {       	
+for (var i = 0; i < (change); i++) {
+            	
+                day_enum[i].style.color = "gray";
+                day_enum[i].style.cursor = "default";
+      
+            }
+
+        	
             return false;
         }
         //把背景色变白
@@ -267,15 +282,21 @@ function checkclick(n) {
 
 
 function choosedatein(n) {
+	
     var type = n.split("-")[0];
     var number = n.split("-")[1];
+    if(document.getElementsByClassName("day_enum")[number].style.color=="gray"&&type == "1"){
+    
+		return false;
+	}
     document.getElementsByClassName("search_container_one")[0].style.width = "420px";
     document.getElementsByClassName("search_container_two")[0].style.width = "330px";
     document.getElementsByClassName("search_container_two")[0].style.left = "430px";
     document.getElementsByClassName("search_container_two_span1")[0].style.width = "120px";
     document.getElementsByClassName("search_container_two_span2")[0].style.left = "165px";
     document.getElementsByClassName("search_container_two_span3")[0].style.left = "190px";
-
+   
+	
 
     var text = document.getElementsByClassName("search_container_three_calendar_container_span")[0].innerText;
     var date1 = document.getElementsByClassName("leftmonth_month")[0].innerText;
@@ -375,8 +396,12 @@ function choosedatein(n) {
 
         var a = month + '月' + day + '日星期' + week;
         var b = document.getElementsByClassName("search_container_two_span3")[0].innerText;
-        if (datecompared(a, b) == false)
+        if (datecompared(a, b) == false){
+        	
             return false;
+        }
+        	
+     
         var indate = document.getElementsByClassName("search_container_two_span1")[0];
         indate.innerHTML = a;
 
@@ -472,8 +497,11 @@ function choosedatein(n) {
 
         var a = document.getElementsByClassName("search_container_two_span1")[0].innerText;
         var b = outmonth + '月' + outday + '日星期' + outweek;
-        if (datecompared(a, b) == false)
+        if (datecompared(a, b) == false){
+        	
             return false;
+        }
+        
         var outdate = document.getElementsByClassName("search_container_two_span3")[0];
         outdate.innerHTML = b;
 
@@ -497,6 +525,7 @@ function datecompared(a, b) {
 
     if (amonth >= bmonth) {
         if (aday >= bday) {
+       
             return false;
         }
     }
@@ -512,6 +541,7 @@ function choosedate(n) {
     if (type == 1 && month == (new Date().getMonth() + 1) && year == (new Date().getFullYear())) {
         for (var i = 0; i < (nowday_position + 1); i++) {
             if (i == number) {
+            
                 return false;
             }
         }
@@ -613,6 +643,7 @@ function openagediv(n) {
             whattime = 0;
         } else {
             whattime = 1;
+          
             return false;
         }
     }
@@ -627,6 +658,7 @@ function flushchildlist() {
 
     if (num == '0' || num == "") {
         document.getElementsByClassName("user_choose_container2")[0].style.height = "0px";
+  
         return false;
     }
     num = parseInt(num);
@@ -698,6 +730,7 @@ function opennumdiv(n) {
                 whattime1 = 0;
             } else {
                 whattime1 = 1;
+
                 return false;
             }
         }
@@ -715,6 +748,7 @@ function opennumdiv(n) {
                 whattime1 = 0;
             } else {
                 whattime1 = 1;
+             
                 return false;
             }
         }
@@ -732,6 +766,7 @@ function opennumdiv(n) {
                 whattime1 = 0;
             } else {
                 whattime1 = 1;
+         
                 return false;
             }
         }
