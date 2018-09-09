@@ -31,7 +31,7 @@ public class PayServlet extends HttpServlet {
 		         String  p5_Pid = ""; // 商品名称(酒店名)(从订单表中获取)
 		         String  p6_Pcat = ""; // 商品种类(从订单表中获取)
 		         String  p7_Pdesc = ""; // 商品描述(从订单表中获取)
-		         String  p8_Url = "http://localhost:8080/OurBookingV1/PayServlet?method=back"; // 商户接收支付成功数据的地址(应该跳转到修改订单表的Servlet，把是否支付的字段改成已支付)
+		         String  p8_Url = "http://localhost:8080/OurBookingV1/view/PersonalCenter.jsp"; // 商户接收支付成功数据的地址(应该跳转到修改订单表的Servlet，把是否支付的字段改成已支付)
 		         String  p9_SAF = ""; // 送货地址   为“1”: 需要用户将送货地址留在易宝支付系统;为“0”: 不需要，默认为 ”0”.
 		         String  pa_MP = ""; // 商户扩展信息(从订单表中获取)
 		         String  pd_FrpId = request.getParameter("pd_FrpId");;//支付通道编码
@@ -54,12 +54,12 @@ public class PayServlet extends HttpServlet {
 		 		 int hotelId = Integer.parseInt(request.getParameter("HotelId"));	//酒店ID
 		 		 String orderTime = request.getParameter("ORDER_TIME").split(" ")[0].replaceAll("/","-");	//订单时间
 		 		 double orderMoney = Double.parseDouble(request.getParameter("ORDER_MONEY").split("元")[0]);	//订单总金额
-		 		 int orderIsPay = 0;		//订单是否支付
+		 		 int orderIsPay = 1;		//订单是否支付
 		 		 int isChargeback = 0;	//订单是否可以退单
 		 		 String inDate = request.getParameter("IN_DATE");		//入住日期
 		 		 String outDate = request.getParameter("OUT_DATE");		//退房日期
 		 		 int roomNum = Integer.parseInt(request.getParameter("ROOM_NUM").split("间")[0]);		//订单房间数量
-		 		 String contactNum = request.getParameter("CONTACT_NUM");	//订房联系人号码
+		 		 String contactNum = request.getParameter("CONTACT_NUM").split(" ")[1];	//订房联系人号码
 		 		 String orderEmail = request.getParameter("ORDER_ID"); 	//订单人邮箱	 		
 		 		 int orderDay = Integer.parseInt(request.getParameter("ORDER_Allday").split("天")[0]);//入住总天数
 		 		 String peopleNum = request.getParameter("orderNumber");		//入住人数（成人+小孩）

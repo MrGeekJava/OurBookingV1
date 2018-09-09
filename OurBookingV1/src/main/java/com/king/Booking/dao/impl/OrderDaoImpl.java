@@ -61,11 +61,14 @@ public class OrderDaoImpl implements OrderDao{
 		Object[] params = {order.getUserId(),order.getOrderId(),order.getHotelId(),order.getOrderTime(),order.getOrderMoney(),order.getOrderIsPay(),order.getIsChargeback(),order.getInDate(),order.getOrderDay(),
 				order.getOutDate(),order.getRoomNum(),order.getPeopleNum(),order.getContactNum(),order.getOrderEmail(),order.getHotelName(),order.getHotelType(),
 				order.getRoomGrade(),order.getHotelAdress(),order.getOrderUserName()};
-	
-		
+			
 			int count = runner.update(insertSql,params);
 			System.out.println("成功增加"+count+"条订单！");
-	
+			
+			String updateSql = "update RoomList set RoomNumber=RoomNumber-1 where RoomId="+order.getHotelId();
+			int updatecount = runner.update(updateSql);
+			System.out.println("成功修改"+updatecount+"条数据！");
+
 	
 	}
 	
@@ -76,8 +79,7 @@ public class OrderDaoImpl implements OrderDao{
 		String updateSql = "update OrderList set OrderIsPay=1 where OrderId=?";
 		Object [] params = {orderId};
 			int count = runner.update(updateSql,params);
-			System.out.println("成功修改"+count+"条数据！");
-		
+			System.out.println("成功修改"+count+"条数据！");		
 	}
 	
 	
