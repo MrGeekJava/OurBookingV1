@@ -16,6 +16,10 @@ $(document).ready(function () {
 //点击价格从低到高模块就显示酒店结果
 $(document).ready(function(){
 		$("#pricedowntoup").click(function(){
+			$(".rightBox_navBar li").eq(0).css("background-color", "white");
+			 $(".rightBox_navBar li").eq(0).css("color", "rgb(0,53,128)");
+		        $(this).css("background-color", "rgb(10,178,27)");   
+		        $(this).css("color", "white");   
 			var currentPage = "1";
 			 var strCookie = document.cookie;
 			 var serchAdress = null;

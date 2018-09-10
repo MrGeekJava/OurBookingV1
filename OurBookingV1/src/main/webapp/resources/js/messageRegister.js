@@ -14,21 +14,22 @@ $(document).ready(function(){
         if(pattern.test(phone)==false){
             $("#emailInputphone").val("");
             alert("输入手机号码格式不正确");
-        };
-
-        //利用ajax把手机号传入后台
-        $.ajax({
-            url: 'SendSms',
-            type: "POST",
-            //发送参数
-            data: {"phone":phone},
-            //返回结果
-            success: function(result){
-                //控制台打印结果
-                //console.log("验证码是"+result);
-                code = result;
-            }
-        });
+        } else {
+        	//利用ajax把手机号传入后台
+            $.ajax({
+                url: 'SendSms',
+                type: "POST",
+                //发送参数
+                data: {"phone":phone},
+                //返回结果
+                success: function(result){
+                    //控制台打印结果
+                    //console.log("验证码是"+result);
+                    code = result;
+                    int = window.setInterval("getTime()",1000);
+                }
+            });
+        }
     });
     $("#pwdInputphone").blur(function(){
         //验证验证码
@@ -62,3 +63,16 @@ $(document).ready(function(){
         $("#registerLi").css("background-color", "#E9F0FA");
     });
 });
+
+var time = 60;
+
+function getTime(){
+	time--;
+	$(".acquireMaphone").text(time +"秒后再发送");
+	$(".acquireMaphone").attr("disabled",true);
+	if(time == 0){
+		$(".acquireMaphone").attr("disabled",false);
+		$(".acquireMaphone").text("获取验证码");
+		window.clearInterval(int);
+	}
+}

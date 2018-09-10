@@ -149,7 +149,7 @@ function loadHotels(result, sortType){
 	        zans += '<div class="iconfont icon-start zan"></div>';
 	    }
 	    
-	    var avgRating = Number(hotel[x].avgRating);
+	    var avgRating = Number(hotel[x].avgRating).toFixed(1);
 	    if (avgRating > 9.0) {
 	    	avgRating = avgRating.toString() + " 好极了";
 	    } else if (avgRating > 8.0) {

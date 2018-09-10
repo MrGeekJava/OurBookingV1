@@ -144,8 +144,7 @@ function readAsDataURL(){
 	    reader.readAsDataURL(file);
 	    reader.onload=function(e){
 	        var result=document.getElementById("img-vessel");
-	        //显示文件
-	        document.getElementById("aaa").innerHTML=this.result;
+	        
 	        result.innerHTML='<img id="myHead" src="'+this.result+'" />';
 	    }
     }  

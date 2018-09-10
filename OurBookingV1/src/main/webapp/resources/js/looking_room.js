@@ -153,17 +153,17 @@ $(document).ready(function(){
         })
     });
     $(".calenderin>.header>.icon-cha2").click(function(){
-        $(".calenderin").fadeToggle("slow");
+        $(".calenderin").fadeToggle("fast");
     });
     $(".calenderin>.indate").click(function(){
-        $(".calenderin").fadeToggle("slow");
+        $(".calenderin").fadeToggle("fast");
     });
 
     $(".calenderout>.header>.icon-cha2").click(function(){
-        $(".calenderout").fadeToggle("slow");
+        $(".calenderout").fadeToggle("fast");
     });
     $(".calenderout>.indate").click(function(){
-        $(".calenderout").fadeToggle("slow");
+        $(".calenderout").fadeToggle("fast");
     });
 
 
@@ -1206,11 +1206,11 @@ $(document).ready(function(){
             
             
             
-            $(".order").find("tr").eq(1).find("td").eq(2).text( $.cookie("roomPrice1"));
-            $(".order").find("tr").eq(2).find("td").eq(2).text( $.cookie("roomPrice2"));
-            $(".order").find("tr").eq(3).find("td").eq(2).text( $.cookie("roomPrice3"));
-            $(".order").find("tr").eq(4).find("td").eq(2).text( $.cookie("roomPrice4"));
-            $(".order").find("tr").eq(5).find("td").eq(2).text( $.cookie("roomPrice5"));
+            $(".order").find("tr").eq(1).find("td").eq(2).text("￥"+ $.cookie("roomPrice1"));
+            $(".order").find("tr").eq(2).find("td").eq(2).text("￥"+ $.cookie("roomPrice2"));
+            $(".order").find("tr").eq(3).find("td").eq(2).text("￥"+ $.cookie("roomPrice3"));
+            $(".order").find("tr").eq(4).find("td").eq(2).text("￥"+ $.cookie("roomPrice4"));
+            $(".order").find("tr").eq(5).find("td").eq(2).text("￥"+ $.cookie("roomPrice5"));
 
 
           
@@ -1245,9 +1245,8 @@ $(document).ready(function(){
     		
     				var days = dateDiff("D",datepre,datenext);
     				
-    				
-    			
-    				 $(".order").find("tr").eq(i).find("td").eq(3).text(price*roomnum*days);
+    				var sum = Number(price.substring(1, price.length))*roomnum*days;
+    				 $(".order").find("tr").eq(i).find("td").eq(3).text("￥"+ sum);
     				
        			     $.cookie("allday",days);//订单天数
        			     	
@@ -1277,31 +1276,37 @@ $(document).ready(function(){
     
  //订单监听事件
     
-    $(".order").find("td").click(function(){	
+    $(".order").find("td").click(function(){
     	for(var i=1;i<6;i++){
-    		
-    		if($(".order").find("tr").eq(i).find("td").eq(8).css("color")=="rgb(0, 0, 255)"){
-    			
-    			var orderRoomType = $(".order").find("tr").eq(i).find("td").eq(0).text();
-    			var orderSurplusRoomNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
-    			var orderPrice = $(".order").find("tr").eq(i).find("td").eq(2).text();
-    			var orderprices = $(".order").find("tr").eq(i).find("td").eq(3).text();
-    			var orderRoomnum = $(".order").find("tr").eq(i).find("td").eq(4).text();
-    			var orderRoomin = $(".order").find("tr").eq(i).find("td").eq(5).text();
-    			var orderRoomout = $(".order").find("tr").eq(i).find("td").eq(6).text();
-    			var orderNumber = $(".order").find("tr").eq(i).find("td").eq(7).text();
-    			
-    			  $.cookie("orderRoomType",orderRoomType);//订单房间类型
-    			  $.cookie("orderSurplusRoomNumber",orderSurplusRoomNumber);//订单房间剩余数量
-    			  $.cookie("orderPrice",orderPrice);//单价
-    			  $.cookie("orderprices",orderprices);//总价
-    			  $.cookie("orderRoomnum",orderRoomnum);//订房数量  
-    			  $.cookie("orderRoomin",orderRoomin);//入住日期
-    			  $.cookie("orderRoomout",orderRoomout);//退房日期
-    			  $.cookie("orderNumber",orderNumber);//人数（成人+儿童）
-    			  location.href = "personInfor.jsp"
-    		}
-    	}
+        		
+        	if($(".order").find("tr").eq(i).find("td").eq(8).css("color")=="rgb(0, 0, 255)"){
+
+        		var orderRoomType = $(".order").find("tr").eq(i).find("td").eq(0).text();
+        		var orderSurplusRoomNumber = $(".order").find("tr").eq(i).find("td").eq(1).text();
+        		var orderPrice = $(".order").find("tr").eq(i).find("td").eq(2).text();
+        		var orderprices = $(".order").find("tr").eq(i).find("td").eq(3).text();
+        		var orderRoomnum = $(".order").find("tr").eq(i).find("td").eq(4).text();
+        		var orderRoomin = $(".order").find("tr").eq(i).find("td").eq(5).text();
+        		var orderRoomout = $(".order").find("tr").eq(i).find("td").eq(6).text();
+        		var orderNumber = $(".order").find("tr").eq(i).find("td").eq(7).text();
+
+        		if(orderRoomin == "入住日期"){
+        			alert("请选择入住日期");
+        		} else if(orderRoomout == "退房日期"){
+        			alert("请选择退房日期");
+        		} else {
+        			$.cookie("orderRoomType",orderRoomType);//订单房间类型
+            		$.cookie("orderSurplusRoomNumber",orderSurplusRoomNumber);//订单房间剩余数量
+            		$.cookie("orderPrice",orderPrice);//单价
+            		$.cookie("orderprices",orderprices);//总价
+            		$.cookie("orderRoomnum",orderRoomnum);//订房数量  
+            		$.cookie("orderRoomin",orderRoomin);//入住日期
+            		$.cookie("orderRoomout",orderRoomout);//退房日期
+            		$.cookie("orderNumber",orderNumber);//人数（成人+儿童）
+            		location.href = "personInfor.jsp"
+        		}
+        	}
+        }
     });
     
   //右侧评论初始化

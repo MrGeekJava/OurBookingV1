@@ -360,9 +360,10 @@ i{
 .container_cancle_fee_span5{
     display: inline-block;
     height: 20px;
-    width: 50px;
+    width: 63px;
     float: right;
     font-size: 14px;
+
 }
 .container_add_tax{
     height: 69px;

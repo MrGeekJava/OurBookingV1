@@ -581,9 +581,8 @@
         </div>
         <div class="text">
             <h3>广州精选推荐之一</h3>
-            <span class="hotelPer" style="color:black;letter-spacing:2px; font-size: 18px"> <%=session.getValue("hotelPer")%></span>
-                 
-                    </div>
+            <span class="hotelPer" style="color:black;letter-spacing:2px; font-size: 18px"> <%=session.getValue("hotelPer")%></span>         
+        </div>
 
         <div class="tip">
             <li>山</li>
@@ -606,53 +605,38 @@
             <tr style="background-color: #e8eff9">
                 <th>房间类型</th><th>剩余房间数</th><th>单价</th><th>总价</th><th>预定客房数量</th><th>入住日期</th><th>离开日期</th><th>入住人数</th><th>预定选择</th>
             </tr>
-            <tr  style="background-color: white">
-
+            <tr style="background-color: white">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>     
-                 预定 </td>
-
-                
-
+                 <button>预定</button></td>
             </tr>
             <tr style="background-color: white">
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >   
-                   预定 </td>
-
-             
-
+                   <button>预定</button></td>
             </tr>
             <tr style="background-color: white">
-
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
-                  预定 </td>
-
-               
-
+                  <button>预定</button></td>
             </tr>
             <tr style="background-color: white">
-
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
-                   预定  </td>
-
-              
-
+                   <button>预定</button></td>
             </tr>
             <tr style="background-color: white">
-
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td >  
-                预定 </td>
-
-               
-
+                <button>预定</button></td>
             </tr>
+            <script>
+            	$("td button").click(function(){
+            		if(<%=session.getAttribute("loginUser") %> == null){
+            			alert("请去登录");
+            		}
+            	});
+            </script>
         </table>
         
-        
-        
-
         <div class="connectfoot">
             <h3>还没有找到合适的住宿?</h3>
-            <div class="searchother">继续搜索</div>
+            <a href="../index.jsp" class="searchother">继续搜索</a>
         </div>
         
             <div class="CommentFoot">

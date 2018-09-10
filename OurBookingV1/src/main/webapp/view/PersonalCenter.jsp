@@ -232,30 +232,30 @@
             <div class="modifyPD-body">
                 <div class="modifyPD-body-proBar">
 <%
-	int finish = 20;
+	int finish = 5;
 	if(loginUser.getUserSurnme()!=null || loginUser.getUserName()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserEmail()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserPhoneNumber()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserCountry()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserPicture()!=null){
 		finish += 10;
 	}
 	if(loginUser.getUserNickName()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserBirthday()!=null){
-		finish += 10;
+		finish += 5;
 	}
 	if(loginUser.getUserSex()!=null){
-		finish += 10;
+		finish += 5;
 	}
 %>
                     <p>已完成<%=finish %>%</p>
@@ -631,7 +631,7 @@
 
                 <div class="ISInfo_content_row">
 <%
-	String[] days = new String[3];
+	String[] days = {"","",""};
 	if(loginUser.getUserBirthday() != null){
 		days = loginUser.getUserBirthday().split("-");
 	}
@@ -944,7 +944,6 @@
                 <h3 class="fileTitle">选择文件上传</h3>
                 <input type="file" id="imgfile" name="newHead" class="fileValue" onchange="readAsDataURL()" >
                 <button id="saveImg" class="saveHeadBtn" onclick="showImg()">保存</button>
-                <textarea id="aaa"></textarea>
             </div>
         </div>
     </div>
