@@ -1206,11 +1206,11 @@ $(document).ready(function(){
             
             
             
-            $(".order").find("tr").eq(1).find("td").eq(2).text("￥"+ $.cookie("roomPrice1"));
-            $(".order").find("tr").eq(2).find("td").eq(2).text("￥"+ $.cookie("roomPrice2"));
-            $(".order").find("tr").eq(3).find("td").eq(2).text("￥"+ $.cookie("roomPrice3"));
-            $(".order").find("tr").eq(4).find("td").eq(2).text("￥"+ $.cookie("roomPrice4"));
-            $(".order").find("tr").eq(5).find("td").eq(2).text("￥"+ $.cookie("roomPrice5"));
+            $(".order").find("tr").eq(1).find("td").eq(2).text($.cookie("roomPrice1"));
+            $(".order").find("tr").eq(2).find("td").eq(2).text($.cookie("roomPrice2"));
+            $(".order").find("tr").eq(3).find("td").eq(2).text($.cookie("roomPrice3"));
+            $(".order").find("tr").eq(4).find("td").eq(2).text($.cookie("roomPrice4"));
+            $(".order").find("tr").eq(5).find("td").eq(2).text($.cookie("roomPrice5"));
 
 
           
@@ -1245,8 +1245,8 @@ $(document).ready(function(){
     		
     				var days = dateDiff("D",datepre,datenext);
     				
-    				var sum = Number(price.substring(1, price.length))*roomnum*days;
-    				 $(".order").find("tr").eq(i).find("td").eq(3).text("￥"+ sum);
+    				var sum = price*roomnum*days;
+    				 $(".order").find("tr").eq(i).find("td").eq(3).text(sum);
     				
        			     $.cookie("allday",days);//订单天数
        			     	

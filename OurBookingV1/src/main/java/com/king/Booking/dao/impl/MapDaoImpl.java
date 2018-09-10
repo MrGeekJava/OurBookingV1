@@ -75,11 +75,12 @@ public class MapDaoImpl implements MapDao {
 		List<Object[]> hotelIds = null;
 		hotelIds = runner.query(conn, sql, new ArrayListHandler());
 		
-		String sql2 = "select * from hotel_eva_view where 1=-1";
+		String sql2 = "select * from hotel_eva_view where ";
+		sql2 += " HotelDowntown='"+destination+"' and (1=-1";
 		for(Object[] hotelId:hotelIds) {
 			sql2 += " or HotelId="+hotelId[0];
 		}
-		sql2 += " and HotelDowntown='"+destination+"'";
+		sql2 += ")";
 		List<HotelView> mapHotels = new ArrayList<HotelView>();
 		mapHotels = runner.query(conn, sql2, new BeanListHandler<HotelView>(HotelView.class));
 
