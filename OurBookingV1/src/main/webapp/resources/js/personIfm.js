@@ -25,7 +25,7 @@ $(document).ready(function () {
 	//所有客人
 	$(".container_price_people").text($.cookie("orderNumber"));	
 	
-
+ 
     $('.order_ifm_p1').hover(function () {
         $('.tips').fadeIn();
         $('.tips').text($('.order_ifm_p1').attr('data-title'));
